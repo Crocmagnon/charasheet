@@ -60,6 +60,7 @@ if DEBUG_TOOLBAR:
 CUSTOM_APPS = [
     "whitenoise.runserver_nostatic",  # should be first
     "common",
+    "character",
 ]
 
 INSTALLED_APPS = CUSTOM_APPS + DJANGO_APPS + EXTERNAL_APPS

@@ -10,13 +10,14 @@ class Profile(UniquelyNamedModel, TimeStampedModel, models.Model):
     class MagicalStrength(models.TextChoices):
         NONE = "NON", "None"
         INTELLIGENCE = "INT", "Intelligence"
-        WISDOM = "WIS", "Wisdom"
+        WISDOM = "SAG", "Wisdom"
         CHARISMA = "CHA", "Charisma"
 
     magical_strength = models.CharField(
         max_length=3, choices=MagicalStrength.choices, default=MagicalStrength.NONE
     )
     life_dice = models.PositiveSmallIntegerField(choices=Dice.choices)
+    notes = models.TextField(blank=True)
 
 
 class Race(UniquelyNamedModel, TimeStampedModel, models.Model):

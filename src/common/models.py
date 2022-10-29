@@ -23,6 +23,5 @@ class UniquelyNamedModel(models.Model):
     def __str__(self):
         return self.name
 
-    @property
     def natural_key(self):
         return (self.name,)

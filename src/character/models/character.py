@@ -110,7 +110,6 @@ class Character(models.Model):
     def __str__(self):
         return self.name
 
-    @property
     def natural_key(self):
         return (self.name, self.player_id)
 

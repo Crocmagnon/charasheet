@@ -36,8 +36,8 @@ class Capability(UniquelyNamedModel, TimeStampedModel, models.Model):
     rank = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)]
     )
-    limited = models.BooleanField(blank=True, null=False)
-    spell = models.BooleanField(blank=True, null=False)
+    limited = models.BooleanField(blank=True, null=False, default=False)
+    spell = models.BooleanField(blank=True, null=False, default=False)
     description = models.TextField()
 
     class Meta:

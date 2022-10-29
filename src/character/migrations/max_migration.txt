@@ -1,1 +1,1 @@
-0006_alter_path_category
+0007_alter_capability_limited_alter_capability_spell

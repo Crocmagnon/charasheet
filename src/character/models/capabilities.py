@@ -25,6 +25,7 @@ class Path(UniquelyNamedModel, TimeStampedModel, models.Model):
         PROFILE = "profile", "Profile"
         RACE = "race", "Race"
         PRESTIGE = "prestige", "Prestige"
+        CREATURE = "creature", "Creature"
 
     category = models.CharField(max_length=20, choices=Category.choices)
     notes = models.TextField(blank=True)

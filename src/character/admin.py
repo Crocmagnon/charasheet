@@ -38,11 +38,18 @@ class RacialCapabilityAdmin(admin.ModelAdmin):
     search_fields = ["name", "description"]
 
 
+class PathInline(admin.TabularInline):
+    model = models.Path
+    fields = ["name"]
+    extra = 0
+
+
 @admin.register(models.Profile)
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ["name", "life_dice", "magical_strength"]
     list_filter = ["life_dice", "magical_strength"]
     search_fields = ["name"]
+    inlines = [PathInline]
 
 
 class RacialCapabilityInline(admin.TabularInline):
@@ -54,7 +61,7 @@ class RacialCapabilityInline(admin.TabularInline):
 class RaceAdmin(admin.ModelAdmin):
     list_display = ["name"]
     search_fields = ["name"]
-    inlines = [RacialCapabilityInline]
+    inlines = [RacialCapabilityInline, PathInline]
 
 
 @admin.register(models.Character)

@@ -1,1 +1,1 @@
-0005_profile_notes_alter_character_mana_consumed_and_more
+0006_alter_path_category

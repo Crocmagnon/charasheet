@@ -67,23 +67,43 @@
                 <tbody class="table-group-divider">
                     <tr>
                         <th scope="row">Initiative</th>
-                        <td>{{ character.initiative }}</td>
+                        <td data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="valeur DEX">
+                            {{ character.initiative }}
+                        </td>
                     </tr>
                     <tr>
                         <th scope="row">Att. contact</th>
-                        <td>{{ character.attack_melee|modifier }}</td>
+                        <td data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="{{ character.level }} (niveau) + {{ character.modifier_strength }} (mod. FOR)">
+                            {{ character.attack_melee|modifier }}
+                        </td>
                     </tr>
                     <tr>
                         <th scope="row">Att. distance</th>
-                        <td>{{ character.attack_range|modifier }}</td>
+                        <td data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="{{ character.level }} (niveau) + {{ character.modifier_dexterity }} (mod. DEX)">
+                            {{ character.attack_range|modifier }}
+                        </td>
                     </tr>
                     <tr>
                         <th scope="row">Att. magique</th>
-                        <td>{{ character.attack_magic|modifier }}</td>
+                        <td data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="{{ character.level }} (niveau) + {{ character.attack_magic|sub:character.level }} (mod. {{ character.profile.magical_strength }})">
+                            {{ character.attack_magic|modifier }}
+                        </td>
                     </tr>
                     <tr>
                         <th scope="row">Défense</th>
-                        <td>{{ character.defense }}</td>
+                        <td data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="10 + {{ character.armor }} (armor) + {{ character.shield }} (shield) + {{ character.modifier_dexterity }} (mod. DEX) + {{ character.defense_misc }} (misc)">
+                            {{ character.defense }}
+                        </td>
                     </tr>
                 </tbody>
             </table>

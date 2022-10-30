@@ -9,3 +9,8 @@ def modifier(value):
         return f"+{value}"
     else:
         return value
+
+
+@register.filter
+def sub(value, arg):
+    return value - arg

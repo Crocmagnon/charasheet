@@ -1,4 +1,5 @@
 {% extends "common/base.html" %}
+{% load character_extras %}
 
 {% block title %}{{ character.name }}{% endblock %}
 
@@ -28,32 +29,32 @@
                     <tr>
                         <th scope="row">FOR</th>
                         <td>{{ character.value_strength }}</td>
-                        <td>{{ character.modifier_strength }}</td>
+                        <td>{{ character.modifier_strength|modifier }}</td>
                     </tr>
                     <tr>
                         <th scope="row">DEX</th>
                         <td>{{ character.value_dexterity }}</td>
-                        <td>{{ character.modifier_dexterity }}</td>
+                        <td>{{ character.modifier_dexterity|modifier }}</td>
                     </tr>
                     <tr>
                         <th scope="row">CON</th>
                         <td>{{ character.value_constitution }}</td>
-                        <td>{{ character.modifier_constitution }}</td>
+                        <td>{{ character.modifier_constitution|modifier }}</td>
                     </tr>
                     <tr>
                         <th scope="row">INT</th>
                         <td>{{ character.value_intelligence }}</td>
-                        <td>{{ character.modifier_intelligence }}</td>
+                        <td>{{ character.modifier_intelligence|modifier }}</td>
                     </tr>
                     <tr>
                         <th scope="row">SAG</th>
                         <td>{{ character.value_wisdom }}</td>
-                        <td>{{ character.modifier_wisdom }}</td>
+                        <td>{{ character.modifier_wisdom|modifier }}</td>
                     </tr>
                     <tr>
                         <th scope="row">CHA</th>
                         <td>{{ character.value_charisma }}</td>
-                        <td>{{ character.modifier_charisma }}</td>
+                        <td>{{ character.modifier_charisma|modifier }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -70,15 +71,15 @@
                     </tr>
                     <tr>
                         <th scope="row">Att. contact</th>
-                        <td>{{ character.attack_melee }}</td>
+                        <td>{{ character.attack_melee|modifier }}</td>
                     </tr>
                     <tr>
                         <th scope="row">Att. distance</th>
-                        <td>{{ character.attack_range }}</td>
+                        <td>{{ character.attack_range|modifier }}</td>
                     </tr>
                     <tr>
                         <th scope="row">Att. magique</th>
-                        <td>{{ character.attack_magic }}</td>
+                        <td>{{ character.attack_magic|modifier }}</td>
                     </tr>
                     <tr>
                         <th scope="row">Défense</th>

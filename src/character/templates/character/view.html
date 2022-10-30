@@ -185,91 +185,114 @@
                             </div>
                         </th>
                         <td id="mana-remaining">{{ character.mana_remaining }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 mb-3">
-            <div class="card">
-                <h5 class="card-header">{{ character.racial_capability.name }}</h5>
-                <div class="card-body">
-                    <p class="card-text">{{ character.racial_capability.description|capfirst }}</p>
-                </div>
+                        <tr>
+                            <th scope="row">PR max</th>
+                            <td>{{ character.recovery_points_max }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                PR restants
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <button
+                                        hx-get="{% url "character:recovery_points_change" pk=character.pk %}?value=-1"
+                                        hx-target="#recovery-points-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-danger">-</button>
+                                    <button
+                                        hx-get="{% url "character:recovery_points_change" pk=character.pk %}?value=1"
+                                        hx-target="#recovery-points-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-success">+</button>
+                                </div>
+                            </th>
+                            <td id="recovery-points-remaining">{{ character.recovery_points_remaining }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="col-md-8">
-            <table class="table table-hover table-sm">
-                <thead>
-                    <tr>
-                        <th scope="col">Arme</th>
-                        <th scope="col">Attaque</th>
-                        <th scope="col">DM</th>
-                        <th scope="col">Spécial</th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    {% for weapon in character.weapons.all %}
-                        <tr>
-                            <th scope="row">{{ weapon.name }}</th>
-                            <td>1D20 +</td>
-                            <td>{{ weapon.damage }}</td>
-                            <td>{{ weapon.special }}</td>
-                        </tr>
-                    {% empty %}
-                        <tr>
-                            <td colspan="4">Aucune arme</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <h5 class="card-header">Équipement</h5>
-                <div class="card-body" id="equipment">
-                    {% include "character/equipment_display.html" %}
-                </div>
-                <div class="card-footer">
-                    {{ character.money_pp }} pp,
-                    {{ character.money_po }} po,
-                    {{ character.money_pa }} pa,
-                    {{ character.money_pc }} pc
-                </div>
-            </div>
-        </div>
-    </div>
-    <h4 class="mt-3">Voies & Capacités</h4>
-    <div class="row gy-3">
-        {% for path, capabilities in character.get_capabilities_by_path.items %}
-            <div class="col-xl-3 col-md-6">
+        <div class="row">
+            <div class="col-md-4 mb-3">
                 <div class="card">
-                    <h5 class="card-header">{{ path.display_name }}</h5>
-                    {% if path.notes %}
-                        <div class="card-body text-bg-light">{{ path.notes }}</div>
-                    {% endif %}
-                    <ul class="list-group list-group-flush">
-                        {% for capability in capabilities %}
-                            <li class="list-group-item">
-                                <strong>
-                                    {{ capability.rank }}.
-                                    {{ capability.name }}
-                                    {% if capability.spell %}<i class="fa-solid fa-hand-sparkles"></i>{% endif %}
-                                    {% if capability.limited %}<i class="fa-solid fa-handcuffs"></i>{% endif %}
-                                </strong><br>
-                                {{ capability.description }}
-                            </li>
-                        {% endfor %}
-                    </ul>
+                    <h5 class="card-header">{{ character.racial_capability.name }}</h5>
+                    <div class="card-body">
+                        <p class="card-text">{{ character.racial_capability.description|capfirst }}</p>
+                    </div>
                 </div>
             </div>
-        {% endfor %}
-    </div>
-    <h4 class="mt-3">Notes</h4>
-    <div class="row" id="notes">
-        {% include "character/notes_display.html" %}
-    </div>
+            <div class="col-md-8">
+                <table class="table table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Arme</th>
+                            <th scope="col">Attaque</th>
+                            <th scope="col">DM</th>
+                            <th scope="col">Spécial</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        {% for weapon in character.weapons.all %}
+                            <tr>
+                                <th scope="row">{{ weapon.name }}</th>
+                                <td>1D20 +</td>
+                                <td>{{ weapon.damage }}</td>
+                                <td>{{ weapon.special }}</td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="4">Aucune arme</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <h5 class="card-header">Équipement</h5>
+                    <div class="card-body" id="equipment">
+                        {% include "character/equipment_display.html" %}
+                    </div>
+                    <div class="card-footer">
+                        {{ character.money_pp }} pp,
+                        {{ character.money_po }} po,
+                        {{ character.money_pa }} pa,
+                        {{ character.money_pc }} pc
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h4 class="mt-3">Voies & Capacités</h4>
+        <div class="row gy-3">
+            {% for path, capabilities in character.get_capabilities_by_path.items %}
+                <div class="col-xl-3 col-md-6">
+                    <div class="card">
+                        <h5 class="card-header">{{ path.display_name }}</h5>
+                        {% if path.notes %}
+                            <div class="card-body text-bg-light">{{ path.notes }}</div>
+                        {% endif %}
+                        <ul class="list-group list-group-flush">
+                            {% for capability in capabilities %}
+                                <li class="list-group-item">
+                                    <strong>
+                                        {{ capability.rank }}.
+                                        {{ capability.name }}
+                                        {% if capability.spell %}<i class="fa-solid fa-hand-sparkles"></i>{% endif %}
+                                        {% if capability.limited %}<i class="fa-solid fa-handcuffs"></i>{% endif %}
+                                    </strong><br>
+                                    {{ capability.description }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <h4 class="mt-3">Notes</h4>
+        <div class="row" id="notes">
+            {% include "character/notes_display.html" %}
+        </div>
 {% endblock %}

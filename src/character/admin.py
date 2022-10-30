@@ -106,7 +106,7 @@ class CharacterAdmin(admin.ModelAdmin):
             "Combat",
             {"fields": ["initiative", "attack_melee", "attack_range", "attack_magic"]},
         ),
-        ("Vitalité", {"fields": ["health_max", "health_remaining"]}),
+        ("Vitalité", {"fields": [("health_max", "health_remaining")]}),
         ("Défense", {"fields": ["armor", "shield", "defense_misc", "defense"]}),
         (
             "Armes & équipement",
@@ -120,8 +120,12 @@ class CharacterAdmin(admin.ModelAdmin):
         ),
         ("Race", {"fields": ["racial_capability"]}),
         ("Capacités", {"fields": ["capabilities"]}),
-        ("Chance", {"fields": ["luck_points_max", "luck_points_remaining"]}),
-        ("Mana", {"fields": ["mana_max", "mana_remaining"]}),
+        ("Chance", {"fields": [("luck_points_max", "luck_points_remaining")]}),
+        ("Mana", {"fields": [("mana_max", "mana_remaining")]}),
+        (
+            "Récupération",
+            {"fields": [("recovery_points_max", "recovery_points_remaining")]},
+        ),
         ("Notes", {"fields": ["notes"]}),
     ]
     readonly_fields = [
@@ -137,7 +141,7 @@ class CharacterAdmin(admin.ModelAdmin):
         "attack_magic",
         "defense",
         "mana_max",
-        "mana_remaining",
+        "recovery_points_max",
     ]
     filter_horizontal = [
         "capabilities",

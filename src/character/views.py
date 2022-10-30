@@ -40,6 +40,19 @@ def character_mana_change(request: WSGIRequest, pk: int) -> HttpResponse:
     return HttpResponse(value)
 
 
+@login_required
+def character_recovery_points_change(request: WSGIRequest, pk: int) -> HttpResponse:
+    character = get_object_or_404(
+        Character.objects.only("recovery_points_remaining"), pk=pk
+    )
+    value = get_updated_value(
+        request, character.recovery_points_remaining, character.recovery_points_max
+    )
+    character.recovery_points_remaining = value
+    character.save(update_fields=["recovery_points_remaining"])
+    return HttpResponse(value)
+
+
 def get_updated_value(
     request: WSGIRequest, remaining_value: int, max_value: int
 ) -> int:

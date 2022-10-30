@@ -138,6 +138,10 @@ class Character(models.Model):
     money_pa = models.PositiveSmallIntegerField(default=0, verbose_name="PA")
     money_pc = models.PositiveSmallIntegerField(default=0, verbose_name="PC")
 
+    recovery_points_remaining = models.PositiveSmallIntegerField(
+        default=5, verbose_name="points de récupération restants"
+    )
+
     notes = models.TextField(blank=True, verbose_name="notes")
 
     objects = CharacterManager()
@@ -226,6 +230,10 @@ class Character(models.Model):
     @property
     def imc(self) -> float:
         return self.weight / (self.height_m**2)
+
+    @property
+    def recovery_points_max(self) -> int:
+        return 5
 
     def get_capabilities_by_path(self) -> dict[Path, list[Capability]]:
         capabilities_by_path = collections.defaultdict(list)

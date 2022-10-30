@@ -1,1 +1,1 @@
-0020_alter_weapon_category
+0024_alter_character_notes

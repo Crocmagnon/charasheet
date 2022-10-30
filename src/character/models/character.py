@@ -1,5 +1,6 @@
 import collections
 
+import markdown
 from django.db import models
 from django.db.models.functions import Lower
 from django.urls import reverse
@@ -49,6 +50,8 @@ class Race(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
 
 
 def modifier(value: int) -> int:
+    if not value:
+        return 0
     if 1 < value < 10:
         value -= 1
     value -= 10
@@ -58,6 +61,25 @@ def modifier(value: int) -> int:
 class CharacterManager(models.Manager):
     def get_by_natural_key(self, name: str, player_id: int):
         return self.get(name=name, player_id=player_id)
+
+
+DEFAULT_NOTES = """
+#### Traits personnalisés
+
+#### Objectifs
+
+#### Langages
+
+#### Historique
+
+#### Handicaps
+
+#### Alignement
+
+#### Relations
+
+#### Religion
+""".lstrip()
 
 
 class Character(models.Model):
@@ -86,7 +108,7 @@ class Character(models.Model):
         related_name="characters",
         verbose_name="profil",
     )
-    level = models.PositiveSmallIntegerField(verbose_name="niveau")
+    level = models.PositiveSmallIntegerField(verbose_name="niveau", default=1)
 
     gender = models.CharField(
         max_length=1, choices=Gender.choices, default=Gender.OTHER, verbose_name="genre"
@@ -122,9 +144,9 @@ class Character(models.Model):
         "character.Weapon", blank=True, verbose_name="armes"
     )
 
-    armor = models.PositiveSmallIntegerField(verbose_name="armure")
-    shield = models.PositiveSmallIntegerField(verbose_name="bouclier")
-    defense_misc = models.SmallIntegerField(verbose_name="divers défense")
+    armor = models.PositiveSmallIntegerField(verbose_name="armure", default=0)
+    shield = models.PositiveSmallIntegerField(verbose_name="bouclier", default=0)
+    defense_misc = models.SmallIntegerField(verbose_name="divers défense", default=0)
 
     capabilities = models.ManyToManyField(
         "character.Capability", blank=True, verbose_name="capacités"
@@ -148,7 +170,7 @@ class Character(models.Model):
         default=5, verbose_name="points de récupération restants"
     )
 
-    notes = models.TextField(blank=True, verbose_name="notes")
+    notes = models.TextField(blank=True, verbose_name="notes", default=DEFAULT_NOTES)
     damage_reduction = models.TextField(blank=True, verbose_name="réduction de dégâts")
 
     objects = CharacterManager()
@@ -277,3 +299,7 @@ class Character(models.Model):
                 key=lambda x: x[0].name,
             )
         )
+
+    def get_formatted_notes(self) -> str:
+        md = markdown.Markdown(extensions=["extra", "nl2br"])
+        return md.convert(self.notes)

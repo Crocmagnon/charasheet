@@ -8,6 +8,13 @@ class CapabilityAdmin(admin.ModelAdmin):
     list_display = ["name", "path", "rank", "limited", "spell"]
     list_filter = ["path", "path__profile", "path__race", "rank", "limited", "spell"]
     search_fields = ["name", "description"]
+    fieldsets = [
+        (None, {"fields": ["name"]}),
+        ("Path", {"fields": [("path", "rank")]}),
+        ("Type", {"fields": [("limited", "spell")]}),
+        ("Description", {"fields": ["description"]}),
+        ("Documentation", {"fields": ["url"]}),
+    ]
 
 
 @admin.register(models.Path)
@@ -19,6 +26,7 @@ class PathAdmin(admin.ModelAdmin):
         (None, {"fields": ["name"]}),
         ("Related to", {"fields": ["category", ("profile", "race")]}),
         ("Notes", {"fields": ["notes"]}),
+        ("Documentation", {"fields": ["url"]}),
     ]
 
     def related_to(self, instance: models.Path) -> str:
@@ -50,6 +58,11 @@ class ProfileAdmin(admin.ModelAdmin):
     list_filter = ["life_dice", "magical_strength"]
     search_fields = ["name"]
     inlines = [PathInline]
+    fieldsets = [
+        (None, {"fields": ["name", ("magical_strength", "life_dice")]}),
+        ("Notes", {"fields": ["notes"]}),
+        ("Documentation", {"fields": ["url"]}),
+    ]
 
 
 class RacialCapabilityInline(admin.TabularInline):

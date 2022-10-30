@@ -52,6 +52,7 @@ class Command(BaseCommand):
                     "path": path,
                     "limited": limited,
                     "spell": spell,
+                    "url": "https://www.co-drs.org/fr/jeu/capacites",
                 },
             )
             self.stdout.write(self.style.SUCCESS(f"Created/updated cap {capability}"))

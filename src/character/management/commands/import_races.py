@@ -23,7 +23,7 @@ class Command(BaseCommand):
         self.selenium.get(url)
         name = self.selenium.find_element(By.TAG_NAME, "h1").text.strip()
         name = self.fix_name(name)
-        race, _ = Race.objects.update_or_create(name=name, defaults={})
+        race, _ = Race.objects.update_or_create(name=name, defaults={"url": url})
         self.stdout.write(self.style.SUCCESS(f"Created/updated race {race}"))
 
     def fix_name(self, name: str) -> str:

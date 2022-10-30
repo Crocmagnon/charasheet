@@ -2,10 +2,10 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
 
-from common.models import UniquelyNamedModel
+from common.models import DocumentedModel, UniquelyNamedModel
 
 
-class Path(UniquelyNamedModel, TimeStampedModel, models.Model):
+class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
     profile = models.ForeignKey(
         "character.Profile",
         on_delete=models.CASCADE,
@@ -31,7 +31,7 @@ class Path(UniquelyNamedModel, TimeStampedModel, models.Model):
     notes = models.TextField(blank=True)
 
 
-class Capability(UniquelyNamedModel, TimeStampedModel, models.Model):
+class Capability(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
     path = models.ForeignKey("character.Path", on_delete=models.CASCADE)
     rank = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)]
@@ -45,7 +45,9 @@ class Capability(UniquelyNamedModel, TimeStampedModel, models.Model):
         verbose_name_plural = "Capabilities"
 
 
-class RacialCapability(UniquelyNamedModel, TimeStampedModel, models.Model):
+class RacialCapability(
+    DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model
+):
     race = models.ForeignKey("character.Race", on_delete=models.CASCADE)
     description = models.TextField()
 

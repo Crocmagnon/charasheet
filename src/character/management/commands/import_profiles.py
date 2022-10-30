@@ -32,6 +32,7 @@ class Command(BaseCommand):
                 "life_dice": dice,
                 "magical_strength": magical_strength,
                 "notes": notes,
+                "url": url,
             },
         )
         self.stdout.write(self.style.SUCCESS(f"Created/updated profile {profile}"))

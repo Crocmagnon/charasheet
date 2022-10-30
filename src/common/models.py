@@ -25,3 +25,10 @@ class UniquelyNamedModel(models.Model):
 
     def natural_key(self):
         return (self.name,)
+
+
+class DocumentedModel(models.Model):
+    url = models.URLField(blank=True, null=False)
+
+    class Meta:
+        abstract = True

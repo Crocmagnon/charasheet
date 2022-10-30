@@ -48,6 +48,7 @@ class Command(BaseCommand):
                 "profile": profile,
                 "race": race,
                 "notes": notes,
+                "url": url,
             },
         )
         self.stdout.write(self.style.SUCCESS(f"Created/updated path {path}"))

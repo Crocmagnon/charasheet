@@ -3,10 +3,10 @@ from django.db.models.functions import Lower
 from django_extensions.db.models import TimeStampedModel
 
 from character.models.dice import Dice
-from common.models import UniquelyNamedModel
+from common.models import DocumentedModel, UniquelyNamedModel
 
 
-class Profile(UniquelyNamedModel, TimeStampedModel, models.Model):
+class Profile(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
     class MagicalStrength(models.TextChoices):
         NONE = "NON", "None"
         INTELLIGENCE = "INT", "Intelligence"
@@ -20,7 +20,7 @@ class Profile(UniquelyNamedModel, TimeStampedModel, models.Model):
     notes = models.TextField(blank=True)
 
 
-class Race(UniquelyNamedModel, TimeStampedModel, models.Model):
+class Race(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
     pass
 
 

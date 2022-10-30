@@ -23,7 +23,7 @@ def character_health_change(request: WSGIRequest, pk: int) -> HttpResponse:
     character = get_object_or_404(
         Character.objects.only("health_max", "health_remaining"), pk=pk
     )
-    value = get_updated_value(character.health_max, request)
+    value = get_updated_value(request, character.health_remaining, character.health_max)
     character.health_remaining = value
     character.save(update_fields=["health_remaining"])
     return HttpResponse(character.health_remaining)
@@ -34,24 +34,26 @@ def character_mana_change(request: WSGIRequest, pk: int) -> HttpResponse:
     character = get_object_or_404(
         Character.objects.only("mana_remaining", "level", "value_intelligence"), pk=pk
     )
-    value = get_updated_value(character.mana_max, request)
+    value = get_updated_value(request, character.mana_remaining, character.mana_max)
     character.mana_remaining = value
     character.save(update_fields=["mana_remaining"])
     return HttpResponse(character.mana_remaining)
 
 
-def get_updated_value(max_value, request):
-    value = request.GET.get("value")
-    if value == "ko":
-        value = 0
-    elif value == "max":
-        value = max_value
+def get_updated_value(
+    request: WSGIRequest, remaining_value: int, max_value: int
+) -> int:
+    form_value = request.GET.get("value")
+    if form_value == "ko":
+        remaining_value = 0
+    elif form_value == "max":
+        remaining_value = max_value
     else:
-        value = int(value)
-        value += value
-        value = min([max_value, value])
-        value = max([0, value])
-    return value
+        form_value = int(form_value)
+        remaining_value += form_value
+        remaining_value = min([max_value, remaining_value])
+        remaining_value = max([0, remaining_value])
+    return remaining_value
 
 
 @login_required

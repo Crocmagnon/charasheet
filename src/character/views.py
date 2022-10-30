@@ -40,6 +40,18 @@ def character_mana_change(request: WSGIRequest, pk: int) -> HttpResponse:
     return HttpResponse(character.mana_remaining)
 
 
+@login_required
+def character_notes_change(request: WSGIRequest, pk: int) -> HttpResponse:
+    character = get_object_or_404(Character.objects.only("notes"), pk=pk)
+    context = {"character": character}
+    if request.method == "GET":
+        return render(request, "character/notes_update.html", context)
+
+    character.notes = request.POST.get("notes")
+    character.save()
+    return render(request, "character/notes_display.html", context)
+
+
 def get_updated_value(max_value, request):
     value = request.GET.get("value")
     if value == "ko":

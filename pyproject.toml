@@ -32,6 +32,7 @@ freezegun = ">=1.1.0"
 bpython = ">=0.22.1"
 poetry-deps-scanner = ">=2.0.0"
 invoke = ">=1.7.3"
+hypothesis = ">=6.56.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

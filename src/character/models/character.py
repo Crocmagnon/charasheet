@@ -155,6 +155,7 @@ class Character(models.Model):
             Profile.MagicalStrength.INTELLIGENCE: self.modifier_intelligence,
             Profile.MagicalStrength.WISDOM: self.modifier_wisdom,
             Profile.MagicalStrength.CHARISMA: self.modifier_charisma,
+            Profile.MagicalStrength.NONE: 0,
         }
 
         return self.level + modifier_map.get(

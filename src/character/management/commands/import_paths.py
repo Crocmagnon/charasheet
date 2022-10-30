@@ -39,7 +39,7 @@ class Command(BaseCommand):
         race = None
         if category == Path.Category.RACE:
             race = self.get_race(name)
-        notes = self.get_notes(name)
+        notes = self.get_notes()
 
         path, _ = Path.objects.update_or_create(
             name=name,
@@ -95,10 +95,10 @@ class Command(BaseCommand):
         except Exception:
             self.stdout.write(self.style.WARNING(f"Couldn't find race for {path_name}"))
 
-    def get_notes(self, path_name: str) -> str:
+    def get_notes(self) -> str:
         try:
             return self.selenium.find_element(
-                By.CLASS_NAME, "field--name-description"
+                By.CSS_SELECTOR, ".mt-3 > .field--name-description"
             ).text.strip()
         except Exception:
             return ""

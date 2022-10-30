@@ -1,0 +1,8 @@
+{% extends "common/base.html" %}
+
+{% block title %}{{ character.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ character.name }}</h1>
+    <p><a href="{% url "admin:character_character_change" object_id=character.pk %}">Edit</a></p>
+{% endblock %}

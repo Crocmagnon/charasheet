@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.functions import Lower
+from django.urls import reverse
 from django_extensions.db.models import TimeStampedModel
 
 from character.models.dice import Dice
@@ -112,6 +113,9 @@ class Character(models.Model):
 
     def natural_key(self):
         return (self.name, self.player_id)
+
+    def get_absolute_url(self):
+        return reverse("character:view", kwargs={"pk": self.pk})
 
     @property
     def modifier_strength(self) -> int:

@@ -25,6 +25,7 @@ urlpatterns = [
     path("logout/", logout, {"next_page": settings.LOGOUT_REDIRECT_URL}, name="logout"),
     path("admin/", admin.site.urls),
     path("", hello_world, name="hello_world"),
+    path("character/", include("character.urls", namespace="character")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,18 @@
+<form id="damage-reduction">
+    <div class="card">
+        <h5 class="card-header">
+            Réduction de dégâts
+            <a hx-post="{% url "character:damage_reduction_change" pk=character.pk %}"
+                hx-target="#damage-reduction"
+                hx-swap="outerHTML"
+                class="btn btn-primary btn-sm"
+            >
+                <i class="fa-solid fa-save"></i> Save
+            </a>
+        </h5>
+        <div class="card-body">
+            {% csrf_token %}
+            <textarea class="form-control" name="damage_reduction" rows="2">{{ character.damage_reduction }}</textarea>
+        </div>
+    </div>
+</form>

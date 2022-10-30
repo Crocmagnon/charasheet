@@ -115,6 +115,11 @@ def character_equipment_change(request: WSGIRequest, pk: int) -> HttpResponse:
     return update_text_field(request, pk, "equipment")
 
 
+@login_required
+def character_damage_reduction_change(request: WSGIRequest, pk: int) -> HttpResponse:
+    return update_text_field(request, pk, "damage_reduction")
+
+
 def update_text_field(request, pk, field):
     character = get_object_or_404(Character.objects.only(field), pk=pk)
     context = {"character": character}

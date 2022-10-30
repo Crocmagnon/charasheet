@@ -29,4 +29,9 @@ urlpatterns = [
         views.character_equipment_change,
         name="equipment_change",
     ),
+    path(
+        "<int:pk>/damage_reduction_change",
+        views.character_damage_reduction_change,
+        name="damage_reduction_change",
+    ),
 ]

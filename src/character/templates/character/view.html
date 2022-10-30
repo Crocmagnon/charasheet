@@ -317,7 +317,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 mb-3">
+        <div class="col-md-6 col-lg-4 mb-3">
             <div class="card">
                 <h5 class="card-header">{{ character.racial_capability.name }}</h5>
                 <div class="card-body">
@@ -325,17 +325,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 mb-3">
-            <div class="card">
-                <h5 class="card-header">Réduction de dégâts</h5>
-                <div class="card-body">
-                    <p class="card-text">{{ character.damage_reduction|linebreaksbr|default:"Rien ici..." }}</p>
-                </div>
-            </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+            {% include "character/damage_reduction_display.html" %}
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
+        <div class="col-md-12 col-lg-4 mb-3">
             <div class="card">
                 <h5 class="card-header">Équipement</h5>
                 <div class="card-body" id="equipment">
@@ -350,7 +343,7 @@
             </div>
         </div>
     </div>
-    <h4 class="mt-3">Voies & Capacités</h4>
+    <h4>Voies & Capacités</h4>
     <div class="row gy-3">
         {% for path, capabilities in character.get_capabilities_by_path.items %}
             <div class="col-xl-3 col-md-6">

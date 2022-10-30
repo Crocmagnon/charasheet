@@ -12,6 +12,7 @@ class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
         related_name="paths",
         blank=True,
         null=True,
+        verbose_name="profil",
     )
     race = models.ForeignKey(
         "character.Race",
@@ -19,30 +20,44 @@ class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
         related_name="paths",
         blank=True,
         null=True,
+        verbose_name="race",
     )
 
     class Category(models.TextChoices):
-        PROFILE = "profile", "Profile"
+        PROFILE = "profile", "Profil"
         RACE = "race", "Race"
         PRESTIGE = "prestige", "Prestige"
-        CREATURE = "creature", "Creature"
+        CREATURE = "creature", "Créature"
 
-    category = models.CharField(max_length=20, choices=Category.choices)
-    notes = models.TextField(blank=True)
+    category = models.CharField(
+        max_length=20, choices=Category.choices, verbose_name="catégorie"
+    )
+    notes = models.TextField(blank=True, verbose_name="notes")
+
+    class Meta:
+        verbose_name = "Voie"
+        verbose_name_plural = "Voies"
 
 
 class Capability(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
-    path = models.ForeignKey("character.Path", on_delete=models.CASCADE)
-    rank = models.PositiveSmallIntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(5)]
+    path = models.ForeignKey(
+        "character.Path", on_delete=models.CASCADE, verbose_name="voie"
     )
-    limited = models.BooleanField(blank=True, null=False, default=False)
-    spell = models.BooleanField(blank=True, null=False, default=False)
-    description = models.TextField()
+    rank = models.PositiveSmallIntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(5)], verbose_name="rang"
+    )
+    limited = models.BooleanField(
+        blank=True, null=False, default=False, verbose_name="limitée"
+    )
+    spell = models.BooleanField(
+        blank=True, null=False, default=False, verbose_name="sort"
+    )
+    description = models.TextField(verbose_name="description")
 
     class Meta:
         constraints = [models.UniqueConstraint("path", "rank", name="unique_path_rank")]
-        verbose_name_plural = "Capabilities"
+        verbose_name = "Capacité"
+        verbose_name_plural = "Capacités"
 
 
 class RacialCapabilityManager(models.Manager):
@@ -51,14 +66,17 @@ class RacialCapabilityManager(models.Manager):
 
 
 class RacialCapability(DocumentedModel, TimeStampedModel, models.Model):
-    name = models.CharField(max_length=100, blank=False, null=False)
-    race = models.ForeignKey("character.Race", on_delete=models.CASCADE)
-    description = models.TextField()
+    name = models.CharField(max_length=100, blank=False, null=False, verbose_name="nom")
+    race = models.ForeignKey(
+        "character.Race", on_delete=models.CASCADE, verbose_name="race"
+    )
+    description = models.TextField(verbose_name="description")
 
     objects = RacialCapabilityManager()
 
     class Meta:
-        verbose_name_plural = "Racial capabilities"
+        verbose_name = "Capacité raciale"
+        verbose_name_plural = "Capacités raciales"
         constraints = [models.UniqueConstraint("name", "race", name="unique_name_race")]
 
     def __str__(self):

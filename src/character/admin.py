@@ -10,7 +10,7 @@ class CapabilityAdmin(admin.ModelAdmin):
     search_fields = ["name", "description"]
     fieldsets = [
         (None, {"fields": ["name"]}),
-        ("Path", {"fields": [("path", "rank")]}),
+        ("Voie", {"fields": [("path", "rank")]}),
         ("Type", {"fields": [("limited", "spell")]}),
         ("Description", {"fields": ["description"]}),
         ("Documentation", {"fields": ["url"]}),
@@ -24,7 +24,7 @@ class PathAdmin(admin.ModelAdmin):
     search_fields = ["name"]
     fieldsets = [
         (None, {"fields": ["name"]}),
-        ("Related to", {"fields": ["category", ("profile", "race")]}),
+        ("Lié à", {"fields": ["category", ("profile", "race")]}),
         ("Notes", {"fields": ["notes"]}),
         ("Documentation", {"fields": ["url"]}),
     ]
@@ -85,12 +85,12 @@ class CharacterAdmin(admin.ModelAdmin):
 
     fieldsets = [
         (
-            "Identity",
+            "Identité",
             {"fields": ["name", "player", "profile", "level", "race"]},
         ),
-        ("Appearance", {"fields": ["gender", "age", "height", "weight"]}),
+        ("Apparence", {"fields": ["gender", "age", "height", "weight"]}),
         (
-            "Abilities",
+            "Caractéristiques",
             {
                 "fields": [
                     ("value_strength", "modifier_strength"),
@@ -103,15 +103,15 @@ class CharacterAdmin(admin.ModelAdmin):
             },
         ),
         (
-            "Fight",
+            "Combat",
             {"fields": ["initiative", "attack_melee", "attack_range", "attack_magic"]},
         ),
-        ("Health", {"fields": ["health_max", "health_remaining"]}),
-        ("Defense", {"fields": ["armor", "shield", "defense_misc", "defense"]}),
-        ("Weapons & equipment", {"fields": ["weapons", "equipment"]}),
-        ("Racial", {"fields": ["racial_capability"]}),
-        ("Capabilities", {"fields": ["capabilities"]}),
-        ("Luck", {"fields": ["luck_points_max", "luck_points_remaining"]}),
+        ("Vitalité", {"fields": ["health_max", "health_remaining"]}),
+        ("Défense", {"fields": ["armor", "shield", "defense_misc", "defense"]}),
+        ("Armes & équipement", {"fields": ["weapons", "equipment"]}),
+        ("Race", {"fields": ["racial_capability"]}),
+        ("Capacités", {"fields": ["capabilities"]}),
+        ("Chance", {"fields": ["luck_points_max", "luck_points_remaining"]}),
         ("Mana", {"fields": ["mana_max", "mana_consumed", "mana_remaining"]}),
         ("Notes", {"fields": ["notes"]}),
     ]

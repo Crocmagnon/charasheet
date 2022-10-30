@@ -14,7 +14,9 @@ class UniquelyNamedModelManager(models.Manager):
 
 
 class UniquelyNamedModel(models.Model):
-    name = models.CharField(max_length=100, blank=False, null=False, unique=True)
+    name = models.CharField(
+        max_length=100, blank=False, null=False, unique=True, verbose_name="nom"
+    )
     objects = UniquelyNamedModelManager()
 
     class Meta:
@@ -28,7 +30,7 @@ class UniquelyNamedModel(models.Model):
 
 
 class DocumentedModel(models.Model):
-    url = models.URLField(blank=True, null=False)
+    url = models.URLField(blank=True, null=False, verbose_name="url")
 
     class Meta:
         abstract = True

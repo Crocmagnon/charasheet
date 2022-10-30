@@ -9,20 +9,31 @@ from common.models import DocumentedModel, UniquelyNamedModel
 
 class Profile(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
     class MagicalStrength(models.TextChoices):
-        NONE = "NON", "None"
+        NONE = "NON", "Aucun"
         INTELLIGENCE = "INT", "Intelligence"
-        WISDOM = "SAG", "Wisdom"
-        CHARISMA = "CHA", "Charisma"
+        WISDOM = "SAG", "Sagesse"
+        CHARISMA = "CHA", "Charisme"
 
     magical_strength = models.CharField(
-        max_length=3, choices=MagicalStrength.choices, default=MagicalStrength.NONE
+        max_length=3,
+        choices=MagicalStrength.choices,
+        default=MagicalStrength.NONE,
+        verbose_name="force magique",
     )
-    life_dice = models.PositiveSmallIntegerField(choices=Dice.choices)
-    notes = models.TextField(blank=True)
+    life_dice = models.PositiveSmallIntegerField(
+        choices=Dice.choices, verbose_name="dé de vie"
+    )
+    notes = models.TextField(blank=True, verbose_name="notes")
+
+    class Meta:
+        verbose_name = "Profil"
+        verbose_name_plural = "Profils"
 
 
 class Race(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
-    pass
+    class Meta:
+        verbose_name = "Race"
+        verbose_name_plural = "Races"
 
 
 def modifier(value: int) -> int:
@@ -39,69 +50,93 @@ class CharacterManager(models.Manager):
 
 class Character(models.Model):
     class Gender(models.TextChoices):
-        MALE = "M", "Male"
-        FEMALE = "F", "Female"
-        OTHER = "O", "Other"
+        MALE = "M", "Mâle"
+        FEMALE = "F", "Femelle"
+        OTHER = "O", "Autre"
 
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, verbose_name="nom")
     player = models.ForeignKey(
-        "common.User", on_delete=models.CASCADE, related_name="characters"
+        "common.User",
+        on_delete=models.CASCADE,
+        related_name="characters",
+        verbose_name="joueur",
     )
 
     race = models.ForeignKey(
         "character.Race",
         on_delete=models.PROTECT,
         related_name="characters",
+        verbose_name="race",
     )
     profile = models.ForeignKey(
         "character.Profile",
         on_delete=models.PROTECT,
         related_name="characters",
+        verbose_name="profil",
     )
-    level = models.PositiveSmallIntegerField()
+    level = models.PositiveSmallIntegerField(verbose_name="niveau")
 
     gender = models.CharField(
-        max_length=1, choices=Gender.choices, default=Gender.OTHER
+        max_length=1, choices=Gender.choices, default=Gender.OTHER, verbose_name="genre"
     )
-    age = models.PositiveSmallIntegerField()
-    height = models.PositiveSmallIntegerField()
-    weight = models.PositiveSmallIntegerField()
+    age = models.PositiveSmallIntegerField(verbose_name="âge")
+    height = models.PositiveSmallIntegerField(verbose_name="taille")
+    weight = models.PositiveSmallIntegerField(verbose_name="poids")
 
-    value_strength = models.PositiveSmallIntegerField()
-    value_dexterity = models.PositiveSmallIntegerField()
-    value_constitution = models.PositiveSmallIntegerField()
-    value_intelligence = models.PositiveSmallIntegerField()
-    value_wisdom = models.PositiveSmallIntegerField()
-    value_charisma = models.PositiveSmallIntegerField()
+    value_strength = models.PositiveSmallIntegerField(verbose_name="valeur force")
+    value_dexterity = models.PositiveSmallIntegerField(verbose_name="valeur dextérité")
+    value_constitution = models.PositiveSmallIntegerField(
+        verbose_name="valeur constitution"
+    )
+    value_intelligence = models.PositiveSmallIntegerField(
+        verbose_name="valeur intelligence"
+    )
+    value_wisdom = models.PositiveSmallIntegerField(verbose_name="valeur sagesse")
+    value_charisma = models.PositiveSmallIntegerField(verbose_name="valeur charisme")
 
-    health_max = models.PositiveSmallIntegerField()
-    health_remaining = models.PositiveSmallIntegerField()
+    health_max = models.PositiveSmallIntegerField(verbose_name="points de vie max")
+    health_remaining = models.PositiveSmallIntegerField(
+        verbose_name="points de vie restants"
+    )
 
     racial_capability = models.ForeignKey(
         "character.RacialCapability",
         on_delete=models.PROTECT,
         related_name="characters",
+        verbose_name="capacité raciale",
     )
 
-    weapons = models.ManyToManyField("character.Weapon", blank=True)
+    weapons = models.ManyToManyField(
+        "character.Weapon", blank=True, verbose_name="armes"
+    )
 
-    armor = models.PositiveSmallIntegerField()
-    shield = models.PositiveSmallIntegerField()
-    defense_misc = models.SmallIntegerField()
+    armor = models.PositiveSmallIntegerField(verbose_name="armure")
+    shield = models.PositiveSmallIntegerField(verbose_name="bouclier")
+    defense_misc = models.SmallIntegerField(verbose_name="divers défense")
 
-    capabilities = models.ManyToManyField("character.Capability", blank=True)
+    capabilities = models.ManyToManyField(
+        "character.Capability", blank=True, verbose_name="capacités"
+    )
 
-    equipment = models.TextField(blank=True)
-    luck_points_max = models.PositiveSmallIntegerField()
-    luck_points_remaining = models.PositiveSmallIntegerField()
+    equipment = models.TextField(blank=True, verbose_name="équipement")
+    luck_points_max = models.PositiveSmallIntegerField(
+        verbose_name="points de chance max"
+    )
+    luck_points_remaining = models.PositiveSmallIntegerField(
+        verbose_name="points de chance restants"
+    )
 
-    mana_consumed = models.PositiveSmallIntegerField(default=0)
+    mana_consumed = models.PositiveSmallIntegerField(
+        default=0, verbose_name="mana utilisé"
+    )
 
-    notes = models.TextField(blank=True)
+    notes = models.TextField(blank=True, verbose_name="notes")
 
     objects = CharacterManager()
 
     class Meta:
+        verbose_name = "Personnage"
+        verbose_name_plural = "Personnages"
         constraints = [
             models.UniqueConstraint(
                 Lower("name"), "player", name="unique_character_player"

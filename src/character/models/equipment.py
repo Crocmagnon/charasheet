@@ -5,5 +5,9 @@ from common.models import UniquelyNamedModel
 
 
 class Weapon(UniquelyNamedModel, TimeStampedModel, models.Model):
-    damage = models.CharField(max_length=50, blank=True)
-    special = models.TextField(blank=True)
+    damage = models.CharField(max_length=50, blank=True, verbose_name="dégâts")
+    special = models.TextField(blank=True, verbose_name="spécial")
+
+    class Meta:
+        verbose_name = "Arme"
+        verbose_name_plural = "Armes"

@@ -190,7 +190,10 @@
                             <td>{{ character.recovery_points_max }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">
+                            <th scope="row"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                data-bs-title="[1 dé de vie + {{ character.modifier_constitution|add:character.level }}] PV">
                                 PR restants
                                 <div class="btn-group btn-group-sm" role="group">
                                     <button

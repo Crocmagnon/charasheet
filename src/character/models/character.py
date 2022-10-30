@@ -1,8 +1,11 @@
+import collections
+
 from django.db import models
 from django.db.models.functions import Lower
 from django.urls import reverse
 from django_extensions.db.models import TimeStampedModel
 
+from character.models import Capability, Path
 from character.models.dice import Dice
 from common.models import DocumentedModel, UniquelyNamedModel
 
@@ -222,3 +225,18 @@ class Character(models.Model):
     @property
     def imc(self) -> float:
         return self.weight / (self.height_m**2)
+
+    def get_capabilities_by_path(self) -> dict[Path, list[Capability]]:
+        capabilities_by_path = collections.defaultdict(list)
+        for capability in self.capabilities.all():
+            capabilities_by_path[capability.path].append(capability)
+
+        return dict(
+            sorted(
+                (
+                    (path, sorted(capabilities, key=lambda x: x.rank))
+                    for path, capabilities in capabilities_by_path.items()
+                ),
+                key=lambda x: x[0].name,
+            )
+        )

@@ -38,6 +38,14 @@ class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
         verbose_name = "Voie"
         verbose_name_plural = "Voies"
 
+    @property
+    def display_name(self) -> str:
+        to_remove = ["voie de la", "voie de l'", "voie du", "voie des", "voie de"]
+        display_name = self.name.lower()
+        for text in to_remove:
+            display_name = display_name.replace(text, "")
+        return display_name.strip().capitalize()
+
 
 class Capability(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
     path = models.ForeignKey(

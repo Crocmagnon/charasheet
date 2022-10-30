@@ -32,7 +32,10 @@ def character_health_change(request: WSGIRequest, pk: int) -> HttpResponse:
 @login_required
 def character_mana_change(request: WSGIRequest, pk: int) -> HttpResponse:
     character = get_object_or_404(
-        Character.objects.only("mana_remaining", "level", "value_intelligence"), pk=pk
+        Character.objects.only(
+            "mana_remaining", "level", "value_intelligence", "profile"
+        ).select_related("profile"),
+        pk=pk,
     )
     value = get_updated_value(request, character.mana_remaining, character.mana_max)
     character.mana_remaining = value

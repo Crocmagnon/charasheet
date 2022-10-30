@@ -98,8 +98,36 @@
                         <td>{{ character.health_max }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">PV restants</th>
-                        <td>{{ character.health_remaining }}</td>
+                        <th scope="row">
+                            PV restants
+                            <div class="btn-group btn-group-sm" role="group">
+                                <button
+                                    hx-get="{% url "character:health_change" pk=character.pk %}?value=ko"
+                                    hx-target="#health-remaining"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-outline-danger">0</button>
+                                <button
+                                    hx-get="{% url "character:health_change" pk=character.pk %}?value=-1"
+                                    hx-target="#health-remaining"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-danger">-</button>
+                                <button
+                                    hx-get="{% url "character:health_change" pk=character.pk %}?value=1"
+                                    hx-target="#health-remaining"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-success">+</button>
+                                <button
+                                    hx-get="{% url "character:health_change" pk=character.pk %}?value=max"
+                                    hx-target="#health-remaining"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-outline-success">max</button>
+                            </div>
+                        </th>
+                        <td id="health-remaining">{{ character.health_remaining }}</td>
                     </tr>
                     <tr>
                         <th scope="row">PM max</th>

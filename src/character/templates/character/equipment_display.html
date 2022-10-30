@@ -1,0 +1,12 @@
+<p class="card-text">
+    <a hx-get="{% url "character:equipment_change" pk=character.pk %}"
+        hx-target="#equipment"
+        hx-swap="innerHTML"
+        class="btn btn-primary btn-sm"
+    >
+        <i class="fa-solid fa-pen-to-square"></i> Edit
+    </a>
+</p>
+<p class="card-text">
+    {{ character.equipment|linebreaksbr|default:"Rien ici..." }}
+</p>

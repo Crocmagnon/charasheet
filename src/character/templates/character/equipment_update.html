@@ -1,0 +1,13 @@
+<form>
+    <p>
+        <a hx-post="{% url "character:equipment_change" pk=character.pk %}"
+            hx-target="#equipment"
+            hx-swap="innerHTML"
+            class="btn btn-primary btn-sm"
+        >
+            <i class="fa-solid fa-save"></i> Save
+        </a>
+    </p>
+    {% csrf_token %}
+    <textarea class="form-control" name="equipment" rows="10">{{ character.equipment }}</textarea>
+</form>

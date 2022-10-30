@@ -8,4 +8,9 @@ urlpatterns = [
     path("<int:pk>/health_change", views.character_health_change, name="health_change"),
     path("<int:pk>/mana_change", views.character_mana_change, name="mana_change"),
     path("<int:pk>/notes_change", views.character_notes_change, name="notes_change"),
+    path(
+        "<int:pk>/equipment_change",
+        views.character_equipment_change,
+        name="equipment_change",
+    ),
 ]

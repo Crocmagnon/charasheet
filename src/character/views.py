@@ -56,23 +56,19 @@ def get_updated_value(max_value, request):
 
 @login_required
 def character_notes_change(request: WSGIRequest, pk: int) -> HttpResponse:
-    character = get_object_or_404(Character.objects.only("notes"), pk=pk)
-    context = {"character": character}
-    if request.method == "GET":
-        return render(request, "character/notes_update.html", context)
-
-    character.notes = request.POST.get("notes")
-    character.save()
-    return render(request, "character/notes_display.html", context)
+    return update_text_field(request, pk, "notes")
 
 
 @login_required
 def character_equipment_change(request: WSGIRequest, pk: int) -> HttpResponse:
-    character = get_object_or_404(Character.objects.only("equipment"), pk=pk)
+    return update_text_field(request, pk, "equipment")
+
+
+def update_text_field(request, pk, field):
+    character = get_object_or_404(Character.objects.only(field), pk=pk)
     context = {"character": character}
     if request.method == "GET":
-        return render(request, "character/equipment_update.html", context)
-
-    character.equipment = request.POST.get("equipment")
+        return render(request, f"character/{field}_update.html", context)
+    setattr(character, field, request.POST.get(field))
     character.save()
-    return render(request, "character/equipment_display.html", context)
+    return render(request, f"character/{field}_display.html", context)

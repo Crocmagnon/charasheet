@@ -195,6 +195,17 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-browser-reload"
+version = "1.6.0"
+description = "Automatically reload your browser in development."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Django = ">=3.2"
+
+[[package]]
 name = "django-cleanup"
 version = "6.0.0"
 description = "Deletes old files."
@@ -259,6 +270,18 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 Django = ">=3.2"
+
+[[package]]
+name = "django-tailwind"
+version = "3.4.0"
+description = "Tailwind CSS Framework for Django projects"
+category = "main"
+optional = false
+python-versions = ">=3.8,<4.0"
+
+[package.dependencies]
+django = ">=3.2.14"
+django-browser-reload = ">=1.6.0,<2.0.0"
 
 [[package]]
 name = "exceptiongroup"
@@ -894,7 +917,7 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0, <4"
-content-hash = "0dc2fab20f892efa2b0acbddd23ae1378d5c5ae24ece6357f11858c625cced68"
+content-hash = "007eee5b3361b224e3d15d6117c744247324854b7f64e23fc4d26d070fbc1ad5"
 
 [metadata.files]
 ansicon = [
@@ -1108,6 +1131,10 @@ django = [
     {file = "Django-4.1.2-py3-none-any.whl", hash = "sha256:26dc24f99c8956374a054bcbf58aab8dc0cad2e6ac82b0fe036b752c00eee793"},
     {file = "Django-4.1.2.tar.gz", hash = "sha256:b8d843714810ab88d59344507d4447be8b2cf12a49031363b6eed9f1b9b2280f"},
 ]
+django-browser-reload = [
+    {file = "django-browser-reload-1.6.0.tar.gz", hash = "sha256:9ca69c71796f53868bdc7421f120d147f7a64faa0d5d8c06970ba3f8061af63c"},
+    {file = "django_browser_reload-1.6.0-py3-none-any.whl", hash = "sha256:31b8b2d51e8faa5878f21e6b60b8f43e1123907c6e082e9e967962ba63958829"},
+]
 django-cleanup = [
     {file = "django-cleanup-6.0.0.tar.gz", hash = "sha256:922e06ef8839c92bd3ab37a84db6058b8764f3fe44dbb4487bbca941d288280a"},
     {file = "django_cleanup-6.0.0-py2.py3-none-any.whl", hash = "sha256:997feab3b1f7a2e84f71c29e83b1d664459ec0d4b1924977b1fa25b5babb8703"},
@@ -1131,6 +1158,10 @@ django-htmx = [
 django-linear-migrations = [
     {file = "django-linear-migrations-2.5.1.tar.gz", hash = "sha256:4dbba1a42ce10dc40df295f7fa2fd28d6f7b31035353f7f1a752d07c71391073"},
     {file = "django_linear_migrations-2.5.1-py3-none-any.whl", hash = "sha256:9b6c4157c0ee21b78affc3c9a76e89d9df7ad9239a4378d48dc7247a914f6c72"},
+]
+django-tailwind = [
+    {file = "django-tailwind-3.4.0.tar.gz", hash = "sha256:b0ea5f2e2e45b86f7165673291323e46200a91cfed99b80278272a49f034c7a4"},
+    {file = "django_tailwind-3.4.0-py3-none-any.whl", hash = "sha256:ce47a28b466e2e427534ee5a8c6f2ee7f7ffb6bce83b55b7ec22be994b293b65"},
 ]
 exceptiongroup = [
     {file = "exceptiongroup-1.0.0-py3-none-any.whl", hash = "sha256:2ac84b496be68464a2da60da518af3785fff8b7ec0d090a581604bc870bdee41"},

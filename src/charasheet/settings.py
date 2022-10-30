@@ -52,10 +52,14 @@ EXTERNAL_APPS = [
     "django_linear_migrations",
     "django_extensions",
     "django_htmx",
+    "tailwind",
+    "theme",
     "django_cleanup.apps.CleanupConfig",  # should be last: https://pypi.org/project/django-cleanup/
 ]
 if DEBUG_TOOLBAR:
-    EXTERNAL_APPS.append("debug_toolbar")
+    EXTERNAL_APPS.insert(-2, "debug_toolbar")
+if DEBUG:
+    EXTERNAL_APPS.insert(-2, "django_browser_reload")
 
 CUSTOM_APPS = [
     "whitenoise.runserver_nostatic",  # should be first
@@ -78,6 +82,8 @@ MIDDLEWARE = [
 ]
 if DEBUG_TOOLBAR:
     MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
+if DEBUG:
+    MIDDLEWARE.append("django_browser_reload.middleware.BrowserReloadMiddleware")
 
 ROOT_URLCONF = "charasheet.urls"
 
@@ -192,3 +198,5 @@ LOGIN_URL = "/admin/login"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "common.User"
+
+TAILWIND_APP_NAME = "theme"

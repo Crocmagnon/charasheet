@@ -19,6 +19,7 @@ psycopg2-binary = ">=2.8"
 whitenoise = ">=6.2"
 uWSGI = ">=2.0.21"
 selenium = ">=4.5.0"
+django-tailwind = "^3.4.0"
 
 [tool.poetry.dev-dependencies]
 django-debug-toolbar = ">=3.2"

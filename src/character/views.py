@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.handlers.wsgi import WSGIRequest
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
+from django_htmx.http import trigger_client_event
 
 from character.models import Character
 
@@ -57,6 +58,16 @@ def character_recovery_points_change(request: WSGIRequest, pk: int) -> HttpRespo
 
 
 @login_required
+def character_defense_misc_change(request: WSGIRequest, pk: int) -> HttpResponse:
+    character = get_object_or_404(Character.objects.only("defense_misc"), pk=pk)
+    value = get_updated_value(request, character.defense_misc, float("inf"))
+    character.defense_misc = value
+    character.save(update_fields=["defense_misc"])
+    response = HttpResponse(value)
+    return trigger_client_event(response, "update_defense", {})
+
+
+@login_required
 def character_luck_points_change(request: WSGIRequest, pk: int) -> HttpResponse:
     character = get_object_or_404(
         Character.objects.only("luck_points_remaining", "value_charisma"), pk=pk
@@ -70,7 +81,7 @@ def character_luck_points_change(request: WSGIRequest, pk: int) -> HttpResponse:
 
 
 def get_updated_value(
-    request: WSGIRequest, remaining_value: int, max_value: int
+    request: WSGIRequest, remaining_value: int, max_value: int | float
 ) -> int:
     form_value = request.GET.get("value")
     if form_value == "ko":
@@ -83,6 +94,15 @@ def get_updated_value(
         remaining_value = min([max_value, remaining_value])
         remaining_value = max([0, remaining_value])
     return remaining_value
+
+
+@login_required
+def character_get_defense(request: WSGIRequest, pk: int) -> HttpResponse:
+    character = get_object_or_404(
+        Character.objects.only("defense_misc", "armor", "shield", "value_dexterity"),
+        pk=pk,
+    )
+    return HttpResponse(character.defense)
 
 
 @login_required

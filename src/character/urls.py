@@ -18,6 +18,12 @@ urlpatterns = [
         name="luck_points_change",
     ),
     path("<int:pk>/notes_change", views.character_notes_change, name="notes_change"),
+    path("<int:pk>/get_defense", views.character_get_defense, name="get_defense"),
+    path(
+        "<int:pk>/defense_misc_change",
+        views.character_defense_misc_change,
+        name="defense_misc_change",
+    ),
     path(
         "<int:pk>/equipment_change",
         views.character_equipment_change,

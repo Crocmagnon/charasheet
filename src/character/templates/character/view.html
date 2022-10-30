@@ -14,4 +14,136 @@
         {{ character.race.name }} {{ character.profile.name }} niv. {{ character.level }}<br>
         {{ character.get_gender_display }}, {{ character.age }} ans, {{ character.height_m }}m, {{ character.weight }}kg (IMC: {{ character.imc }})
     </p>
+    <div class="row">
+        <div class="col-sm-6 col-md">
+            <table class="table table-hover table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Carac</th>
+                        <th scope="col">Valeur</th>
+                        <th scope="col">Mod.</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">FOR</th>
+                        <td>{{ character.value_strength }}</td>
+                        <td>{{ character.modifier_strength }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">DEX</th>
+                        <td>{{ character.value_dexterity }}</td>
+                        <td>{{ character.modifier_dexterity }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CON</th>
+                        <td>{{ character.value_constitution }}</td>
+                        <td>{{ character.modifier_constitution }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">INT</th>
+                        <td>{{ character.value_intelligence }}</td>
+                        <td>{{ character.modifier_intelligence }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SAG</th>
+                        <td>{{ character.value_wisdom }}</td>
+                        <td>{{ character.modifier_wisdom }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CHA</th>
+                        <td>{{ character.value_charisma }}</td>
+                        <td>{{ character.modifier_charisma }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-6 col-md">
+            <table class="table table-hover table-sm">
+                <thead>
+                    <tr><th scope="col" colspan="2">Combat</th></tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">Initiative</th>
+                        <td>{{ character.initiative }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Att. contact</th>
+                        <td>{{ character.attack_melee }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Att. distance</th>
+                        <td>{{ character.attack_range }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Att. magique</th>
+                        <td>{{ character.attack_magic }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Défense</th>
+                        <td>{{ character.defense }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-6 col-md">
+            <table class="table table-hover table-sm">
+                <thead>
+                    <tr><th scope="col" colspan="2">Énergie</th></tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">PV max</th>
+                        <td>{{ character.health_max }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">PV restants</th>
+                        <td>{{ character.health_remaining }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">PM max</th>
+                        <td>{{ character.mana_max }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">PM restants</th>
+                        <td>{{ character.mana_remaining }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h5>Capacité raciale</h5>
+            <h6>{{ character.racial_capability.name }}</h6>
+            <p>{{ character.racial_capability.description|capfirst }}</p>
+        </div>
+        <div class="col-md-8">
+            <table class="table table-hover table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Arme</th>
+                        <th scope="col">Attaque</th>
+                        <th scope="col">DM</th>
+                        <th scope="col">Spécial</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    {% for weapon in character.weapons.all %}
+                        <tr>
+                            <th scope="row">{{ weapon.name }}</th>
+                            <td>1D20 +</td>
+                            <td>{{ weapon.damage }}</td>
+                            <td>{{ weapon.special }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="4">Aucune arme</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}

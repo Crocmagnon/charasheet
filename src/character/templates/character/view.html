@@ -68,7 +68,7 @@
                     <tr>
                         <th scope="row">Initiative</th>
                         <td data-bs-toggle="tooltip"
-                            data-bs-placement="top"
+                            data-bs-placement="left"
                             data-bs-title="valeur DEX">
                             {{ character.initiative }}
                         </td>
@@ -76,7 +76,7 @@
                     <tr>
                         <th scope="row">Att. contact</th>
                         <td data-bs-toggle="tooltip"
-                            data-bs-placement="top"
+                            data-bs-placement="left"
                             data-bs-title="{{ character.level }} (niveau) + {{ character.modifier_strength }} (mod. FOR)">
                             {{ character.attack_melee|modifier }}
                         </td>
@@ -84,7 +84,7 @@
                     <tr>
                         <th scope="row">Att. distance</th>
                         <td data-bs-toggle="tooltip"
-                            data-bs-placement="top"
+                            data-bs-placement="left"
                             data-bs-title="{{ character.level }} (niveau) + {{ character.modifier_dexterity }} (mod. DEX)">
                             {{ character.attack_range|modifier }}
                         </td>
@@ -92,7 +92,7 @@
                     <tr>
                         <th scope="row">Att. magique</th>
                         <td data-bs-toggle="tooltip"
-                            data-bs-placement="top"
+                            data-bs-placement="left"
                             data-bs-title="{{ character.level }} (niveau) + {{ character.attack_magic|sub:character.level }} (mod. {{ character.profile.magical_strength }})">
                             {{ character.attack_magic|modifier }}
                         </td>
@@ -100,7 +100,7 @@
                     <tr>
                         <th scope="row">Défense</th>
                         <td data-bs-toggle="tooltip"
-                            data-bs-placement="top"
+                            data-bs-placement="left"
                             data-bs-title="10 + {{ character.armor }} (armor) + {{ character.shield }} (shield) + {{ character.modifier_dexterity }} (mod. DEX) + {{ character.defense_misc }} (misc)">
                             {{ character.defense }}
                         </td>
@@ -115,143 +115,139 @@
                 </thead>
                 <tbody class="table-group-divider">
                     <tr>
-                        <th scope="row">PV max</th>
-                        <td>{{ character.health_max }}</td>
-                    </tr>
-                    <tr>
                         <th scope="row">
-                            PV restants
-                            <div class="btn-group btn-group-sm" role="group">
+                            PV
+                            <div class="btn-group btn-group-sm float-end" role="group">
                                 <button
                                     hx-get="{% url "character:health_change" pk=character.pk %}?value=ko"
                                     hx-target="#health-remaining"
                                     hx-swap="innerHTML"
                                     type="button"
-                                    class="btn btn-outline-danger">0</button>
+                                    class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
                                 <button
                                     hx-get="{% url "character:health_change" pk=character.pk %}?value=-1"
                                     hx-target="#health-remaining"
                                     hx-swap="innerHTML"
                                     type="button"
-                                    class="btn btn-danger">-</button>
+                                    class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
                                 <button
                                     hx-get="{% url "character:health_change" pk=character.pk %}?value=1"
                                     hx-target="#health-remaining"
                                     hx-swap="innerHTML"
                                     type="button"
-                                    class="btn btn-success">+</button>
+                                    class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
                                 <button
                                     hx-get="{% url "character:health_change" pk=character.pk %}?value=max"
                                     hx-target="#health-remaining"
                                     hx-swap="innerHTML"
                                     type="button"
-                                    class="btn btn-outline-success">max</button>
+                                    class="btn btn-outline-success"><i class="fa-solid fa-battery-full"></i></button>
                             </div>
                         </th>
-                        <td id="health-remaining">{{ character.health_remaining }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">PM max</th>
-                        <td data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            {% if character.profile.mana_max_compute == 1 %}
-                                data-bs-title="{{ character.level }} (niveau) + {{ character.modifier_magic }} (mod. {{ character.profile.magical_strength }})"
-                            {% elif character.profile.mana_max_compute == 2 %}
-                                data-bs-title="2 x {{ character.level }} (niveau) + {{ character.modifier_magic }} (mod. {{ character.profile.magical_strength }})"
-                            {% endif %}
-                        >
-                            {{ character.mana_max }}
-                        </td>
+                        <td><span id="health-remaining">{{ character.health_remaining }}</span> / {{ character.health_max }}</td>
                     </tr>
                     <tr>
                         <th scope="row">
-                            PM restants
-                            <div class="btn-group btn-group-sm" role="group">
+                            PM
+                            <div class="btn-group btn-group-sm float-end" role="group">
                                 <button
                                     hx-get="{% url "character:mana_change" pk=character.pk %}?value=ko"
                                     hx-target="#mana-remaining"
                                     hx-swap="innerHTML"
                                     type="button"
-                                    class="btn btn-outline-danger">0</button>
+                                    class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
                                 <button
                                     hx-get="{% url "character:mana_change" pk=character.pk %}?value=-1"
                                     hx-target="#mana-remaining"
                                     hx-swap="innerHTML"
                                     type="button"
-                                    class="btn btn-danger">-</button>
+                                    class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
                                 <button
                                     hx-get="{% url "character:mana_change" pk=character.pk %}?value=1"
                                     hx-target="#mana-remaining"
                                     hx-swap="innerHTML"
                                     type="button"
-                                    class="btn btn-success">+</button>
+                                    class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
                                 <button
                                     hx-get="{% url "character:mana_change" pk=character.pk %}?value=max"
                                     hx-target="#mana-remaining"
                                     hx-swap="innerHTML"
                                     type="button"
-                                    class="btn btn-outline-success">max</button>
+                                    class="btn btn-outline-success"><i class="fa-solid fa-battery-full"></i></button>
                             </div>
                         </th>
-                        <td id="mana-remaining">{{ character.mana_remaining }}</td>
+                        <td data-bs-toggle="tooltip"
+                            data-bs-placement="left"
+                            {% if character.profile.mana_max_compute == 1 %}
+                                data-bs-title="{{ character.level }} (niveau) + {{ character.modifier_magic }} (mod. {{ character.profile.magical_strength }})"
+                            {% elif character.profile.mana_max_compute == 2 %}
+                                data-bs-title="2 x {{ character.level }} (niveau) + {{ character.modifier_magic }} (mod. {{ character.profile.magical_strength }})"
+                            {% endif %}>
+                            <span id="mana-remaining">{{ character.mana_remaining }}</span> / {{ character.mana_max }}
+                        </td>
                         <tr>
-                            <th scope="row">PR max</th>
-                            <td>{{ character.recovery_points_max }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"
-                                data-bs-toggle="tooltip"
-                                data-bs-placement="top"
-                                data-bs-title="[1 dé de vie + {{ character.modifier_constitution|add:character.level }}] PV">
-                                PR restants
-                                <div class="btn-group btn-group-sm" role="group">
+                            <th scope="row">
+                                PR
+                                <div class="btn-group btn-group-sm float-end" role="group">
+                                    <button
+                                        type="button"
+                                        disabled
+                                        class="btn btn-outline-secondary"><i class="fa-solid fa-battery-empty"></i></button>
                                     <button
                                         hx-get="{% url "character:recovery_points_change" pk=character.pk %}?value=-1"
                                         hx-target="#recovery-points-remaining"
                                         hx-swap="innerHTML"
                                         type="button"
-                                        class="btn btn-danger">-</button>
+                                        class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
                                     <button
                                         hx-get="{% url "character:recovery_points_change" pk=character.pk %}?value=1"
                                         hx-target="#recovery-points-remaining"
                                         hx-swap="innerHTML"
                                         type="button"
-                                        class="btn btn-success">+</button>
+                                        class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                    <button
+                                        type="button"
+                                        disabled
+                                        class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
                                 </div>
                             </th>
-                            <td id="recovery-points-remaining">{{ character.recovery_points_remaining }}</td>
+                            <td data-bs-toggle="tooltip"
+                                data-bs-placement="left"
+                                data-bs-title="[1 dé de vie + {{ character.modifier_constitution|add:character.level }}] PV">
+                                <span id="recovery-points-remaining">{{ character.recovery_points_remaining }}</span> / {{ character.recovery_points_max }}</td>
                             <tr>
-                                <th scope="row">PC max</th>
-                                <td>{{ character.luck_points_max }}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-placement="top"
-                                    data-bs-title="[1 dé de vie + {{ character.modifier_constitution|add:character.level }}] PV">
-                                    PC restants
-                                    <div class="btn-group btn-group-sm" role="group">
+                                <th scope="row">
+                                    PC
+                                    <div class="btn-group btn-group-sm float-end" role="group">
+                                        <button
+                                            type="button"
+                                            disabled
+                                            class="btn btn-outline-secondary"><i class="fa-solid fa-battery-empty"></i></button>
                                         <button
                                             hx-get="{% url "character:luck_points_change" pk=character.pk %}?value=-1"
                                             hx-target="#luck-points-remaining"
                                             hx-swap="innerHTML"
                                             type="button"
-                                            class="btn btn-danger">-</button>
+                                            class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
                                         <button
                                             hx-get="{% url "character:luck_points_change" pk=character.pk %}?value=1"
                                             hx-target="#luck-points-remaining"
                                             hx-swap="innerHTML"
                                             type="button"
-                                            class="btn btn-success">+</button>
+                                            class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
                                         <button
                                             hx-get="{% url "character:luck_points_change" pk=character.pk %}?value=max"
                                             hx-target="#luck-points-remaining"
                                             hx-swap="innerHTML"
                                             type="button"
-                                            class="btn btn-outline-success">max</button>
+                                            class="btn btn-outline-success"><i class="fa-solid fa-battery-full"></i></button>
                                     </div>
                                 </th>
-                                <td id="luck-points-remaining">{{ character.luck_points_remaining }}</td>
+                                <td data-bs-toggle="tooltip"
+                                    data-bs-placement="left"
+                                    data-bs-title="[1 dé de vie + {{ character.modifier_constitution|add:character.level }}] PV">
+                                    <span id="luck-points-remaining">{{ character.luck_points_remaining }}</span> / {{ character.luck_points_max }}
+                                </td>
                             </tr>
                         </tbody>
                     </table>

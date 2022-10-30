@@ -17,6 +17,11 @@ class Profile(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Mode
         WISDOM = "SAG", "Sagesse"
         CHARISMA = "CHA", "Charisme"
 
+    class ManaMax(models.IntegerChoices):
+        NO_MANA = 0, "Pas de mana"
+        LEVEL = 1, "1 x niveau + mod. magique"
+        DOUBLE_LEVEL = 2, "2 x niveau + mod. magique"
+
     magical_strength = models.CharField(
         max_length=3,
         choices=MagicalStrength.choices,
@@ -25,6 +30,9 @@ class Profile(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Mode
     )
     life_dice = models.PositiveSmallIntegerField(
         choices=Dice.choices, verbose_name="dé de vie"
+    )
+    mana_max_compute = models.PositiveSmallIntegerField(
+        choices=ManaMax.choices, verbose_name="calcul mana max", default=ManaMax.NO_MANA
     )
     notes = models.TextField(blank=True, verbose_name="notes")
 
@@ -202,16 +210,17 @@ class Character(models.Model):
 
     @property
     def attack_magic(self) -> int:
+        return self.level + self.modifier_magic
+
+    @property
+    def modifier_magic(self) -> int:
         modifier_map = {
             Profile.MagicalStrength.INTELLIGENCE: self.modifier_intelligence,
             Profile.MagicalStrength.WISDOM: self.modifier_wisdom,
             Profile.MagicalStrength.CHARISMA: self.modifier_charisma,
             Profile.MagicalStrength.NONE: 0,
         }
-
-        return self.level + modifier_map.get(
-            Profile.MagicalStrength(self.profile.magical_strength)
-        )
+        return modifier_map.get(Profile.MagicalStrength(self.profile.magical_strength))
 
     @property
     def defense(self) -> int:
@@ -221,7 +230,13 @@ class Character(models.Model):
 
     @property
     def mana_max(self) -> int:
-        return 2 * self.level + self.modifier_intelligence
+        mana_max_compute = self.profile.mana_max_compute
+        if mana_max_compute == Profile.ManaMax.NO_MANA:
+            return 0
+        elif mana_max_compute == Profile.ManaMax.LEVEL:
+            return self.level + self.modifier_intelligence
+        else:
+            return 2 * self.level + self.modifier_intelligence
 
     @property
     def height_m(self) -> float:

@@ -25,6 +25,7 @@ class Command(BaseCommand):
         dice = self.get_dice(name)
         magical_strength = self.get_magical_strength()
         notes = self.get_notes(name)
+        mana_max_compute = self.get_mana_max_compute(name)
 
         profile, _ = Profile.objects.update_or_create(
             name=name,
@@ -33,6 +34,7 @@ class Command(BaseCommand):
                 "magical_strength": magical_strength,
                 "notes": notes,
                 "url": url,
+                "mana_max_compute": mana_max_compute,
             },
         )
         self.stdout.write(self.style.SUCCESS(f"Created/updated profile {profile}"))
@@ -73,6 +75,13 @@ class Command(BaseCommand):
                 self.stdout.write(f"No {field_name} found for {name}")
         notes = notes.strip()
         return notes
+
+    def get_mana_max_compute(self, name) -> Profile.ManaMax:
+        if name in ["Barde", "Druide", "Forgesort", "Prêtre"]:
+            return Profile.ManaMax.LEVEL
+        elif name in ["Ensorceleur", "Magicien", "Nécromancien"]:
+            return Profile.ManaMax.DOUBLE_LEVEL
+        return Profile.ManaMax.NO_MANA
 
     def setup_selenium(self) -> None:
         options = webdriver.FirefoxOptions()

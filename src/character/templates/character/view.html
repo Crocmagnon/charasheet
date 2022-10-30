@@ -152,7 +152,16 @@
                     </tr>
                     <tr>
                         <th scope="row">PM max</th>
-                        <td>{{ character.mana_max }}</td>
+                        <td data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            {% if character.profile.mana_max_compute == 1 %}
+                                data-bs-title="{{ character.level }} (niveau) + {{ character.modifier_magic }} (mod. {{ character.profile.magical_strength }})"
+                            {% elif character.profile.mana_max_compute == 2 %}
+                                data-bs-title="2 x {{ character.level }} (niveau) + {{ character.modifier_magic }} (mod. {{ character.profile.magical_strength }})"
+                            {% endif %}
+                        >
+                            {{ character.mana_max }}
+                        </td>
                     </tr>
                     <tr>
                         <th scope="row">

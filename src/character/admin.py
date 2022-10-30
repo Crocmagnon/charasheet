@@ -59,7 +59,10 @@ class ProfileAdmin(admin.ModelAdmin):
     search_fields = ["name"]
     inlines = [PathInline]
     fieldsets = [
-        (None, {"fields": ["name", ("magical_strength", "life_dice")]}),
+        (
+            None,
+            {"fields": ["name", ("magical_strength", "life_dice", "mana_max_compute")]},
+        ),
         ("Notes", {"fields": ["notes"]}),
         ("Documentation", {"fields": ["url"]}),
     ]

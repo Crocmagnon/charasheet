@@ -4,5 +4,14 @@
 
 {% block content %}
     <h1>{{ character.name }}</h1>
-    <p><a href="{% url "admin:character_character_change" object_id=character.pk %}">Edit</a></p>
+    <p>
+        <a href="{% url "admin:character_character_change" object_id=character.pk %}">Edit</a>
+    </p>
+    <p>
+        Joueur : {{ character.player.get_full_name|default:character.player.username }}
+    </p>
+    <p>
+        {{ character.race.name }} {{ character.profile.name }} niv. {{ character.level }}<br>
+        {{ character.get_gender_display }}, {{ character.age }} ans, {{ character.height_m }}m, {{ character.weight }}kg (IMC: {{ character.imc }})
+    </p>
 {% endblock %}

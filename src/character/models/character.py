@@ -179,3 +179,11 @@ class Character(models.Model):
     @property
     def mana_remaining(self) -> int:
         return self.mana_max - self.mana_consumed
+
+    @property
+    def height_m(self) -> float:
+        return round(self.height / 100, 2)
+
+    @property
+    def imc(self) -> float:
+        return self.weight / (self.height_m**2)

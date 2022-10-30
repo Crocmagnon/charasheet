@@ -8,6 +8,6 @@ from character.models import Character
 
 @login_required
 def character_view(request: WSGIRequest, pk: int) -> HttpResponse:
-    character = get_object_or_404(Character, pk=pk)
+    character = get_object_or_404(Character.objects.select_related("player"), pk=pk)
     context = {"character": character}
     return render(request, "character/view.html", context)

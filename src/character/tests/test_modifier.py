@@ -1,6 +1,6 @@
 import pytest
 
-from character.models import modifier
+from character.models.character import modifier
 
 
 @pytest.mark.parametrize(

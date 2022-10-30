@@ -8,42 +8,47 @@ from character.models import Character
 
 @login_required
 def character_view(request: WSGIRequest, pk: int) -> HttpResponse:
-    character = get_object_or_404(Character.objects.select_related("player"), pk=pk)
+    character = get_object_or_404(
+        Character.objects.select_related(
+            "player", "racial_capability", "profile", "race"
+        ).prefetch_related("capabilities__path", "weapons"),
+        pk=pk,
+    )
     context = {"character": character}
     return render(request, "character/view.html", context)
 
 
 @login_required
 def character_health_change(request: WSGIRequest, pk: int) -> HttpResponse:
-    character = get_object_or_404(Character, pk=pk)
-    value = request.GET.get("value")
-    if value == "ko":
-        character.health_remaining = 0
-    elif value == "max":
-        character.health_remaining = character.health_max
-    else:
-        value = int(value)
-        character.health_remaining += value
-        character.health_remaining = min(
-            [character.health_max, character.health_remaining]
-        )
-        character.health_remaining = max([0, character.health_remaining])
+    character = get_object_or_404(
+        Character.objects.only("health_max", "health_remaining"), pk=pk
+    )
+    value = get_updated_value(character.health_max, request)
+    character.health_remaining = value
     character.save(update_fields=["health_remaining"])
     return HttpResponse(character.health_remaining)
 
 
 @login_required
 def character_mana_change(request: WSGIRequest, pk: int) -> HttpResponse:
-    character = get_object_or_404(Character, pk=pk)
-    value = request.GET.get("value")
-    if value == "ko":
-        character.mana_remaining = 0
-    elif value == "max":
-        character.mana_remaining = character.mana_max
-    else:
-        value = int(value)
-        character.mana_remaining += value
-        character.mana_remaining = min([character.mana_max, character.mana_remaining])
-        character.mana_remaining = max([0, character.mana_remaining])
+    character = get_object_or_404(
+        Character.objects.only("mana_remaining", "level", "value_intelligence"), pk=pk
+    )
+    value = get_updated_value(character.mana_max, request)
+    character.mana_remaining = value
     character.save(update_fields=["mana_remaining"])
     return HttpResponse(character.mana_remaining)
+
+
+def get_updated_value(max_value, request):
+    value = request.GET.get("value")
+    if value == "ko":
+        value = 0
+    elif value == "max":
+        value = max_value
+    else:
+        value = int(value)
+        value += value
+        value = min([max_value, value])
+        value = max([0, value])
+    return value

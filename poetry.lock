@@ -195,6 +195,17 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-browser-reload"
+version = "1.6.0"
+description = "Automatically reload your browser in development."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Django = ">=3.2"
+
+[[package]]
 name = "django-cleanup"
 version = "6.0.0"
 description = "Deletes old files."
@@ -894,7 +905,7 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0, <4"
-content-hash = "0dc2fab20f892efa2b0acbddd23ae1378d5c5ae24ece6357f11858c625cced68"
+content-hash = "96bceed911ff3dca55ddfc85bf7d48e9056111b55aad6e05da5d3ebd2e9a60aa"
 
 [metadata.files]
 ansicon = [
@@ -1107,6 +1118,10 @@ distlib = [
 django = [
     {file = "Django-4.1.2-py3-none-any.whl", hash = "sha256:26dc24f99c8956374a054bcbf58aab8dc0cad2e6ac82b0fe036b752c00eee793"},
     {file = "Django-4.1.2.tar.gz", hash = "sha256:b8d843714810ab88d59344507d4447be8b2cf12a49031363b6eed9f1b9b2280f"},
+]
+django-browser-reload = [
+    {file = "django-browser-reload-1.6.0.tar.gz", hash = "sha256:9ca69c71796f53868bdc7421f120d147f7a64faa0d5d8c06970ba3f8061af63c"},
+    {file = "django_browser_reload-1.6.0-py3-none-any.whl", hash = "sha256:31b8b2d51e8faa5878f21e6b60b8f43e1123907c6e082e9e967962ba63958829"},
 ]
 django-cleanup = [
     {file = "django-cleanup-6.0.0.tar.gz", hash = "sha256:922e06ef8839c92bd3ab37a84db6058b8764f3fe44dbb4487bbca941d288280a"},

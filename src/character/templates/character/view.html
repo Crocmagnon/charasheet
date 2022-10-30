@@ -303,7 +303,10 @@
                     {% for weapon in character.weapons.all %}
                         <tr>
                             <th scope="row">{{ weapon.name }}</th>
-                            <td>1D20 +</td>
+                            <td>
+                                1D20
+                                {{ character|weapon_modifier:weapon }}
+                            </td>
                             <td>{{ weapon.damage }}</td>
                             <td>{{ weapon.special }}</td>
                         </tr>

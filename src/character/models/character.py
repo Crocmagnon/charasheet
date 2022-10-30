@@ -7,6 +7,7 @@ from django_extensions.db.models import TimeStampedModel
 
 from character.models import Capability, Path
 from character.models.dice import Dice
+from character.models.equipment import Weapon
 from common.models import DocumentedModel, UniquelyNamedModel
 
 
@@ -218,7 +219,9 @@ class Character(models.Model):
             Profile.MagicalStrength.CHARISMA: self.modifier_charisma,
             Profile.MagicalStrength.NONE: 0,
         }
-        return modifier_map.get(Profile.MagicalStrength(self.profile.magical_strength))
+        return modifier_map.get(
+            Profile.MagicalStrength(self.profile.magical_strength), 0
+        )
 
     @property
     def defense(self) -> int:
@@ -251,6 +254,14 @@ class Character(models.Model):
     @property
     def luck_points_max(self) -> int:
         return 3 + self.modifier_charisma
+
+    def get_modifier_for_weapon(self, weapon: Weapon) -> int:
+        modifier_map = {
+            Weapon.Category.RANGE: self.modifier_dexterity,
+            Weapon.Category.MELEE: self.modifier_strength,
+            Weapon.Category.NONE: 0,
+        }
+        return modifier_map.get(Weapon.Category(weapon.category), 0)
 
     def get_capabilities_by_path(self) -> dict[Path, list[Capability]]:
         capabilities_by_path = collections.defaultdict(list)

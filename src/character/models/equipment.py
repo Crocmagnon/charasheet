@@ -5,8 +5,16 @@ from common.models import UniquelyNamedModel
 
 
 class Weapon(UniquelyNamedModel, TimeStampedModel, models.Model):
+    class Category(models.TextChoices):
+        MELEE = "MEL", "corps à corps"
+        RANGE = "RAN", "à distance"
+        NONE = "NON", "aucune"
+
     damage = models.CharField(max_length=50, blank=True, verbose_name="dégâts")
     special = models.TextField(blank=True, verbose_name="spécial")
+    category = models.CharField(
+        max_length=3, choices=Category.choices, default=Category.NONE
+    )
 
     class Meta:
         verbose_name = "Arme"

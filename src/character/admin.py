@@ -145,6 +145,7 @@ class CharacterAdmin(admin.ModelAdmin):
         "defense",
         "mana_max",
         "recovery_points_max",
+        "luck_points_max",
     ]
     filter_horizontal = [
         "capabilities",

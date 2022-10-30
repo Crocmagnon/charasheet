@@ -1,1 +1,1 @@
-0018_character_damage_reduction
+0020_alter_weapon_category

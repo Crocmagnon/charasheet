@@ -133,6 +133,11 @@ class Character(models.Model):
         default=0, verbose_name="mana utilisé"
     )
 
+    money_pp = models.PositiveSmallIntegerField(default=0, verbose_name="PP")
+    money_po = models.PositiveSmallIntegerField(default=0, verbose_name="PO")
+    money_pa = models.PositiveSmallIntegerField(default=0, verbose_name="PA")
+    money_pc = models.PositiveSmallIntegerField(default=0, verbose_name="PC")
+
     notes = models.TextField(blank=True, verbose_name="notes")
 
     objects = CharacterManager()

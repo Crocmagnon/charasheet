@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django_htmx.http import trigger_client_event
 
+from character.forms import EquipmentForm
 from character.models import Character
 
 
@@ -112,7 +113,18 @@ def character_notes_change(request: WSGIRequest, pk: int) -> HttpResponse:
 
 @login_required
 def character_equipment_change(request: WSGIRequest, pk: int) -> HttpResponse:
-    return update_text_field(request, pk, "equipment")
+    field = "equipment"
+    character = get_object_or_404(Character.objects.only(field), pk=pk)
+    context = {"character": character}
+    if request.method == "GET":
+        return render(request, f"character/{field}_update.html", context)
+    form = EquipmentForm(request.POST, instance=character)
+    if form.is_valid():
+        form.save()
+        return render(request, f"character/{field}_display.html", context)
+    else:
+        context["errors"] = form.errors
+        return render(request, f"character/{field}_update.html", context)
 
 
 @login_required

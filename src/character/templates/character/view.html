@@ -329,18 +329,7 @@
             {% include "character/damage_reduction_display.html" %}
         </div>
         <div class="col-md-12 col-lg-4 mb-3">
-            <div class="card">
-                <h5 class="card-header">Équipement</h5>
-                <div class="card-body" id="equipment">
-                    {% include "character/equipment_display.html" %}
-                </div>
-                <div class="card-footer">
-                    {{ character.money_pp }} pp,
-                    {{ character.money_po }} po,
-                    {{ character.money_pa }} pa,
-                    {{ character.money_pc }} pc
-                </div>
-            </div>
+            {% include "character/equipment_display.html" %}
         </div>
     </div>
     <h4>Voies & Capacités</h4>

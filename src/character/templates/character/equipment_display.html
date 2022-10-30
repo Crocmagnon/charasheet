@@ -1,12 +1,23 @@
-<p class="card-text">
-    <a hx-get="{% url "character:equipment_change" pk=character.pk %}"
-        hx-target="#equipment"
-        hx-swap="innerHTML"
-        class="btn btn-primary btn-sm"
-    >
-        <i class="fa-solid fa-pen-to-square"></i> Edit
-    </a>
-</p>
-<p class="card-text">
-    {{ character.equipment|linebreaksbr|default:"Rien ici..." }}
-</p>
+<div class="card" id="equipment">
+    <h5 class="card-header">
+        Équipement
+        <a hx-get="{% url "character:equipment_change" pk=character.pk %}"
+            hx-target="#equipment"
+            hx-swap="outerHTML"
+            class="btn btn-primary btn-sm"
+        >
+            <i class="fa-solid fa-pen-to-square"></i> Edit
+        </a>
+    </h5>
+    <div class="card-body">
+        <p class="card-text">
+            {{ character.equipment|linebreaksbr|default:"Rien ici..." }}
+        </p>
+    </div>
+    <div class="card-footer">
+        {{ character.money_pp }} pp,
+        {{ character.money_po }} po,
+        {{ character.money_pa }} pa,
+        {{ character.money_pc }} pc
+    </div>
+</div>

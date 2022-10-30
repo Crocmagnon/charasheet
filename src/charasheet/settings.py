@@ -3,10 +3,6 @@ from pathlib import Path
 
 import environ
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 BASE_DIR = PROJECT_ROOT / "src"
 CONTRIB_DIR = PROJECT_ROOT / "contrib"
@@ -35,7 +31,19 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
 DEBUG_TOOLBAR = env("DEBUG") and env("DEBUG_TOOLBAR")
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 ALLOWED_HOSTS = env("ALLOWED_HOSTS")
+
+if DEBUG:
+    import socket
+
+    hostname = socket.gethostname()
+    ip = socket.gethostbyname(hostname)
+    INTERNAL_IPS.append(ip)
+    ALLOWED_HOSTS.append(ip)
+
 
 # Application definition
 

@@ -56,7 +56,7 @@ def character_recovery_points_change(request: WSGIRequest, pk: int) -> HttpRespo
 @login_required
 def character_luck_points_change(request: WSGIRequest, pk: int) -> HttpResponse:
     character = get_object_or_404(
-        Character.objects.only("luck_points_remaining", "luck_points_max"), pk=pk
+        Character.objects.only("luck_points_remaining", "value_charisma"), pk=pk
     )
     value = get_updated_value(
         request, character.luck_points_remaining, character.luck_points_max

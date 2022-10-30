@@ -130,9 +130,6 @@ class Character(models.Model):
     )
 
     equipment = models.TextField(blank=True, verbose_name="équipement")
-    luck_points_max = models.PositiveSmallIntegerField(
-        verbose_name="points de chance max"
-    )
     luck_points_remaining = models.PositiveSmallIntegerField(
         verbose_name="points de chance restants"
     )
@@ -249,6 +246,10 @@ class Character(models.Model):
     @property
     def recovery_points_max(self) -> int:
         return 5
+
+    @property
+    def luck_points_max(self) -> int:
+        return 3 + self.modifier_charisma
 
     def get_capabilities_by_path(self) -> dict[Path, list[Capability]]:
         capabilities_by_path = collections.defaultdict(list)

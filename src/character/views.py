@@ -26,7 +26,7 @@ def character_health_change(request: WSGIRequest, pk: int) -> HttpResponse:
     value = get_updated_value(request, character.health_remaining, character.health_max)
     character.health_remaining = value
     character.save(update_fields=["health_remaining"])
-    return HttpResponse(character.health_remaining)
+    return HttpResponse(value)
 
 
 @login_required
@@ -37,7 +37,7 @@ def character_mana_change(request: WSGIRequest, pk: int) -> HttpResponse:
     value = get_updated_value(request, character.mana_remaining, character.mana_max)
     character.mana_remaining = value
     character.save(update_fields=["mana_remaining"])
-    return HttpResponse(character.mana_remaining)
+    return HttpResponse(value)
 
 
 def get_updated_value(
@@ -72,5 +72,5 @@ def update_text_field(request, pk, field):
     if request.method == "GET":
         return render(request, f"character/{field}_update.html", context)
     setattr(character, field, request.POST.get(field))
-    character.save()
+    character.save(update_fields=[field])
     return render(request, f"character/{field}_display.html", context)

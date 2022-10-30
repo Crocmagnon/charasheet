@@ -108,11 +108,20 @@ class CharacterAdmin(admin.ModelAdmin):
         ),
         ("Vitalité", {"fields": ["health_max", "health_remaining"]}),
         ("Défense", {"fields": ["armor", "shield", "defense_misc", "defense"]}),
-        ("Armes & équipement", {"fields": ["weapons", "equipment"]}),
+        (
+            "Armes & équipement",
+            {
+                "fields": [
+                    "weapons",
+                    "equipment",
+                    ("money_pp", "money_po", "money_pa", "money_pc"),
+                ]
+            },
+        ),
         ("Race", {"fields": ["racial_capability"]}),
         ("Capacités", {"fields": ["capabilities"]}),
         ("Chance", {"fields": ["luck_points_max", "luck_points_remaining"]}),
-        ("Mana", {"fields": ["mana_max", "mana_consumed", "mana_remaining"]}),
+        ("Mana", {"fields": ["mana_max", "mana_remaining"]}),
         ("Notes", {"fields": ["notes"]}),
     ]
     readonly_fields = [

@@ -3,8 +3,6 @@ from django.db import models
 
 
 class User(AbstractUser):
-    """Default custom user model for My Awesome Project."""
-
     pass
 
 

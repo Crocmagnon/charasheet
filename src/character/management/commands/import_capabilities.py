@@ -44,6 +44,11 @@ class Command(BaseCommand):
             spell = True
             name = name.replace("*", "")
         name = name.strip()
+        description = (
+            card.find_element(By.CLASS_NAME, "field--name-description")
+            .text.strip()
+            .replace("’", "'")
+        )
         try:
             capability, _ = Capability.objects.update_or_create(
                 name=name,
@@ -52,6 +57,7 @@ class Command(BaseCommand):
                     "path": path,
                     "limited": limited,
                     "spell": spell,
+                    "description": description,
                     "url": "https://www.co-drs.org/fr/jeu/capacites",
                 },
             )

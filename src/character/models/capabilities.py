@@ -45,11 +45,24 @@ class Capability(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.M
         verbose_name_plural = "Capabilities"
 
 
-class RacialCapability(
-    DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model
-):
+class RacialCapabilityManager(models.Manager):
+    def get_by_natural_key(self, name: str, race_id: int):
+        return self.get(name=name, race_id=race_id)
+
+
+class RacialCapability(DocumentedModel, TimeStampedModel, models.Model):
+    name = models.CharField(max_length=100, blank=False, null=False)
     race = models.ForeignKey("character.Race", on_delete=models.CASCADE)
     description = models.TextField()
 
+    objects = RacialCapabilityManager()
+
     class Meta:
         verbose_name_plural = "Racial capabilities"
+        constraints = [models.UniqueConstraint("name", "race", name="unique_name_race")]
+
+    def __str__(self):
+        return f"{self.name} ({self.race})"
+
+    def natural_key(self):
+        return (self.name, self.race_id)

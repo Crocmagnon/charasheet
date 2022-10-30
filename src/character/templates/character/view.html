@@ -135,8 +135,36 @@
                         <td>{{ character.mana_max }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">PM restants</th>
-                        <td>{{ character.mana_remaining }}</td>
+                        <th scope="row">
+                            PM restants
+                            <div class="btn-group btn-group-sm" role="group">
+                                <button
+                                    hx-get="{% url "character:mana_change" pk=character.pk %}?value=ko"
+                                    hx-target="#mana-remaining"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-outline-danger">0</button>
+                                <button
+                                    hx-get="{% url "character:mana_change" pk=character.pk %}?value=-1"
+                                    hx-target="#mana-remaining"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-danger">-</button>
+                                <button
+                                    hx-get="{% url "character:mana_change" pk=character.pk %}?value=1"
+                                    hx-target="#mana-remaining"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-success">+</button>
+                                <button
+                                    hx-get="{% url "character:mana_change" pk=character.pk %}?value=max"
+                                    hx-target="#mana-remaining"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-outline-success">max</button>
+                            </div>
+                        </th>
+                        <td id="mana-remaining">{{ character.mana_remaining }}</td>
                     </tr>
                 </tbody>
             </table>

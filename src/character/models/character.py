@@ -129,8 +129,8 @@ class Character(models.Model):
         verbose_name="points de chance restants"
     )
 
-    mana_consumed = models.PositiveSmallIntegerField(
-        default=0, verbose_name="mana utilisé"
+    mana_remaining = models.PositiveSmallIntegerField(
+        default=0, verbose_name="mana restant"
     )
 
     money_pp = models.PositiveSmallIntegerField(default=0, verbose_name="PP")
@@ -218,10 +218,6 @@ class Character(models.Model):
     @property
     def mana_max(self) -> int:
         return 2 * self.level + self.modifier_intelligence
-
-    @property
-    def mana_remaining(self) -> int:
-        return self.mana_max - self.mana_consumed
 
     @property
     def height_m(self) -> float:

@@ -53,6 +53,19 @@ def character_recovery_points_change(request: WSGIRequest, pk: int) -> HttpRespo
     return HttpResponse(value)
 
 
+@login_required
+def character_luck_points_change(request: WSGIRequest, pk: int) -> HttpResponse:
+    character = get_object_or_404(
+        Character.objects.only("luck_points_remaining", "luck_points_max"), pk=pk
+    )
+    value = get_updated_value(
+        request, character.luck_points_remaining, character.luck_points_max
+    )
+    character.luck_points_remaining = value
+    character.save(update_fields=["luck_points_remaining"])
+    return HttpResponse(value)
+
+
 def get_updated_value(
     request: WSGIRequest, remaining_value: int, max_value: int
 ) -> int:

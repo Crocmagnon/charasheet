@@ -12,6 +12,11 @@ urlpatterns = [
         views.character_recovery_points_change,
         name="recovery_points_change",
     ),
+    path(
+        "<int:pk>/luck_points_change",
+        views.character_luck_points_change,
+        name="luck_points_change",
+    ),
     path("<int:pk>/notes_change", views.character_notes_change, name="notes_change"),
     path(
         "<int:pk>/equipment_change",

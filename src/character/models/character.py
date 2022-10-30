@@ -148,6 +148,7 @@ class Character(models.Model):
     )
 
     notes = models.TextField(blank=True, verbose_name="notes")
+    damage_reduction = models.TextField(blank=True, verbose_name="réduction de dégâts")
 
     objects = CharacterManager()
 

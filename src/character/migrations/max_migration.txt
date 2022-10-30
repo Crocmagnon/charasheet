@@ -1,1 +1,1 @@
-0017_remove_character_luck_points_max
+0018_character_damage_reduction

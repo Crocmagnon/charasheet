@@ -218,3 +218,6 @@ ANYMAIL = {
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 DEFAULT_FROM_EMAIL = "charasheet@mg.augendre.info"
 SERVER_EMAIL = "charasheet@mg.augendre.info"
+
+if DEBUG:
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

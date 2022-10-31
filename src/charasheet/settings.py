@@ -10,7 +10,7 @@ CONTRIB_DIR = PROJECT_ROOT / "contrib"
 
 env = environ.Env(
     DEBUG=(bool, False),
-    SECRET_KEY=str,
+    SECRET_KEY=(str, "g7Dpw*NPF&qGYh%fCE@FEu6T5iT2^TUg&5ysH6xFio*S^9U5FV"),
     ALLOWED_HOSTS=(list, []),
     DEBUG_TOOLBAR=(bool, True),
     STATIC_ROOT=(Path, BASE_DIR / "public" / "static"),

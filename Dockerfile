@@ -51,7 +51,7 @@ RUN python manage.py collectstatic --noinput --clear
 ##############################################
 # write git info
 ##############################################
-FROM alpine/git:v2.26.2 AS git
+FROM alpine/git:v2.36.3 AS git
 
 WORKDIR /app
 COPY .git /app/.git/

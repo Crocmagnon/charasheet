@@ -38,7 +38,7 @@ WORKDIR /app/src
 
 # Required for manage.py to startup
 ARG ENV_FILE=/app/.env
-ARG DEBUG=true
+ARG DEBUG=false
 ENV STATIC_ROOT=/app/static
 ENV DATABASE_URL=sqlite:////app/db/db.sqlite3
 

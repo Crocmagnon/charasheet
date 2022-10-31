@@ -1,11 +1,13 @@
 {% extends "common/base.html" %}
+{% load django_bootstrap5 %}
 
 {% block content %}
     <h1>Connexion</h1>
     <form action="{% url "login" %}" method="post">
-        {{ form.as_p }}
+
         {% csrf_token %}
-        <button type="submit" class="btn btn-primary">Submit</button>
+        {% bootstrap_form form %}
+        {% bootstrap_button button_type="submit" content="Connexion" %}
         <a href="{% url "django_registration_register" %}" class="btn btn-secondary">
             Create account
         </a>

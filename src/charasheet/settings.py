@@ -63,6 +63,7 @@ EXTERNAL_APPS = [
     "django_linear_migrations",
     "django_extensions",
     "django_htmx",
+    "django_bootstrap5",
     "django_cleanup.apps.CleanupConfig",  # should be last: https://pypi.org/project/django-cleanup/
 ]
 if DEBUG_TOOLBAR:

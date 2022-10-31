@@ -28,6 +28,7 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/src/common/templates" />
+        <option value="$MODULE_DIR$/src/character/templates" />
       </list>
     </option>
   </component>

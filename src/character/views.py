@@ -9,7 +9,11 @@ from character.models import Character
 
 @login_required
 def characters_list(request):
-    context = {"characters": Character.objects.filter(player=request.user)}
+    context = {
+        "characters": Character.objects.filter(player=request.user).select_related(
+            "race", "profile"
+        )
+    }
     return render(request, "character/list.html", context)
 
 

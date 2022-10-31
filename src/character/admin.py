@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.forms import ModelForm
 
 from character import models
 
@@ -28,6 +29,9 @@ class PathAdmin(admin.ModelAdmin):
         ("Notes", {"fields": ["notes"]}),
         ("Documentation", {"fields": ["url"]}),
     ]
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).select_related("profile", "race")
 
     def related_to(self, instance: models.Path) -> str:
         category = models.Path.Category(instance.category)
@@ -78,6 +82,21 @@ class RaceAdmin(admin.ModelAdmin):
     list_display = ["name"]
     search_fields = ["name"]
     inlines = [RacialCapabilityInline, PathInline]
+
+
+class CharacterAdminForm(ModelForm):
+    class Meta:
+        model = models.Character
+        exclude = ()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["capabilities"].queryset = models.Capability.objects.select_related(
+            "path", "path__race", "path__profile"
+        )
+        self.fields[
+            "racial_capability"
+        ].queryset = models.RacialCapability.objects.select_related("race")
 
 
 @admin.register(models.Character)
@@ -151,6 +170,8 @@ class CharacterAdmin(admin.ModelAdmin):
         "capabilities",
         "weapons",
     ]
+
+    form = CharacterAdminForm
 
 
 @admin.register(models.Weapon)

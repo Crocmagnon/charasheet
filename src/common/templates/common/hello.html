@@ -1,0 +1,17 @@
+{% extends "common/base.html" %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Character Sheet</h1>
+                <p class="col-md-8 fs-4">
+                    Bienvenue sur CharaSheet !<br>
+                    Vous devez vous identifier pour créer et gérer votre personnage.
+                </p>
+                <a href="{% url "django_registration_register" %}" class="btn btn-primary btn-lg">Créer un compte</a>
+                <a href="{% url "login" %}" class="btn btn-secondary btn-lg">Se connecter</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

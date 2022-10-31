@@ -1,14 +1,16 @@
 from django.contrib.auth.models import Permission
 from django.core.handlers.wsgi import WSGIRequest
 from django.http import HttpResponse
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django_registration.backends.activation.views import (
     ActivationView as BaseActivationView,
 )
 
 
 def hello_world(request: WSGIRequest) -> HttpResponse:
-    return redirect("character:list")
+    if request.user.is_authenticated:
+        return redirect("character:list")
+    return render(request, "common/hello.html")
 
 
 class ActivationView(BaseActivationView):

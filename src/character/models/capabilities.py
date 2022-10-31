@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
@@ -56,10 +58,24 @@ class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
         else:
             return None
 
+    def get_next_capability(self, character) -> Capability:
+        next_rank = character.capabilities.filter(path=self).count() + 1
+        return self.capabilities.get(rank=next_rank)
+
+    def has_next_capability(self, character) -> bool:
+        try:
+            self.get_next_capability(character)
+            return True
+        except Capability.DoesNotExist:
+            return False
+
 
 class Capability(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
     path = models.ForeignKey(
-        "character.Path", on_delete=models.CASCADE, verbose_name="voie"
+        "character.Path",
+        on_delete=models.CASCADE,
+        verbose_name="voie",
+        related_name="capabilities",
     )
     rank = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)], verbose_name="rang"

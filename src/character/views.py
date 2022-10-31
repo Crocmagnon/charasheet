@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django_htmx.http import trigger_client_event
 
 from character.forms import EquipmentForm
-from character.models import Character
+from character.models import Character, Path
 
 
 @login_required
@@ -167,3 +167,14 @@ def update_text_field(request, pk, field):
     setattr(character, field, request.POST.get(field))
     character.save(update_fields=[field])
     return render(request, f"character/{field}_display.html", context)
+
+
+@login_required
+def add_next_in_path(request, character_pk: int, path_pk: int):
+    character = get_object_or_404(
+        Character.objects.filter(player=request.user), pk=character_pk
+    )
+    path = get_object_or_404(Path, pk=path_pk)
+    capability = path.get_next_capability(character)
+    character.capabilities.add(capability)
+    return render(request, "character/capability.html", {"capability": capability})

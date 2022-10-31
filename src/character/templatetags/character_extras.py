@@ -1,6 +1,6 @@
 from django import template
 
-from character.models import Character, Weapon
+from character.models import Character, Path, Weapon
 
 register = template.Library()
 
@@ -27,3 +27,8 @@ def weapon_modifier(character: Character, weapon: Weapon):
         return f"- {abs(value)}"
     else:
         return ""
+
+
+@register.filter
+def has_next_capability(path: Path, character: Character) -> bool:
+    return path.has_next_capability(character)

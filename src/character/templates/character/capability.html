@@ -1,0 +1,9 @@
+<li class="list-group-item">
+    <strong>
+        {{ capability.rank }}.
+        {{ capability.name }}
+        {% if capability.spell %}<i class="fa-solid fa-hand-sparkles"></i>{% endif %}
+        {% if capability.limited %}<i class="fa-solid fa-handcuffs"></i>{% endif %}
+    </strong><br>
+    {{ capability.description }}
+</li>

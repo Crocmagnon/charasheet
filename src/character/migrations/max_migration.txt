@@ -1,1 +1,1 @@
-0024_alter_character_notes
+0025_alter_capability_path

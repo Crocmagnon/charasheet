@@ -126,8 +126,12 @@ COPY --chown=django:django tasks.py ./tasks.py
 COPY --chown=django:django docker/uwsgi.ini ./uwsgi.ini
 
 
-RUN mkdir -p /app/data
-RUN chown django:django /app /app/data
+RUN mkdir -p /app/data /app/db
+RUN chown django:django /app /app/data /app/db
+
+ENV SECRET_KEY "changeme"
+ENV DEBUG "false"
+ENV DATABASE_URL "sqlite:////app/db/db.sqlite3"
 
 EXPOSE 8000
 

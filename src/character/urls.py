@@ -43,4 +43,9 @@ urlpatterns = [
         views.add_next_in_path,
         name="add_next_in_path",
     ),
+    path(
+        "<int:character_pk>/remove_last_in_path/<int:path_pk>/",
+        views.remove_last_in_path,
+        name="remove_last_in_path",
+    ),
 ]

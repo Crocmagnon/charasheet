@@ -338,29 +338,7 @@
     <h2>Voies & Capacités</h2>
     <div class="row gy-3">
         {% for path, capabilities in character.get_capabilities_by_path.items %}
-            <div class="col-xl-3 col-md-6">
-                <div class="card" data-path-id="{{ path.pk }}">
-                    <h5 class="card-header">{{ path.display_name }}</h5>
-                    {% if path.notes %}
-                        <div class="card-body text-bg-light">{{ path.notes }}</div>
-                    {% endif %}
-                    <ul class="list-group list-group-flush capabilities">
-                        {% for capability in capabilities %}
-                            {% include "character/capability.html" %}
-                        {% endfor %}
-                    </ul>
-                    {% if path|has_next_capability:character %}
-                        <div class="card-body">
-                            <button hx-get="{% url "character:add_next_in_path" character_pk=character.pk path_pk=path.pk %}"
-                                hx-target="[data-path-id='{{ path.pk }}'] .capabilities"
-                                hx-swap="beforeend"
-                                class="btn btn-primary">
-                                Next
-                            </button>
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
+            {% include "character/path.html" %}
         {% endfor %}
     </div>
     {% include "character/notes_display.html" %}

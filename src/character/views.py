@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django_htmx.http import trigger_client_event
 
 from character.forms import EquipmentForm
-from character.models import Character, Path
+from character.models import Capability, Character, Path
 
 
 @login_required
@@ -177,4 +177,32 @@ def add_next_in_path(request, character_pk: int, path_pk: int):
     path = get_object_or_404(Path, pk=path_pk)
     capability = path.get_next_capability(character)
     character.capabilities.add(capability)
-    return render(request, "character/capability.html", {"capability": capability})
+    context = {
+        "capabilities": character.capabilities.filter(path=path).order_by("rank"),
+        "path": path,
+        "character": character,
+    }
+    return render(request, "character/path.html", context)
+
+
+@login_required
+def remove_last_in_path(request, character_pk: int, path_pk: int):
+    character = get_object_or_404(
+        Character.objects.filter(player=request.user), pk=character_pk
+    )
+    path = get_object_or_404(Path, pk=path_pk)
+    last_rank = max(
+        character.capabilities.filter(path=path).values_list("rank", flat=True)
+    )
+    cap = Capability.objects.get(path=path, rank=last_rank)
+    character.capabilities.remove(cap)
+    capabilities = character.capabilities.filter(path=path).order_by("rank")
+    if len(capabilities) == 0:
+        return HttpResponse()
+
+    context = {
+        "capabilities": capabilities,
+        "path": path,
+        "character": character,
+    }
+    return render(request, "character/path.html", context)

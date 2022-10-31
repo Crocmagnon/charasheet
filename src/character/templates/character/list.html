@@ -5,6 +5,9 @@
 
 {% block content %}
     <h1>Characters</h1>
+    <a href="{% url "character:create" %}" class="btn btn-primary mb-3">
+        <i class="fa-solid fa-user-plus"></i> New character
+    </a>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         {% for character in characters %}
             {% include "character/character_card.html" %}

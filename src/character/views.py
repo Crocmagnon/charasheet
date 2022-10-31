@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django_htmx.http import trigger_client_event
 
 from character.forms import EquipmentForm
@@ -15,6 +15,11 @@ def characters_list(request):
         )
     }
     return render(request, "character/list.html", context)
+
+
+@login_required
+def character_create(request):
+    return redirect("admin:character_character_add")
 
 
 @login_required

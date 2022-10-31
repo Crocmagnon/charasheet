@@ -22,9 +22,10 @@ RUN python -m poetry_lock_check check-lock
 # Install python dependencies
 ##############################################
 RUN python -m venv --copies /app/venv
+ARG POETRY_OPTIONS
 # Will install dev deps as well, so that we can run tests in this image
 RUN . /app/venv/bin/activate \
-    && poetry install --no-interaction
+    && poetry install --no-interaction $POETRY_OPTIONS
 
 ENV PATH /app/venv/bin:$PATH
 

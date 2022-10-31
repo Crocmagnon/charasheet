@@ -18,6 +18,11 @@ class CapabilityAdmin(admin.ModelAdmin):
     ]
 
 
+class CapabilityInline(admin.TabularInline):
+    model = models.Capability
+    fields = ["name", "rank", "limited", "spell"]
+
+
 @admin.register(models.Path)
 class PathAdmin(admin.ModelAdmin):
     list_display = ["name", "category", "related_to"]
@@ -29,6 +34,7 @@ class PathAdmin(admin.ModelAdmin):
         ("Notes", {"fields": ["notes"]}),
         ("Documentation", {"fields": ["url"]}),
     ]
+    inlines = [CapabilityInline]
 
     def get_queryset(self, request):
         return super().get_queryset(request).select_related("profile", "race")

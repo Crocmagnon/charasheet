@@ -46,6 +46,16 @@ class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
             display_name = display_name.replace(text, "")
         return display_name.strip().capitalize()
 
+    @property
+    def related_to(self) -> UniquelyNamedModel | None:
+        category = Path.Category(self.category)
+        if category == Path.Category.PROFILE:
+            return self.profile
+        elif category == Path.Category.RACE:
+            return self.race
+        else:
+            return None
+
 
 class Capability(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
     path = models.ForeignKey(
@@ -66,6 +76,12 @@ class Capability(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.M
         constraints = [models.UniqueConstraint("path", "rank", name="unique_path_rank")]
         verbose_name = "Capacité"
         verbose_name_plural = "Capacités"
+
+    def __str__(self):
+        description = f"{self.name} - {self.path.name}"
+        if self.path.related_to:
+            description += f" ({self.path.related_to.name})"
+        return description
 
 
 class RacialCapabilityManager(models.Manager):

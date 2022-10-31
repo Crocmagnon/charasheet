@@ -3,6 +3,12 @@
     <div class="card">
         <h5 class="card-header">
             {{ path.display_name }}
+            <button hx-get="{% url "character:remove_last_in_path" character_pk=character.pk path_pk=path.pk %}"
+                hx-target="[data-path-id='{{ path.pk }}']"
+                hx-swap="outerHTML"
+                class="btn btn-sm btn-primary">
+                <i class="fa-solid fa-minus"></i>
+            </button>
             {% if path|has_next_capability:character %}
                 <button hx-get="{% url "character:add_next_in_path" character_pk=character.pk path_pk=path.pk %}"
                     hx-target="[data-path-id='{{ path.pk }}']"
@@ -11,12 +17,6 @@
                     <i class="fa-solid fa-plus"></i>
                 </button>
             {% endif %}
-            <button hx-get="{% url "character:remove_last_in_path" character_pk=character.pk path_pk=path.pk %}"
-                hx-target="[data-path-id='{{ path.pk }}']"
-                hx-swap="outerHTML"
-                class="btn btn-sm btn-primary">
-                <i class="fa-solid fa-minus"></i>
-            </button>
         </h5>
         {% if path.notes %}
             <div class="card-body text-bg-light">{{ path.notes }}</div>

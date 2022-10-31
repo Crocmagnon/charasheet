@@ -1,5 +1,4 @@
 from django.contrib.auth.decorators import login_required
-from django.core.handlers.wsgi import WSGIRequest
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django_htmx.http import trigger_client_event
@@ -9,7 +8,13 @@ from character.models import Character
 
 
 @login_required
-def character_view(request: WSGIRequest, pk: int) -> HttpResponse:
+def characters_list(request):
+    context = {"characters": Character.objects.filter(player=request.user)}
+    return render(request, "character/list.html", context)
+
+
+@login_required
+def character_view(request, pk: int):
     character = get_object_or_404(
         Character.objects.select_related(
             "player", "racial_capability", "profile", "race"
@@ -21,7 +26,7 @@ def character_view(request: WSGIRequest, pk: int) -> HttpResponse:
 
 
 @login_required
-def character_health_change(request: WSGIRequest, pk: int) -> HttpResponse:
+def character_health_change(request, pk: int):
     character = get_object_or_404(
         Character.objects.only("health_max", "health_remaining"), pk=pk
     )
@@ -32,7 +37,7 @@ def character_health_change(request: WSGIRequest, pk: int) -> HttpResponse:
 
 
 @login_required
-def character_mana_change(request: WSGIRequest, pk: int) -> HttpResponse:
+def character_mana_change(request, pk: int):
     character = get_object_or_404(
         Character.objects.only(
             "mana_remaining", "level", "value_intelligence", "profile"
@@ -46,7 +51,7 @@ def character_mana_change(request: WSGIRequest, pk: int) -> HttpResponse:
 
 
 @login_required
-def character_recovery_points_change(request: WSGIRequest, pk: int) -> HttpResponse:
+def character_recovery_points_change(request, pk: int):
     character = get_object_or_404(
         Character.objects.only("recovery_points_remaining"), pk=pk
     )
@@ -59,7 +64,7 @@ def character_recovery_points_change(request: WSGIRequest, pk: int) -> HttpRespo
 
 
 @login_required
-def character_defense_misc_change(request: WSGIRequest, pk: int) -> HttpResponse:
+def character_defense_misc_change(request, pk: int):
     character = get_object_or_404(Character.objects.only("defense_misc"), pk=pk)
     value = get_updated_value(request, character.defense_misc, float("inf"))
     character.defense_misc = value
@@ -69,7 +74,7 @@ def character_defense_misc_change(request: WSGIRequest, pk: int) -> HttpResponse
 
 
 @login_required
-def character_luck_points_change(request: WSGIRequest, pk: int) -> HttpResponse:
+def character_luck_points_change(request, pk: int):
     character = get_object_or_404(
         Character.objects.only("luck_points_remaining", "value_charisma"), pk=pk
     )
@@ -81,9 +86,7 @@ def character_luck_points_change(request: WSGIRequest, pk: int) -> HttpResponse:
     return HttpResponse(value)
 
 
-def get_updated_value(
-    request: WSGIRequest, remaining_value: int, max_value: int | float
-) -> int:
+def get_updated_value(request, remaining_value: int, max_value: int | float) -> int:
     form_value = request.GET.get("value")
     if form_value == "ko":
         remaining_value = 0
@@ -98,7 +101,7 @@ def get_updated_value(
 
 
 @login_required
-def character_get_defense(request: WSGIRequest, pk: int) -> HttpResponse:
+def character_get_defense(request, pk: int):
     character = get_object_or_404(
         Character.objects.only("defense_misc", "armor", "shield", "value_dexterity"),
         pk=pk,
@@ -107,12 +110,12 @@ def character_get_defense(request: WSGIRequest, pk: int) -> HttpResponse:
 
 
 @login_required
-def character_notes_change(request: WSGIRequest, pk: int) -> HttpResponse:
+def character_notes_change(request, pk: int):
     return update_text_field(request, pk, "notes")
 
 
 @login_required
-def character_equipment_change(request: WSGIRequest, pk: int) -> HttpResponse:
+def character_equipment_change(request, pk: int):
     field = "equipment"
     character = get_object_or_404(Character.objects.only(field), pk=pk)
     context = {"character": character}
@@ -128,7 +131,7 @@ def character_equipment_change(request: WSGIRequest, pk: int) -> HttpResponse:
 
 
 @login_required
-def character_damage_reduction_change(request: WSGIRequest, pk: int) -> HttpResponse:
+def character_damage_reduction_change(request, pk: int):
     return update_text_field(request, pk, "damage_reduction")
 
 

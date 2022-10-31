@@ -25,9 +25,9 @@ def character_create(request):
 @login_required
 def character_view(request, pk: int):
     character = get_object_or_404(
-        Character.objects.select_related(
-            "player", "racial_capability", "profile", "race"
-        ).prefetch_related("capabilities__path", "weapons"),
+        Character.objects.filter(player=request.user)
+        .select_related("player", "racial_capability", "profile", "race")
+        .prefetch_related("capabilities__path", "weapons"),
         pk=pk,
     )
     context = {"character": character}
@@ -37,7 +37,10 @@ def character_view(request, pk: int):
 @login_required
 def character_health_change(request, pk: int):
     character = get_object_or_404(
-        Character.objects.only("health_max", "health_remaining"), pk=pk
+        Character.objects.filter(player=request.user).only(
+            "health_max", "health_remaining"
+        ),
+        pk=pk,
     )
     value = get_updated_value(request, character.health_remaining, character.health_max)
     character.health_remaining = value
@@ -48,9 +51,9 @@ def character_health_change(request, pk: int):
 @login_required
 def character_mana_change(request, pk: int):
     character = get_object_or_404(
-        Character.objects.only(
-            "mana_remaining", "level", "value_intelligence", "profile"
-        ).select_related("profile"),
+        Character.objects.filter(player=request.user)
+        .only("mana_remaining", "level", "value_intelligence", "profile")
+        .select_related("profile"),
         pk=pk,
     )
     value = get_updated_value(request, character.mana_remaining, character.mana_max)
@@ -62,7 +65,8 @@ def character_mana_change(request, pk: int):
 @login_required
 def character_recovery_points_change(request, pk: int):
     character = get_object_or_404(
-        Character.objects.only("recovery_points_remaining"), pk=pk
+        Character.objects.filter(player=request.user).only("recovery_points_remaining"),
+        pk=pk,
     )
     value = get_updated_value(
         request, character.recovery_points_remaining, character.recovery_points_max
@@ -74,7 +78,9 @@ def character_recovery_points_change(request, pk: int):
 
 @login_required
 def character_defense_misc_change(request, pk: int):
-    character = get_object_or_404(Character.objects.only("defense_misc"), pk=pk)
+    character = get_object_or_404(
+        Character.objects.filter(player=request.user).only("defense_misc"), pk=pk
+    )
     value = get_updated_value(request, character.defense_misc, float("inf"))
     character.defense_misc = value
     character.save(update_fields=["defense_misc"])
@@ -85,7 +91,10 @@ def character_defense_misc_change(request, pk: int):
 @login_required
 def character_luck_points_change(request, pk: int):
     character = get_object_or_404(
-        Character.objects.only("luck_points_remaining", "value_charisma"), pk=pk
+        Character.objects.filter(player=request.user).only(
+            "luck_points_remaining", "value_charisma"
+        ),
+        pk=pk,
     )
     value = get_updated_value(
         request, character.luck_points_remaining, character.luck_points_max
@@ -112,7 +121,9 @@ def get_updated_value(request, remaining_value: int, max_value: int | float) -> 
 @login_required
 def character_get_defense(request, pk: int):
     character = get_object_or_404(
-        Character.objects.only("defense_misc", "armor", "shield", "value_dexterity"),
+        Character.objects.filter(player=request.user).only(
+            "defense_misc", "armor", "shield", "value_dexterity"
+        ),
         pk=pk,
     )
     return HttpResponse(character.defense)
@@ -126,7 +137,9 @@ def character_notes_change(request, pk: int):
 @login_required
 def character_equipment_change(request, pk: int):
     field = "equipment"
-    character = get_object_or_404(Character.objects.only(field), pk=pk)
+    character = get_object_or_404(
+        Character.objects.filter(player=request.user).only(field), pk=pk
+    )
     context = {"character": character}
     if request.method == "GET":
         return render(request, f"character/{field}_update.html", context)
@@ -145,7 +158,9 @@ def character_damage_reduction_change(request, pk: int):
 
 
 def update_text_field(request, pk, field):
-    character = get_object_or_404(Character.objects.only(field), pk=pk)
+    character = get_object_or_404(
+        Character.objects.filter(player=request.user).only(field), pk=pk
+    )
     context = {"character": character}
     if request.method == "GET":
         return render(request, f"character/{field}_update.html", context)

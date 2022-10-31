@@ -2,7 +2,8 @@ import pytest
 from hypothesis import given
 from hypothesis.strategies import integers
 
-from character.models.character import Character
+from character.models.character import Character, Profile
+from character.models.dice import Dice
 from character.tests.utils import ability_values, levels, modifier_test
 
 
@@ -70,17 +71,24 @@ def test_defense(armor, shield, dexterity, misc):
 
 
 @given(level=levels(), intelligence=ability_values())
-def test_mana_max(level, intelligence):
-    char = Character(level=level, value_intelligence=intelligence)
+def test_mana_max_mage(level, intelligence):
+    profile = Profile(
+        name="Magicien",
+        life_dice=Dice.D4,
+        magical_strength=Profile.MagicalStrength.INTELLIGENCE,
+        mana_max_compute=Profile.ManaMax.DOUBLE_LEVEL,
+    )
+    char = Character(level=level, profile=profile, value_intelligence=intelligence)
     assert char.mana_max == 2 * level + modifier_test(intelligence)
 
 
-@given(
-    level=levels(), intelligence=ability_values(), mana_consumed=integers(min_value=0)
-)
-def test_mana_remaining(level, intelligence, mana_consumed):
-    char = Character(
-        level=level, value_intelligence=intelligence, mana_consumed=mana_consumed
+@given(level=levels(), wisdom=ability_values())
+def test_mana_max_druid(level, wisdom):
+    profile = Profile(
+        name="Druide",
+        life_dice=Dice.D4,
+        magical_strength=Profile.MagicalStrength.WISDOM,
+        mana_max_compute=Profile.ManaMax.LEVEL,
     )
-    mana_max = 2 * level + modifier_test(intelligence)
-    assert char.mana_remaining == mana_max - mana_consumed
+    char = Character(level=level, profile=profile, value_wisdom=wisdom)
+    assert char.mana_max == level + modifier_test(wisdom)

@@ -257,9 +257,9 @@ class Character(models.Model):
         if mana_max_compute == Profile.ManaMax.NO_MANA:
             return 0
         elif mana_max_compute == Profile.ManaMax.LEVEL:
-            return self.level + self.modifier_intelligence
+            return self.level + self.modifier_magic
         else:
-            return 2 * self.level + self.modifier_intelligence
+            return 2 * self.level + self.modifier_magic
 
     @property
     def height_m(self) -> float:

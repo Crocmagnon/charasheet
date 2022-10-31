@@ -19,6 +19,9 @@
     </head>
     <body>
         <div class="container-fluid">
+            {% if user.is_authenticated %}
+                <a href="{% url "logout" %}">Déconnexion</a>
+            {% endif %}
             {% block content %}
                 {% include "common/hello-random.html" %}
             {% endblock %}

@@ -21,7 +21,7 @@ from django.urls import include, path
 from django_registration.backends.activation.views import RegistrationView
 
 from common.forms import RegistrationForm
-from common.views import hello_world
+from common.views import ActivationView, hello_world
 
 urlpatterns = [
     path("logout/", logout, {"next_page": settings.LOGOUT_REDIRECT_URL}, name="logout"),
@@ -29,6 +29,11 @@ urlpatterns = [
         "accounts/register/",
         RegistrationView.as_view(form_class=RegistrationForm),
         name="django_registration_register",
+    ),
+    path(
+        "accounts/activate/<str:activation_key>/",
+        ActivationView.as_view(),
+        name="django_registration_activate",
     ),
     path("accounts/", include("django_registration.backends.activation.urls")),
     path("accounts/", include("django.contrib.auth.urls")),

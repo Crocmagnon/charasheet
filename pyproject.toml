@@ -20,6 +20,8 @@ whitenoise = ">=6.2"
 uWSGI = ">=2.0.21"
 selenium = ">=4.5.0"
 Markdown = ">=3.2"
+django-registration = ">=3.3"
+django-anymail = {extras = ["mailgun"], version = ">=8.6"}
 
 [tool.poetry.dev-dependencies]
 django-debug-toolbar = ">=3.2"

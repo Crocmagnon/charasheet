@@ -18,6 +18,9 @@ env = environ.Env(
     LOG_FORMAT=(str, "default"),
     APP_DATA=(Path, PROJECT_ROOT / "data"),
     DATABASE_URL=(str, "sqlite:////app/db/db.sqlite3"),
+    REGISTRATION_OPEN=(bool, True),
+    MAILGUN_API_KEY=(str, ""),
+    MAILGUN_SENDER_DOMAIN=(str, ""),
 )
 
 env_file = os.getenv("ENV_FILE", None)
@@ -200,7 +203,18 @@ AUTHENTICATION_BACKENDS = ("django.contrib.auth.backends.ModelBackend",)
 
 LOGOUT_REDIRECT_URL = "/"
 LOGIN_REDIRECT_URL = "/"
-LOGIN_URL = "/admin/login"
+LOGIN_URL = "login"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "common.User"
+
+ACCOUNT_ACTIVATION_DAYS = 2
+REGISTRATION_OPEN = env("REGISTRATION_OPEN")
+
+ANYMAIL = {
+    "MAILGUN_API_KEY": env("MAILGUN_API_KEY"),
+    "MAILGUN_SENDER_DOMAIN": env("MAILGUN_SENDER_DOMAIN"),
+}
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+DEFAULT_FROM_EMAIL = "charasheet@mg.augendre.info"
+SERVER_EMAIL = "charasheet@mg.augendre.info"

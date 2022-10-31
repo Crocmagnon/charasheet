@@ -39,6 +39,7 @@ WORKDIR /app/src
 ARG ENV_FILE=/app/.env
 ARG DEBUG=true
 ENV STATIC_ROOT=/app/static
+ENV DATABASE_URL=sqlite:////app/db/db.sqlite3
 
 RUN mkdir -p $STATIC_ROOT
 

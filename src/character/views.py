@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django_htmx.http import trigger_client_event
 
-from character.forms import EquipmentForm
+from character.forms import AddPathForm, EquipmentForm
 from character.models import Capability, Character, Path
 
 
@@ -30,8 +30,24 @@ def character_view(request, pk: int):
         .prefetch_related("capabilities__path", "weapons"),
         pk=pk,
     )
-    context = {"character": character}
+    add_path_form = AddPathForm(character)
+    context = {"character": character, "add_path_form": add_path_form}
     return render(request, "character/view.html", context)
+
+
+@login_required
+def add_path(request, pk: int):
+    character = get_object_or_404(Character.objects.filter(player=request.user), pk=pk)
+    form = AddPathForm(character, request.POST)
+    context = {"character": character}
+    if form.is_valid():
+        path: Path = form.cleaned_data.get("path")
+        cap = path.get_next_capability(character)
+        character.capabilities.add(cap)
+        context["add_path_form"] = AddPathForm(character)
+    else:
+        context["add_path_form"] = form
+    return render(request, "character/paths_and_capabilities.html", context)
 
 
 @login_required

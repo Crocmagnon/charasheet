@@ -48,4 +48,5 @@ urlpatterns = [
         views.remove_last_in_path,
         name="remove_last_in_path",
     ),
+    path("<int:pk>/add_path/", views.add_path, name="add_path"),
 ]

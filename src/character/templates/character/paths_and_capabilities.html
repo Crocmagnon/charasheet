@@ -1,0 +1,23 @@
+<div id="paths-and-capabilities">
+    <form>
+        {% csrf_token %}
+        <div class="row">
+            <div class="col col-lg-6">
+                <div class="input-group">
+                    {{ add_path_form.path }}
+                    <button class="btn btn-primary"
+                        hx-target="#paths-and-capabilities"
+                        hx-swap="outerHTML"
+                        hx-post="{% url "character:add_path" pk=character.pk %}">
+                        Sélectionner
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row mt-2 gy-3">
+        {% for path, capabilities in character.get_capabilities_by_path.items %}
+            {% include "character/path.html" %}
+        {% endfor %}
+    </div>
+</div>

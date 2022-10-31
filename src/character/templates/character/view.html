@@ -1,4 +1,5 @@
 {% extends "common/base.html" %}
+{% load django_bootstrap5 %}
 {% load character_extras %}
 
 {% block title %}{{ character.name }}{% endblock %}
@@ -336,10 +337,6 @@
         </div>
     </div>
     <h2>Voies & Capacités</h2>
-    <div class="row gy-3">
-        {% for path, capabilities in character.get_capabilities_by_path.items %}
-            {% include "character/path.html" %}
-        {% endfor %}
-    </div>
+    {% include "character/paths_and_capabilities.html" %}
     {% include "character/notes_display.html" %}
 {% endblock %}

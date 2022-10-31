@@ -17,7 +17,7 @@ env = environ.Env(
     LOG_LEVEL=(str, "DEBUG"),
     LOG_FORMAT=(str, "default"),
     APP_DATA=(Path, PROJECT_ROOT / "data"),
-    DATABASE_URL=str,
+    DATABASE_URL=(str, "sqlite:////app/db/db.sqlite3"),
 )
 
 env_file = os.getenv("ENV_FILE", None)

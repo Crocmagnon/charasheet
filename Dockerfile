@@ -1,7 +1,7 @@
 ##############################################
 # Build virtualenv
 ##############################################
-FROM python:3.10.7-bullseye AS venv
+FROM python:3.11.0-bullseye AS venv
 
 # Prepare poetry
 ##############################################
@@ -65,7 +65,7 @@ RUN date +'%Y-%m-%d %H:%M %Z' > /build-date
 ##############################################
 # Main image
 ##############################################
-FROM python:3.10.7-slim-bullseye AS final
+FROM python:3.11.0-slim-bullseye AS final
 
 ARG DEBIAN_FRONTEND=noninteractive
 

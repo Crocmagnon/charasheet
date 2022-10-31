@@ -94,7 +94,7 @@ class Capability(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.M
         verbose_name_plural = "Capacités"
 
     def __str__(self):
-        description = f"{self.name} - {self.path.name}"
+        description = f"{self.name} - {self.path.display_name} rang {self.rank}"
         if self.path.related_to:
             description += f" ({self.path.related_to.name})"
         return description

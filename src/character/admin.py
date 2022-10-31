@@ -173,6 +173,11 @@ class CharacterAdmin(admin.ModelAdmin):
 
     form = CharacterAdminForm
 
+    def has_change_permission(self, request, obj=None):
+        if obj is None:
+            return super().has_change_permission(request, obj)
+        return obj.player == request.user or request.user.is_superuser
+
 
 @admin.register(models.Weapon)
 class WeaponAdmin(admin.ModelAdmin):

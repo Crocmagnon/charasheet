@@ -1,10 +1,13 @@
+{% load django_bootstrap5 %}
 <div id="paths-and-capabilities">
     <form>
         {% csrf_token %}
         <div class="row">
-            <div class="col col-lg-6">
+            <div class="col">
+                {% bootstrap_form_errors add_path_form %}
                 <div class="input-group">
-                    {{ add_path_form.path }}
+                    {{ add_path_form.character_path }}
+                    {{ add_path_form.other_path }}
                     <button class="btn btn-primary"
                         hx-target="#paths-and-capabilities"
                         hx-swap="outerHTML"

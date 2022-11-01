@@ -41,7 +41,9 @@ def add_path(request, pk: int):
     form = AddPathForm(character, request.POST)
     context = {"character": character}
     if form.is_valid():
-        path: Path = form.cleaned_data.get("path")
+        path: Path = form.cleaned_data.get("character_path") or form.cleaned_data.get(
+            "other_path"
+        )
         cap = path.get_next_capability(character)
         character.capabilities.add(cap)
         context["add_path_form"] = AddPathForm(character)

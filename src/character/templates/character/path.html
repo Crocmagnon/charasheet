@@ -1,17 +1,17 @@
 {% load character_extras %}
-<div class="col-xl-3 col-md-6" data-path-id="{{ path.pk }}">
+<div class="col-xl-3 col-md-6">
     <div class="card">
         <h5 class="card-header">
             {{ path.display_name }}
             <button hx-get="{% url "character:remove_last_in_path" character_pk=character.pk path_pk=path.pk %}"
-                hx-target="[data-path-id='{{ path.pk }}']"
+                hx-target="#paths-and-capabilities"
                 hx-swap="outerHTML"
                 class="btn btn-sm btn-primary">
                 <i class="fa-solid fa-minus"></i>
             </button>
             {% if path|has_next_capability:character %}
                 <button hx-get="{% url "character:add_next_in_path" character_pk=character.pk path_pk=path.pk %}"
-                    hx-target="[data-path-id='{{ path.pk }}']"
+                    hx-target="#paths-and-capabilities"
                     hx-swap="outerHTML"
                     class="btn btn-sm btn-primary">
                     <i class="fa-solid fa-plus"></i>

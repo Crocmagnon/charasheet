@@ -43,7 +43,7 @@ def test_cov(ctx):
 @task
 def pre_commit(ctx):
     with ctx.cd(BASE_DIR):
-        ctx.run("pre-commit run --all-files", pty=True)
+        ctx.run("pre-commit run --all-files", pty=True, echo=True)
 
 
 @task(pre=[pre_commit, test_cov])
@@ -95,8 +95,40 @@ def beam(ctx):
 @task
 def download_db(ctx):
     with ctx.cd(BASE_DIR):
-        ctx.run("scp ubuntu:/mnt/data/charasheet/db/db.sqlite3 ./db/db.sqlite3")
-        ctx.run("rm -rf src/media/")
-        ctx.run("scp -r ubuntu:/mnt/data/charasheet/media/ ./src/media")
+        ctx.run(
+            "scp ubuntu:/mnt/data/charasheet/db/db.sqlite3 ./db/db.sqlite3",
+            pty=True,
+            echo=True,
+        )
+        ctx.run("rm -rf src/media/", pty=True, echo=True)
+        ctx.run(
+            "scp -r ubuntu:/mnt/data/charasheet/media/ ./src/media", pty=True, echo=True
+        )
     with ctx.cd(SRC_DIR):
-        ctx.run("./manage.py changepassword gaugendre", pty=True)
+        ctx.run("./manage.py changepassword gaugendre", pty=True, echo=True)
+
+
+@task
+def dump_initial(ctx):
+    with ctx.cd(SRC_DIR):
+        path = "./character/fixtures/initial_data.json"
+        ctx.run(
+            f"./manage.py dumpdata character --natural-primary --natural-foreign -o {path} --indent 2",
+            pty=True,
+            echo=True,
+        )
+        ctx.run(f"pre-commit run pretty-format-json --file {path}", pty=True, echo=True)
+
+
+@task
+def import_from_co_drs(ctx):
+    with ctx.cd(SRC_DIR):
+        ctx.run("./manage.py import_races", pty=True, echo=True)
+        ctx.run("./manage.py import_profiles", pty=True, echo=True)
+        ctx.run("./manage.py import_paths", pty=True, echo=True)
+        ctx.run("./manage.py import_capabilities", pty=True, echo=True)
+
+
+@task(pre=[import_from_co_drs, dump_initial])
+def update_fixtures(ctx):
+    pass

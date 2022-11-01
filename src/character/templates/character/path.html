@@ -1,32 +1,30 @@
 {% load character_extras %}
 <div class="col-12 col-md-6 col-xl-4">
-    <div class="card">
-        <h5 class="card-header">
-            {{ path.display_name }} ({{ path|max_rank:character }})
-            <div class="btn-group btn-group-sm">
-                <button hx-get="{% url "character:remove_last_in_path" character_pk=character.pk path_pk=path.pk %}"
+    <h5>
+        {{ path.display_name }} ({{ path|max_rank:character }})
+        <div class="btn-group btn-group-sm">
+            <button hx-get="{% url "character:remove_last_in_path" character_pk=character.pk path_pk=path.pk %}"
+                hx-target="#paths-and-capabilities"
+                hx-swap="outerHTML"
+                class="btn btn-secondary">
+                <i class="fa-solid fa-minus"></i>
+            </button>
+            {% if path|has_next_capability:character %}
+                <button hx-get="{% url "character:add_next_in_path" character_pk=character.pk path_pk=path.pk %}"
                     hx-target="#paths-and-capabilities"
                     hx-swap="outerHTML"
                     class="btn btn-primary">
-                    <i class="fa-solid fa-minus"></i>
+                    <i class="fa-solid fa-plus"></i>
                 </button>
-                {% if path|has_next_capability:character %}
-                    <button hx-get="{% url "character:add_next_in_path" character_pk=character.pk path_pk=path.pk %}"
-                        hx-target="#paths-and-capabilities"
-                        hx-swap="outerHTML"
-                        class="btn btn-primary">
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
-                {% endif %}
-            </div>
-        </h5>
-        {% if path.notes %}
-            <div class="card-body text-bg-light">{{ path.notes }}</div>
-        {% endif %}
-        <div class="accordion accordion-flush capabilities">
-            {% for capability in capabilities %}
-                {% include "character/capability.html" %}
-            {% endfor %}
+            {% endif %}
         </div>
+    </h5>
+    {% if path.notes %}
+        <div class="alert alert-primary">{{ path.notes }}</div>
+    {% endif %}
+    <div class="accordion capabilities">
+        {% for capability in capabilities %}
+            {% include "character/capability.html" %}
+        {% endfor %}
     </div>
 </div>

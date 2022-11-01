@@ -1808,10 +1808,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "6\u00e8me sens",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.737Z",
-      "modified": "2022-10-30T15:11:19.037Z",
+      "modified": "2022-11-01T08:08:13.857Z",
+      "name": "6\u00e8me sens",
       "path": [
         "Voie de la divination"
       ],
@@ -1824,10 +1824,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "\u00c0 couvert",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.748Z",
-      "modified": "2022-10-30T15:11:19.054Z",
+      "modified": "2022-11-01T08:08:13.872Z",
+      "name": "\u00c0 couvert",
       "path": [
         "Voie du champ de bataille"
       ],
@@ -1840,10 +1840,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Absorber un coup",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.770Z",
-      "modified": "2022-10-30T15:11:19.069Z",
+      "modified": "2022-11-01T08:08:13.890Z",
+      "name": "Absorber un coup",
       "path": [
         "Voie du bouclier"
       ],
@@ -1856,10 +1856,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Absorber un sort",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.789Z",
-      "modified": "2022-10-30T15:11:19.086Z",
+      "modified": "2022-11-01T08:08:13.911Z",
+      "name": "Absorber un sort",
       "path": [
         "Voie du bouclier"
       ],
@@ -1872,10 +1872,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Acrobate",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.801Z",
-      "modified": "2022-10-30T15:11:19.106Z",
+      "modified": "2022-11-01T08:08:13.930Z",
+      "name": "Acrobate",
       "path": [
         "Voie du saltimbanque"
       ],
@@ -1888,10 +1888,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Acrobaties",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.814Z",
-      "modified": "2022-10-30T15:11:19.122Z",
+      "modified": "2022-11-01T08:08:13.950Z",
+      "name": "Acrobaties",
       "path": [
         "Voie du d\u00e9placement"
       ],
@@ -1904,10 +1904,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Action concert\u00e9e",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.824Z",
-      "modified": "2022-10-30T15:11:19.137Z",
+      "modified": "2022-11-01T08:08:13.966Z",
+      "name": "Action concert\u00e9e",
       "path": [
         "Voie du champ de bataille"
       ],
@@ -1920,10 +1920,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Adaptable",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.834Z",
-      "modified": "2022-10-30T15:11:19.152Z",
+      "modified": "2022-11-01T08:08:13.981Z",
+      "name": "Adaptable",
       "path": [
         "Voie de l'humain"
       ],
@@ -1936,10 +1936,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Agrandissement",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.846Z",
-      "modified": "2022-10-30T15:11:19.168Z",
+      "modified": "2022-11-01T08:08:13.996Z",
+      "name": "Agrandissement",
       "path": [
         "Voie de la magie des arcanes"
       ],
@@ -1952,10 +1952,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Agripper",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.857Z",
-      "modified": "2022-10-30T15:11:19.182Z",
+      "modified": "2022-11-01T08:08:14.015Z",
+      "name": "Agripper",
       "path": [
         "Voie des cr\u00e9atures volantes"
       ],
@@ -1968,10 +1968,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Ailes c\u00e9lestes",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.868Z",
-      "modified": "2022-10-30T15:11:19.195Z",
+      "modified": "2022-11-01T08:08:14.029Z",
+      "name": "Ailes c\u00e9lestes",
       "path": [
         "Voie de la foi"
       ],
@@ -1984,10 +1984,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Ambidextrie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.880Z",
-      "modified": "2022-10-30T15:11:19.207Z",
+      "modified": "2022-11-01T08:08:14.044Z",
+      "name": "Ambidextrie",
       "path": [
         "Voie du spadassin"
       ],
@@ -2000,10 +2000,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Amiti\u00e9",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.893Z",
-      "modified": "2022-10-30T15:11:19.221Z",
+      "modified": "2022-11-01T08:08:14.059Z",
+      "name": "Amiti\u00e9",
       "path": [
         "Voie de l'envo\u00fbteur"
       ],
@@ -2016,10 +2016,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Animal fabuleux",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.904Z",
-      "modified": "2022-10-30T15:11:19.279Z",
+      "modified": "2022-11-01T08:08:14.117Z",
+      "name": "Animal fabuleux",
       "path": [
         "Voie du montreur d'ours"
       ],
@@ -2032,10 +2032,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Animation des morts",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.929Z",
-      "modified": "2022-10-30T15:11:19.297Z",
+      "modified": "2022-11-01T08:08:14.138Z",
+      "name": "Animation des morts",
       "path": [
         "Voie de l'outre-tombe"
       ],
@@ -2048,10 +2048,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Animation d'un arbre",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.940Z",
-      "modified": "2022-10-30T15:11:19.319Z",
+      "modified": "2022-11-01T08:08:14.161Z",
+      "name": "Animation d'un arbre",
       "path": [
         "Voie des v\u00e9g\u00e9taux"
       ],
@@ -2064,10 +2064,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Animer un cadavre",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.951Z",
-      "modified": "2022-10-30T15:11:19.334Z",
+      "modified": "2022-11-01T08:08:14.174Z",
+      "name": "Animer un cadavre",
       "path": [
         "Voie de la magie mal\u00e9fique"
       ],
@@ -2080,10 +2080,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Archer \u00e9m\u00e9rite",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.962Z",
-      "modified": "2022-10-30T15:11:19.347Z",
+      "modified": "2022-11-01T08:08:14.189Z",
+      "name": "Archer \u00e9m\u00e9rite",
       "path": [
         "Voie de l'elfe sylvain"
       ],
@@ -2096,10 +2096,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Argument de taille",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.971Z",
-      "modified": "2022-10-30T15:11:19.359Z",
+      "modified": "2022-11-01T08:08:14.204Z",
+      "name": "Argument de taille",
       "path": [
         "Voie de la brute"
       ],
@@ -2112,10 +2112,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Arme b\u00e9nie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.983Z",
-      "modified": "2022-10-30T15:11:19.372Z",
+      "modified": "2022-11-01T08:08:14.219Z",
+      "name": "Arme b\u00e9nie",
       "path": [
         "Voie de la guerre sainte"
       ],
@@ -2128,10 +2128,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Arme dansante",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:54.993Z",
-      "modified": "2022-10-30T15:11:19.387Z",
+      "modified": "2022-11-01T08:08:14.236Z",
+      "name": "Arme dansante",
       "path": [
         "Voie de l'invocation"
       ],
@@ -2144,10 +2144,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Arme de pr\u00e9dilection",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:55.005Z",
-      "modified": "2022-10-30T15:11:19.400Z",
+      "modified": "2022-11-01T08:08:14.250Z",
+      "name": "Arme de pr\u00e9dilection",
       "path": [
         "Voie du ma\u00eetre d'armes"
       ],
@@ -2160,10 +2160,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Arme d'argent",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:45:55.016Z",
-      "modified": "2022-10-30T15:11:19.414Z",
+      "modified": "2022-11-01T08:08:14.264Z",
+      "name": "Arme d'argent",
       "path": [
         "Voie de la foi"
       ],
@@ -2176,10 +2176,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Arme enflamm\u00e9e",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.372Z",
-      "modified": "2022-10-30T15:11:19.426Z",
+      "modified": "2022-11-01T08:08:14.278Z",
+      "name": "Arme enflamm\u00e9e",
       "path": [
         "Voie de la magie \u00e9l\u00e9mentaire"
       ],
@@ -2192,10 +2192,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Arme secr\u00e8te",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.381Z",
-      "modified": "2022-10-30T15:11:19.439Z",
+      "modified": "2022-11-01T08:08:14.293Z",
+      "name": "Arme secr\u00e8te",
       "path": [
         "Voie de la s\u00e9duction"
       ],
@@ -2208,10 +2208,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Arm\u00e9e des morts",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.393Z",
-      "modified": "2022-10-30T15:11:19.453Z",
+      "modified": "2022-11-01T08:08:14.309Z",
+      "name": "Arm\u00e9e des morts",
       "path": [
         "Voie de l'outre-tombe"
       ],
@@ -2224,10 +2224,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Armure de mage",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.402Z",
-      "modified": "2022-10-30T15:11:19.467Z",
+      "modified": "2022-11-01T08:08:14.324Z",
+      "name": "Armure de mage",
       "path": [
         "Voie de la magie protectrice"
       ],
@@ -2240,10 +2240,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Armure de vent",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.411Z",
-      "modified": "2022-10-30T15:11:19.481Z",
+      "modified": "2022-11-01T08:08:14.339Z",
+      "name": "Armure de vent",
       "path": [
         "Voie du primitif"
       ],
@@ -2256,10 +2256,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Armure lourde",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.421Z",
-      "modified": "2022-10-30T15:11:19.494Z",
+      "modified": "2022-11-01T08:08:14.354Z",
+      "name": "Armure lourde",
       "path": [
         "Voie du bouclier"
       ],
@@ -2272,10 +2272,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Armure magique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.434Z",
-      "modified": "2022-10-30T15:11:19.507Z",
+      "modified": "2022-11-01T08:08:14.369Z",
+      "name": "Armure magique",
       "path": [
         "Voie de la magie de combat"
       ],
@@ -2288,10 +2288,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Armure naturelle",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.444Z",
-      "modified": "2022-10-30T15:11:19.521Z",
+      "modified": "2022-11-01T08:08:14.383Z",
+      "name": "Armure naturelle",
       "path": [
         "Voie de la r\u00e9sistance"
       ],
@@ -2304,10 +2304,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Armure sur mesure",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.454Z",
-      "modified": "2022-10-30T15:11:19.535Z",
+      "modified": "2022-11-01T08:08:14.397Z",
+      "name": "Armure sur mesure",
       "path": [
         "Voie de la guerre"
       ],
@@ -2320,10 +2320,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Arr\u00eat du temps",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.462Z",
-      "modified": "2022-10-30T15:11:19.550Z",
+      "modified": "2022-11-01T08:08:14.412Z",
+      "name": "Arr\u00eat du temps",
       "path": [
         "Voie de la magie protectrice"
       ],
@@ -2336,10 +2336,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Artefact majeur",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.472Z",
-      "modified": "2022-10-30T15:11:19.563Z",
+      "modified": "2022-11-01T08:08:14.427Z",
+      "name": "Artefact majeur",
       "path": [
         "Voie des artefacts"
       ],
@@ -2352,10 +2352,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "As de la g\u00e2chette",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.482Z",
-      "modified": "2022-10-30T15:11:19.577Z",
+      "modified": "2022-11-01T08:08:14.442Z",
+      "name": "As de la g\u00e2chette",
       "path": [
         "Voie du pistolero"
       ],
@@ -2368,10 +2368,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Asc\u00e9tisme",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.492Z",
-      "modified": "2022-10-30T15:11:19.596Z",
+      "modified": "2022-11-01T08:08:14.462Z",
+      "name": "Asc\u00e9tisme",
       "path": [
         "Voie de l'\u00e9nergie vitale"
       ],
@@ -2384,10 +2384,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Aspect de la succube",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.501Z",
-      "modified": "2022-10-30T15:11:19.607Z",
+      "modified": "2022-11-01T08:08:14.478Z",
+      "name": "Aspect de la succube",
       "path": [
         "Voie du d\u00e9mon"
       ],
@@ -2400,10 +2400,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Aspect du d\u00e9mon",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.510Z",
-      "modified": "2022-10-30T15:11:19.621Z",
+      "modified": "2022-11-01T08:08:14.494Z",
+      "name": "Aspect du d\u00e9mon",
       "path": [
         "Voie du d\u00e9mon"
       ],
@@ -2416,10 +2416,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Asphyxie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.519Z",
-      "modified": "2022-10-30T15:11:19.639Z",
+      "modified": "2022-11-01T08:08:14.510Z",
+      "name": "Asphyxie",
       "path": [
         "Voie de la magie \u00e9l\u00e9mentaire"
       ],
@@ -2432,10 +2432,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Assassinat",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.528Z",
-      "modified": "2022-10-30T15:11:19.655Z",
+      "modified": "2022-11-01T08:08:14.530Z",
+      "name": "Assassinat",
       "path": [
         "Voie du tueur"
       ],
@@ -2448,10 +2448,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque bondissante",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.538Z",
-      "modified": "2022-10-30T15:11:19.673Z",
+      "modified": "2022-11-01T08:08:14.546Z",
+      "name": "Attaque bondissante",
       "path": [
         "Voie du fauve"
       ],
@@ -2464,10 +2464,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque brutale",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.547Z",
-      "modified": "2022-10-30T15:11:19.689Z",
+      "modified": "2022-11-01T08:08:14.563Z",
+      "name": "Attaque brutale",
       "path": [
         "Voie de la brute"
       ],
@@ -2480,10 +2480,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque circulaire",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.560Z",
-      "modified": "2022-10-30T15:11:19.704Z",
+      "modified": "2022-11-01T08:08:14.579Z",
+      "name": "Attaque circulaire",
       "path": [
         "Voie du combat"
       ],
@@ -2496,10 +2496,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque \u00e9clair",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.570Z",
-      "modified": "2022-10-30T15:11:19.719Z",
+      "modified": "2022-11-01T08:08:14.596Z",
+      "name": "Attaque \u00e9clair",
       "path": [
         "Voie de l'escarmouche"
       ],
@@ -2512,10 +2512,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque en finesse",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.579Z",
-      "modified": "2022-10-30T15:11:19.734Z",
+      "modified": "2022-11-01T08:08:14.613Z",
+      "name": "Attaque en finesse",
       "path": [
         "Voie du spadassin"
       ],
@@ -2528,10 +2528,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque en tra\u00eetre",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.589Z",
-      "modified": "2022-10-30T15:11:19.763Z",
+      "modified": "2022-11-01T08:08:14.645Z",
+      "name": "Attaque en tra\u00eetre",
       "path": [
         "Voie du roublard"
       ],
@@ -2544,10 +2544,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque flamboyante",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.609Z",
-      "modified": "2022-10-30T15:11:19.777Z",
+      "modified": "2022-11-01T08:08:14.661Z",
+      "name": "Attaque flamboyante",
       "path": [
         "Voie de l'escrime"
       ],
@@ -2560,10 +2560,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque magique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.620Z",
-      "modified": "2022-10-30T15:11:19.793Z",
+      "modified": "2022-11-01T08:08:14.676Z",
+      "name": "Attaque magique",
       "path": [
         "Voie de la magie de combat"
       ],
@@ -2576,10 +2576,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque mortelle",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.628Z",
-      "modified": "2022-10-30T15:11:19.808Z",
+      "modified": "2022-11-01T08:08:14.691Z",
+      "name": "Attaque mortelle",
       "path": [
         "Voie du tueur"
       ],
@@ -2592,10 +2592,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque paralysante",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.638Z",
-      "modified": "2022-10-30T15:11:19.825Z",
+      "modified": "2022-11-01T08:08:14.707Z",
+      "name": "Attaque paralysante",
       "path": [
         "Voie du roublard"
       ],
@@ -2608,10 +2608,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque parfaite",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.648Z",
-      "modified": "2022-10-30T15:11:19.840Z",
+      "modified": "2022-11-01T08:08:14.722Z",
+      "name": "Attaque parfaite",
       "path": [
         "Voie du ma\u00eetre d'armes"
       ],
@@ -2624,10 +2624,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque puissante",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.658Z",
-      "modified": "2022-10-30T15:11:19.855Z",
+      "modified": "2022-11-01T08:08:14.737Z",
+      "name": "Attaque puissante",
       "path": [
         "Voie du combat"
       ],
@@ -2640,10 +2640,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque sanglante",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.668Z",
-      "modified": "2022-10-30T15:11:19.869Z",
+      "modified": "2022-11-01T08:08:14.752Z",
+      "name": "Attaque sanglante",
       "path": [
         "Voie du demi-orque"
       ],
@@ -2656,10 +2656,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque sonore",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.677Z",
-      "modified": "2022-10-30T15:11:19.883Z",
+      "modified": "2022-11-01T08:08:14.766Z",
+      "name": "Attaque sonore",
       "path": [
         "Voie du musicien"
       ],
@@ -2672,10 +2672,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque sournoise",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.686Z",
-      "modified": "2022-10-30T15:11:19.900Z",
+      "modified": "2022-11-01T08:08:14.783Z",
+      "name": "Attaque sournoise",
       "path": [
         "Voie de l'assassin"
       ],
@@ -2688,10 +2688,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Attaque tourbillon",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.695Z",
-      "modified": "2022-10-30T15:11:19.913Z",
+      "modified": "2022-11-01T08:08:14.797Z",
+      "name": "Attaque tourbillon",
       "path": [
         "Voie du pourfendeur"
       ],
@@ -2704,10 +2704,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Autorit\u00e9 naturelle",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.711Z",
-      "modified": "2022-10-30T15:11:19.938Z",
+      "modified": "2022-11-01T08:08:14.827Z",
+      "name": "Autorit\u00e9 naturelle",
       "path": [
         "Voie de la noblesse"
       ],
@@ -2720,10 +2720,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Baies magiques",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.722Z",
-      "modified": "2022-10-30T15:11:19.952Z",
+      "modified": "2022-11-01T08:08:14.840Z",
+      "name": "Baies magiques",
       "path": [
         "Voie du protecteur"
       ],
@@ -2736,10 +2736,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Baiser du vampire",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.731Z",
-      "modified": "2022-10-30T15:11:19.965Z",
+      "modified": "2022-11-01T08:08:14.855Z",
+      "name": "Baiser du vampire",
       "path": [
         "Voie de la mort"
       ],
@@ -2752,10 +2752,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Balayage",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.740Z",
-      "modified": "2022-10-30T15:11:19.978Z",
+      "modified": "2022-11-01T08:08:14.870Z",
+      "name": "Balayage",
       "path": [
         "Voie du colosse"
       ],
@@ -2768,10 +2768,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "B\u00e2ton de druide",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.748Z",
-      "modified": "2022-10-30T15:11:19.997Z",
+      "modified": "2022-11-01T08:08:14.884Z",
+      "name": "B\u00e2ton de druide",
       "path": [
         "Voie de la nature"
       ],
@@ -2784,10 +2784,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "B\u00e2ton de mage",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.762Z",
-      "modified": "2022-10-30T15:11:20.010Z",
+      "modified": "2022-11-01T08:08:14.898Z",
+      "name": "B\u00e2ton de mage",
       "path": [
         "Voie des artefacts"
       ],
@@ -2800,10 +2800,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "B\u00e9n\u00e9diction",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.774Z",
-      "modified": "2022-10-30T15:11:20.023Z",
+      "modified": "2022-11-01T08:08:14.912Z",
+      "name": "B\u00e9n\u00e9diction",
       "path": [
         "Voie de la pri\u00e8re"
       ],
@@ -2816,10 +2816,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Blocage",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.784Z",
-      "modified": "2022-10-30T15:11:20.037Z",
+      "modified": "2022-11-01T08:08:14.927Z",
+      "name": "Blocage",
       "path": [
         "Voie des artefacts"
       ],
@@ -2832,10 +2832,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Bon pour le moral",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.794Z",
-      "modified": "2022-10-30T15:11:20.051Z",
+      "modified": "2022-11-01T08:08:14.943Z",
+      "name": "Bon pour le moral",
       "path": [
         "Voie du halfelin"
       ],
@@ -2848,10 +2848,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Bonne nature",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.803Z",
-      "modified": "2022-10-30T15:11:20.065Z",
+      "modified": "2022-11-01T08:08:14.959Z",
+      "name": "Bonne nature",
       "path": [
         "Voie du gnome"
       ],
@@ -2864,10 +2864,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Botte mortelle",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.813Z",
-      "modified": "2022-10-30T15:11:20.078Z",
+      "modified": "2022-11-01T08:08:14.974Z",
+      "name": "Botte mortelle",
       "path": [
         "Voie de l'escrime"
       ],
@@ -2880,10 +2880,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Botte secr\u00e8te",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.823Z",
-      "modified": "2022-10-30T15:11:20.091Z",
+      "modified": "2022-11-01T08:08:14.989Z",
+      "name": "Botte secr\u00e8te",
       "path": [
         "Voie du spadassin"
       ],
@@ -2896,10 +2896,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Bouclier de la foi",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.832Z",
-      "modified": "2022-10-30T15:11:20.105Z",
+      "modified": "2022-11-01T08:08:15.004Z",
+      "name": "Bouclier de la foi",
       "path": [
         "Voie de la guerre sainte"
       ],
@@ -2912,10 +2912,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Boule de feu",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.844Z",
-      "modified": "2022-10-30T15:11:20.120Z",
+      "modified": "2022-11-01T08:08:15.019Z",
+      "name": "Boule de feu",
       "path": [
         "Voie de la magie destructrice"
       ],
@@ -2928,10 +2928,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Boulet explosif",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.854Z",
-      "modified": "2022-10-30T15:11:20.133Z",
+      "modified": "2022-11-01T08:08:15.033Z",
+      "name": "Boulet explosif",
       "path": [
         "Voie des explosifs"
       ],
@@ -2944,10 +2944,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Briser les c\u0153urs",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.864Z",
-      "modified": "2022-10-30T15:11:20.146Z",
+      "modified": "2022-11-01T08:08:15.047Z",
+      "name": "Briser les c\u0153urs",
       "path": [
         "Voie de la mort"
       ],
@@ -2960,10 +2960,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Briseur d'os",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.875Z",
-      "modified": "2022-10-30T15:11:20.158Z",
+      "modified": "2022-11-01T08:08:15.062Z",
+      "name": "Briseur d'os",
       "path": [
         "Voie de la brute"
       ],
@@ -2976,10 +2976,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Cadence de tir",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.884Z",
-      "modified": "2022-10-30T15:11:20.172Z",
+      "modified": "2022-11-01T08:08:15.081Z",
+      "name": "Cadence de tir",
       "path": [
         "Voie du pistolero"
       ],
@@ -2992,10 +2992,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Capacit\u00e9 fabuleuse",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.894Z",
-      "modified": "2022-10-30T15:11:20.189Z",
+      "modified": "2022-11-01T08:08:15.096Z",
+      "name": "Capacit\u00e9 fabuleuse",
       "path": [
         "Voie de prestige sp\u00e9cialis\u00e9e"
       ],
@@ -3008,10 +3008,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Capacit\u00e9 signature",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.904Z",
-      "modified": "2022-10-30T15:11:20.205Z",
+      "modified": "2022-11-01T08:08:15.111Z",
+      "name": "Capacit\u00e9 signature",
       "path": [
         "Voie de prestige sp\u00e9cialis\u00e9e"
       ],
@@ -3024,10 +3024,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Capacit\u00e9 sup\u00e9rieure",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.913Z",
-      "modified": "2022-10-30T15:11:20.220Z",
+      "modified": "2022-11-01T08:08:15.127Z",
+      "name": "Capacit\u00e9 sup\u00e9rieure",
       "path": [
         "Voie de prestige sp\u00e9cialis\u00e9e"
       ],
@@ -3040,10 +3040,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Capitaine",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.923Z",
-      "modified": "2022-10-30T15:11:20.236Z",
+      "modified": "2022-11-01T08:08:15.142Z",
+      "name": "Capitaine",
       "path": [
         "Voie du chef d'arm\u00e9e"
       ],
@@ -3056,10 +3056,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Caract\u00e9ristique fabuleuse",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.931Z",
-      "modified": "2022-10-30T15:11:20.250Z",
+      "modified": "2022-11-01T08:08:15.157Z",
+      "name": "Caract\u00e9ristique fabuleuse",
       "path": [
         "Voie de prestige sp\u00e9cialis\u00e9e"
       ],
@@ -3072,10 +3072,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Cavalier \u00e9m\u00e9rite",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.942Z",
-      "modified": "2022-10-30T15:11:20.263Z",
+      "modified": "2022-11-01T08:08:15.172Z",
+      "name": "Cavalier \u00e9m\u00e9rite",
       "path": [
         "Voie du cavalier"
       ],
@@ -3088,10 +3088,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Cercle de protection",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.958Z",
-      "modified": "2022-10-30T15:11:20.277Z",
+      "modified": "2022-11-01T08:08:15.187Z",
+      "name": "Cercle de protection",
       "path": [
         "Voie de la magie protectrice"
       ],
@@ -3104,10 +3104,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Chair \u00e0 canon",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.966Z",
-      "modified": "2022-10-30T15:11:20.291Z",
+      "modified": "2022-11-01T08:08:15.201Z",
+      "name": "Chair \u00e0 canon",
       "path": [
         "Voie du PNJ r\u00e9current"
       ],
@@ -3120,10 +3120,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Chant des h\u00e9ros",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.976Z",
-      "modified": "2022-10-30T15:11:20.306Z",
+      "modified": "2022-11-01T08:08:15.214Z",
+      "name": "Chant des h\u00e9ros",
       "path": [
         "Voie du musicien"
       ],
@@ -3136,10 +3136,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Charge",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:53.985Z",
-      "modified": "2022-10-30T15:11:20.346Z",
+      "modified": "2022-11-01T08:08:15.266Z",
+      "name": "Charge",
       "path": [
         "Voie du cogneur"
       ],
@@ -3152,10 +3152,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Charge fantastique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.013Z",
-      "modified": "2022-10-30T15:11:20.358Z",
+      "modified": "2022-11-01T08:08:15.280Z",
+      "name": "Charge fantastique",
       "path": [
         "Voie du meneur d'homme"
       ],
@@ -3168,10 +3168,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Charisme h\u00e9ro\u00efque",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.022Z",
-      "modified": "2022-10-30T15:11:20.377Z",
+      "modified": "2022-11-01T08:08:15.307Z",
+      "name": "Charisme h\u00e9ro\u00efque",
       "path": [
         "Voie de la s\u00e9duction"
       ],
@@ -3184,10 +3184,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Charmant",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.031Z",
-      "modified": "2022-10-30T15:11:20.391Z",
+      "modified": "2022-11-01T08:08:15.327Z",
+      "name": "Charmant",
       "path": [
         "Voie de la s\u00e9duction"
       ],
@@ -3200,10 +3200,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Chasseur \u00e9m\u00e9rite",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.042Z",
-      "modified": "2022-10-30T15:11:20.404Z",
+      "modified": "2022-11-01T08:08:15.342Z",
+      "name": "Chasseur \u00e9m\u00e9rite",
       "path": [
         "Voie de l'escarmouche"
       ],
@@ -3216,10 +3216,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Ch\u00e2timent divin",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.051Z",
-      "modified": "2022-10-30T15:11:20.418Z",
+      "modified": "2022-11-01T08:08:15.358Z",
+      "name": "Ch\u00e2timent divin",
       "path": [
         "Voie de la guerre sainte"
       ],
@@ -3232,10 +3232,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Chimiste",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.061Z",
-      "modified": "2022-10-30T15:11:20.430Z",
+      "modified": "2022-11-01T08:08:15.373Z",
+      "name": "Chimiste",
       "path": [
         "Voie des explosifs"
       ],
@@ -3248,10 +3248,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Chute",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.070Z",
-      "modified": "2022-10-30T15:11:20.442Z",
+      "modified": "2022-11-01T08:08:15.388Z",
+      "name": "Chute",
       "path": [
         "Voie du d\u00e9placement"
       ],
@@ -3264,10 +3264,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Chute ralentie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.080Z",
-      "modified": "2022-10-30T15:11:20.456Z",
+      "modified": "2022-11-01T08:08:15.404Z",
+      "name": "Chute ralentie",
       "path": [
         "Voie de la magie protectrice"
       ],
@@ -3280,10 +3280,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Clairvoyance",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.089Z",
-      "modified": "2022-10-30T15:11:20.470Z",
+      "modified": "2022-11-01T08:08:15.419Z",
+      "name": "Clairvoyance",
       "path": [
         "Voie de la divination"
       ],
@@ -3296,10 +3296,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Colosse",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.101Z",
-      "modified": "2022-10-30T15:11:20.484Z",
+      "modified": "2022-11-01T08:08:15.433Z",
+      "name": "Colosse",
       "path": [
         "Voie du demi-orque"
       ],
@@ -3312,10 +3312,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Combat",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.111Z",
-      "modified": "2022-10-30T15:11:20.537Z",
+      "modified": "2022-11-01T08:08:15.488Z",
+      "name": "Combat",
       "path": [
         "Voie du montreur d'ours"
       ],
@@ -3328,10 +3328,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Combat \u00e0 deux armes am\u00e9lior\u00e9",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.133Z",
-      "modified": "2022-10-30T15:11:20.551Z",
+      "modified": "2022-11-01T08:08:15.503Z",
+      "name": "Combat \u00e0 deux armes am\u00e9lior\u00e9",
       "path": [
         "Voie du combat \u00e0 deux armes"
       ],
@@ -3344,10 +3344,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Combat \u00e0 deux armes parfait",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.143Z",
-      "modified": "2022-10-30T15:11:20.565Z",
+      "modified": "2022-11-01T08:08:15.518Z",
+      "name": "Combat \u00e0 deux armes parfait",
       "path": [
         "Voie du combat \u00e0 deux armes"
       ],
@@ -3360,10 +3360,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Combat de masse",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.153Z",
-      "modified": "2022-10-30T15:11:20.578Z",
+      "modified": "2022-11-01T08:08:15.531Z",
+      "name": "Combat de masse",
       "path": [
         "Voie du champ de bataille"
       ],
@@ -3376,10 +3376,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Combat en phalange",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.163Z",
-      "modified": "2022-10-30T15:11:20.590Z",
+      "modified": "2022-11-01T08:08:15.546Z",
+      "name": "Combat en phalange",
       "path": [
         "Voie du soldat"
       ],
@@ -3392,10 +3392,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Combattant aguerri",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.173Z",
-      "modified": "2022-10-30T15:11:20.603Z",
+      "modified": "2022-11-01T08:08:15.561Z",
+      "name": "Combattant aguerri",
       "path": [
         "Voie du champ de bataille"
       ],
@@ -3408,10 +3408,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Commandant",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.182Z",
-      "modified": "2022-10-30T15:11:20.617Z",
+      "modified": "2022-11-01T08:08:15.576Z",
+      "name": "Commandant",
       "path": [
         "Voie du chef d'arm\u00e9e"
       ],
@@ -3424,10 +3424,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Compr\u00e9hension des langues",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.193Z",
-      "modified": "2022-10-30T15:11:20.630Z",
+      "modified": "2022-11-01T08:08:15.592Z",
+      "name": "Compr\u00e9hension des langues",
       "path": [
         "Voie du vagabond"
       ],
@@ -3440,10 +3440,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Confusion",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.200Z",
-      "modified": "2022-10-30T15:11:20.646Z",
+      "modified": "2022-11-01T08:08:15.609Z",
+      "name": "Confusion",
       "path": [
         "Voie de l'envo\u00fbteur"
       ],
@@ -3456,10 +3456,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Constitution h\u00e9ro\u00efque",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.211Z",
-      "modified": "2022-10-30T15:11:20.657Z",
+      "modified": "2022-11-01T08:08:15.638Z",
+      "name": "Constitution h\u00e9ro\u00efque",
       "path": [
         "Voie du champ de bataille"
       ],
@@ -3472,10 +3472,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Corps enflamm\u00e9",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.219Z",
-      "modified": "2022-10-30T15:11:20.671Z",
+      "modified": "2022-11-01T08:08:15.658Z",
+      "name": "Corps enflamm\u00e9",
       "path": [
         "Voie des cr\u00e9atures \u00e9l\u00e9mentaire [du feu]"
       ],
@@ -3488,10 +3488,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Couleuvrine",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.228Z",
-      "modified": "2022-10-30T15:11:20.685Z",
+      "modified": "2022-11-01T08:08:15.676Z",
+      "name": "Couleuvrine",
       "path": [
         "Voie de l'artilleur"
       ],
@@ -3504,10 +3504,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Coup de bouclier",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.238Z",
-      "modified": "2022-10-30T15:11:20.699Z",
+      "modified": "2022-11-01T08:08:15.688Z",
+      "name": "Coup de bouclier",
       "path": [
         "Voie de la guerre"
       ],
@@ -3520,10 +3520,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Course des airs",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.247Z",
-      "modified": "2022-10-30T15:11:20.718Z",
+      "modified": "2022-11-01T08:08:15.702Z",
+      "name": "Course des airs",
       "path": [
         "Voie du vent"
       ],
@@ -3536,10 +3536,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Course du vent",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.256Z",
-      "modified": "2022-10-30T15:11:20.732Z",
+      "modified": "2022-11-01T08:08:15.715Z",
+      "name": "Course du vent",
       "path": [
         "Voie du vent"
       ],
@@ -3552,10 +3552,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Cri de guerre",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.264Z",
-      "modified": "2022-10-30T15:11:20.744Z",
+      "modified": "2022-11-01T08:08:15.730Z",
+      "name": "Cri de guerre",
       "path": [
         "Voie de la rage"
       ],
@@ -3568,10 +3568,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Critique brutal",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.275Z",
-      "modified": "2022-10-30T15:11:20.756Z",
+      "modified": "2022-11-01T08:08:15.748Z",
+      "name": "Critique brutal",
       "path": [
         "Voie du demi-orque"
       ],
@@ -3584,10 +3584,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Croc-en-jambe",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.283Z",
-      "modified": "2022-10-30T15:11:20.771Z",
+      "modified": "2022-11-01T08:08:15.763Z",
+      "name": "Croc-en-jambe",
       "path": [
         "Voie du roublard"
       ],
@@ -3600,10 +3600,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Dans le mille",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.293Z",
-      "modified": "2022-10-30T15:11:20.794Z",
+      "modified": "2022-11-01T08:08:15.779Z",
+      "name": "Dans le mille",
       "path": [
         "Voie de l'archer"
       ],
@@ -3616,10 +3616,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Danse irr\u00e9sistible",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.301Z",
-      "modified": "2022-10-30T15:11:20.806Z",
+      "modified": "2022-11-01T08:08:15.794Z",
+      "name": "Danse irr\u00e9sistible",
       "path": [
         "Voie du musicien"
       ],
@@ -3632,10 +3632,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9brouillard",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.311Z",
-      "modified": "2022-10-30T15:11:20.820Z",
+      "modified": "2022-11-01T08:08:15.810Z",
+      "name": "D\u00e9brouillard",
       "path": [
         "Voie du vagabond"
       ],
@@ -3648,10 +3648,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9cha\u00eenement d'acier",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.320Z",
-      "modified": "2022-10-30T15:11:20.835Z",
+      "modified": "2022-11-01T08:08:15.826Z",
+      "name": "D\u00e9cha\u00eenement d'acier",
       "path": [
         "Voie du pourfendeur"
       ],
@@ -3664,10 +3664,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9doublement",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.330Z",
-      "modified": "2022-10-30T15:11:20.850Z",
+      "modified": "2022-11-01T08:08:15.842Z",
+      "name": "D\u00e9doublement",
       "path": [
         "Voie des illusions"
       ],
@@ -3680,10 +3680,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9faut dans la cuirasse",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.339Z",
-      "modified": "2022-10-30T15:11:20.864Z",
+      "modified": "2022-11-01T08:08:15.857Z",
+      "name": "D\u00e9faut dans la cuirasse",
       "path": [
         "Voie de la pr\u00e9cision"
       ],
@@ -3696,10 +3696,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9fier la mort",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.349Z",
-      "modified": "2022-10-30T15:11:20.880Z",
+      "modified": "2022-11-01T08:08:15.873Z",
+      "name": "D\u00e9fier la mort",
       "path": [
         "Voie de la rage"
       ],
@@ -3712,10 +3712,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9guisement",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.359Z",
-      "modified": "2022-10-30T15:11:20.893Z",
+      "modified": "2022-11-01T08:08:15.891Z",
+      "name": "D\u00e9guisement",
       "path": [
         "Voie du vagabond"
       ],
@@ -3728,10 +3728,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9livrance",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.367Z",
-      "modified": "2022-10-30T15:11:20.906Z",
+      "modified": "2022-11-01T08:08:15.907Z",
+      "name": "D\u00e9livrance",
       "path": [
         "Voie de la spiritualit\u00e9"
       ],
@@ -3744,10 +3744,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9luge de coups",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.377Z",
-      "modified": "2022-10-30T15:11:20.921Z",
+      "modified": "2022-11-01T08:08:15.923Z",
+      "name": "D\u00e9luge de coups",
       "path": [
         "Voie du poing"
       ],
@@ -3760,10 +3760,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9molition",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.385Z",
-      "modified": "2022-10-30T15:11:20.935Z",
+      "modified": "2022-11-01T08:08:15.938Z",
+      "name": "D\u00e9molition",
       "path": [
         "Voie des explosifs"
       ],
@@ -3776,10 +3776,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Dentelles et rapi\u00e8re",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.395Z",
-      "modified": "2022-10-30T15:11:20.949Z",
+      "modified": "2022-11-01T08:08:15.953Z",
+      "name": "Dentelles et rapi\u00e8re",
       "path": [
         "Voie de la s\u00e9duction"
       ],
@@ -3792,10 +3792,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9placement magique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.404Z",
-      "modified": "2022-10-30T15:11:20.963Z",
+      "modified": "2022-11-01T08:08:15.968Z",
+      "name": "D\u00e9placement magique",
       "path": [
         "Voie de la magie de combat"
       ],
@@ -3808,10 +3808,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Dernier rempart",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.417Z",
-      "modified": "2022-10-30T15:11:20.975Z",
+      "modified": "2022-11-01T08:08:15.982Z",
+      "name": "Dernier rempart",
       "path": [
         "Voie du soldat"
       ],
@@ -3824,10 +3824,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9sarmer",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.427Z",
-      "modified": "2022-10-30T15:11:20.989Z",
+      "modified": "2022-11-01T08:08:15.997Z",
+      "name": "D\u00e9sarmer",
       "path": [
         "Voie du combat"
       ],
@@ -3840,10 +3840,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9sint\u00e9gration",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.435Z",
-      "modified": "2022-10-30T15:11:21.005Z",
+      "modified": "2022-11-01T08:08:16.013Z",
+      "name": "D\u00e9sint\u00e9gration",
       "path": [
         "Voie de la magie des arcanes"
       ],
@@ -3856,10 +3856,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Destruction des morts-vivants",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.445Z",
-      "modified": "2022-10-30T15:11:21.024Z",
+      "modified": "2022-11-01T08:08:16.028Z",
+      "name": "Destruction des morts-vivants",
       "path": [
         "Voie de la pri\u00e8re"
       ],
@@ -3872,10 +3872,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9tecter les pi\u00e8ges",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.454Z",
-      "modified": "2022-10-30T15:11:21.045Z",
+      "modified": "2022-11-01T08:08:16.044Z",
+      "name": "D\u00e9tecter les pi\u00e8ges",
       "path": [
         "Voie du roublard"
       ],
@@ -3888,10 +3888,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9tection de l'invisible",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.463Z",
-      "modified": "2022-10-30T15:11:21.062Z",
+      "modified": "2022-11-01T08:08:16.059Z",
+      "name": "D\u00e9tection de l'invisible",
       "path": [
         "Voie de la divination"
       ],
@@ -3904,10 +3904,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9tection de la magie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.473Z",
-      "modified": "2022-10-30T15:11:21.076Z",
+      "modified": "2022-11-01T08:08:16.075Z",
+      "name": "D\u00e9tection de la magie",
       "path": [
         "Voie de la magie universelle"
       ],
@@ -3920,10 +3920,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "D\u00e9vorer",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.481Z",
-      "modified": "2022-10-30T15:11:21.094Z",
+      "modified": "2022-11-01T08:08:16.090Z",
+      "name": "D\u00e9vorer",
       "path": [
         "Voie du pr\u00e9dateur"
       ],
@@ -3936,10 +3936,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Dext\u00e9rit\u00e9 h\u00e9ro\u00efque",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.491Z",
-      "modified": "2022-10-30T15:11:21.113Z",
+      "modified": "2022-11-01T08:08:16.110Z",
+      "name": "Dext\u00e9rit\u00e9 h\u00e9ro\u00efque",
       "path": [
         "Voie du pistolero"
       ],
@@ -3952,10 +3952,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Discr\u00e9tion",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.500Z",
-      "modified": "2022-10-30T15:11:21.138Z",
+      "modified": "2022-11-01T08:08:16.131Z",
+      "name": "Discr\u00e9tion",
       "path": [
         "Voie de l'assassin"
       ],
@@ -3968,10 +3968,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Disparition",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.510Z",
-      "modified": "2022-10-30T15:11:21.156Z",
+      "modified": "2022-11-01T08:08:16.146Z",
+      "name": "Disparition",
       "path": [
         "Voie du tueur"
       ],
@@ -3984,10 +3984,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Doigts agiles",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.518Z",
-      "modified": "2022-10-30T15:11:21.172Z",
+      "modified": "2022-11-01T08:08:16.160Z",
+      "name": "Doigts agiles",
       "path": [
         "Voie du roublard"
       ],
@@ -4000,10 +4000,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Domination",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.527Z",
-      "modified": "2022-10-30T15:11:21.189Z",
+      "modified": "2022-11-01T08:08:16.176Z",
+      "name": "Domination",
       "path": [
         "Voie de l'envo\u00fbteur"
       ],
@@ -4016,10 +4016,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Don occulte",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.535Z",
-      "modified": "2022-10-30T15:11:21.209Z",
+      "modified": "2022-11-01T08:08:16.192Z",
+      "name": "Don occulte",
       "path": [
         "Voie du gnome"
       ],
@@ -4032,10 +4032,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Double attaque",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.545Z",
-      "modified": "2022-10-30T15:11:21.227Z",
+      "modified": "2022-11-01T08:08:16.207Z",
+      "name": "Double attaque",
       "path": [
         "Voie du combat"
       ],
@@ -4048,10 +4048,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Double peine",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.553Z",
-      "modified": "2022-10-30T15:11:21.246Z",
+      "modified": "2022-11-01T08:08:16.222Z",
+      "name": "Double peine",
       "path": [
         "Voie du combat \u00e0 deux armes"
       ],
@@ -4064,10 +4064,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Dressage",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.563Z",
-      "modified": "2022-10-30T15:11:21.263Z",
+      "modified": "2022-11-01T08:08:16.236Z",
+      "name": "Dressage",
       "path": [
         "Voie du montreur d'ours"
       ],
@@ -4080,10 +4080,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Dur \u00e0 cuire",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.572Z",
-      "modified": "2022-10-30T15:11:21.278Z",
+      "modified": "2022-11-01T08:08:16.250Z",
+      "name": "Dur \u00e0 cuire",
       "path": [
         "Voie de la r\u00e9sistance"
       ],
@@ -4096,10 +4096,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "\u00c9cuyer",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.580Z",
-      "modified": "2022-10-30T15:11:21.299Z",
+      "modified": "2022-11-01T08:08:16.271Z",
+      "name": "\u00c9cuyer",
       "path": [
         "Voie de la noblesse"
       ],
@@ -4112,10 +4112,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "\u00c9duqu\u00e9",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.589Z",
-      "modified": "2022-10-30T15:11:21.312Z",
+      "modified": "2022-11-01T08:08:16.285Z",
+      "name": "\u00c9duqu\u00e9",
       "path": [
         "Voie de la noblesse"
       ],
@@ -4128,10 +4128,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "\u00c9lixir de gu\u00e9rison",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.599Z",
-      "modified": "2022-10-30T15:11:21.325Z",
+      "modified": "2022-11-01T08:08:16.299Z",
+      "name": "\u00c9lixir de gu\u00e9rison",
       "path": [
         "Voie des \u00e9lixirs"
       ],
@@ -4144,10 +4144,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "\u00c9lixirs magiques",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.609Z",
-      "modified": "2022-10-30T15:11:21.340Z",
+      "modified": "2022-11-01T08:08:16.314Z",
+      "name": "\u00c9lixirs magiques",
       "path": [
         "Voie des \u00e9lixirs"
       ],
@@ -4160,10 +4160,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Embuscade",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.617Z",
-      "modified": "2022-10-30T15:11:21.370Z",
+      "modified": "2022-11-01T08:08:16.344Z",
+      "name": "Embuscade",
       "path": [
         "Voie du traqueur"
       ],
@@ -4176,10 +4176,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Empathie animale",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.637Z",
-      "modified": "2022-10-30T15:11:21.384Z",
+      "modified": "2022-11-01T08:08:16.370Z",
+      "name": "Empathie animale",
       "path": [
         "Voie du compagnon animal"
       ],
@@ -4192,10 +4192,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Emporter dans les airs",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.646Z",
-      "modified": "2022-10-30T15:11:21.399Z",
+      "modified": "2022-11-01T08:08:16.392Z",
+      "name": "Emporter dans les airs",
       "path": [
         "Voie des cr\u00e9atures volantes"
       ],
@@ -4208,10 +4208,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Encaisser un coup",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.656Z",
-      "modified": "2022-10-30T15:11:21.412Z",
+      "modified": "2022-11-01T08:08:16.413Z",
+      "name": "Encaisser un coup",
       "path": [
         "Voie de la guerre"
       ],
@@ -4224,10 +4224,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Encha\u00eenement",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.664Z",
-      "modified": "2022-10-30T15:11:21.425Z",
+      "modified": "2022-11-01T08:08:16.427Z",
+      "name": "Encha\u00eenement",
       "path": [
         "Voie du pourfendeur"
       ],
@@ -4240,10 +4240,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Endurant",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.675Z",
-      "modified": "2022-10-30T15:11:21.439Z",
+      "modified": "2022-11-01T08:08:16.443Z",
+      "name": "Endurant",
       "path": [
         "Voie de la survie"
       ],
@@ -4256,10 +4256,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Endurer",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.684Z",
-      "modified": "2022-10-30T15:11:21.454Z",
+      "modified": "2022-11-01T08:08:16.458Z",
+      "name": "Endurer",
       "path": [
         "Voie du m\u00e9tal"
       ],
@@ -4272,10 +4272,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Enfant de la for\u00eat",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.694Z",
-      "modified": "2022-10-30T15:11:21.471Z",
+      "modified": "2022-11-01T08:08:16.476Z",
+      "name": "Enfant de la for\u00eat",
       "path": [
         "Voie de l'elfe sylvain"
       ],
@@ -4288,10 +4288,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Ennemi jur\u00e9",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.702Z",
-      "modified": "2022-10-30T15:11:21.485Z",
+      "modified": "2022-11-01T08:08:16.491Z",
+      "name": "Ennemi jur\u00e9",
       "path": [
         "Voie du traqueur"
       ],
@@ -4304,10 +4304,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Enrager",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.712Z",
-      "modified": "2022-10-30T15:11:21.503Z",
+      "modified": "2022-11-01T08:08:16.508Z",
+      "name": "Enrager",
       "path": [
         "Voie du cogneur"
       ],
@@ -4320,10 +4320,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Ensevelissement",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.721Z",
-      "modified": "2022-10-30T15:11:21.519Z",
+      "modified": "2022-11-01T08:08:16.523Z",
+      "name": "Ensevelissement",
       "path": [
         "Voie de l'outre-tombe"
       ],
@@ -4336,10 +4336,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Esquive",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.734Z",
-      "modified": "2022-10-30T15:11:21.541Z",
+      "modified": "2022-11-01T08:08:16.538Z",
+      "name": "Esquive",
       "path": [
         "Voie du d\u00e9placement"
       ],
@@ -4352,10 +4352,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Esquive acrobatique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.743Z",
-      "modified": "2022-10-30T15:11:21.555Z",
+      "modified": "2022-11-01T08:08:16.552Z",
+      "name": "Esquive acrobatique",
       "path": [
         "Voie du saltimbanque"
       ],
@@ -4368,10 +4368,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Esquive de la magie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.751Z",
-      "modified": "2022-10-30T15:11:21.570Z",
+      "modified": "2022-11-01T08:08:16.566Z",
+      "name": "Esquive de la magie",
       "path": [
         "Voie du d\u00e9placement"
       ],
@@ -4384,10 +4384,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Esquive du singe",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.761Z",
-      "modified": "2022-10-30T15:11:21.585Z",
+      "modified": "2022-11-01T08:08:16.587Z",
+      "name": "Esquive du singe",
       "path": [
         "Voie de la ma\u00eetrise"
       ],
@@ -4400,10 +4400,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Esquive fatale",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.769Z",
-      "modified": "2022-10-30T15:11:21.601Z",
+      "modified": "2022-11-01T08:08:16.602Z",
+      "name": "Esquive fatale",
       "path": [
         "Voie du spadassin"
       ],
@@ -4416,10 +4416,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Exemplaire",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.778Z",
-      "modified": "2022-10-30T15:11:21.617Z",
+      "modified": "2022-11-01T08:08:16.616Z",
+      "name": "Exemplaire",
       "path": [
         "Voie du meneur d'homme"
       ],
@@ -4432,10 +4432,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Expertise",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.787Z",
-      "modified": "2022-10-30T15:11:21.631Z",
+      "modified": "2022-11-01T08:08:16.630Z",
+      "name": "Expertise",
       "path": [
         "Voie de prestige sp\u00e9cialis\u00e9e"
       ],
@@ -4448,10 +4448,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Explosion finale",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.796Z",
-      "modified": "2022-10-30T15:11:21.644Z",
+      "modified": "2022-11-01T08:08:16.645Z",
+      "name": "Explosion finale",
       "path": [
         "Voie des cr\u00e9atures \u00e9l\u00e9mentaire [du feu]"
       ],
@@ -4464,10 +4464,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Exsangue",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.804Z",
-      "modified": "2022-10-30T15:11:21.657Z",
+      "modified": "2022-11-01T08:08:16.659Z",
+      "name": "Exsangue",
       "path": [
         "Voie du sang"
       ],
@@ -4480,10 +4480,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Familier",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.813Z",
-      "modified": "2022-10-30T15:11:21.683Z",
+      "modified": "2022-11-01T08:08:16.688Z",
+      "name": "Familier",
       "path": [
         "Voie de l'invocation"
       ],
@@ -4496,10 +4496,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Fauchage",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.822Z",
-      "modified": "2022-10-30T15:11:21.697Z",
+      "modified": "2022-11-01T08:08:16.704Z",
+      "name": "Fauchage",
       "path": [
         "Voie du colosse"
       ],
@@ -4512,10 +4512,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Feindre la mort",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.830Z",
-      "modified": "2022-10-30T15:11:21.711Z",
+      "modified": "2022-11-01T08:08:16.718Z",
+      "name": "Feindre la mort",
       "path": [
         "Voie de l'aventurier"
       ],
@@ -4528,10 +4528,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Feinte",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.841Z",
-      "modified": "2022-10-30T15:11:21.724Z",
+      "modified": "2022-11-01T08:08:16.734Z",
+      "name": "Feinte",
       "path": [
         "Voie de l'escrime"
       ],
@@ -4544,10 +4544,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Feu gr\u00e9geois",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.850Z",
-      "modified": "2022-10-30T15:11:21.738Z",
+      "modified": "2022-11-01T08:08:16.749Z",
+      "name": "Feu gr\u00e9geois",
       "path": [
         "Voie des \u00e9lixirs"
       ],
@@ -4560,10 +4560,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Feu nourri",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.859Z",
-      "modified": "2022-10-30T15:11:21.753Z",
+      "modified": "2022-11-01T08:08:16.764Z",
+      "name": "Feu nourri",
       "path": [
         "Voie de l'artilleur"
       ],
@@ -4576,10 +4576,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Fid\u00e8le monture",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.867Z",
-      "modified": "2022-10-30T15:11:21.780Z",
+      "modified": "2022-11-01T08:08:16.792Z",
+      "name": "Fid\u00e8le monture",
       "path": [
         "Voie du cavalier"
       ],
@@ -4592,10 +4592,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Fl\u00e8che de mort",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.878Z",
-      "modified": "2022-10-30T15:11:21.792Z",
+      "modified": "2022-11-01T08:08:16.806Z",
+      "name": "Fl\u00e8che de mort",
       "path": [
         "Voie de l'archer"
       ],
@@ -4608,10 +4608,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Fl\u00e8che enflamm\u00e9e",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.886Z",
-      "modified": "2022-10-30T15:11:21.807Z",
+      "modified": "2022-11-01T08:08:16.822Z",
+      "name": "Fl\u00e8che enflamm\u00e9e",
       "path": [
         "Voie de la magie destructrice"
       ],
@@ -4624,10 +4624,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Fl\u00e8che sanglante",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.896Z",
-      "modified": "2022-10-30T15:11:21.821Z",
+      "modified": "2022-11-01T08:08:16.838Z",
+      "name": "Fl\u00e8che sanglante",
       "path": [
         "Voie de l'elfe sylvain"
       ],
@@ -4640,10 +4640,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Flou",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.907Z",
-      "modified": "2022-10-30T15:11:21.836Z",
+      "modified": "2022-11-01T08:08:16.853Z",
+      "name": "Flou",
       "path": [
         "Voie de la magie protectrice"
       ],
@@ -4656,10 +4656,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Force d'\u00e2me",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.917Z",
-      "modified": "2022-10-30T15:11:21.850Z",
+      "modified": "2022-11-01T08:08:16.868Z",
+      "name": "Force d'\u00e2me",
       "path": [
         "Voie du haut-elfe"
       ],
@@ -4672,10 +4672,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Force de la nature",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.928Z",
-      "modified": "2022-10-30T15:11:21.865Z",
+      "modified": "2022-11-01T08:08:16.884Z",
+      "name": "Force de la nature",
       "path": [
         "Voie du demi-orque"
       ],
@@ -4688,10 +4688,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Force h\u00e9ro\u00efque",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.938Z",
-      "modified": "2022-10-30T15:11:21.877Z",
+      "modified": "2022-11-01T08:08:16.907Z",
+      "name": "Force h\u00e9ro\u00efque",
       "path": [
         "Voie de la brute"
       ],
@@ -4704,10 +4704,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "For\u00eat vivante",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.949Z",
-      "modified": "2022-10-30T15:11:21.890Z",
+      "modified": "2022-11-01T08:08:16.926Z",
+      "name": "For\u00eat vivante",
       "path": [
         "Voie du protecteur"
       ],
@@ -4720,10 +4720,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Forgeron",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.962Z",
-      "modified": "2022-10-30T15:11:21.910Z",
+      "modified": "2022-11-01T08:08:16.941Z",
+      "name": "Forgeron",
       "path": [
         "Voie du m\u00e9tal"
       ],
@@ -4736,10 +4736,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Formation d'\u00e9lite",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.972Z",
-      "modified": "2022-10-30T15:11:21.923Z",
+      "modified": "2022-11-01T08:08:16.956Z",
+      "name": "Formation d'\u00e9lite",
       "path": [
         "Voie de la noblesse"
       ],
@@ -4752,10 +4752,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Forme animale",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.983Z",
-      "modified": "2022-10-30T15:11:21.937Z",
+      "modified": "2022-11-01T08:08:16.971Z",
+      "name": "Forme animale",
       "path": [
         "Voie des animaux"
       ],
@@ -4768,10 +4768,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Forme d'arbre",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:54.995Z",
-      "modified": "2022-10-30T15:11:21.961Z",
+      "modified": "2022-11-01T08:08:17.001Z",
+      "name": "Forme d'arbre",
       "path": [
         "Voie du protecteur"
       ],
@@ -4784,10 +4784,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Forme \u00e9th\u00e9r\u00e9e",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.006Z",
-      "modified": "2022-10-30T15:11:21.972Z",
+      "modified": "2022-11-01T08:08:17.016Z",
+      "name": "Forme \u00e9th\u00e9r\u00e9e",
       "path": [
         "Voie de l'air"
       ],
@@ -4800,10 +4800,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Forme gazeuse",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.017Z",
-      "modified": "2022-10-30T15:11:21.986Z",
+      "modified": "2022-11-01T08:08:17.034Z",
+      "name": "Forme gazeuse",
       "path": [
         "Voie de la magie des arcanes"
       ],
@@ -4816,10 +4816,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Fortifiant",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.029Z",
-      "modified": "2022-10-30T15:11:22.000Z",
+      "modified": "2022-11-01T08:08:17.050Z",
+      "name": "Fortifiant",
       "path": [
         "Voie des \u00e9lixirs"
       ],
@@ -4832,10 +4832,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Foudre",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.039Z",
-      "modified": "2022-10-30T15:11:22.014Z",
+      "modified": "2022-11-01T08:08:17.065Z",
+      "name": "Foudre",
       "path": [
         "Voie de l'air"
       ],
@@ -4848,10 +4848,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Foudres divines",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.050Z",
-      "modified": "2022-10-30T15:11:22.027Z",
+      "modified": "2022-11-01T08:08:17.080Z",
+      "name": "Foudres divines",
       "path": [
         "Voie de la foi"
       ],
@@ -4864,10 +4864,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Frappe chirurgicale",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.063Z",
-      "modified": "2022-10-30T15:11:22.040Z",
+      "modified": "2022-11-01T08:08:17.096Z",
+      "name": "Frappe chirurgicale",
       "path": [
         "Voie du spadassin"
       ],
@@ -4880,10 +4880,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Frappe des arcanes",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.079Z",
-      "modified": "2022-10-30T15:11:22.055Z",
+      "modified": "2022-11-01T08:08:17.112Z",
+      "name": "Frappe des arcanes",
       "path": [
         "Voie des artefacts"
       ],
@@ -4896,10 +4896,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Frappe lourde",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.090Z",
-      "modified": "2022-10-30T15:11:22.069Z",
+      "modified": "2022-11-01T08:08:17.127Z",
+      "name": "Frappe lourde",
       "path": [
         "Voie de la guerre"
       ],
@@ -4912,10 +4912,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Fureur du dragon",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.101Z",
-      "modified": "2022-10-30T15:11:22.084Z",
+      "modified": "2022-11-01T08:08:17.143Z",
+      "name": "Fureur du dragon",
       "path": [
         "Voie de la ma\u00eetrise"
       ],
@@ -4928,10 +4928,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Furie du berserk",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.112Z",
-      "modified": "2022-10-30T15:11:22.098Z",
+      "modified": "2022-11-01T08:08:17.158Z",
+      "name": "Furie du berserk",
       "path": [
         "Voie de la rage"
       ],
@@ -4944,10 +4944,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Gland de pouvoir",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.123Z",
-      "modified": "2022-10-30T15:11:22.111Z",
+      "modified": "2022-11-01T08:08:17.173Z",
+      "name": "Gland de pouvoir",
       "path": [
         "Voie des v\u00e9g\u00e9taux"
       ],
@@ -4960,10 +4960,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Gober",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.134Z",
-      "modified": "2022-10-30T15:11:22.125Z",
+      "modified": "2022-11-01T08:08:17.189Z",
+      "name": "Gober",
       "path": [
         "Voie du pr\u00e9dateur"
       ],
@@ -4976,10 +4976,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Golem",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.145Z",
-      "modified": "2022-10-30T15:11:22.152Z",
+      "modified": "2022-11-01T08:08:17.217Z",
+      "name": "Golem",
       "path": [
         "Voie du golem"
       ],
@@ -4992,10 +4992,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Golem sup\u00e9rieur",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.156Z",
-      "modified": "2022-10-30T15:11:22.179Z",
+      "modified": "2022-11-01T08:08:17.243Z",
+      "name": "Golem sup\u00e9rieur",
       "path": [
         "Voie du golem"
       ],
@@ -5008,10 +5008,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Gr\u00e2ce elfique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.166Z",
-      "modified": "2022-10-30T15:11:22.207Z",
+      "modified": "2022-11-01T08:08:17.273Z",
+      "name": "Gr\u00e2ce elfique",
       "path": [
         "Voie du haut-elfe"
       ],
@@ -5024,10 +5024,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Gr\u00e2ce f\u00e9line",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.188Z",
-      "modified": "2022-10-30T15:11:22.236Z",
+      "modified": "2022-11-01T08:08:17.304Z",
+      "name": "Gr\u00e2ce f\u00e9line",
       "path": [
         "Voie de l'aventurier"
       ],
@@ -5040,10 +5040,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Grand f\u00e9lin",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.210Z",
-      "modified": "2022-10-30T15:11:22.265Z",
+      "modified": "2022-11-01T08:08:17.329Z",
+      "name": "Grand f\u00e9lin",
       "path": [
         "Voie du fauve"
       ],
@@ -5056,10 +5056,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Grand pas",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.220Z",
-      "modified": "2022-10-30T15:11:22.281Z",
+      "modified": "2022-11-01T08:08:17.342Z",
+      "name": "Grand pas",
       "path": [
         "Voie de la survie"
       ],
@@ -5072,10 +5072,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Griffes du tigre",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.230Z",
-      "modified": "2022-10-30T15:11:22.293Z",
+      "modified": "2022-11-01T08:08:17.357Z",
+      "name": "Griffes du tigre",
       "path": [
         "Voie de la ma\u00eetrise"
       ],
@@ -5088,10 +5088,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Grosse t\u00eate",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.241Z",
-      "modified": "2022-10-30T15:11:22.307Z",
+      "modified": "2022-11-01T08:08:17.372Z",
+      "name": "Grosse t\u00eate",
       "path": [
         "Voie du golem"
       ],
@@ -5104,10 +5104,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Gu\u00e9rir",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.249Z",
-      "modified": "2022-10-30T15:11:22.322Z",
+      "modified": "2022-11-01T08:08:17.388Z",
+      "name": "Gu\u00e9rir",
       "path": [
         "Voie de la magie de gu\u00e9rison"
       ],
@@ -5120,10 +5120,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Gu\u00e9rison",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.259Z",
-      "modified": "2022-10-30T15:11:22.337Z",
+      "modified": "2022-11-01T08:08:17.407Z",
+      "name": "Gu\u00e9rison",
       "path": [
         "Voie des soins"
       ],
@@ -5136,10 +5136,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Haches et marteaux",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.267Z",
-      "modified": "2022-10-30T15:11:22.354Z",
+      "modified": "2022-11-01T08:08:17.422Z",
+      "name": "Haches et marteaux",
       "path": [
         "Voie du nain"
       ],
@@ -5152,10 +5152,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "H\u00e2te",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.276Z",
-      "modified": "2022-10-30T15:11:22.369Z",
+      "modified": "2022-11-01T08:08:17.437Z",
+      "name": "H\u00e2te",
       "path": [
         "Voie de la magie des arcanes"
       ],
@@ -5168,10 +5168,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Hausser le ton",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.284Z",
-      "modified": "2022-10-30T15:11:22.383Z",
+      "modified": "2022-11-01T08:08:17.454Z",
+      "name": "Hausser le ton",
       "path": [
         "Voie du champion"
       ],
@@ -5184,10 +5184,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "H\u00e9morragie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.297Z",
-      "modified": "2022-10-30T15:11:22.396Z",
+      "modified": "2022-11-01T08:08:17.470Z",
+      "name": "H\u00e9morragie",
       "path": [
         "Voie du sang"
       ],
@@ -5200,10 +5200,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Hyperconscience",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.309Z",
-      "modified": "2022-10-30T15:11:22.409Z",
+      "modified": "2022-11-01T08:08:17.485Z",
+      "name": "Hyperconscience",
       "path": [
         "Voie de la divination"
       ],
@@ -5216,10 +5216,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Ignorer la douleur",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.317Z",
-      "modified": "2022-10-30T15:11:22.423Z",
+      "modified": "2022-11-01T08:08:17.500Z",
+      "name": "Ignorer la douleur",
       "path": [
         "Voie du h\u00e9ros"
       ],
@@ -5232,10 +5232,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Image d\u00e9cal\u00e9e",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.327Z",
-      "modified": "2022-10-30T15:11:22.437Z",
+      "modified": "2022-11-01T08:08:17.514Z",
+      "name": "Image d\u00e9cal\u00e9e",
       "path": [
         "Voie des illusions"
       ],
@@ -5248,10 +5248,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Imitation",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.336Z",
-      "modified": "2022-10-30T15:11:22.451Z",
+      "modified": "2022-11-01T08:08:17.529Z",
+      "name": "Imitation",
       "path": [
         "Voie des illusions"
       ],
@@ -5264,10 +5264,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Immortel",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.347Z",
-      "modified": "2022-10-30T15:11:22.477Z",
+      "modified": "2022-11-01T08:08:17.561Z",
+      "name": "Immortel",
       "path": [
         "Voie des cr\u00e9atures magiques"
       ],
@@ -5280,10 +5280,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Imparable",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.366Z",
-      "modified": "2022-10-30T15:11:22.492Z",
+      "modified": "2022-11-01T08:08:17.577Z",
+      "name": "Imparable",
       "path": [
         "Voie du champion"
       ],
@@ -5296,10 +5296,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Impressionnant",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.377Z",
-      "modified": "2022-10-30T15:11:22.506Z",
+      "modified": "2022-11-01T08:08:17.593Z",
+      "name": "Impressionnant",
       "path": [
         "Voie du montreur d'ours"
       ],
@@ -5312,10 +5312,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Increvable",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.388Z",
-      "modified": "2022-10-30T15:11:22.534Z",
+      "modified": "2022-11-01T08:08:17.622Z",
+      "name": "Increvable",
       "path": [
         "Voie de la survie"
       ],
@@ -5328,10 +5328,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Injonction",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.410Z",
-      "modified": "2022-10-30T15:11:22.547Z",
+      "modified": "2022-11-01T08:08:17.636Z",
+      "name": "Injonction",
       "path": [
         "Voie de l'envo\u00fbteur"
       ],
@@ -5344,10 +5344,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Injonction mortelle",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.423Z",
-      "modified": "2022-10-30T15:11:22.560Z",
+      "modified": "2022-11-01T08:08:17.650Z",
+      "name": "Injonction mortelle",
       "path": [
         "Voie de la magie mal\u00e9fique"
       ],
@@ -5360,10 +5360,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Insignifiant",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.435Z",
-      "modified": "2022-10-30T15:11:22.573Z",
+      "modified": "2022-11-01T08:08:17.664Z",
+      "name": "Insignifiant",
       "path": [
         "Voie du gnome"
       ],
@@ -5376,10 +5376,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Instinct de survie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.447Z",
-      "modified": "2022-10-30T15:11:22.588Z",
+      "modified": "2022-11-01T08:08:17.680Z",
+      "name": "Instinct de survie",
       "path": [
         "Voie du PNJ r\u00e9current"
       ],
@@ -5392,10 +5392,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Intelligence du combat",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.459Z",
-      "modified": "2022-10-30T15:11:22.602Z",
+      "modified": "2022-11-01T08:08:17.694Z",
+      "name": "Intelligence du combat",
       "path": [
         "Voie de l'escrime"
       ],
@@ -5408,10 +5408,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Intelligence h\u00e9ro\u00efque",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.467Z",
-      "modified": "2022-10-30T15:11:22.621Z",
+      "modified": "2022-11-01T08:08:17.715Z",
+      "name": "Intelligence h\u00e9ro\u00efque",
       "path": [
         "Voie du golem"
       ],
@@ -5424,10 +5424,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Intercepter",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.479Z",
-      "modified": "2022-10-30T15:11:22.635Z",
+      "modified": "2022-11-01T08:08:17.731Z",
+      "name": "Intercepter",
       "path": [
         "Voie du meneur d'homme"
       ],
@@ -5440,10 +5440,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Interchangeables",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.489Z",
-      "modified": "2022-10-30T15:11:22.650Z",
+      "modified": "2022-11-01T08:08:17.745Z",
+      "name": "Interchangeables",
       "path": [
         "Voie de la meute"
       ],
@@ -5456,10 +5456,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Intervention divine",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.500Z",
-      "modified": "2022-10-30T15:11:22.662Z",
+      "modified": "2022-11-01T08:08:17.761Z",
+      "name": "Intervention divine",
       "path": [
         "Voie de la pri\u00e8re"
       ],
@@ -5472,10 +5472,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Invisibilit\u00e9",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.510Z",
-      "modified": "2022-10-30T15:11:22.674Z",
+      "modified": "2022-11-01T08:08:17.777Z",
+      "name": "Invisibilit\u00e9",
       "path": [
         "Voie de la magie universelle"
       ],
@@ -5488,10 +5488,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Invocation d'un d\u00e9mon",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.519Z",
-      "modified": "2022-10-30T15:11:22.703Z",
+      "modified": "2022-11-01T08:08:17.805Z",
+      "name": "Invocation d'un d\u00e9mon",
       "path": [
         "Voie du d\u00e9mon"
       ],
@@ -5504,10 +5504,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Invuln\u00e9rable",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.529Z",
-      "modified": "2022-10-30T15:11:22.718Z",
+      "modified": "2022-11-01T08:08:17.821Z",
+      "name": "Invuln\u00e9rable",
       "path": [
         "Voie de l'\u00e9nergie vitale"
       ],
@@ -5520,10 +5520,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Joli coup !",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.537Z",
-      "modified": "2022-10-30T15:11:22.732Z",
+      "modified": "2022-11-01T08:08:17.844Z",
+      "name": "Joli coup !",
       "path": [
         "Voie de la pr\u00e9cision"
       ],
@@ -5536,10 +5536,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Laissez-le-moi !",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.546Z",
-      "modified": "2022-10-30T15:11:22.744Z",
+      "modified": "2022-11-01T08:08:17.858Z",
+      "name": "Laissez-le-moi !",
       "path": [
         "Voie du h\u00e9ros"
       ],
@@ -5552,10 +5552,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Lanceur de couteau",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.557Z",
-      "modified": "2022-10-30T15:11:22.757Z",
+      "modified": "2022-11-01T08:08:17.873Z",
+      "name": "Lanceur de couteau",
       "path": [
         "Voie du saltimbanque"
       ],
@@ -5568,10 +5568,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Langage des animaux",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.565Z",
-      "modified": "2022-10-30T15:11:22.772Z",
+      "modified": "2022-11-01T08:08:17.887Z",
+      "name": "Langage des animaux",
       "path": [
         "Voie des animaux"
       ],
@@ -5584,10 +5584,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Le guetteur",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.576Z",
-      "modified": "2022-10-30T15:11:22.791Z",
+      "modified": "2022-11-01T08:08:17.909Z",
+      "name": "Le guetteur",
       "path": [
         "Voie des animaux"
       ],
@@ -5600,10 +5600,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Les sept vies du chat",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.584Z",
-      "modified": "2022-10-30T15:11:22.805Z",
+      "modified": "2022-11-01T08:08:17.924Z",
+      "name": "Les sept vies du chat",
       "path": [
         "Voie du fauve"
       ],
@@ -5616,10 +5616,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "L\u00e9vitation",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.594Z",
-      "modified": "2022-10-30T15:11:22.819Z",
+      "modified": "2022-11-01T08:08:17.939Z",
+      "name": "L\u00e9vitation",
       "path": [
         "Voie du vent"
       ],
@@ -5632,10 +5632,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Libert\u00e9 d'action",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.603Z",
-      "modified": "2022-10-30T15:11:22.833Z",
+      "modified": "2022-11-01T08:08:17.954Z",
+      "name": "Libert\u00e9 d'action",
       "path": [
         "Voie du saltimbanque"
       ],
@@ -5648,10 +5648,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Lien de sang",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.613Z",
-      "modified": "2022-10-30T15:11:22.847Z",
+      "modified": "2022-11-01T08:08:17.969Z",
+      "name": "Lien de sang",
       "path": [
         "Voie du sang"
       ],
@@ -5664,10 +5664,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Lilliputien",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.622Z",
-      "modified": "2022-10-30T15:11:22.865Z",
+      "modified": "2022-11-01T08:08:17.985Z",
+      "name": "Lilliputien",
       "path": [
         "Voie du familier"
       ],
@@ -5680,10 +5680,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Loup parmi les loups",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.630Z",
-      "modified": "2022-10-30T15:11:22.879Z",
+      "modified": "2022-11-01T08:08:18.000Z",
+      "name": "Loup parmi les loups",
       "path": [
         "Voie de l'humain"
       ],
@@ -5696,10 +5696,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Lumi\u00e8re",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.639Z",
-      "modified": "2022-10-30T15:11:22.894Z",
+      "modified": "2022-11-01T08:08:18.017Z",
+      "name": "Lumi\u00e8re",
       "path": [
         "Voie de la magie universelle"
       ],
@@ -5712,10 +5712,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "L'hallali",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.648Z",
-      "modified": "2022-10-30T15:11:22.908Z",
+      "modified": "2022-11-01T08:08:18.032Z",
+      "name": "L'hallali",
       "path": [
         "Voie de la meute"
       ],
@@ -5728,10 +5728,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Magn\u00e9tisme",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.659Z",
-      "modified": "2022-10-30T15:11:22.922Z",
+      "modified": "2022-11-01T08:08:18.048Z",
+      "name": "Magn\u00e9tisme",
       "path": [
         "Voie du m\u00e9tal"
       ],
@@ -5744,10 +5744,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Mains d'\u00e9nergie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.666Z",
-      "modified": "2022-10-30T15:11:22.937Z",
+      "modified": "2022-11-01T08:08:18.063Z",
+      "name": "Mains d'\u00e9nergie",
       "path": [
         "Voie de l'\u00e9nergie vitale"
       ],
@@ -5760,10 +5760,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Ma\u00eetre de la survie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.677Z",
-      "modified": "2022-10-30T15:11:22.950Z",
+      "modified": "2022-11-01T08:08:18.077Z",
+      "name": "Ma\u00eetre de la survie",
       "path": [
         "Voie de la nature"
       ],
@@ -5776,10 +5776,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Ma\u00eetrise du ki",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.686Z",
-      "modified": "2022-10-30T15:11:22.962Z",
+      "modified": "2022-11-01T08:08:18.091Z",
+      "name": "Ma\u00eetrise du ki",
       "path": [
         "Voie de la m\u00e9ditation"
       ],
@@ -5792,10 +5792,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Mal\u00e9diction",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.696Z",
-      "modified": "2022-10-30T15:11:22.975Z",
+      "modified": "2022-11-01T08:08:18.106Z",
+      "name": "Mal\u00e9diction",
       "path": [
         "Voie du d\u00e9mon"
       ],
@@ -5808,10 +5808,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Marche des plans",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.704Z",
-      "modified": "2022-10-30T15:11:22.995Z",
+      "modified": "2022-11-01T08:08:18.121Z",
+      "name": "Marche des plans",
       "path": [
         "Voie de la spiritualit\u00e9"
       ],
@@ -5824,10 +5824,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Marche sylvestre",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.714Z",
-      "modified": "2022-10-30T15:11:23.007Z",
+      "modified": "2022-11-01T08:08:18.134Z",
+      "name": "Marche sylvestre",
       "path": [
         "Voie de la nature"
       ],
@@ -5840,10 +5840,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Marteau spirituel",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.723Z",
-      "modified": "2022-10-30T15:11:23.021Z",
+      "modified": "2022-11-01T08:08:18.149Z",
+      "name": "Marteau spirituel",
       "path": [
         "Voie de la guerre sainte"
       ],
@@ -5856,10 +5856,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Masque du pr\u00e9dateur",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.731Z",
-      "modified": "2022-10-30T15:11:23.035Z",
+      "modified": "2022-11-01T08:08:18.164Z",
+      "name": "Masque du pr\u00e9dateur",
       "path": [
         "Voie des animaux"
       ],
@@ -5872,10 +5872,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Masque mortuaire",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.742Z",
-      "modified": "2022-10-30T15:11:23.049Z",
+      "modified": "2022-11-01T08:08:18.180Z",
+      "name": "Masque mortuaire",
       "path": [
         "Voie de la mort"
       ],
@@ -5888,10 +5888,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Massacrer la pi\u00e9taille",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.753Z",
-      "modified": "2022-10-30T15:11:23.061Z",
+      "modified": "2022-11-01T08:08:18.196Z",
+      "name": "Massacrer la pi\u00e9taille",
       "path": [
         "Voie de la noblesse"
       ],
@@ -5904,10 +5904,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "M\u00e9canismes",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.763Z",
-      "modified": "2022-10-30T15:11:23.078Z",
+      "modified": "2022-11-01T08:08:18.211Z",
+      "name": "M\u00e9canismes",
       "path": [
         "Voie de l'artilleur"
       ],
@@ -5920,10 +5920,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "M\u00eame pas mal",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.775Z",
-      "modified": "2022-10-30T15:11:23.099Z",
+      "modified": "2022-11-01T08:08:18.227Z",
+      "name": "M\u00eame pas mal",
       "path": [
         "Voie de la rage"
       ],
@@ -5936,10 +5936,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Merveille technologique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.784Z",
-      "modified": "2022-10-30T15:11:23.123Z",
+      "modified": "2022-11-01T08:08:18.241Z",
+      "name": "Merveille technologique",
       "path": [
         "Voie du gnome"
       ],
@@ -5952,10 +5952,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Messie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.796Z",
-      "modified": "2022-10-30T15:11:23.137Z",
+      "modified": "2022-11-01T08:08:18.255Z",
+      "name": "Messie",
       "path": [
         "Voie de la spiritualit\u00e9"
       ],
@@ -5968,10 +5968,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "M\u00e9tal br\u00fblant",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.809Z",
-      "modified": "2022-10-30T15:11:23.151Z",
+      "modified": "2022-11-01T08:08:18.275Z",
+      "name": "M\u00e9tal br\u00fblant",
       "path": [
         "Voie du m\u00e9tal"
       ],
@@ -5984,10 +5984,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "M\u00e9tal hurlant",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.818Z",
-      "modified": "2022-10-30T15:11:23.163Z",
+      "modified": "2022-11-01T08:08:18.296Z",
+      "name": "M\u00e9tal hurlant",
       "path": [
         "Voie du m\u00e9tal"
       ],
@@ -6000,10 +6000,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Mirage",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.831Z",
-      "modified": "2022-10-30T15:11:23.176Z",
+      "modified": "2022-11-01T08:08:18.320Z",
+      "name": "Mirage",
       "path": [
         "Voie des illusions"
       ],
@@ -6016,10 +6016,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Moment de perfection",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.844Z",
-      "modified": "2022-10-30T15:11:23.189Z",
+      "modified": "2022-11-01T08:08:18.342Z",
+      "name": "Moment de perfection",
       "path": [
         "Voie de la ma\u00eetrise"
       ],
@@ -6032,10 +6032,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Monture fantastique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.853Z",
-      "modified": "2022-10-30T15:11:23.210Z",
+      "modified": "2022-11-01T08:08:18.369Z",
+      "name": "Monture fantastique",
       "path": [
         "Voie du cavalier"
       ],
@@ -6048,10 +6048,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Monture magique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.863Z",
-      "modified": "2022-10-30T15:11:23.221Z",
+      "modified": "2022-11-01T08:08:18.384Z",
+      "name": "Monture magique",
       "path": [
         "Voie du cavalier"
       ],
@@ -6064,10 +6064,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Morsure du serpent",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.872Z",
-      "modified": "2022-10-30T15:11:23.234Z",
+      "modified": "2022-11-01T08:08:18.400Z",
+      "name": "Morsure du serpent",
       "path": [
         "Voie de la ma\u00eetrise"
       ],
@@ -6080,10 +6080,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Mot de mort",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.881Z",
-      "modified": "2022-10-30T15:11:23.247Z",
+      "modified": "2022-11-01T08:08:18.416Z",
+      "name": "Mot de mort",
       "path": [
         "Voie de la mort"
       ],
@@ -6096,10 +6096,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Mot de pouvoir",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.891Z",
-      "modified": "2022-10-30T15:11:23.261Z",
+      "modified": "2022-11-01T08:08:18.431Z",
+      "name": "Mot de pouvoir",
       "path": [
         "Voie de la guerre sainte"
       ],
@@ -6112,10 +6112,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Mur de force",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.899Z",
-      "modified": "2022-10-30T15:11:23.273Z",
+      "modified": "2022-11-01T08:08:18.447Z",
+      "name": "Mur de force",
       "path": [
         "Voie de l'invocation"
       ],
@@ -6128,10 +6128,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Murmures dans le vent",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.909Z",
-      "modified": "2022-10-30T15:11:23.286Z",
+      "modified": "2022-11-01T08:08:18.463Z",
+      "name": "Murmures dans le vent",
       "path": [
         "Voie de l'air"
       ],
@@ -6144,10 +6144,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Musique fascinante",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.917Z",
-      "modified": "2022-10-30T15:11:23.300Z",
+      "modified": "2022-11-01T08:08:18.478Z",
+      "name": "Musique fascinante",
       "path": [
         "Voie du musicien"
       ],
@@ -6160,10 +6160,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Nature nourrici\u00e8re",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.927Z",
-      "modified": "2022-10-30T15:11:23.313Z",
+      "modified": "2022-11-01T08:08:18.495Z",
+      "name": "Nature nourrici\u00e8re",
       "path": [
         "Voie de la survie"
       ],
@@ -6176,10 +6176,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Nu\u00e9e d'insectes",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.936Z",
-      "modified": "2022-10-30T15:11:23.325Z",
+      "modified": "2022-11-01T08:08:18.510Z",
+      "name": "Nu\u00e9e d'insectes",
       "path": [
         "Voie des animaux"
       ],
@@ -6192,10 +6192,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Odorat",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.945Z",
-      "modified": "2022-10-30T15:11:23.339Z",
+      "modified": "2022-11-01T08:08:18.523Z",
+      "name": "Odorat",
       "path": [
         "Voie du compagnon animal"
       ],
@@ -6208,10 +6208,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Ombre mortelle",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.956Z",
-      "modified": "2022-10-30T15:11:23.356Z",
+      "modified": "2022-11-01T08:08:18.539Z",
+      "name": "Ombre mortelle",
       "path": [
         "Voie de la sombre magie"
       ],
@@ -6224,10 +6224,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Ombre mouvante",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.966Z",
-      "modified": "2022-10-30T15:11:23.370Z",
+      "modified": "2022-11-01T08:08:18.553Z",
+      "name": "Ombre mouvante",
       "path": [
         "Voie de l'assassin"
       ],
@@ -6240,10 +6240,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Ordre de bataille",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.976Z",
-      "modified": "2022-10-30T15:11:23.383Z",
+      "modified": "2022-11-01T08:08:18.568Z",
+      "name": "Ordre de bataille",
       "path": [
         "Voie du meneur d'homme"
       ],
@@ -6256,10 +6256,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Ouverture mortelle",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.983Z",
-      "modified": "2022-10-30T15:11:23.396Z",
+      "modified": "2022-11-01T08:08:18.583Z",
+      "name": "Ouverture mortelle",
       "path": [
         "Voie de l'assassin"
       ],
@@ -6272,10 +6272,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Pacifisme",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:55.994Z",
-      "modified": "2022-10-30T15:11:23.408Z",
+      "modified": "2022-11-01T08:08:18.598Z",
+      "name": "Pacifisme",
       "path": [
         "Voie de la m\u00e9ditation"
       ],
@@ -6288,10 +6288,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Pacte sanglant",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.002Z",
-      "modified": "2022-10-30T15:11:23.421Z",
+      "modified": "2022-11-01T08:08:18.614Z",
+      "name": "Pacte sanglant",
       "path": [
         "Voie du d\u00e9mon"
       ],
@@ -6304,10 +6304,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Panth\u00e8re",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.011Z",
-      "modified": "2022-10-30T15:11:23.453Z",
+      "modified": "2022-11-01T08:08:18.645Z",
+      "name": "Panth\u00e8re",
       "path": [
         "Voie du fauve"
       ],
@@ -6320,10 +6320,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Parade crois\u00e9e",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.021Z",
-      "modified": "2022-10-30T15:11:23.467Z",
+      "modified": "2022-11-01T08:08:18.663Z",
+      "name": "Parade crois\u00e9e",
       "path": [
         "Voie du combat \u00e0 deux armes"
       ],
@@ -6336,10 +6336,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Parade de projectiles",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.030Z",
-      "modified": "2022-10-30T15:11:23.480Z",
+      "modified": "2022-11-01T08:08:18.679Z",
+      "name": "Parade de projectiles",
       "path": [
         "Voie du poing"
       ],
@@ -6352,10 +6352,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Parole divine",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.040Z",
-      "modified": "2022-10-30T15:11:23.492Z",
+      "modified": "2022-11-01T08:08:18.695Z",
+      "name": "Parole divine",
       "path": [
         "Voie de la foi"
       ],
@@ -6368,10 +6368,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Pas de loup",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.048Z",
-      "modified": "2022-10-30T15:11:23.506Z",
+      "modified": "2022-11-01T08:08:18.711Z",
+      "name": "Pas de loup",
       "path": [
         "Voie du traqueur"
       ],
@@ -6384,10 +6384,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Pas du vent",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.058Z",
-      "modified": "2022-10-30T15:11:23.520Z",
+      "modified": "2022-11-01T08:08:18.731Z",
+      "name": "Pas du vent",
       "path": [
         "Voie du vent"
       ],
@@ -6400,10 +6400,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Passe-muraille",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.067Z",
-      "modified": "2022-10-30T15:11:23.534Z",
+      "modified": "2022-11-01T08:08:18.744Z",
+      "name": "Passe-muraille",
       "path": [
         "Voie du vent"
       ],
@@ -6416,10 +6416,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Pattes d'araign\u00e9e",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.077Z",
-      "modified": "2022-10-30T15:11:23.546Z",
+      "modified": "2022-11-01T08:08:18.759Z",
+      "name": "Pattes d'araign\u00e9e",
       "path": [
         "Voie de la sombre magie"
       ],
@@ -6432,10 +6432,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Peau de fer",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.086Z",
-      "modified": "2022-10-30T15:11:23.558Z",
+      "modified": "2022-11-01T08:08:18.775Z",
+      "name": "Peau de fer",
       "path": [
         "Voie du poing"
       ],
@@ -6448,10 +6448,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Peau de pierre",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.095Z",
-      "modified": "2022-10-30T15:11:23.586Z",
+      "modified": "2022-11-01T08:08:18.808Z",
+      "name": "Peau de pierre",
       "path": [
         "Voie du pagne"
       ],
@@ -6464,10 +6464,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Peau d'acier",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.116Z",
-      "modified": "2022-10-30T15:11:23.600Z",
+      "modified": "2022-11-01T08:08:18.823Z",
+      "name": "Peau d'acier",
       "path": [
         "Voie du pagne"
       ],
@@ -6480,10 +6480,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Peau d'\u00e9corce",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.127Z",
-      "modified": "2022-10-30T15:11:23.613Z",
+      "modified": "2022-11-01T08:08:18.837Z",
+      "name": "Peau d'\u00e9corce",
       "path": [
         "Voie des v\u00e9g\u00e9taux"
       ],
@@ -6496,10 +6496,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Perception",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.135Z",
-      "modified": "2022-10-30T15:11:23.625Z",
+      "modified": "2022-11-01T08:08:18.855Z",
+      "name": "Perception",
       "path": [
         "Voie du halfelin"
       ],
@@ -6512,10 +6512,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Perception h\u00e9ro\u00efque",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.145Z",
-      "modified": "2022-10-30T15:11:23.639Z",
+      "modified": "2022-11-01T08:08:18.869Z",
+      "name": "Perception h\u00e9ro\u00efque",
       "path": [
         "Voie du traqueur"
       ],
@@ -6528,10 +6528,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Percuter",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.155Z",
-      "modified": "2022-10-30T15:11:23.653Z",
+      "modified": "2022-11-01T08:08:18.884Z",
+      "name": "Percuter",
       "path": [
         "Voie du cogneur"
       ],
@@ -6544,10 +6544,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Petit pote",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.164Z",
-      "modified": "2022-10-30T15:11:23.667Z",
+      "modified": "2022-11-01T08:08:18.899Z",
+      "name": "Petit pote",
       "path": [
         "Voie du gnome"
       ],
@@ -6560,10 +6560,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Petit veinard",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.173Z",
-      "modified": "2022-10-30T15:11:23.680Z",
+      "modified": "2022-11-01T08:08:18.914Z",
+      "name": "Petit veinard",
       "path": [
         "Voie du halfelin"
       ],
@@ -6576,10 +6576,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Peur",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.181Z",
-      "modified": "2022-10-30T15:11:23.692Z",
+      "modified": "2022-11-01T08:08:18.929Z",
+      "name": "Peur",
       "path": [
         "Voie de l'outre-tombe"
       ],
@@ -6592,10 +6592,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Pi\u00e8ge explosif",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.192Z",
-      "modified": "2022-10-30T15:11:23.706Z",
+      "modified": "2022-11-01T08:08:18.946Z",
+      "name": "Pi\u00e8ge explosif",
       "path": [
         "Voie des explosifs"
       ],
@@ -6608,10 +6608,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Piq\u00fbres d'insecte",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.200Z",
-      "modified": "2022-10-30T15:11:23.720Z",
+      "modified": "2022-11-01T08:08:18.962Z",
+      "name": "Piq\u00fbres d'insecte",
       "path": [
         "Voie du h\u00e9ros"
       ],
@@ -6624,10 +6624,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Plus vite que son ombre",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.210Z",
-      "modified": "2022-10-30T15:11:23.734Z",
+      "modified": "2022-11-01T08:08:18.979Z",
+      "name": "Plus vite que son ombre",
       "path": [
         "Voie du pistolero"
       ],
@@ -6640,10 +6640,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Poings de fer",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.217Z",
-      "modified": "2022-10-30T15:11:23.745Z",
+      "modified": "2022-11-01T08:08:18.995Z",
+      "name": "Poings de fer",
       "path": [
         "Voie du poing"
       ],
@@ -6656,10 +6656,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Polyvalence",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.227Z",
-      "modified": "2022-10-30T15:11:23.758Z",
+      "modified": "2022-11-01T08:08:19.011Z",
+      "name": "Polyvalence",
       "path": [
         "Voie de l'humain"
       ],
@@ -6672,10 +6672,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Porte v\u00e9g\u00e9tale",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.236Z",
-      "modified": "2022-10-30T15:11:23.772Z",
+      "modified": "2022-11-01T08:08:19.025Z",
+      "name": "Porte v\u00e9g\u00e9tale",
       "path": [
         "Voie des v\u00e9g\u00e9taux"
       ],
@@ -6688,10 +6688,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Porteur de poisse",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.245Z",
-      "modified": "2022-10-30T15:11:23.786Z",
+      "modified": "2022-11-01T08:08:19.041Z",
+      "name": "Porteur de poisse",
       "path": [
         "Voie du PNJ r\u00e9current"
       ],
@@ -6704,10 +6704,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Posture de combat",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.254Z",
-      "modified": "2022-10-30T15:11:23.800Z",
+      "modified": "2022-11-01T08:08:19.056Z",
+      "name": "Posture de combat",
       "path": [
         "Voie du soldat"
       ],
@@ -6720,10 +6720,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Potion magique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.263Z",
-      "modified": "2022-10-30T15:11:23.819Z",
+      "modified": "2022-11-01T08:08:19.070Z",
+      "name": "Potion magique",
       "path": [
         "Voie des \u00e9lixirs"
       ],
@@ -6736,10 +6736,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Poudre puissante",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.273Z",
-      "modified": "2022-10-30T15:11:23.834Z",
+      "modified": "2022-11-01T08:08:19.084Z",
+      "name": "Poudre puissante",
       "path": [
         "Voie des explosifs"
       ],
@@ -6752,10 +6752,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Pr\u00e9cision",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.281Z",
-      "modified": "2022-10-30T15:11:23.846Z",
+      "modified": "2022-11-01T08:08:19.099Z",
+      "name": "Pr\u00e9cision",
       "path": [
         "Voie de l'escrime"
       ],
@@ -6768,10 +6768,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Prescience",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.291Z",
-      "modified": "2022-10-30T15:11:23.858Z",
+      "modified": "2022-11-01T08:08:19.114Z",
+      "name": "Prescience",
       "path": [
         "Voie de la divination"
       ],
@@ -6784,10 +6784,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Pression mortelle",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.300Z",
-      "modified": "2022-10-30T15:11:23.871Z",
+      "modified": "2022-11-01T08:08:19.129Z",
+      "name": "Pression mortelle",
       "path": [
         "Voie de l'\u00e9nergie vitale"
       ],
@@ -6800,10 +6800,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Prison v\u00e9g\u00e9tale",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.310Z",
-      "modified": "2022-10-30T15:11:23.885Z",
+      "modified": "2022-11-01T08:08:19.144Z",
+      "name": "Prison v\u00e9g\u00e9tale",
       "path": [
         "Voie des v\u00e9g\u00e9taux"
       ],
@@ -6816,10 +6816,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Proche de la nature",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.317Z",
-      "modified": "2022-10-30T15:11:23.901Z",
+      "modified": "2022-11-01T08:08:19.159Z",
+      "name": "Proche de la nature",
       "path": [
         "Voie du primitif"
       ],
@@ -6832,10 +6832,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Projectile magique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.328Z",
-      "modified": "2022-10-30T15:11:23.918Z",
+      "modified": "2022-11-01T08:08:19.174Z",
+      "name": "Projectile magique",
       "path": [
         "Voie de la magie destructrice"
       ],
@@ -6848,10 +6848,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Projection",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.336Z",
-      "modified": "2022-10-30T15:11:23.933Z",
+      "modified": "2022-11-01T08:08:19.194Z",
+      "name": "Projection",
       "path": [
         "Voie du colosse"
       ],
@@ -6864,10 +6864,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Projection du ki",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.345Z",
-      "modified": "2022-10-30T15:11:23.946Z",
+      "modified": "2022-11-01T08:08:19.209Z",
+      "name": "Projection du ki",
       "path": [
         "Voie de l'\u00e9nergie vitale"
       ],
@@ -6880,10 +6880,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Projection mentale",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.355Z",
-      "modified": "2022-10-30T15:11:23.958Z",
+      "modified": "2022-11-01T08:08:19.222Z",
+      "name": "Projection mentale",
       "path": [
         "Voie de la m\u00e9ditation"
       ],
@@ -6896,10 +6896,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Protecteur",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.364Z",
-      "modified": "2022-10-30T15:11:23.972Z",
+      "modified": "2022-11-01T08:08:19.239Z",
+      "name": "Protecteur",
       "path": [
         "Voie du golem"
       ],
@@ -6912,10 +6912,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Protection contre le mal",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.375Z",
-      "modified": "2022-10-30T15:11:23.986Z",
+      "modified": "2022-11-01T08:08:19.255Z",
+      "name": "Protection contre le mal",
       "path": [
         "Voie de la spiritualit\u00e9"
       ],
@@ -6928,10 +6928,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Protection contre les \u00e9l\u00e9ments",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.384Z",
-      "modified": "2022-10-30T15:11:24.001Z",
+      "modified": "2022-11-01T08:08:19.272Z",
+      "name": "Protection contre les \u00e9l\u00e9ments",
       "path": [
         "Voie de la magie \u00e9l\u00e9mentaire"
       ],
@@ -6944,10 +6944,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Prot\u00e9ger un alli\u00e9",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.393Z",
-      "modified": "2022-10-30T15:11:24.015Z",
+      "modified": "2022-11-01T08:08:19.296Z",
+      "name": "Prot\u00e9ger un alli\u00e9",
       "path": [
         "Voie du bouclier"
       ],
@@ -6960,10 +6960,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Prouesse",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.401Z",
-      "modified": "2022-10-30T15:11:24.027Z",
+      "modified": "2022-11-01T08:08:19.310Z",
+      "name": "Prouesse",
       "path": [
         "Voie du soldat"
       ],
@@ -6976,10 +6976,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Provocation",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.412Z",
-      "modified": "2022-10-30T15:11:24.041Z",
+      "modified": "2022-11-01T08:08:19.326Z",
+      "name": "Provocation",
       "path": [
         "Voie de l'aventurier"
       ],
@@ -6992,10 +6992,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Puissance du ki",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.420Z",
-      "modified": "2022-10-30T15:11:24.055Z",
+      "modified": "2022-11-01T08:08:19.341Z",
+      "name": "Puissance du ki",
       "path": [
         "Voie du poing"
       ],
@@ -7008,10 +7008,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Putr\u00e9faction",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.433Z",
-      "modified": "2022-10-30T15:11:24.069Z",
+      "modified": "2022-11-01T08:08:19.356Z",
+      "name": "Putr\u00e9faction",
       "path": [
         "Voie de l'outre-tombe"
       ],
@@ -7024,10 +7024,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Rage du berserk",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.444Z",
-      "modified": "2022-10-30T15:11:24.083Z",
+      "modified": "2022-11-01T08:08:19.370Z",
+      "name": "Rage du berserk",
       "path": [
         "Voie de la rage"
       ],
@@ -7040,10 +7040,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Rappel",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.453Z",
-      "modified": "2022-10-30T15:11:24.096Z",
+      "modified": "2022-11-01T08:08:19.386Z",
+      "name": "Rappel",
       "path": [
         "Voie du familier"
       ],
@@ -7056,10 +7056,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Rappel \u00e0 la vie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.462Z",
-      "modified": "2022-10-30T15:11:24.108Z",
+      "modified": "2022-11-01T08:08:19.401Z",
+      "name": "Rappel \u00e0 la vie",
       "path": [
         "Voie des soins"
       ],
@@ -7072,10 +7072,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Rayon affaiblissant",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.473Z",
-      "modified": "2022-10-30T15:11:24.122Z",
+      "modified": "2022-11-01T08:08:19.415Z",
+      "name": "Rayon affaiblissant",
       "path": [
         "Voie de la magie destructrice"
       ],
@@ -7088,10 +7088,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "R\u00e9duction des DM",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.481Z",
-      "modified": "2022-10-30T15:11:24.136Z",
+      "modified": "2022-11-01T08:08:19.430Z",
+      "name": "R\u00e9duction des DM",
       "path": [
         "Voie des cr\u00e9atures magiques"
       ],
@@ -7104,10 +7104,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "R\u00e9flexes f\u00e9lins",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.490Z",
-      "modified": "2022-10-30T15:11:24.150Z",
+      "modified": "2022-11-01T08:08:19.446Z",
+      "name": "R\u00e9flexes f\u00e9lins",
       "path": [
         "Voie du pourfendeur"
       ],
@@ -7120,10 +7120,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "R\u00e9g\u00e9n\u00e9ration",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.499Z",
-      "modified": "2022-10-30T15:11:24.164Z",
+      "modified": "2022-11-01T08:08:19.461Z",
+      "name": "R\u00e9g\u00e9n\u00e9ration",
       "path": [
         "Voie du protecteur"
       ],
@@ -7136,10 +7136,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Renvoi de sort",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.509Z",
-      "modified": "2022-10-30T15:11:24.177Z",
+      "modified": "2022-11-01T08:08:19.477Z",
+      "name": "Renvoi de sort",
       "path": [
         "Voie du bouclier"
       ],
@@ -7152,10 +7152,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Repli",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.517Z",
-      "modified": "2022-10-30T15:11:24.198Z",
+      "modified": "2022-11-01T08:08:19.493Z",
+      "name": "Repli",
       "path": [
         "Voie de l'escarmouche"
       ],
@@ -7168,10 +7168,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "R\u00e9sistance",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.527Z",
-      "modified": "2022-10-30T15:11:24.239Z",
+      "modified": "2022-11-01T08:08:19.522Z",
+      "name": "R\u00e9sistance",
       "path": [
         "Voie du familier"
       ],
@@ -7184,10 +7184,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "R\u00e9sistance \u00e0 la magie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.545Z",
-      "modified": "2022-10-30T15:11:24.267Z",
+      "modified": "2022-11-01T08:08:19.549Z",
+      "name": "R\u00e9sistance \u00e0 la magie",
       "path": [
         "Voie du nain"
       ],
@@ -7200,10 +7200,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "R\u00e9sistance l\u00e9gendaire",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.565Z",
-      "modified": "2022-10-30T15:11:24.280Z",
+      "modified": "2022-11-01T08:08:19.564Z",
+      "name": "R\u00e9sistance l\u00e9gendaire",
       "path": [
         "Voie du halfelin"
       ],
@@ -7216,10 +7216,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "R\u00e9sistant",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.575Z",
-      "modified": "2022-10-30T15:11:24.295Z",
+      "modified": "2022-11-01T08:08:19.580Z",
+      "name": "R\u00e9sistant",
       "path": [
         "Voie de la nature"
       ],
@@ -7232,10 +7232,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Respiration aquatique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.584Z",
-      "modified": "2022-10-30T15:11:24.308Z",
+      "modified": "2022-11-01T08:08:19.594Z",
+      "name": "Respiration aquatique",
       "path": [
         "Voie de la magie \u00e9l\u00e9mentaire"
       ],
@@ -7248,10 +7248,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Riposte",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.594Z",
-      "modified": "2022-10-30T15:11:24.336Z",
+      "modified": "2022-11-01T08:08:19.625Z",
+      "name": "Riposte",
       "path": [
         "Voie du champion"
       ],
@@ -7264,10 +7264,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Rituel de puissance",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.612Z",
-      "modified": "2022-10-30T15:11:24.350Z",
+      "modified": "2022-11-01T08:08:19.644Z",
+      "name": "Rituel de puissance",
       "path": [
         "Voie de la magie destructrice"
       ],
@@ -7280,10 +7280,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Robustesse",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.620Z",
-      "modified": "2022-10-30T15:11:24.364Z",
+      "modified": "2022-11-01T08:08:19.657Z",
+      "name": "Robustesse",
       "path": [
         "Voie de la r\u00e9sistance"
       ],
@@ -7296,10 +7296,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Rumeurs et l\u00e9gendes",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.629Z",
-      "modified": "2022-10-30T15:11:24.377Z",
+      "modified": "2022-11-01T08:08:19.672Z",
+      "name": "Rumeurs et l\u00e9gendes",
       "path": [
         "Voie du vagabond"
       ],
@@ -7312,10 +7312,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Rune de pouvoir",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.640Z",
-      "modified": "2022-10-30T15:11:24.391Z",
+      "modified": "2022-11-01T08:08:19.686Z",
+      "name": "Rune de pouvoir",
       "path": [
         "Voie des runes"
       ],
@@ -7328,10 +7328,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Rune de protection",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.648Z",
-      "modified": "2022-10-30T15:11:24.405Z",
+      "modified": "2022-11-01T08:08:19.700Z",
+      "name": "Rune de protection",
       "path": [
         "Voie des runes"
       ],
@@ -7344,10 +7344,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Rune de puissance",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.657Z",
-      "modified": "2022-10-30T15:11:24.419Z",
+      "modified": "2022-11-01T08:08:19.714Z",
+      "name": "Rune de puissance",
       "path": [
         "Voie des runes"
       ],
@@ -7360,10 +7360,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Rune d'\u00e9nergie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.665Z",
-      "modified": "2022-10-30T15:11:24.432Z",
+      "modified": "2022-11-01T08:08:19.729Z",
+      "name": "Rune d'\u00e9nergie",
       "path": [
         "Voie des runes"
       ],
@@ -7376,10 +7376,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Runes de d\u00e9fense",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.675Z",
-      "modified": "2022-10-30T15:11:24.446Z",
+      "modified": "2022-11-01T08:08:19.745Z",
+      "name": "Runes de d\u00e9fense",
       "path": [
         "Voie des runes"
       ],
@@ -7392,10 +7392,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sac sans fond",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.683Z",
-      "modified": "2022-10-30T15:11:24.458Z",
+      "modified": "2022-11-01T08:08:19.760Z",
+      "name": "Sac sans fond",
       "path": [
         "Voie des artefacts"
       ],
@@ -7408,10 +7408,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sagesse h\u00e9ro\u00efque",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.693Z",
-      "modified": "2022-10-30T15:11:24.473Z",
+      "modified": "2022-11-01T08:08:19.780Z",
+      "name": "Sagesse h\u00e9ro\u00efque",
       "path": [
         "Voie du protecteur"
       ],
@@ -7424,10 +7424,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Saignements",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.702Z",
-      "modified": "2022-10-30T15:11:24.487Z",
+      "modified": "2022-11-01T08:08:19.798Z",
+      "name": "Saignements",
       "path": [
         "Voie du sang"
       ],
@@ -7440,10 +7440,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sanctuaire",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.712Z",
-      "modified": "2022-10-30T15:11:24.500Z",
+      "modified": "2022-11-01T08:08:19.815Z",
+      "name": "Sanctuaire",
       "path": [
         "Voie de la pri\u00e8re"
       ],
@@ -7456,10 +7456,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sang mordant",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.721Z",
-      "modified": "2022-10-30T15:11:24.513Z",
+      "modified": "2022-11-01T08:08:19.830Z",
+      "name": "Sang mordant",
       "path": [
         "Voie du sang"
       ],
@@ -7472,10 +7472,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sans peur",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.730Z",
-      "modified": "2022-10-30T15:11:24.526Z",
+      "modified": "2022-11-01T08:08:19.848Z",
+      "name": "Sans peur",
       "path": [
         "Voie du meneur d'homme"
       ],
@@ -7488,10 +7488,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Science du critique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.739Z",
-      "modified": "2022-10-30T15:11:24.539Z",
+      "modified": "2022-11-01T08:08:19.862Z",
+      "name": "Science du critique",
       "path": [
         "Voie du ma\u00eetre d'armes"
       ],
@@ -7504,10 +7504,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Second ennemi jur\u00e9",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.751Z",
-      "modified": "2022-10-30T15:11:24.554Z",
+      "modified": "2022-11-01T08:08:19.876Z",
+      "name": "Second ennemi jur\u00e9",
       "path": [
         "Voie du traqueur"
       ],
@@ -7520,10 +7520,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Second souffle",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.761Z",
-      "modified": "2022-10-30T15:11:24.568Z",
+      "modified": "2022-11-01T08:08:19.890Z",
+      "name": "Second souffle",
       "path": [
         "Voie de la r\u00e9sistance"
       ],
@@ -7536,10 +7536,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sens aff\u00fbt\u00e9s",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.769Z",
-      "modified": "2022-10-30T15:11:24.582Z",
+      "modified": "2022-11-01T08:08:19.905Z",
+      "name": "Sens aff\u00fbt\u00e9s",
       "path": [
         "Voie de l'archer"
       ],
@@ -7552,10 +7552,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sens d\u00e9velopp\u00e9s",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.780Z",
-      "modified": "2022-10-30T15:11:24.601Z",
+      "modified": "2022-11-01T08:08:19.921Z",
+      "name": "Sens d\u00e9velopp\u00e9s",
       "path": [
         "Voie du familier"
       ],
@@ -7568,10 +7568,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sergent",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.788Z",
-      "modified": "2022-10-30T15:11:24.616Z",
+      "modified": "2022-11-01T08:08:19.935Z",
+      "name": "Sergent",
       "path": [
         "Voie du chef d'arm\u00e9e"
       ],
@@ -7584,10 +7584,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Serviteur invisible",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.797Z",
-      "modified": "2022-10-30T15:11:24.628Z",
+      "modified": "2022-11-01T08:08:19.951Z",
+      "name": "Serviteur invisible",
       "path": [
         "Voie de l'invocation"
       ],
@@ -7600,10 +7600,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Seul contre tous",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.808Z",
-      "modified": "2022-10-30T15:11:24.642Z",
+      "modified": "2022-11-01T08:08:19.966Z",
+      "name": "Seul contre tous",
       "path": [
         "Voie du h\u00e9ros"
       ],
@@ -7616,10 +7616,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Siphon des \u00e2mes",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.816Z",
-      "modified": "2022-10-30T15:11:24.655Z",
+      "modified": "2022-11-01T08:08:19.982Z",
+      "name": "Siphon des \u00e2mes",
       "path": [
         "Voie de la mort"
       ],
@@ -7632,10 +7632,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Soigner",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.826Z",
-      "modified": "2022-10-30T15:11:24.669Z",
+      "modified": "2022-11-01T08:08:19.995Z",
+      "name": "Soigner",
       "path": [
         "Voie de la magie de gu\u00e9rison"
       ],
@@ -7648,10 +7648,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Soins de groupe",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.835Z",
-      "modified": "2022-10-30T15:11:24.684Z",
+      "modified": "2022-11-01T08:08:20.008Z",
+      "name": "Soins de groupe",
       "path": [
         "Voie des soins"
       ],
@@ -7664,10 +7664,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Soins l\u00e9gers",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.845Z",
-      "modified": "2022-10-30T15:11:24.697Z",
+      "modified": "2022-11-01T08:08:20.023Z",
+      "name": "Soins l\u00e9gers",
       "path": [
         "Voie des soins"
       ],
@@ -7680,10 +7680,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Soins mod\u00e9r\u00e9s",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.854Z",
-      "modified": "2022-10-30T15:11:24.708Z",
+      "modified": "2022-11-01T08:08:20.038Z",
+      "name": "Soins mod\u00e9r\u00e9s",
       "path": [
         "Voie des soins"
       ],
@@ -7696,10 +7696,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Solide comme un roc",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.863Z",
-      "modified": "2022-10-30T15:11:24.724Z",
+      "modified": "2022-11-01T08:08:20.054Z",
+      "name": "Solide comme un roc",
       "path": [
         "Voie du nain"
       ],
@@ -7712,10 +7712,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sommeil",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.872Z",
-      "modified": "2022-10-30T15:11:24.738Z",
+      "modified": "2022-11-01T08:08:20.069Z",
+      "name": "Sommeil",
       "path": [
         "Voie de l'envo\u00fbteur"
       ],
@@ -7728,10 +7728,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Souffle enflamm\u00e9",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.882Z",
-      "modified": "2022-10-30T15:11:24.752Z",
+      "modified": "2022-11-01T08:08:20.090Z",
+      "name": "Souffle enflamm\u00e9",
       "path": [
         "Voie des cr\u00e9atures \u00e9l\u00e9mentaire [du feu]"
       ],
@@ -7744,10 +7744,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sous tension",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.893Z",
-      "modified": "2022-10-30T15:11:24.766Z",
+      "modified": "2022-11-01T08:08:20.103Z",
+      "name": "Sous tension",
       "path": [
         "Voie de l'air"
       ],
@@ -7760,10 +7760,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Soutenir",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.901Z",
-      "modified": "2022-10-30T15:11:24.779Z",
+      "modified": "2022-11-01T08:08:20.117Z",
+      "name": "Soutenir",
       "path": [
         "Voie de la magie de gu\u00e9rison"
       ],
@@ -7776,10 +7776,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sp\u00e9cialisation",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.910Z",
-      "modified": "2022-10-30T15:11:24.791Z",
+      "modified": "2022-11-01T08:08:20.133Z",
+      "name": "Sp\u00e9cialisation",
       "path": [
         "Voie du ma\u00eetre d'armes"
       ],
@@ -7792,10 +7792,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sprint",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.919Z",
-      "modified": "2022-10-30T15:11:24.807Z",
+      "modified": "2022-11-01T08:08:20.148Z",
+      "name": "Sprint",
       "path": [
         "Voie de l'aventurier"
       ],
@@ -7808,10 +7808,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Strangulation",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.929Z",
-      "modified": "2022-10-30T15:11:24.821Z",
+      "modified": "2022-11-01T08:08:20.163Z",
+      "name": "Strangulation",
       "path": [
         "Voie de la sombre magie"
       ],
@@ -7824,10 +7824,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Suggestion",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.937Z",
-      "modified": "2022-10-30T15:11:24.835Z",
+      "modified": "2022-11-01T08:08:20.180Z",
+      "name": "Suggestion",
       "path": [
         "Voie de la s\u00e9duction"
       ],
@@ -7840,10 +7840,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sup\u00e9riorit\u00e9 elfique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.946Z",
-      "modified": "2022-10-30T15:11:24.861Z",
+      "modified": "2022-11-01T08:08:20.211Z",
+      "name": "Sup\u00e9riorit\u00e9 elfique",
       "path": [
         "Voie du haut-elfe"
       ],
@@ -7856,10 +7856,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Surprise",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.963Z",
-      "modified": "2022-10-30T15:11:24.873Z",
+      "modified": "2022-11-01T08:08:20.227Z",
+      "name": "Surprise",
       "path": [
         "Voie de l'assassin"
       ],
@@ -7872,10 +7872,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Surveillance",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.972Z",
-      "modified": "2022-10-30T15:11:24.888Z",
+      "modified": "2022-11-01T08:08:20.242Z",
+      "name": "Surveillance",
       "path": [
         "Voie du compagnon animal"
       ],
@@ -7888,10 +7888,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Sym\u00e9trie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.981Z",
-      "modified": "2022-10-30T15:11:24.902Z",
+      "modified": "2022-11-01T08:08:20.258Z",
+      "name": "Sym\u00e9trie",
       "path": [
         "Voie du combat \u00e0 deux armes"
       ],
@@ -7904,10 +7904,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Talent pour la magie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.990Z",
-      "modified": "2022-10-30T15:11:24.916Z",
+      "modified": "2022-11-01T08:08:20.273Z",
+      "name": "Talent pour la magie",
       "path": [
         "Voie du haut-elfe"
       ],
@@ -7920,10 +7920,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Talent pour la violence",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:56.998Z",
-      "modified": "2022-10-30T15:11:24.933Z",
+      "modified": "2022-11-01T08:08:20.291Z",
+      "name": "Talent pour la violence",
       "path": [
         "Voie du demi-orque"
       ],
@@ -7936,10 +7936,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Tatouages",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.008Z",
-      "modified": "2022-10-30T15:11:24.946Z",
+      "modified": "2022-11-01T08:08:20.306Z",
+      "name": "Tatouages",
       "path": [
         "Voie du pagne"
       ],
@@ -7952,10 +7952,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "T\u00e9l\u00e9kin\u00e9sie",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.016Z",
-      "modified": "2022-10-30T15:11:24.957Z",
+      "modified": "2022-11-01T08:08:20.320Z",
+      "name": "T\u00e9l\u00e9kin\u00e9sie",
       "path": [
         "Voie de l'air"
       ],
@@ -7968,10 +7968,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "T\u00e9l\u00e9portation",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.026Z",
-      "modified": "2022-10-30T15:11:24.977Z",
+      "modified": "2022-11-01T08:08:20.334Z",
+      "name": "T\u00e9l\u00e9portation",
       "path": [
         "Voie de la magie des arcanes"
       ],
@@ -7984,10 +7984,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Tenacit\u00e9",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.034Z",
-      "modified": "2022-10-30T15:11:24.990Z",
+      "modified": "2022-11-01T08:08:20.350Z",
+      "name": "Tenacit\u00e9",
       "path": [
         "Voie du nain"
       ],
@@ -8000,10 +8000,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "T\u00e9n\u00e8bres",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.044Z",
-      "modified": "2022-10-30T15:11:25.003Z",
+      "modified": "2022-11-01T08:08:20.364Z",
+      "name": "T\u00e9n\u00e8bres",
       "path": [
         "Voie de la sombre magie"
       ],
@@ -8016,10 +8016,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Tir aveugle",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.056Z",
-      "modified": "2022-10-30T15:11:25.017Z",
+      "modified": "2022-11-01T08:08:20.379Z",
+      "name": "Tir aveugle",
       "path": [
         "Voie de l'archer"
       ],
@@ -8032,10 +8032,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Tir de barrage",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.066Z",
-      "modified": "2022-10-30T15:11:25.032Z",
+      "modified": "2022-11-01T08:08:20.394Z",
+      "name": "Tir de barrage",
       "path": [
         "Voie de l'artilleur"
       ],
@@ -8048,10 +8048,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Tir de semonce",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.076Z",
-      "modified": "2022-10-30T15:11:25.044Z",
+      "modified": "2022-11-01T08:08:20.410Z",
+      "name": "Tir de semonce",
       "path": [
         "Voie de l'artilleur"
       ],
@@ -8064,10 +8064,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Tir double",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.084Z",
-      "modified": "2022-10-30T15:11:25.058Z",
+      "modified": "2022-11-01T08:08:20.426Z",
+      "name": "Tir double",
       "path": [
         "Voie du pistolero"
       ],
@@ -8080,10 +8080,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Tir mortel",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.095Z",
-      "modified": "2022-10-30T15:11:25.072Z",
+      "modified": "2022-11-01T08:08:20.442Z",
+      "name": "Tir mortel",
       "path": [
         "Voie de la pr\u00e9cision"
       ],
@@ -8096,10 +8096,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Tir parabolique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.102Z",
-      "modified": "2022-10-30T15:11:25.086Z",
+      "modified": "2022-11-01T08:08:20.457Z",
+      "name": "Tir parabolique",
       "path": [
         "Voie de la pr\u00e9cision"
       ],
@@ -8112,10 +8112,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Tir pr\u00e9cis",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.112Z",
-      "modified": "2022-10-30T15:11:25.100Z",
+      "modified": "2022-11-01T08:08:20.472Z",
+      "name": "Tir pr\u00e9cis",
       "path": [
         "Voie de la pr\u00e9cision"
       ],
@@ -8128,10 +8128,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Tir rapide",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.123Z",
-      "modified": "2022-10-30T15:11:25.113Z",
+      "modified": "2022-11-01T08:08:20.486Z",
+      "name": "Tir rapide",
       "path": [
         "Voie de l'archer"
       ],
@@ -8144,10 +8144,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Touche \u00e0 tout",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.134Z",
-      "modified": "2022-10-30T15:11:25.127Z",
+      "modified": "2022-11-01T08:08:20.503Z",
+      "name": "Touche \u00e0 tout",
       "path": [
         "Voie du vagabond"
       ],
@@ -8160,10 +8160,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Tour de force",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.147Z",
-      "modified": "2022-10-30T15:11:25.140Z",
+      "modified": "2022-11-01T08:08:20.516Z",
+      "name": "Tour de force",
       "path": [
         "Voie de la brute"
       ],
@@ -8176,10 +8176,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Transe de gu\u00e9rison",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.158Z",
-      "modified": "2022-10-30T15:11:25.154Z",
+      "modified": "2022-11-01T08:08:20.537Z",
+      "name": "Transe de gu\u00e9rison",
       "path": [
         "Voie de la m\u00e9ditation"
       ],
@@ -8192,10 +8192,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Traquenard",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.166Z",
-      "modified": "2022-10-30T15:11:25.167Z",
+      "modified": "2022-11-01T08:08:20.552Z",
+      "name": "Traquenard",
       "path": [
         "Voie de l'escarmouche"
       ],
@@ -8208,10 +8208,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Tueur fantasmagorique",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.177Z",
-      "modified": "2022-10-30T15:11:25.179Z",
+      "modified": "2022-11-01T08:08:20.567Z",
+      "name": "Tueur fantasmagorique",
       "path": [
         "Voie des illusions"
       ],
@@ -8224,10 +8224,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Vampirisation",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.185Z",
-      "modified": "2022-10-30T15:11:25.191Z",
+      "modified": "2022-11-01T08:08:20.582Z",
+      "name": "Vampirisation",
       "path": [
         "Voie de la magie mal\u00e9fique"
       ],
@@ -8240,10 +8240,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Versatile",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.195Z",
-      "modified": "2022-10-30T15:11:25.205Z",
+      "modified": "2022-11-01T08:08:20.597Z",
+      "name": "Versatile",
       "path": [
         "Voie de l'humain"
       ],
@@ -8256,10 +8256,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "V\u00eatements sacr\u00e9s",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.205Z",
-      "modified": "2022-10-30T15:11:25.219Z",
+      "modified": "2022-11-01T08:08:20.613Z",
+      "name": "V\u00eatements sacr\u00e9s",
       "path": [
         "Voie de la spiritualit\u00e9"
       ],
@@ -8272,10 +8272,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Vif et alerte",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.213Z",
-      "modified": "2022-10-30T15:11:25.233Z",
+      "modified": "2022-11-01T08:08:20.628Z",
+      "name": "Vif et alerte",
       "path": [
         "Voie du halfelin"
       ],
@@ -8288,10 +8288,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Vigilance",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.223Z",
-      "modified": "2022-10-30T15:11:25.246Z",
+      "modified": "2022-11-01T08:08:20.644Z",
+      "name": "Vigilance",
       "path": [
         "Voie du primitif"
       ],
@@ -8304,10 +8304,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Vigueur",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.232Z",
-      "modified": "2022-10-30T15:11:25.258Z",
+      "modified": "2022-11-01T08:08:20.659Z",
+      "name": "Vigueur",
       "path": [
         "Voie du pagne"
       ],
@@ -8320,10 +8320,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Vitalit\u00e9 d\u00e9bordante",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.242Z",
-      "modified": "2022-10-30T15:11:25.273Z",
+      "modified": "2022-11-01T08:08:20.674Z",
+      "name": "Vitalit\u00e9 d\u00e9bordante",
       "path": [
         "Voie du primitif"
       ],
@@ -8336,10 +8336,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Vitalit\u00e9 surnaturelle",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.249Z",
-      "modified": "2022-10-30T15:11:25.287Z",
+      "modified": "2022-11-01T08:08:20.689Z",
+      "name": "Vitalit\u00e9 surnaturelle",
       "path": [
         "Voie des cr\u00e9atures magiques"
       ],
@@ -8352,10 +8352,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Vitesse du f\u00e9lin",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.260Z",
-      "modified": "2022-10-30T15:11:25.301Z",
+      "modified": "2022-11-01T08:08:20.703Z",
+      "name": "Vitesse du f\u00e9lin",
       "path": [
         "Voie du fauve"
       ],
@@ -8368,10 +8368,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Vivacit\u00e9",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.268Z",
-      "modified": "2022-10-30T15:11:25.315Z",
+      "modified": "2022-11-01T08:08:20.717Z",
+      "name": "Vivacit\u00e9",
       "path": [
         "Voie du combat"
       ],
@@ -8384,10 +8384,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Vol",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.278Z",
-      "modified": "2022-10-30T15:11:25.327Z",
+      "modified": "2022-11-01T08:08:20.731Z",
+      "name": "Vol",
       "path": [
         "Voie de la magie universelle"
       ],
@@ -8400,10 +8400,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Vol rapide",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.285Z",
-      "modified": "2022-10-30T15:11:25.345Z",
+      "modified": "2022-11-01T08:08:20.747Z",
+      "name": "Vol rapide",
       "path": [
         "Voie des cr\u00e9atures volantes"
       ],
@@ -8416,10 +8416,10 @@
   {
     "model": "character.capability",
     "fields": {
-      "name": "Zone de silence",
       "url": "https://www.co-drs.org/fr/jeu/capacites",
       "created": "2022-10-29T09:46:57.296Z",
-      "modified": "2022-10-30T15:11:25.358Z",
+      "modified": "2022-11-01T08:08:20.761Z",
+      "name": "Zone de silence",
       "path": [
         "Voie du musicien"
       ],
@@ -8427,6 +8427,735 @@
       "limited": true,
       "spell": true,
       "description": "Le Barde cr\u00e9e une zone de silence fixe de 5 m\u00e8tres de diam\u00e8tre, jusqu'\u00e0 une port\u00e9e de 30 m\u00e8tres, pendant [1d6+Mod. de CHA] tours. Tous les sons \u00e9mis dans cette sph\u00e8re sont annul\u00e9s. La zone n'emp\u00eache pas le lancement des sorts mais inflige un malus de -2 \u00e0 tous les tests d'attaque magique."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:14.088Z",
+      "modified": "2022-11-01T08:08:14.088Z",
+      "name": "Animal fabuleux",
+      "path": [
+        "Voie du compagnon animal"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le loup du R\u00f4deur devient un sp\u00e9cimen particuli\u00e8rement puissant. M\u00e2le alpha : Init 13, DEF 16, PV [niveau x 4], attaque au contact = [niveau du R\u00f4deur+2], DM 1d6+3, FOR +3, DEX +1, CON* +3, INT -3, SAG* +2, CHA -2"
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:14.629Z",
+      "modified": "2022-11-01T08:08:14.629Z",
+      "name": "Attaque en tra\u00eetre",
+      "path": [
+        "Voie de la meute"
+      ],
+      "rank": 2,
+      "limited": true,
+      "spell": false,
+      "description": "Si la cr\u00e9ature attaque en m\u00eame temps qu'un alli\u00e9 (elle peut volontairement retarder son Initiative), de dos ou par surprise, elle r\u00e9alise une Attaque sournoise avec un bonus de +5 en attaque et +2d6 aux DM."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:15.228Z",
+      "modified": "2022-11-01T08:08:15.229Z",
+      "name": "Charge",
+      "path": [
+        "Voie du pourfendeur"
+      ],
+      "rank": 2,
+      "limited": true,
+      "spell": false,
+      "description": "Le Barbare se d\u00e9place en ligne droite d'au moins 5 m\u00e8tres (20 m\u00e8tres au maximum) et effectue une attaque au contact avec un bonus de +2 en attaque et +1d6 aux DM."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:15.246Z",
+      "modified": "2022-11-01T08:08:15.246Z",
+      "name": "Charge",
+      "path": [
+        "Voie du cavalier"
+      ],
+      "rank": 4,
+      "limited": true,
+      "spell": false,
+      "description": "A cheval, le chevalier peut effectuer un d\u00e9placement de 40 m en ligne droite, et une attaque de contact plac\u00e9e au moment son choix. Il doit parcourir au moins 10 m avant d'attaquer, mais peut r\u00e9aliser le reste du d\u00e9placement \u00e0 sa guise. Le joueur lance deux d20 \u00e0 son test d'attaque et garde le meilleur r\u00e9sultat, tout en ajoutant +1d6 aux DM. Une cr\u00e9ature situ\u00e9e sur la trajectoire de la charge doit r\u00e9ussir un test de FOR difficult\u00e9 18 ou \u00eatre contrainte de c\u00e9der le passage en subissant 1d6 DM. Si elle r\u00e9ussit ce test, la Charge est bloqu\u00e9e et le tour du Chevalier se termine."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:15.309Z",
+      "modified": "2022-11-01T08:08:15.309Z",
+      "name": "Charisme h\u00e9ro\u00efque",
+      "path": [
+        "Voie du h\u00e9ros"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente sa valeur de CHA de +2. Il peut de plus lancer deux d20 \u00e0 chaque fois qu'un test de CHA lui est demand\u00e9 et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:15.310Z",
+      "modified": "2022-11-01T08:08:15.310Z",
+      "name": "Charisme h\u00e9ro\u00efque",
+      "path": [
+        "Voie de la foi"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente sa valeur de CHA de +2. Il peut de plus lancer deux d20 \u00e0 chaque fois qu'un test de CHA lui est demand\u00e9 et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:15.312Z",
+      "modified": "2022-11-01T08:08:15.312Z",
+      "name": "Charisme h\u00e9ro\u00efque",
+      "path": [
+        "Voie de l'aventurier"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente sa valeur de CHA de +2. Il peut de plus lancer deux d20 \u00e0 chaque fois qu'un test de CHA lui est demand\u00e9 et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:15.313Z",
+      "modified": "2022-11-01T08:08:15.313Z",
+      "name": "Charisme h\u00e9ro\u00efque",
+      "path": [
+        "Voie de l'invocation"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente sa valeur de CHA de +2. Il peut de plus lancer deux d20 \u00e0 chaque fois qu'un test de CHA lui est demand\u00e9 et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:15.461Z",
+      "modified": "2022-11-01T08:08:15.461Z",
+      "name": "Combat",
+      "path": [
+        "Voie du compagnon animal"
+      ],
+      "rank": 3,
+      "limited": false,
+      "spell": false,
+      "description": "Le loup du R\u00f4deur peut d\u00e9sormais se battre comme un v\u00e9ritable personnage. Il attaque en m\u00eame temps que le R\u00f4deur. Loup : Init 13, DEF 14, PV [niveau x 4], attaque au contact = [niveau du R\u00f4deur], DM 1d6+1, FOR +1, DEX +1, CON* +1, INT -3, SAG* +2, CHA -2."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:15.640Z",
+      "modified": "2022-11-01T08:08:15.640Z",
+      "name": "Constitution h\u00e9ro\u00efque",
+      "path": [
+        "Voie du pagne"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente son score de CON de +2 et il peut d\u00e9sormais lancer deux d20 \u00e0 chaque fois qu'un test de CON lui est demand\u00e9 et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:15.641Z",
+      "modified": "2022-11-01T08:08:15.641Z",
+      "name": "Constitution h\u00e9ro\u00efque",
+      "path": [
+        "Voie de la nature"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente son score de CON de +2 et il peut d\u00e9sormais lancer deux d20 \u00e0 chaque fois qu'un test de CON lui est demand\u00e9 et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:15.642Z",
+      "modified": "2022-11-01T08:08:15.642Z",
+      "name": "Constitution h\u00e9ro\u00efque",
+      "path": [
+        "Voie de la survie"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente son score de CON de +2 et il peut d\u00e9sormais lancer deux d20 \u00e0 chaque fois qu'un test de CON lui est demand\u00e9 et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:15.643Z",
+      "modified": "2022-11-01T08:08:15.643Z",
+      "name": "Constitution h\u00e9ro\u00efque",
+      "path": [
+        "Voie de la r\u00e9sistance"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente son score de CON de +2 et il peut d\u00e9sormais lancer deux d20 \u00e0 chaque fois qu'un test de CON lui est demand\u00e9 et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:16.112Z",
+      "modified": "2022-11-01T08:08:16.112Z",
+      "name": "Dext\u00e9rit\u00e9 h\u00e9ro\u00efque",
+      "path": [
+        "Voie du d\u00e9placement"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente son score de DEX de +2 et il peut d\u00e9sormais lancer deux d20 \u00e0 chaque fois qu'un test de DEX lui est demand\u00e9, et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:16.113Z",
+      "modified": "2022-11-01T08:08:16.113Z",
+      "name": "Dext\u00e9rit\u00e9 h\u00e9ro\u00efque",
+      "path": [
+        "Voie de l'escarmouche"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente son score de DEX de +2 et il peut d\u00e9sormais lancer deux d20 \u00e0 chaque fois qu'un test de DEX lui est demand\u00e9, et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:16.329Z",
+      "modified": "2022-11-01T08:08:16.329Z",
+      "name": "Embuscade",
+      "path": [
+        "Voie du pr\u00e9dateur"
+      ],
+      "rank": 1,
+      "limited": false,
+      "spell": false,
+      "description": "Au premier tour de combat, si l'environnement permet \u00e0 la cr\u00e9ature de se dissimuler, la cible doit faire un test de SAG difficult\u00e9 [15 + Mod. de DEX] ou \u00eatre Surprise. Si elle attaque avec succ\u00e8s une cible surprise, la cr\u00e9ature inflige +1d6 aux DM et toute cr\u00e9ature dont la FOR est inf\u00e9rieure \u00e0 la sienne est Renvers\u00e9e. La cr\u00e9ature obtient un bonus de +5 \u00e0 tous les tests de discr\u00e9tion et en Init."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:16.373Z",
+      "modified": "2022-11-01T08:08:16.373Z",
+      "name": "Empathie animale",
+      "path": [
+        "Voie du montreur d'ours"
+      ],
+      "rank": 4,
+      "limited": true,
+      "spell": false,
+      "description": "Le R\u00f4deur peut parler aux animaux. Il peut \u00e9galement communiquer avec son compagnon animal par t\u00e9l\u00e9pathie et le gu\u00e9rir \u00e0 distance en d\u00e9pensant ses propres PV (1 PV du R\u00f4deur pour 1 PV octroy\u00e9 au compagnon animal)."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:16.690Z",
+      "modified": "2022-11-01T08:08:16.690Z",
+      "name": "Familier",
+      "path": [
+        "Voie du familier"
+      ],
+      "rank": 1,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage choisit un petit animal (corbeau, chat, furet, serpent\u2026). Il peut utiliser les sens de son familier et communiquer avec lui \u00e0 distance illimit\u00e9e. Il gagne de plus +2 en Initiative lorsque son familier est en vue. Familier : DEF [personnage], Init [personnage], PV [il les partage avec ceux de son ma\u00eetre], ils forment une cible unique pour les attaques de zone. FOR -4, DEX +3, CON 0, INT -2, SAG +1, CHA -2."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:16.910Z",
+      "modified": "2022-11-01T08:08:16.910Z",
+      "name": "Force h\u00e9ro\u00efque",
+      "path": [
+        "Voie de la guerre"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente sa valeur de FOR de +2 et il peut d\u00e9sormais lancer deux d20 \u00e0 chaque fois qu'un test de FOR lui est demand\u00e9 et garder le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:16.912Z",
+      "modified": "2022-11-01T08:08:16.912Z",
+      "name": "Force h\u00e9ro\u00efque",
+      "path": [
+        "Voie du soldat"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente sa valeur de FOR de +2 et il peut d\u00e9sormais lancer deux d20 \u00e0 chaque fois qu'un test de FOR lui est demand\u00e9 et garder le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:17.259Z",
+      "modified": "2022-11-01T08:08:17.259Z",
+      "name": "Gr\u00e2ce elfique",
+      "path": [
+        "Voie de l'elfe sylvain"
+      ],
+      "rank": 1,
+      "limited": false,
+      "spell": false,
+      "description": "L'elfe gagne un bonus de +5 en Initiative et \u00e0 tous les tests de DEX."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:17.290Z",
+      "modified": "2022-11-01T08:08:17.290Z",
+      "name": "Gr\u00e2ce f\u00e9line",
+      "path": [
+        "Voie du saltimbanque"
+      ],
+      "rank": 2,
+      "limited": false,
+      "spell": false,
+      "description": "Le Barde ajoute son Mod. de CHA en DEF et en Initiative (en plus du Mod. habituel de DEX)."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:17.545Z",
+      "modified": "2022-11-01T08:08:17.545Z",
+      "name": "Immortel",
+      "path": [
+        "Voie du haut-elfe"
+      ],
+      "rank": 4,
+      "limited": false,
+      "spell": false,
+      "description": "L'elfe n'a besoin que de la moiti\u00e9 du repos, de la nourriture ou de la boisson d'un humain normal pour \u00eatre en pleine forme. Il est immunis\u00e9 aux effets des poisons et des maladies."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:17.608Z",
+      "modified": "2022-11-01T08:08:17.608Z",
+      "name": "Increvable",
+      "path": [
+        "Voie de l'humain"
+      ],
+      "rank": 4,
+      "limited": false,
+      "spell": false,
+      "description": "Une fois par tour, lorsqu'une attaque fait tomber le personnage \u00e0 0 PV, ce dernier peut effectuer un test d'attaque (du m\u00eame type) oppos\u00e9 \u00e0 celui de l'adversaire. En cas de r\u00e9ussite, le personnage esquive ou r\u00e9siste \u00e0 cette attaque et ne subit aucun DM."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:17.716Z",
+      "modified": "2022-11-01T08:08:17.717Z",
+      "name": "Intelligence h\u00e9ro\u00efque",
+      "path": [
+        "Voie de la sombre magie"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente sa valeur d'INT de +2 et il peut d\u00e9sormais lancer deux d20 \u00e0 chaque fois qu'un test d'INT lui est demand\u00e9 et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:17.718Z",
+      "modified": "2022-11-01T08:08:17.718Z",
+      "name": "Intelligence h\u00e9ro\u00efque",
+      "path": [
+        "Voie de la magie universelle"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente sa valeur d'INT de +2 et il peut d\u00e9sormais lancer deux d20 \u00e0 chaque fois qu'un test d'INT lui est demand\u00e9 et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:18.792Z",
+      "modified": "2022-11-01T08:08:18.792Z",
+      "name": "Peau de pierre",
+      "path": [
+        "Voie de la magie \u00e9l\u00e9mentaire"
+      ],
+      "rank": 5,
+      "limited": true,
+      "spell": true,
+      "description": "Le Magicien obtient une r\u00e9duction des DM \u00e9gale \u00e0 [5 + Mod. d'INT] pendant [5+ Mod. d'INT] tours ou jusqu'\u00e0 ce que le sort ait absorb\u00e9 40 points de d\u00e9g\u00e2ts."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:19.508Z",
+      "modified": "2022-11-01T08:08:19.508Z",
+      "name": "R\u00e9sistance",
+      "path": [
+        "Voie du nain"
+      ],
+      "rank": 1,
+      "limited": false,
+      "spell": false,
+      "description": "Le nain gagne un bonus de +5 \u00e0 tous ses tests de CON."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:19.536Z",
+      "modified": "2022-11-01T08:08:19.536Z",
+      "name": "R\u00e9sistance \u00e0 la magie",
+      "path": [
+        "Voie du primitif"
+      ],
+      "rank": 4,
+      "limited": false,
+      "spell": false,
+      "description": "Le Barbare devient capable de r\u00e9sister \u00e0 la magie. Lorsqu'il est la cible d'un sort, une fois par tour, il peut faire un test d'attaque magique (Mod. de SAG) oppos\u00e9 \u00e0 celui du sort. En cas de r\u00e9ussite, il n'en subit pas les effets."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:19.610Z",
+      "modified": "2022-11-01T08:08:19.610Z",
+      "name": "Riposte",
+      "path": [
+        "Voie du ma\u00eetre d'armes"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "En plus de ses actions normales, une fois par tour, lorsqu'un adversaire rate une attaque de contact contre le Guerrier, le joueur obtient une attaque suppl\u00e9mentaire contre cet adversaire."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:19.782Z",
+      "modified": "2022-11-01T08:08:19.782Z",
+      "name": "Sagesse h\u00e9ro\u00efque",
+      "path": [
+        "Voie de la pri\u00e8re"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente sa valeur de SAG de +2. Il peut d\u00e9sormais lancer deux d20 \u00e0 chaque fois qu'un test de SAG lui est demand\u00e9 et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:19.784Z",
+      "modified": "2022-11-01T08:08:19.784Z",
+      "name": "Sagesse h\u00e9ro\u00efque",
+      "path": [
+        "Voie de la m\u00e9ditation"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "Le personnage augmente sa valeur de SAG de +2. Il peut d\u00e9sormais lancer deux d20 \u00e0 chaque fois qu'un test de SAG lui est demand\u00e9 et conserver le meilleur r\u00e9sultat."
+    }
+  },
+  {
+    "model": "character.capability",
+    "fields": {
+      "url": "https://www.co-drs.org/fr/jeu/capacites",
+      "created": "2022-11-01T08:08:20.196Z",
+      "modified": "2022-11-01T08:08:20.196Z",
+      "name": "Sup\u00e9riorit\u00e9 elfique",
+      "path": [
+        "Voie de l'elfe sylvain"
+      ],
+      "rank": 5,
+      "limited": false,
+      "spell": false,
+      "description": "L'elfe augmente ses valeurs de DEX et SAG de +2."
+    }
+  },
+  {
+    "model": "character.character",
+    "fields": {
+      "name": "Drimir Forgefeu",
+      "player": [
+        "gaugendre"
+      ],
+      "race": [
+        "Nain"
+      ],
+      "profile": [
+        "Magicien"
+      ],
+      "level": 4,
+      "gender": "M",
+      "age": 50,
+      "height": 125,
+      "weight": 90,
+      "value_strength": 9,
+      "value_dexterity": 12,
+      "value_constitution": 18,
+      "value_intelligence": 17,
+      "value_wisdom": 10,
+      "value_charisma": 13,
+      "health_max": 26,
+      "health_remaining": 26,
+      "racial_capability": [
+        "Vision dans le noir",
+        1
+      ],
+      "armor": 0,
+      "shield": 0,
+      "defense_misc": 0,
+      "equipment": "Grimoire\r\nPotion de mana (1D8)",
+      "luck_points_remaining": 4,
+      "mana_remaining": 9,
+      "money_pp": 1,
+      "money_po": 3,
+      "money_pa": 3,
+      "money_pc": 1,
+      "recovery_points_remaining": 5,
+      "notes": "#### Langages\r\n* Commun\r\n* Nain\r\n* Elfique (injures)\r\n* Orc\r\n\r\n#### Historique\r\nPays natal : Monts Argent\u00e9s\r\nLieu de naissance : Kaerimbor\r\nEnfance : Envoy\u00e9 \u00e0 Fort-Colline car plus loin des cit\u00e9s naines \u00e0 cause de ses dons\r\nAdolescence et formation : Acad\u00e9mie de magie \u00e0 Ferrance\r\nInfluenc\u00e9 par Ma\u00ebla, rencontr\u00e9e de passage \u00e0 Ferrance\r\n\r\n#### Relations\r\nFemme : Astrid, rest\u00e9e \u00e0 Fort-Colline, travaille \u00e0 l'extraction du fer.\r\nContacts avec les Fr\u00e8res Forgeurs, la guide de forgesorts de Fort-Colline.",
+      "damage_reduction": "R\u00e9duction d\u00e9g\u00e2ts de feu (robe de l'Archimage Tholsad\u00fbm) -2",
+      "weapons": [
+        [
+          "Baton ferr\u00e9"
+        ],
+        [
+          "Dague"
+        ]
+      ],
+      "capabilities": [
+        [
+          15,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          20,
+          2
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          20,
+          3
+        ],
+        [
+          20,
+          1
+        ],
+        [
+          16,
+          1
+        ],
+        [
+          16,
+          2
+        ],
+        [
+          20,
+          4
+        ]
+      ]
+    }
+  },
+  {
+    "model": "character.character",
+    "fields": {
+      "name": "Test",
+      "player": [
+        "gaugendre"
+      ],
+      "race": [
+        "Gnome"
+      ],
+      "profile": [
+        "Druide"
+      ],
+      "level": 2,
+      "gender": "F",
+      "age": 104,
+      "height": 103,
+      "weight": 24,
+      "value_strength": 10,
+      "value_dexterity": 10,
+      "value_constitution": 10,
+      "value_intelligence": 10,
+      "value_wisdom": 10,
+      "value_charisma": 10,
+      "health_max": 18,
+      "health_remaining": 18,
+      "racial_capability": [
+        "Don \u00e9trange",
+        4
+      ],
+      "armor": 0,
+      "shield": 0,
+      "defense_misc": 0,
+      "equipment": "",
+      "luck_points_remaining": 3,
+      "mana_remaining": 0,
+      "money_pp": 0,
+      "money_po": 0,
+      "money_pa": 0,
+      "money_pc": 0,
+      "recovery_points_remaining": 5,
+      "notes": "### Traits personnalis\u00e9s\r\n\r\n### Objectifs\r\n\r\n### Langages\r\n\r\n### Historique\r\n\r\n### Handicaps\r\n\r\n### Alignement\r\n\r\n### Relations\r\n\r\n### Religion",
+      "damage_reduction": "",
+      "weapons": [
+        [
+          "Baton ferr\u00e9"
+        ],
+        [
+          "Dague"
+        ]
+      ],
+      "capabilities": [
+        [
+          9,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "model": "character.character",
+    "fields": {
+      "name": "test",
+      "player": [
+        "bonjour2"
+      ],
+      "race": [
+        "Nain"
+      ],
+      "profile": [
+        "Magicien"
+      ],
+      "level": 1,
+      "gender": "F",
+      "age": 12,
+      "height": 12,
+      "weight": 12,
+      "value_strength": 12,
+      "value_dexterity": 12,
+      "value_constitution": 12,
+      "value_intelligence": 12,
+      "value_wisdom": 12,
+      "value_charisma": 12,
+      "health_max": 12,
+      "health_remaining": 12,
+      "racial_capability": [
+        "Sang m\u00eal\u00e9",
+        2
+      ],
+      "armor": 12,
+      "shield": 0,
+      "defense_misc": 0,
+      "equipment": "",
+      "luck_points_remaining": 1,
+      "mana_remaining": 0,
+      "money_pp": 0,
+      "money_po": 0,
+      "money_pa": 0,
+      "money_pc": 0,
+      "recovery_points_remaining": 5,
+      "notes": "#### Traits personnalis\u00e9s\r\n\r\n#### Objectifs\r\n\r\n#### Langages\r\n\r\n#### Historique\r\n\r\n#### Handicaps\r\n\r\n#### Alignement\r\n\r\n#### Relations\r\n\r\n#### Religion",
+      "damage_reduction": "",
+      "weapons": [],
+      "capabilities": []
     }
   }
 ]

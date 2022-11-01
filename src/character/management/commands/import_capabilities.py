@@ -34,7 +34,7 @@ class Command(BaseCommand):
         )
         name = title[0].replace("’", "'").strip()
         rank = int(title[1].replace("rang ", ""))
-        path = self.get_path(card, name)
+        paths = self.get_paths(card, name)
         limited = False
         if "(L)" in name:
             limited = True
@@ -49,46 +49,39 @@ class Command(BaseCommand):
             .text.strip()
             .replace("’", "'")
         )
-        try:
-            capability, _ = Capability.objects.update_or_create(
-                name=name,
-                defaults={
-                    "rank": rank,
-                    "path": path,
-                    "limited": limited,
-                    "spell": spell,
-                    "description": description,
-                    "url": "https://www.co-drs.org/fr/jeu/capacites",
-                },
-            )
-            self.stdout.write(self.style.SUCCESS(f"Created/updated cap {capability}"))
-        except Exception as e:
-            self.stdout.write(
-                self.style.ERROR(f"Couldn't create/update cap {name}: {e}")
-            )
+        for path in paths:
+            try:
+                capability, _ = Capability.objects.update_or_create(
+                    rank=rank,
+                    path=path,
+                    defaults={
+                        "name": name,
+                        "limited": limited,
+                        "spell": spell,
+                        "description": description,
+                        "url": "https://www.co-drs.org/fr/jeu/capacites",
+                    },
+                )
+                self.stdout.write(
+                    self.style.SUCCESS(f"Created/updated cap {capability}")
+                )
+            except Exception as e:
+                self.stdout.write(
+                    self.style.ERROR(f"Couldn't create/update cap {name}: {e}")
+                )
 
-    def get_path(self, card: WebElement, name: str) -> Path | None:
+    def get_paths(self, card: WebElement, name: str) -> list[Path]:
+        paths = []
         try:
-            path_name = (
-                card.find_element(By.CSS_SELECTOR, ".card-back .paths a")
-                .text.replace("’", "'")
-                .strip()
-            )
+            for elem in card.find_elements(By.CSS_SELECTOR, ".card-back .paths a"):
+                path_name = elem.text.replace("’", "'").strip()
+                paths.append(Path.objects.get(name__iexact=path_name))
         except Exception:
             self.stdout.write(
                 self.style.WARNING(f"Couldn't find path in card for cap '{name}'.")
             )
-            return None
-        try:
-            path = Path.objects.get(name__iexact=path_name)
-            return path
-        except Exception:
-            self.stdout.write(
-                self.style.WARNING(
-                    f"Couldn't find path name '{path_name}' for cap '{name}'."
-                )
-            )
-            return None
+            return []
+        return paths
 
     def setup_selenium(self):
         options = webdriver.FirefoxOptions()

@@ -1,1 +1,1 @@
-0025_alter_capability_path
+0026_alter_capability_name

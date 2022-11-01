@@ -76,7 +76,13 @@ class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
             return False
 
 
-class Capability(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
+class CapabilityManager(models.Manager):
+    def get_by_natural_key(self, path_id, rank):
+        return self.get(path_id=path_id, rank=rank)
+
+
+class Capability(DocumentedModel, TimeStampedModel, models.Model):
+    name = models.CharField(max_length=100, blank=False, null=False, verbose_name="nom")
     path = models.ForeignKey(
         "character.Path",
         on_delete=models.CASCADE,
@@ -94,6 +100,8 @@ class Capability(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.M
     )
     description = models.TextField(verbose_name="description")
 
+    objects = CapabilityManager
+
     class Meta:
         constraints = [models.UniqueConstraint("path", "rank", name="unique_path_rank")]
         verbose_name = "Capacité"
@@ -104,6 +112,9 @@ class Capability(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.M
         if self.path.related_to:
             description += f" ({self.path.related_to.name})"
         return description
+
+    def natural_key(self):
+        return (self.path_id, self.rank)
 
 
 class RacialCapabilityManager(models.Manager):

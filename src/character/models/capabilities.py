@@ -65,7 +65,7 @@ class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
             return None
 
     def get_next_capability(self, character) -> Capability:
-        next_rank = character.capabilities.filter(path=self).count() + 1
+        next_rank = self.max_rank(character) + 1
         return self.capabilities.get(rank=next_rank)
 
     def has_next_capability(self, character) -> bool:
@@ -74,6 +74,9 @@ class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
             return True
         except Capability.DoesNotExist:
             return False
+
+    def max_rank(self, character) -> int:
+        return character.capabilities.filter(path=self).count()
 
 
 class CapabilityManager(models.Manager):

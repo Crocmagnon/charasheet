@@ -32,3 +32,8 @@ def weapon_modifier(character: Character, weapon: Weapon):
 @register.filter
 def has_next_capability(path: Path, character: Character) -> bool:
     return path.has_next_capability(character)
+
+
+@register.filter
+def max_rank(path: Path, character: Character) -> int:
+    return path.max_rank(character)

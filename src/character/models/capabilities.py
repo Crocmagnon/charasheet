@@ -77,8 +77,8 @@ class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
 
 
 class CapabilityManager(models.Manager):
-    def get_by_natural_key(self, path_id, rank):
-        return self.get(path_id=path_id, rank=rank)
+    def get_by_natural_key(self, path, rank):
+        return self.get(path=path, rank=rank)
 
 
 class Capability(DocumentedModel, TimeStampedModel, models.Model):
@@ -100,7 +100,7 @@ class Capability(DocumentedModel, TimeStampedModel, models.Model):
     )
     description = models.TextField(verbose_name="description")
 
-    objects = CapabilityManager
+    objects = CapabilityManager()
 
     class Meta:
         constraints = [models.UniqueConstraint("path", "rank", name="unique_path_rank")]

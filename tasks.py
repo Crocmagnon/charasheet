@@ -113,7 +113,7 @@ def dump_initial(ctx):
     with ctx.cd(SRC_DIR):
         path = "./character/fixtures/initial_data.json"
         ctx.run(
-            f"./manage.py dumpdata character --natural-primary --natural-foreign -o {path} --indent 2",
+            f"./manage.py dumpdata character --natural-primary --natural-foreign -e character.Character -o {path} --indent 2",
             pty=True,
             echo=True,
         )

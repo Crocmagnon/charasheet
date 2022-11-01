@@ -23,10 +23,10 @@
         {% if path.notes %}
             <div class="card-body text-bg-light">{{ path.notes }}</div>
         {% endif %}
-        <ul class="list-group list-group-flush capabilities">
+        <div class="accordion accordion-flush capabilities">
             {% for capability in capabilities %}
                 {% include "character/capability.html" %}
             {% endfor %}
-        </ul>
+        </div>
     </div>
 </div>

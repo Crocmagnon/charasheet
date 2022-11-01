@@ -1,9 +1,16 @@
-<li class="list-group-item">
-    <strong>
-        {{ capability.rank }}.
-        {{ capability.name }}
-        {% if capability.spell %}<i class="fa-solid fa-hand-sparkles"></i>{% endif %}
-        {% if capability.limited %}<i class="fa-solid fa-handcuffs"></i>{% endif %}
-    </strong><br>
-    {{ capability.description }}
-</li>
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse" data-bs-target="#cap-{{ capability.pk }}">
+            {{ capability.rank }}.
+            {{ capability.name }}
+            {% if capability.spell %}&nbsp;<i class="fa-solid fa-hand-sparkles"></i>{% endif %}
+            {% if capability.limited %}&nbsp;<i class="fa-solid fa-handcuffs"></i>{% endif %}
+        </button>
+    </h2>
+    <div id="cap-{{ capability.pk }}" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            {{ capability.description }}
+        </div>
+    </div>
+</div>

@@ -3,6 +3,7 @@
     "model": "character.weapon",
     "fields": {
       "name": "Baton ferr\u00e9",
+      "url": "",
       "created": "2022-10-28T21:54:05.158Z",
       "modified": "2022-10-30T23:15:00.921Z",
       "damage": "1D6",
@@ -14,9 +15,10 @@
     "model": "character.weapon",
     "fields": {
       "name": "Dague",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
       "created": "2022-10-28T21:54:12.291Z",
-      "modified": "2022-10-30T23:14:46.815Z",
-      "damage": "1D4",
+      "modified": "2022-11-02T21:08:18.096Z",
+      "damage": "1d4",
       "special": "",
       "category": "MEL"
     }
@@ -25,6 +27,7 @@
     "model": "character.weapon",
     "fields": {
       "name": "Arc long",
+      "url": "",
       "created": "2022-10-30T23:15:10.706Z",
       "modified": "2022-10-30T23:15:10.706Z",
       "damage": "1D6",
@@ -36,11 +39,300 @@
     "model": "character.weapon",
     "fields": {
       "name": "Grimoire",
+      "url": "",
       "created": "2022-10-30T23:15:19.159Z",
       "modified": "2022-10-30T23:15:19.160Z",
       "damage": "0",
       "special": "",
       "category": "NON"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Arbal\u00e8te de poing",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.007Z",
+      "modified": "2022-11-02T21:08:18.007Z",
+      "damage": "1d6",
+      "special": "",
+      "category": "RAN"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Arbal\u00e8te l\u00e9g\u00e8re",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.019Z",
+      "modified": "2022-11-02T21:08:18.019Z",
+      "damage": "2d4",
+      "special": "",
+      "category": "RAN"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Arbal\u00e8te lourde",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.031Z",
+      "modified": "2022-11-02T21:08:18.031Z",
+      "damage": "3d4",
+      "special": "",
+      "category": "RAN"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Arc court",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.045Z",
+      "modified": "2022-11-02T21:08:18.045Z",
+      "damage": "1d6",
+      "special": "",
+      "category": "RAN"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Arc long\nFOR min. 13",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.058Z",
+      "modified": "2022-11-02T21:08:18.058Z",
+      "damage": "1d8",
+      "special": "",
+      "category": "RAN"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "B\u00e2ton",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.072Z",
+      "modified": "2022-11-02T21:08:18.072Z",
+      "damage": "1d4",
+      "special": "",
+      "category": "MEL"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "B\u00e2ton ferr\u00e9",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.084Z",
+      "modified": "2022-11-02T21:08:18.084Z",
+      "damage": "1d6",
+      "special": "",
+      "category": "MEL"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "\u00c9p\u00e9e \u00e0 2 mains",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.109Z",
+      "modified": "2022-11-02T21:08:18.109Z",
+      "damage": "2d6",
+      "special": "",
+      "category": "MEL"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "\u00c9p\u00e9e b\u00e2tarde",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.121Z",
+      "modified": "2022-11-02T21:08:18.121Z",
+      "damage": "1d8 \u00e0 1 main, 1d12 \u00e0 2 mains",
+      "special": "",
+      "category": "MEL"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "\u00c9p\u00e9e courte",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.134Z",
+      "modified": "2022-11-02T21:08:18.134Z",
+      "damage": "1d6",
+      "special": "",
+      "category": "MEL"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "\u00c9p\u00e9e longue",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.146Z",
+      "modified": "2022-11-02T21:08:18.146Z",
+      "damage": "1d8",
+      "special": "",
+      "category": "MEL"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Fronde",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.158Z",
+      "modified": "2022-11-02T21:08:18.158Z",
+      "damage": "1d4",
+      "special": "",
+      "category": "RAN"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Gourdin",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.170Z",
+      "modified": "2022-11-02T21:08:18.170Z",
+      "damage": "1d4",
+      "special": "",
+      "category": "MEL"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Hache \u00e0 1 main",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.182Z",
+      "modified": "2022-11-02T21:08:18.182Z",
+      "damage": "1d8",
+      "special": "",
+      "category": "MEL"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Hache \u00e0 2 mains",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.193Z",
+      "modified": "2022-11-02T21:08:18.193Z",
+      "damage": "2d6",
+      "special": "",
+      "category": "MEL"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Hachette",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.205Z",
+      "modified": "2022-11-02T21:08:18.205Z",
+      "damage": "1d6",
+      "special": "",
+      "category": "RAN"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Javelot",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.219Z",
+      "modified": "2022-11-02T21:08:18.220Z",
+      "damage": "1d6",
+      "special": "",
+      "category": "RAN"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Katana",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.234Z",
+      "modified": "2022-11-02T21:08:18.234Z",
+      "damage": "1d10",
+      "special": "",
+      "category": "MEL"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Marteau de guerre",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.244Z",
+      "modified": "2022-11-02T21:08:18.244Z",
+      "damage": "1d6",
+      "special": "",
+      "category": "MEL"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Masse d'armes",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.256Z",
+      "modified": "2022-11-02T21:08:18.256Z",
+      "damage": "1d6",
+      "special": "",
+      "category": "MEL"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Mousquet",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.269Z",
+      "modified": "2022-11-02T21:08:18.269Z",
+      "damage": "2d6",
+      "special": "",
+      "category": "RAN"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "P\u00e9toire",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.281Z",
+      "modified": "2022-11-02T21:08:18.281Z",
+      "damage": "1d10",
+      "special": "",
+      "category": "RAN"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Rapi\u00e8re",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.296Z",
+      "modified": "2022-11-02T21:08:18.296Z",
+      "damage": "1d6",
+      "special": "",
+      "category": "MEL"
+    }
+  },
+  {
+    "model": "character.weapon",
+    "fields": {
+      "name": "Vivelame",
+      "url": "https://www.co-drs.org/fr/ressources/equipements/armes",
+      "created": "2022-11-02T21:08:18.313Z",
+      "modified": "2022-11-02T21:08:18.313Z",
+      "damage": "1d10",
+      "special": "",
+      "category": "MEL"
     }
   },
   {
@@ -295,6 +587,94 @@
       "url": "https://www.co-drs.org/fr/jeu/races/elfe-sylvain",
       "created": "2022-10-29T09:08:53.908Z",
       "modified": "2022-11-01T08:36:58.989Z"
+    }
+  },
+  {
+    "model": "character.harmfulstate",
+    "fields": {
+      "name": "Affaibli",
+      "url": "https://www.co-drs.org/fr/jeu/etats-prejudiciables",
+      "created": "2022-11-02T20:01:20.845Z",
+      "modified": "2022-11-02T20:01:20.845Z",
+      "description": "d12 pour tous les tests au lieu du d20",
+      "icon_url": "https://www.co-drs.org/sites/default/files/co/detrimental_state/achilles-heel.svg"
+    }
+  },
+  {
+    "model": "character.harmfulstate",
+    "fields": {
+      "name": "Aveugl\u00e9",
+      "url": "https://www.co-drs.org/fr/jeu/etats-prejudiciables",
+      "created": "2022-11-02T20:01:20.861Z",
+      "modified": "2022-11-02T20:01:20.861Z",
+      "description": "Init. -5, Att. contact -5, DEF -5, Att. dist. -10",
+      "icon_url": "https://www.co-drs.org/sites/default/files/co/detrimental_state/sight-disabled.svg"
+    }
+  },
+  {
+    "model": "character.harmfulstate",
+    "fields": {
+      "name": "\u00c9tourdi",
+      "url": "https://www.co-drs.org/fr/jeu/etats-prejudiciables",
+      "created": "2022-11-02T20:01:20.877Z",
+      "modified": "2022-11-02T20:01:20.877Z",
+      "description": "Aucune action possible, DEF -10",
+      "icon_url": "https://www.co-drs.org/sites/default/files/co/detrimental_state/stoned-skull.svg"
+    }
+  },
+  {
+    "model": "character.harmfulstate",
+    "fields": {
+      "name": "Immobilis\u00e9",
+      "url": "https://www.co-drs.org/fr/jeu/etats-prejudiciables",
+      "created": "2022-11-02T20:01:20.897Z",
+      "modified": "2022-11-02T20:01:20.897Z",
+      "description": "d12 pour tous les tests au lieu du d20, pas de d\u00e9placement",
+      "icon_url": "https://www.co-drs.org/sites/default/files/co/detrimental_state/weight-crush.svg"
+    }
+  },
+  {
+    "model": "character.harmfulstate",
+    "fields": {
+      "name": "Paralys\u00e9",
+      "url": "https://www.co-drs.org/fr/jeu/etats-prejudiciables",
+      "created": "2022-11-02T20:01:20.916Z",
+      "modified": "2022-11-02T20:01:20.916Z",
+      "description": "Aucune action possible, en cas d\u2019attaque : touch\u00e9 automatiquement et subit un coup critique",
+      "icon_url": "https://www.co-drs.org/sites/default/files/co/detrimental_state/handcuffed.svg"
+    }
+  },
+  {
+    "model": "character.harmfulstate",
+    "fields": {
+      "name": "Ralenti",
+      "url": "https://www.co-drs.org/fr/jeu/etats-prejudiciables",
+      "created": "2022-11-02T20:01:20.936Z",
+      "modified": "2022-11-02T20:01:20.936Z",
+      "description": "Une seule action par tour (action d\u2019attaque ou de mouvement)",
+      "icon_url": "https://www.co-drs.org/sites/default/files/co/detrimental_state/tortoise.svg"
+    }
+  },
+  {
+    "model": "character.harmfulstate",
+    "fields": {
+      "name": "Renvers\u00e9",
+      "url": "https://www.co-drs.org/fr/jeu/etats-prejudiciables",
+      "created": "2022-11-02T20:01:20.954Z",
+      "modified": "2022-11-02T20:01:20.954Z",
+      "description": "Att. -5, DEF -5, n\u00e9cessite une action de mouvement pour se relever",
+      "icon_url": "https://www.co-drs.org/sites/default/files/co/detrimental_state/falling.svg"
+    }
+  },
+  {
+    "model": "character.harmfulstate",
+    "fields": {
+      "name": "Surpris",
+      "url": "https://www.co-drs.org/fr/jeu/etats-prejudiciables",
+      "created": "2022-11-02T20:01:20.971Z",
+      "modified": "2022-11-02T20:01:20.971Z",
+      "description": "Pas d\u2019action, DEF -5 au 1er tour de combat",
+      "icon_url": "https://www.co-drs.org/sites/default/files/co/detrimental_state/surprised.svg"
     }
   },
   {

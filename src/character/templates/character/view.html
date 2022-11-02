@@ -63,7 +63,7 @@
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl">
             <table id="fight-table" class="table table-hover table-sm">
                 <thead>
-                    <tr><th scope="col" colspan="2">Combat</th></tr>
+                    <tr><th scope="col" colspan="2">Attaque</th></tr>
                 </thead>
                 <tbody class="table-group-divider">
                     <tr>
@@ -130,6 +130,47 @@
                             data-bs-placement="left"
                             data-bs-title="{{ character.level }} (niveau) + {{ character.attack_magic|sub:character.level }} (mod. {{ character.profile.magical_strength }})">
                             {{ character.attack_magic|modifier }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl">
+            <table id="fight-table" class="table table-hover table-sm">
+                <thead>
+                    <tr><th scope="col" colspan="2">Protection</th></tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">
+                            Armure
+                            <div class="btn-group btn-group-sm float-end" role="group">
+                                <button
+                                    hx-get="{% url "character:armor_change" pk=character.pk %}?value=ko"
+                                    hx-target="#armor"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
+                                <button
+                                    hx-get="{% url "character:armor_change" pk=character.pk %}?value=-1"
+                                    hx-target="#armor"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+                                <button
+                                    hx-get="{% url "character:armor_change" pk=character.pk %}?value=1"
+                                    hx-target="#armor"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                <button
+                                    type="button"
+                                    disabled
+                                    class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
+                            </div>
+                        </th>
+                        <td id="armor">
+                            {{ character.armor }}
                         </td>
                     </tr>
                     <tr>
@@ -200,7 +241,7 @@
                         <th scope="row">Défense</th>
                         <td data-bs-toggle="tooltip"
                             data-bs-placement="left"
-                            data-bs-title="10 + {{ character.armor }} (armure) + {{ character.shield }} (bouclier) + {{ character.modifier_dexterity }} (mod. DEX) + {{ character.defense_misc }} (divers)"
+                            data-bs-title="10 + armure + bouclier + mod. DEX + divers"
                             hx-get="{% url "character:get_defense" pk=character.pk %}"
                             hx-trigger="update_defense from:#fight-table">
                             {{ character.defense }}

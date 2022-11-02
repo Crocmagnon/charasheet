@@ -54,7 +54,11 @@ def add_path(request, pk: int):
         context["add_path_form"] = AddPathForm(character)
     else:
         context["add_path_form"] = form
-    return render(request, "character/paths_and_capabilities.html", context)
+    return render(
+        request,
+        "character/snippets/character_details/paths_and_capabilities.html",
+        context,
+    )
 
 
 @login_required
@@ -212,14 +216,26 @@ def character_equipment_change(request, pk: int):
     )
     context = {"character": character}
     if request.method == "GET":
-        return render(request, f"character/{field}_update.html", context)
+        return render(
+            request,
+            f"character/snippets/character_details/{field}_update.html",
+            context,
+        )
     form = EquipmentForm(request.POST, instance=character)
     if form.is_valid():
         form.save()
-        return render(request, f"character/{field}_display.html", context)
+        return render(
+            request,
+            f"character/snippets/character_details/{field}_display.html",
+            context,
+        )
     else:
         context["errors"] = form.errors
-        return render(request, f"character/{field}_update.html", context)
+        return render(
+            request,
+            f"character/snippets/character_details/{field}_update.html",
+            context,
+        )
 
 
 @login_required
@@ -233,10 +249,16 @@ def update_text_field(request, pk, field):
     )
     context = {"character": character}
     if request.method == "GET":
-        return render(request, f"character/{field}_update.html", context)
+        return render(
+            request,
+            f"character/snippets/character_details/{field}_update.html",
+            context,
+        )
     setattr(character, field, request.POST.get(field))
     character.save(update_fields=[field])
-    return render(request, f"character/{field}_display.html", context)
+    return render(
+        request, f"character/snippets/character_details/{field}_display.html", context
+    )
 
 
 @login_required
@@ -251,7 +273,11 @@ def add_next_in_path(request, character_pk: int, path_pk: int):
         "character": character,
         "add_path_form": AddPathForm(character),
     }
-    return render(request, "character/paths_and_capabilities.html", context)
+    return render(
+        request,
+        "character/snippets/character_details/paths_and_capabilities.html",
+        context,
+    )
 
 
 @login_required
@@ -268,7 +294,11 @@ def remove_last_in_path(request, character_pk: int, path_pk: int):
         "character": character,
         "add_path_form": AddPathForm(character),
     }
-    return render(request, "character/paths_and_capabilities.html", context)
+    return render(
+        request,
+        "character/snippets/character_details/paths_and_capabilities.html",
+        context,
+    )
 
 
 @login_required
@@ -279,7 +309,9 @@ def remove_state(request, pk: int, state_pk: int):
     state = get_object_or_404(HarmfulState, pk=state_pk)
     character.states.remove(state)
     context = {"character": character, "all_states": HarmfulState.objects.all()}
-    response = render(request, "character/states.html", context)
+    response = render(
+        request, "character/snippets/character_details/states.html", context
+    )
     return trigger_client_event(response, "refresh_tooltips", {})
 
 
@@ -291,5 +323,7 @@ def add_state(request, pk: int, state_pk: int):
     state = get_object_or_404(HarmfulState, pk=state_pk)
     character.states.add(state)
     context = {"character": character, "all_states": HarmfulState.objects.all()}
-    response = render(request, "character/states.html", context)
+    response = render(
+        request, "character/snippets/character_details/states.html", context
+    )
     return trigger_client_event(response, "refresh_tooltips", {})

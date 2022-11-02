@@ -21,7 +21,7 @@
         {{ character.race.name }} {{ character.profile.name }} niv. {{ character.level }}<br>
         {{ character.get_gender_display }}, {{ character.age }} ans, {{ character.height_m }}m, {{ character.weight }}kg (IMC: {{ character.imc|floatformat }})
     </p>
-    {% include "character/states.html" %}
+    {% include "character/snippets/character_details/states.html" %}
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl">
             <table id="fight-table" class="table table-hover table-sm">
@@ -443,13 +443,13 @@
             </div>
         </div>
         <div class="col-md-6 col-lg-4 mb-3">
-            {% include "character/damage_reduction_display.html" %}
+            {% include "character/snippets/character_details/damage_reduction_display.html" %}
         </div>
         <div class="col-md-12 col-lg-4 mb-3">
-            {% include "character/equipment_display.html" %}
+            {% include "character/snippets/character_details/equipment_display.html" %}
         </div>
     </div>
     <h2>Voies & Capacités</h2>
-    {% include "character/paths_and_capabilities.html" %}
-    {% include "character/notes_display.html" %}
+    {% include "character/snippets/character_details/paths_and_capabilities.html" %}
+    {% include "character/snippets/character_details/notes_display.html" %}
 {% endblock %}

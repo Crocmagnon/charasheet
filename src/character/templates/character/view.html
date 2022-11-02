@@ -18,49 +18,6 @@
     </p>
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl">
-            <table class="table table-hover table-sm">
-                <thead>
-                    <tr>
-                        <th scope="col">Carac</th>
-                        <th scope="col">Valeur</th>
-                        <th scope="col">Mod.</th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    <tr>
-                        <th scope="row">FOR</th>
-                        <td>{{ character.value_strength }}</td>
-                        <td>{{ character.modifier_strength|modifier }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">DEX</th>
-                        <td>{{ character.value_dexterity }}</td>
-                        <td>{{ character.modifier_dexterity|modifier }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">CON</th>
-                        <td>{{ character.value_constitution }}</td>
-                        <td>{{ character.modifier_constitution|modifier }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">INT</th>
-                        <td>{{ character.value_intelligence }}</td>
-                        <td>{{ character.modifier_intelligence|modifier }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">SAG</th>
-                        <td>{{ character.value_wisdom }}</td>
-                        <td>{{ character.modifier_wisdom|modifier }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">CHA</th>
-                        <td>{{ character.value_charisma }}</td>
-                        <td>{{ character.modifier_charisma|modifier }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 col-xl">
             <table id="fight-table" class="table table-hover table-sm">
                 <thead>
                     <tr><th scope="col" colspan="2">Attaque</th></tr>
@@ -250,7 +207,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-12 col-lg-6 col-xl">
+        <div class="col-sm-12 col-md-8 col-lg-6 col-xl">
             <table class="table table-hover table-sm">
                 <thead>
                     <tr><th scope="col" colspan="2">Énergie</th></tr>
@@ -397,7 +354,50 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-md-4">
+            <table class="table table-hover table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Carac</th>
+                        <th scope="col">Valeur</th>
+                        <th scope="col">Mod.</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">FOR</th>
+                        <td>{{ character.value_strength }}</td>
+                        <td>{{ character.modifier_strength|modifier }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">DEX</th>
+                        <td>{{ character.value_dexterity }}</td>
+                        <td>{{ character.modifier_dexterity|modifier }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CON</th>
+                        <td>{{ character.value_constitution }}</td>
+                        <td>{{ character.modifier_constitution|modifier }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">INT</th>
+                        <td>{{ character.value_intelligence }}</td>
+                        <td>{{ character.modifier_intelligence|modifier }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SAG</th>
+                        <td>{{ character.value_wisdom }}</td>
+                        <td>{{ character.modifier_wisdom|modifier }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CHA</th>
+                        <td>{{ character.value_charisma }}</td>
+                        <td>{{ character.modifier_charisma|modifier }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-8">
             <table class="table table-hover table-sm">
                 <thead>
                     <tr>

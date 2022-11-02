@@ -134,6 +134,38 @@
                     </tr>
                     <tr>
                         <th scope="row">
+                            Bouclier
+                            <div class="btn-group btn-group-sm float-end" role="group">
+                                <button
+                                    hx-get="{% url "character:shield_change" pk=character.pk %}?value=ko"
+                                    hx-target="#shield"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
+                                <button
+                                    hx-get="{% url "character:shield_change" pk=character.pk %}?value=-1"
+                                    hx-target="#shield"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+                                <button
+                                    hx-get="{% url "character:shield_change" pk=character.pk %}?value=1"
+                                    hx-target="#shield"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                <button
+                                    type="button"
+                                    disabled
+                                    class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
+                            </div>
+                        </th>
+                        <td id="shield">
+                            {{ character.shield }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
                             Divers défense
                             <div class="btn-group btn-group-sm float-end" role="group">
                                 <button

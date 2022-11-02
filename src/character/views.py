@@ -107,6 +107,18 @@ def character_defense_misc_change(request, pk: int):
 
 
 @login_required
+def character_shield_change(request, pk: int):
+    character = get_object_or_404(
+        Character.objects.filter(player=request.user).only("shield"), pk=pk
+    )
+    value = get_updated_value(request, character.shield, float("inf"))
+    character.shield = value
+    character.save(update_fields=["shield"])
+    response = HttpResponse(value)
+    return trigger_client_event(response, "update_defense", {})
+
+
+@login_required
 def character_initiative_misc_change(request, pk: int):
     character = get_object_or_404(
         Character.objects.filter(player=request.user).only("initiative_misc"), pk=pk

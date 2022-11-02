@@ -1,0 +1,27 @@
+{% extends "common/base.html" %}
+{% load character_extras %}
+
+{% block title %}Groupes{% endblock %}
+
+{% block content %}
+    <h1>Groupes</h1>
+    <a href="{% url "party:create" %}" class="btn btn-primary mb-3">
+        <i class="fa-solid fa-user-plus"></i> Nouveau groupe
+    </a>
+    <h2>Groupes que vous gérez</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        {% for party in managed_parties %}
+            {% include "party/snippets/party_card.html" %}
+        {% empty %}
+            <div class="col">Aucun</div>
+        {% endfor %}
+    </div>
+    <h2 class="mt-3">Groupes dont vous êtes membre</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        {% for party in played_parties %}
+            {% include "party/snippets/party_card.html" %}
+        {% empty %}
+            <div class="col">Aucun</div>
+        {% endfor %}
+    </div>
+{% endblock %}

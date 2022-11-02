@@ -1,0 +1,14 @@
+{% extends "common/base.html" %}
+{% load django_bootstrap5 %}
+{% load character_extras %}
+
+{% block title %}Créer groupe{% endblock %}
+
+{% block content %}
+    <h1>Créer un groupe</h1>
+    <form action="{% url "party:create" %}" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% bootstrap_button type="submit" content="Créer" %}
+    </form>
+{% endblock %}

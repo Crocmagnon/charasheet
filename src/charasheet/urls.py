@@ -48,6 +48,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", hello_world, name="hello_world"),
     path("character/", include("character.urls", namespace="character")),
+    path("party/", include("party.urls", namespace="party")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -210,9 +210,3 @@ class WeaponAdmin(admin.ModelAdmin):
 class HarmfulStateAdmin(admin.ModelAdmin):
     list_display = ["name", "description"]
     search_fields = ["name"]
-
-
-@admin.register(models.Party)
-class PartyAdmin(admin.ModelAdmin):
-    list_display = ["name", "game_master"]
-    search_fields = ["name"]

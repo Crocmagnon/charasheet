@@ -29,6 +29,7 @@
       <list>
         <option value="$MODULE_DIR$/src/common/templates" />
         <option value="$MODULE_DIR$/src/character/templates" />
+        <option value="$MODULE_DIR$/src/party/templates" />
       </list>
     </option>
   </component>

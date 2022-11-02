@@ -75,6 +75,7 @@ CUSTOM_APPS = [
     "whitenoise.runserver_nostatic",  # should be first
     "common",
     "character",
+    "party",
 ]
 
 INSTALLED_APPS = CUSTOM_APPS + DJANGO_APPS + EXTERNAL_APPS

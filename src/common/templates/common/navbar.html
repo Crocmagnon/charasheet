@@ -7,16 +7,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{% url "character:list" %}">Mes perso</a>
+                    <a class="nav-link" href="{% url "character:list" %}">Mes perso</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{% url "character:list" %}">Mes groupes</a>
+                    <a class="nav-link" href="{% url "party:list" %}">Mes groupes</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
+                {% if user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "admin:index" %}">Admin</a>
+                    </li>
+                {% endif %}
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url "logout" %}">Déconnexion</a>
+                        <a class="nav-link" href="{% url "logout" %}">Déconnexion</a>
                     </li>
                 {% endif %}
             </ul>

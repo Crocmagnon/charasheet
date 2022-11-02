@@ -1,7 +1,20 @@
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
 
-from common.models import UniquelyNamedModel
+from character.models import Character
+from common.models import UniquelyNamedModel, UniquelyNamedModelManager
+
+
+class PartyQuerySet(models.QuerySet):
+    def managed_by(self, user):
+        return self.filter(game_master=user)
+
+    def played_by(self, user):
+        return self.filter(characters__in=Character.objects.filter(player=user))
+
+
+class PartyManager(UniquelyNamedModelManager):
+    pass
 
 
 class Party(UniquelyNamedModel, TimeStampedModel, models.Model):
@@ -17,6 +30,8 @@ class Party(UniquelyNamedModel, TimeStampedModel, models.Model):
         related_name="parties",
         verbose_name="personnages",
     )
+
+    objects = PartyManager.from_queryset(PartyQuerySet)()
 
     class Meta(UniquelyNamedModel.Meta, TimeStampedModel.Meta):
         verbose_name = "Groupe"

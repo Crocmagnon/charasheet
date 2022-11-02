@@ -1,0 +1,15 @@
+<p id="states">
+    États :
+    {% for state in character.states.all %}
+        <img src="{{ state.icon_url }}" alt="{{ state.name }}" height="25" width="25"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-title="{{ state.name }} : {{ state.description }}"
+            hx-get="{% url "character:remove_state" pk=character.pk state_pk=state.pk %}"
+            hx-target="#states"
+            hx-swap="outerHTML"
+        >
+    {% empty %}
+        Aucun
+    {% endfor %}
+</p>

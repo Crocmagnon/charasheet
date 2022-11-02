@@ -42,8 +42,15 @@
         {% endif %}
         <script src="{% static "vendor/bootstrap-5.2.2/bootstrap.bundle.min.js" %}"></script>
         <script type="application/javascript" defer>
-            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+            let tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+            let tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+            addEventListener("refresh_tooltips", function (event) {
+                tooltipList.forEach(tooltip => tooltip.dispose());
+                setTimeout(() => {
+                    tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+                    tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+                }, 50);
+            });
         </script>
     </body>
 </html>

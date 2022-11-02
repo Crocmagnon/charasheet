@@ -16,6 +16,7 @@
         {{ character.race.name }} {{ character.profile.name }} niv. {{ character.level }}<br>
         {{ character.get_gender_display }}, {{ character.age }} ans, {{ character.height_m }}m, {{ character.weight }}kg (IMC: {{ character.imc|floatformat }})
     </p>
+    {% include "character/states.html" %}
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl">
             <table id="fight-table" class="table table-hover table-sm">

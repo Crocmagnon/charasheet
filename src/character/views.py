@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django_htmx.http import trigger_client_event
 
 from character.forms import AddPathForm, EquipmentForm
-from character.models import Capability, Character, Path
+from character.models import Capability, Character, HarmfulState, Path
 from character.templatetags.character_extras import modifier
 
 
@@ -265,3 +265,15 @@ def remove_last_in_path(request, character_pk: int, path_pk: int):
         "add_path_form": AddPathForm(character),
     }
     return render(request, "character/paths_and_capabilities.html", context)
+
+
+@login_required
+def remove_state(request, pk: int, state_pk: int):
+    character: Character = get_object_or_404(
+        Character.objects.filter(player=request.user), pk=pk
+    )
+    state = get_object_or_404(HarmfulState, pk=state_pk)
+    character.states.remove(state)
+    context = {"character": character}
+    response = render(request, "character/states.html", context)
+    return trigger_client_event(response, "refresh_tooltips", {})

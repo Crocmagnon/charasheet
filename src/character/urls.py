@@ -69,4 +69,7 @@ urlpatterns = [
         name="remove_last_in_path",
     ),
     path("<int:pk>/add_path/", views.add_path, name="add_path"),
+    path(
+        "<int:pk>/remove_state/<int:state_pk>/", views.remove_state, name="remove_state"
+    ),
 ]

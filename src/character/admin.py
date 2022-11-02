@@ -138,6 +138,7 @@ class CharacterAdmin(admin.ModelAdmin):
                     "attack_melee",
                     "attack_range",
                     "attack_magic",
+                    "states",
                 ]
             },
         ),
@@ -182,6 +183,7 @@ class CharacterAdmin(admin.ModelAdmin):
     filter_horizontal = [
         "capabilities",
         "weapons",
+        "states",
     ]
 
     form = CharacterAdminForm
@@ -196,3 +198,9 @@ class CharacterAdmin(admin.ModelAdmin):
 class WeaponAdmin(admin.ModelAdmin):
     list_display = ["name", "damage"]
     search_fields = ["name", "special", "damage"]
+
+
+@admin.register(models.HarmfulState)
+class HarmfulStateAdmin(admin.ModelAdmin):
+    list_display = ["name", "description"]
+    search_fields = ["name"]

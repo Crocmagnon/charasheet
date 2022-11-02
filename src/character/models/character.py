@@ -49,6 +49,15 @@ class Race(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
         verbose_name_plural = "Races"
 
 
+class HarmfulState(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
+    description = models.TextField()
+    icon_url = models.URLField()
+
+    class Meta:
+        verbose_name = "État préjudiciable"
+        verbose_name_plural = "États préjudiciables"
+
+
 def modifier(value: int) -> int:
     if not value:
         return 0
@@ -176,6 +185,8 @@ class Character(models.Model):
 
     notes = models.TextField(blank=True, verbose_name="notes", default=DEFAULT_NOTES)
     damage_reduction = models.TextField(blank=True, verbose_name="réduction de dégâts")
+
+    states = models.ManyToManyField(HarmfulState, blank=True, related_name="characters")
 
     objects = CharacterManager()
 

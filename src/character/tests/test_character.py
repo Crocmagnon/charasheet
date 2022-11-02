@@ -45,9 +45,12 @@ def test_modifier_values(value, expected, ability):
     assert getattr(character, modifier_attribute) == expected
 
 
-@given(ability_values())
-def test_initiative(dex):
-    assert Character(value_dexterity=dex).initiative == dex
+@given(ability_values(), integers())
+def test_initiative(dex, init_misc):
+    assert (
+        Character(value_dexterity=dex, initiative_misc=init_misc).modifier_initiative
+        == modifier_test(dex) + init_misc
+    )
 
 
 @given(level=levels(), strength=ability_values())

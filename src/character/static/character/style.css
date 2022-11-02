@@ -1,0 +1,3 @@
+.state-enabled {
+    filter: invert(50%) sepia(100%) saturate(3000%) hue-rotate(325deg);
+}

@@ -72,4 +72,5 @@ urlpatterns = [
     path(
         "<int:pk>/remove_state/<int:state_pk>/", views.remove_state, name="remove_state"
     ),
+    path("<int:pk>/add_state/<int:state_pk>/", views.add_state, name="add_state"),
 ]

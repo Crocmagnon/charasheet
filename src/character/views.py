@@ -32,7 +32,11 @@ def character_view(request, pk: int):
         pk=pk,
     )
     add_path_form = AddPathForm(character)
-    context = {"character": character, "add_path_form": add_path_form}
+    context = {
+        "character": character,
+        "add_path_form": add_path_form,
+        "all_states": HarmfulState.objects.all(),
+    }
     return render(request, "character/view.html", context)
 
 
@@ -274,6 +278,18 @@ def remove_state(request, pk: int, state_pk: int):
     )
     state = get_object_or_404(HarmfulState, pk=state_pk)
     character.states.remove(state)
-    context = {"character": character}
+    context = {"character": character, "all_states": HarmfulState.objects.all()}
+    response = render(request, "character/states.html", context)
+    return trigger_client_event(response, "refresh_tooltips", {})
+
+
+@login_required
+def add_state(request, pk: int, state_pk: int):
+    character: Character = get_object_or_404(
+        Character.objects.filter(player=request.user), pk=pk
+    )
+    state = get_object_or_404(HarmfulState, pk=state_pk)
+    character.states.add(state)
+    context = {"character": character, "all_states": HarmfulState.objects.all()}
     response = render(request, "character/states.html", context)
     return trigger_client_event(response, "refresh_tooltips", {})

@@ -24,8 +24,10 @@ class AddPathForm(forms.Form):
     def __init__(self, character: Character, *args, **kwargs):
         super().__init__(*args, **kwargs)
         paths = {cap.path_id for cap in character.capabilities.all()}
-        paths = Path.objects.exclude(pk__in=paths).order_by(
-            "profile__name", "race__name"
+        paths = (
+            Path.objects.exclude(pk__in=paths)
+            .order_by("profile__name", "race__name")
+            .select_related("profile", "race")
         )
         character_paths = paths.filter(
             Q(profile=character.profile) | Q(race=character.race)

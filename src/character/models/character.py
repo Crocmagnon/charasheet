@@ -1,4 +1,5 @@
 import collections
+from collections.abc import Iterable
 
 import markdown
 from django.db import models
@@ -56,6 +57,7 @@ class HarmfulState(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models
     class Meta:
         verbose_name = "État préjudiciable"
         verbose_name_plural = "États préjudiciables"
+        ordering = ["name"]
 
 
 def modifier(value: int) -> int:
@@ -318,3 +320,8 @@ class Character(models.Model):
     def get_formatted_notes(self) -> str:
         md = markdown.Markdown(extensions=["extra", "nl2br"])
         return md.convert(self.notes)
+
+    def get_missing_states(self) -> Iterable[HarmfulState]:
+        return HarmfulState.objects.exclude(
+            pk__in=self.states.all().values_list("pk", flat=True)
+        )

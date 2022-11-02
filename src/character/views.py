@@ -5,6 +5,7 @@ from django_htmx.http import trigger_client_event
 
 from character.forms import AddPathForm, EquipmentForm
 from character.models import Capability, Character, Path
+from character.templatetags.character_extras import modifier
 
 
 @login_required
@@ -179,7 +180,7 @@ def character_get_initiative(request, pk: int):
         ),
         pk=pk,
     )
-    return HttpResponse(character.modifier_initiative)
+    return HttpResponse(modifier(character.modifier_initiative))
 
 
 @login_required

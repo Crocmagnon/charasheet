@@ -15,7 +15,7 @@ def characters_list(request):
             "race", "profile"
         )
     }
-    return render(request, "character/list.html", context)
+    return render(request, "character/characters_list.html", context)
 
 
 @login_required
@@ -37,7 +37,7 @@ def character_view(request, pk: int):
         "add_path_form": add_path_form,
         "all_states": HarmfulState.objects.all(),
     }
-    return render(request, "character/view.html", context)
+    return render(request, "character/character_details.html", context)
 
 
 @login_required

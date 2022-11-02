@@ -1,10 +1,10 @@
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
 
-from common.models import UniquelyNamedModel
+from common.models import DocumentedModel, UniquelyNamedModel
 
 
-class Weapon(UniquelyNamedModel, TimeStampedModel, models.Model):
+class Weapon(UniquelyNamedModel, DocumentedModel, TimeStampedModel, models.Model):
     class Category(models.TextChoices):
         MELEE = "MEL", "corps à corps"
         RANGE = "RAN", "à distance"

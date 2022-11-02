@@ -128,6 +128,7 @@ def import_from_co_drs(ctx):
         ctx.run("./manage.py import_paths", pty=True, echo=True)
         ctx.run("./manage.py import_capabilities", pty=True, echo=True)
         ctx.run("./manage.py import_harmful_states", pty=True, echo=True)
+        ctx.run("./manage.py import_weapons", pty=True, echo=True)
 
 
 @task(pre=[import_from_co_drs, dump_initial])

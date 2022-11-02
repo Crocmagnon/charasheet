@@ -3,12 +3,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 
-from character.models.character import HarmfulState
+from character.models import Weapon
 
 
 class Command(BaseCommand):
     def handle(self, *args, **options) -> None:
-        url = "https://www.co-drs.org/fr/jeu/etats-prejudiciables"
+        url = "https://www.co-drs.org/fr/ressources/equipements/armes"
         self.setup_selenium()
         self.selenium.get(url)
         states = self.selenium.find_elements(By.CSS_SELECTOR, "tbody tr")
@@ -17,21 +17,30 @@ class Command(BaseCommand):
                 self.import_row(url, state)
             except Exception as e:
                 print(f"{type(e)}: {e}")
-        self.stdout.write(f"Finished processing {len(states)} states.")
+        self.stdout.write(f"Finished processing {len(states)} weapons.")
 
     def import_row(self, url: str, state_row: WebElement) -> None:
         name = state_row.find_element(By.CLASS_NAME, "views-field-name").text.strip()
-        description = state_row.find_element(
-            By.CLASS_NAME, "views-field-description__value"
-        ).text.strip()
-        icon_url = state_row.find_element(
-            By.CSS_SELECTOR, ".views-field-field-svg-icon img"
-        ).get_attribute("src")
-        state, _ = HarmfulState.objects.update_or_create(
-            name=name,
-            defaults={"description": description, "url": url, "icon_url": icon_url},
+        category = (
+            state_row.find_element(By.CLASS_NAME, "views-field-type")
+            .text.strip()
+            .lower()
         )
-        self.stdout.write(self.style.SUCCESS(f"Created/updated state {state}"))
+        if "distance" in category:
+            category = Weapon.Category.RANGE
+        else:
+            category = Weapon.Category.MELEE
+        damage = state_row.find_element(By.CLASS_NAME, "views-field-dmg").text.strip()
+        weapon, _ = Weapon.objects.update_or_create(
+            name=name,
+            defaults={
+                "damage": damage,
+                "special": "",
+                "category": category,
+                "url": url,
+            },
+        )
+        self.stdout.write(self.style.SUCCESS(f"Created/updated weapon {weapon}"))
 
     def setup_selenium(self) -> None:
         options = webdriver.FirefoxOptions()

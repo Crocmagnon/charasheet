@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Q
 from django_extensions.db.models import TimeStampedModel
 
 from character.models import Character
@@ -11,6 +12,12 @@ class PartyQuerySet(models.QuerySet):
 
     def played_by(self, user):
         return self.filter(characters__in=Character.objects.filter(player=user))
+
+    def related_to(self, user):
+        return self.filter(
+            Q(game_master=user)
+            | Q(characters__in=Character.objects.filter(player=user))
+        ).distinct()
 
 
 class PartyManager(UniquelyNamedModelManager):

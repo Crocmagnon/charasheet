@@ -3,6 +3,7 @@ from collections.abc import Iterable
 
 import markdown
 from django.db import models
+from django.db.models import Q
 from django.db.models.functions import Lower
 from django.urls import reverse
 from django_extensions.db.models import TimeStampedModel
@@ -75,7 +76,11 @@ class CharacterManager(models.Manager):
 
 class CharacterQuerySet(models.QuerySet):
     def managed_by(self, user):
-        return self.filter(player=user)
+        from party.models import Party
+
+        return self.filter(
+            Q(player=user) | Q(parties__in=Party.objects.managed_by(user))
+        )
 
     def owned_by(self, user):
         return self.filter(player=user)

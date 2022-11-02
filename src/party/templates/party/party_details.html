@@ -1,0 +1,21 @@
+{% extends "common/base.html" %}
+{% load django_bootstrap5 %}
+{% load character_extras %}
+
+{% block title %}{{ party.name }} &centerdot; Groupe{% endblock %}
+
+{% block content %}
+    <h1>{{ party.name }}</h1>
+    <p>Personnages :</p>
+    <ul>
+        {% for character in party.characters.all %}
+            <li>
+                <a href="{% url "character:view" pk=character.pk %}">
+                    {{ character.name }}
+                </a>
+            </li>
+        {% empty %}
+            <li>Aucun...</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

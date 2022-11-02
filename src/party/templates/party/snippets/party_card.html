@@ -4,7 +4,7 @@
             <h5 class="card-title">
                 {{ party.name }}
             </h5>
-            <a href="" class="btn btn-sm btn-success">
+            <a href="{% url "party:details" pk=party.pk %}" class="btn btn-sm btn-success">
                 <i class="fa-solid fa-users"></i> Accéder
             </a>
         </div>

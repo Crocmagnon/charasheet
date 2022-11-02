@@ -105,7 +105,7 @@
                             data-bs-title="{{ character.modifier_dexterity }} (mod. DEX) + {{ character.initiative_misc }} (divers)"
                             hx-get="{% url "character:get_initiative" pk=character.pk %}"
                             hx-trigger="update_initiative from:#fight-table">
-                            {{ character.modifier_initiative }}
+                            {{ character.modifier_initiative|modifier }}
                         </td>
                     </tr>
                     <tr>

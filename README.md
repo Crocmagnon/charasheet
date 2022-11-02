@@ -1,8 +1,14 @@
 # charasheet
 
 ## Quick start
+Clone, then
 ```shell
-pre-commit install --install-hooks
+pyenv virtualenv 3.10.7 charasheet
+pyenv local charasheet
 poetry install
+pre-commit install --install-hooks
 inv test
+./src/manage.py migrate
+./src/manage.py loaddata initial_data
+./src/manage.py createsuperuser
 ```

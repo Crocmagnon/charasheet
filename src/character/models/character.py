@@ -39,13 +39,13 @@ class Profile(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Mode
     )
     notes = models.TextField(blank=True, verbose_name="notes")
 
-    class Meta:
+    class Meta(UniquelyNamedModel.Meta, TimeStampedModel.Meta):
         verbose_name = "Profil"
         verbose_name_plural = "Profils"
 
 
 class Race(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
-    class Meta:
+    class Meta(UniquelyNamedModel.Meta, TimeStampedModel.Meta):
         verbose_name = "Race"
         verbose_name_plural = "Races"
 
@@ -54,10 +54,9 @@ class HarmfulState(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models
     description = models.TextField()
     icon_url = models.URLField()
 
-    class Meta:
+    class Meta(UniquelyNamedModel.Meta, TimeStampedModel.Meta):
         verbose_name = "État préjudiciable"
         verbose_name_plural = "États préjudiciables"
-        ordering = ["name"]
 
 
 def modifier(value: int) -> int:
@@ -72,6 +71,14 @@ def modifier(value: int) -> int:
 class CharacterManager(models.Manager):
     def get_by_natural_key(self, name: str, player_id: int):
         return self.get(name=name, player_id=player_id)
+
+
+class CharacterQuerySet(models.QuerySet):
+    def managed_by(self, user):
+        return self.filter(player=user)
+
+    def owned_by(self, user):
+        return self.filter(player=user)
 
 
 DEFAULT_NOTES = """
@@ -190,7 +197,7 @@ class Character(models.Model):
 
     states = models.ManyToManyField(HarmfulState, blank=True, related_name="characters")
 
-    objects = CharacterManager()
+    objects = CharacterManager.from_queryset(CharacterQuerySet)()
 
     class Meta:
         verbose_name = "Personnage"

@@ -16,6 +16,6 @@ class Weapon(UniquelyNamedModel, DocumentedModel, TimeStampedModel, models.Model
         max_length=3, choices=Category.choices, default=Category.NONE
     )
 
-    class Meta:
+    class Meta(UniquelyNamedModel.Meta, TimeStampedModel.Meta):
         verbose_name = "Arme"
         verbose_name_plural = "Armes"

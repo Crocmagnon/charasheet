@@ -11,7 +11,7 @@ from character.templatetags.character_extras import modifier
 @login_required
 def characters_list(request):
     context = {
-        "characters": Character.objects.filter(player=request.user).select_related(
+        "characters": Character.objects.owned_by(request.user).select_related(
             "race", "profile"
         )
     }
@@ -26,7 +26,7 @@ def character_create(request):
 @login_required
 def character_view(request, pk: int):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user)
+        Character.objects.managed_by(request.user)
         .select_related("player", "racial_capability", "profile", "race")
         .prefetch_related("capabilities__path", "weapons"),
         pk=pk,
@@ -42,7 +42,7 @@ def character_view(request, pk: int):
 
 @login_required
 def add_path(request, pk: int):
-    character = get_object_or_404(Character.objects.filter(player=request.user), pk=pk)
+    character = get_object_or_404(Character.objects.managed_by(request.user), pk=pk)
     form = AddPathForm(character, request.POST)
     context = {"character": character}
     if form.is_valid():
@@ -64,7 +64,7 @@ def add_path(request, pk: int):
 @login_required
 def character_health_change(request, pk: int):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user).only(
+        Character.objects.managed_by(request.user).only(
             "health_max", "health_remaining"
         ),
         pk=pk,
@@ -78,7 +78,7 @@ def character_health_change(request, pk: int):
 @login_required
 def character_mana_change(request, pk: int):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user)
+        Character.objects.managed_by(request.user)
         .only("mana_remaining", "level", "value_intelligence", "profile")
         .select_related("profile"),
         pk=pk,
@@ -92,7 +92,7 @@ def character_mana_change(request, pk: int):
 @login_required
 def character_recovery_points_change(request, pk: int):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user).only("recovery_points_remaining"),
+        Character.objects.managed_by(request.user).only("recovery_points_remaining"),
         pk=pk,
     )
     value = get_updated_value(
@@ -106,7 +106,7 @@ def character_recovery_points_change(request, pk: int):
 @login_required
 def character_defense_misc_change(request, pk: int):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user).only("defense_misc"), pk=pk
+        Character.objects.managed_by(request.user).only("defense_misc"), pk=pk
     )
     value = get_updated_value(request, character.defense_misc, float("inf"))
     character.defense_misc = value
@@ -118,7 +118,7 @@ def character_defense_misc_change(request, pk: int):
 @login_required
 def character_shield_change(request, pk: int):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user).only("shield"), pk=pk
+        Character.objects.managed_by(request.user).only("shield"), pk=pk
     )
     value = get_updated_value(request, character.shield, float("inf"))
     character.shield = value
@@ -130,7 +130,7 @@ def character_shield_change(request, pk: int):
 @login_required
 def character_armor_change(request, pk: int):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user).only("armor"), pk=pk
+        Character.objects.managed_by(request.user).only("armor"), pk=pk
     )
     value = get_updated_value(request, character.armor, float("inf"))
     character.armor = value
@@ -142,7 +142,7 @@ def character_armor_change(request, pk: int):
 @login_required
 def character_initiative_misc_change(request, pk: int):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user).only("initiative_misc"), pk=pk
+        Character.objects.managed_by(request.user).only("initiative_misc"), pk=pk
     )
     value = get_updated_value(request, character.initiative_misc, float("inf"))
     character.initiative_misc = value
@@ -154,7 +154,7 @@ def character_initiative_misc_change(request, pk: int):
 @login_required
 def character_luck_points_change(request, pk: int):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user).only(
+        Character.objects.managed_by(request.user).only(
             "luck_points_remaining", "value_charisma"
         ),
         pk=pk,
@@ -184,7 +184,7 @@ def get_updated_value(request, remaining_value: int, max_value: int | float) -> 
 @login_required
 def character_get_defense(request, pk: int):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user).only(
+        Character.objects.managed_by(request.user).only(
             "defense_misc", "armor", "shield", "value_dexterity"
         ),
         pk=pk,
@@ -195,7 +195,7 @@ def character_get_defense(request, pk: int):
 @login_required
 def character_get_initiative(request, pk: int):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user).only(
+        Character.objects.managed_by(request.user).only(
             "initiative_misc", "value_dexterity"
         ),
         pk=pk,
@@ -212,7 +212,7 @@ def character_notes_change(request, pk: int):
 def character_equipment_change(request, pk: int):
     field = "equipment"
     character = get_object_or_404(
-        Character.objects.filter(player=request.user).only(field), pk=pk
+        Character.objects.managed_by(request.user).only(field), pk=pk
     )
     context = {"character": character}
     if request.method == "GET":
@@ -245,7 +245,7 @@ def character_damage_reduction_change(request, pk: int):
 
 def update_text_field(request, pk, field):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user).only(field), pk=pk
+        Character.objects.managed_by(request.user).only(field), pk=pk
     )
     context = {"character": character}
     if request.method == "GET":
@@ -264,7 +264,7 @@ def update_text_field(request, pk, field):
 @login_required
 def add_next_in_path(request, character_pk: int, path_pk: int):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user), pk=character_pk
+        Character.objects.managed_by(request.user), pk=character_pk
     )
     path = get_object_or_404(Path, pk=path_pk)
     capability = path.get_next_capability(character)
@@ -283,7 +283,7 @@ def add_next_in_path(request, character_pk: int, path_pk: int):
 @login_required
 def remove_last_in_path(request, character_pk: int, path_pk: int):
     character = get_object_or_404(
-        Character.objects.filter(player=request.user), pk=character_pk
+        Character.objects.managed_by(request.user), pk=character_pk
     )
     last_rank = max(
         character.capabilities.filter(path_id=path_pk).values_list("rank", flat=True)
@@ -304,7 +304,7 @@ def remove_last_in_path(request, character_pk: int, path_pk: int):
 @login_required
 def remove_state(request, pk: int, state_pk: int):
     character: Character = get_object_or_404(
-        Character.objects.filter(player=request.user), pk=pk
+        Character.objects.managed_by(request.user), pk=pk
     )
     state = get_object_or_404(HarmfulState, pk=state_pk)
     character.states.remove(state)
@@ -318,7 +318,7 @@ def remove_state(request, pk: int, state_pk: int):
 @login_required
 def add_state(request, pk: int, state_pk: int):
     character: Character = get_object_or_404(
-        Character.objects.filter(player=request.user), pk=pk
+        Character.objects.managed_by(request.user), pk=pk
     )
     state = get_object_or_404(HarmfulState, pk=state_pk)
     character.states.add(state)

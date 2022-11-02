@@ -105,6 +105,11 @@ class CharacterAdminForm(ModelForm):
         ].queryset = models.RacialCapability.objects.select_related("race")
 
 
+class PartyInline(admin.TabularInline):
+    model = models.Character.parties.through
+    extra = 0
+
+
 @admin.register(models.Character)
 class CharacterAdmin(admin.ModelAdmin):
     list_display = ["name", "player", "race", "profile", "level"]
@@ -185,6 +190,7 @@ class CharacterAdmin(admin.ModelAdmin):
         "weapons",
         "states",
     ]
+    inlines = [PartyInline]
 
     form = CharacterAdminForm
 
@@ -203,4 +209,10 @@ class WeaponAdmin(admin.ModelAdmin):
 @admin.register(models.HarmfulState)
 class HarmfulStateAdmin(admin.ModelAdmin):
     list_display = ["name", "description"]
+    search_fields = ["name"]
+
+
+@admin.register(models.Party)
+class PartyAdmin(admin.ModelAdmin):
+    list_display = ["name", "game_master"]
     search_fields = ["name"]

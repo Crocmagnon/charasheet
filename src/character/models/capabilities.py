@@ -36,7 +36,7 @@ class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
     )
     notes = models.TextField(blank=True, verbose_name="notes")
 
-    class Meta:
+    class Meta(UniquelyNamedModel.Meta, TimeStampedModel.Meta):
         verbose_name = "Voie"
         verbose_name_plural = "Voies"
 
@@ -105,7 +105,7 @@ class Capability(DocumentedModel, TimeStampedModel, models.Model):
 
     objects = CapabilityManager()
 
-    class Meta:
+    class Meta(TimeStampedModel.Meta):
         constraints = [models.UniqueConstraint("path", "rank", name="unique_path_rank")]
         verbose_name = "Capacité"
         verbose_name_plural = "Capacités"
@@ -134,7 +134,7 @@ class RacialCapability(DocumentedModel, TimeStampedModel, models.Model):
 
     objects = RacialCapabilityManager()
 
-    class Meta:
+    class Meta(TimeStampedModel.Meta):
         verbose_name = "Capacité raciale"
         verbose_name_plural = "Capacités raciales"
         constraints = [models.UniqueConstraint("name", "race", name="unique_name_race")]

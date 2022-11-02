@@ -283,7 +283,7 @@ class Character(models.Model):
             Weapon.Category.MELEE: self.modifier_strength,
             Weapon.Category.NONE: 0,
         }
-        return modifier_map.get(Weapon.Category(weapon.category), 0)
+        return modifier_map.get(Weapon.Category(weapon.category), 0) + self.level
 
     def get_capabilities_by_path(self) -> dict[Path, list[Capability]]:
         capabilities_by_path = collections.defaultdict(list)

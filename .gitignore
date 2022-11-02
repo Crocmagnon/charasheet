@@ -36,3 +36,4 @@ test_reports/
 dashboard_templates/backup_*.zip
 
 .hypothesis
+.idea/sonarlint/

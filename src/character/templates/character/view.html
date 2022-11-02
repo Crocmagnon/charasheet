@@ -67,11 +67,45 @@
                 </thead>
                 <tbody class="table-group-divider">
                     <tr>
-                        <th scope="row">Initiative</th>
+                        <th scope="row">
+                            Initiative divers
+                            <div class="btn-group btn-group-sm float-end" role="group">
+                                <button
+                                    hx-get="{% url "character:initiative_misc_change" pk=character.pk %}?value=ko"
+                                    hx-target="#initiative-misc"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
+                                <button
+                                    hx-get="{% url "character:initiative_misc_change" pk=character.pk %}?value=-1"
+                                    hx-target="#initiative-misc"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+                                <button
+                                    hx-get="{% url "character:initiative_misc_change" pk=character.pk %}?value=1"
+                                    hx-target="#initiative-misc"
+                                    hx-swap="innerHTML"
+                                    type="button"
+                                    class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                <button
+                                    type="button"
+                                    disabled
+                                    class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
+                            </div>
+                        </th>
+                        <td id="initiative-misc">
+                            {{ character.initiative_misc }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Mod. initiative</th>
                         <td data-bs-toggle="tooltip"
                             data-bs-placement="left"
-                            data-bs-title="valeur DEX">
-                            {{ character.initiative }}
+                            data-bs-title="{{ character.modifier_dexterity }} (mod. DEX) + {{ character.initiative_misc }} (divers)"
+                            hx-get="{% url "character:get_initiative" pk=character.pk %}"
+                            hx-trigger="update_initiative from:#fight-table">
+                            {{ character.modifier_initiative }}
                         </td>
                     </tr>
                     <tr>

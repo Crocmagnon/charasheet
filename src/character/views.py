@@ -107,6 +107,18 @@ def character_defense_misc_change(request, pk: int):
 
 
 @login_required
+def character_initiative_misc_change(request, pk: int):
+    character = get_object_or_404(
+        Character.objects.filter(player=request.user).only("initiative_misc"), pk=pk
+    )
+    value = get_updated_value(request, character.initiative_misc, float("inf"))
+    character.initiative_misc = value
+    character.save(update_fields=["initiative_misc"])
+    response = HttpResponse(value)
+    return trigger_client_event(response, "update_initiative", {})
+
+
+@login_required
 def character_luck_points_change(request, pk: int):
     character = get_object_or_404(
         Character.objects.filter(player=request.user).only(
@@ -145,6 +157,17 @@ def character_get_defense(request, pk: int):
         pk=pk,
     )
     return HttpResponse(character.defense)
+
+
+@login_required
+def character_get_initiative(request, pk: int):
+    character = get_object_or_404(
+        Character.objects.filter(player=request.user).only(
+            "initiative_misc", "value_dexterity"
+        ),
+        pk=pk,
+    )
+    return HttpResponse(character.modifier_initiative)
 
 
 @login_required

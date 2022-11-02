@@ -29,6 +29,16 @@ urlpatterns = [
         name="defense_misc_change",
     ),
     path(
+        "<int:pk>/get_initiative/",
+        views.character_get_initiative,
+        name="get_initiative",
+    ),
+    path(
+        "<int:pk>/initiative_misc_change/",
+        views.character_initiative_misc_change,
+        name="initiative_misc_change",
+    ),
+    path(
         "<int:pk>/equipment_change/",
         views.character_equipment_change,
         name="equipment_change",

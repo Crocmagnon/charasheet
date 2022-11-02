@@ -148,6 +148,10 @@ class Character(models.Model):
     shield = models.PositiveSmallIntegerField(verbose_name="bouclier", default=0)
     defense_misc = models.SmallIntegerField(verbose_name="divers défense", default=0)
 
+    initiative_misc = models.SmallIntegerField(
+        verbose_name="divers initiative", default=0
+    )
+
     capabilities = models.ManyToManyField(
         "character.Capability", blank=True, verbose_name="capacités"
     )
@@ -218,8 +222,8 @@ class Character(models.Model):
         return modifier(self.value_charisma)
 
     @property
-    def initiative(self) -> int:
-        return self.value_dexterity
+    def modifier_initiative(self) -> int:
+        return self.modifier_dexterity + self.initiative_misc
 
     @property
     def attack_melee(self) -> int:

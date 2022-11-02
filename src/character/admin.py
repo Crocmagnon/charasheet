@@ -132,7 +132,14 @@ class CharacterAdmin(admin.ModelAdmin):
         ),
         (
             "Combat",
-            {"fields": ["initiative", "attack_melee", "attack_range", "attack_magic"]},
+            {
+                "fields": [
+                    ("initiative_misc", "modifier_initiative"),
+                    "attack_melee",
+                    "attack_range",
+                    "attack_magic",
+                ]
+            },
         ),
         ("Vitalité", {"fields": [("health_max", "health_remaining")]}),
         ("Défense", {"fields": ["armor", "shield", "defense_misc", "defense"]}),
@@ -163,7 +170,7 @@ class CharacterAdmin(admin.ModelAdmin):
         "modifier_intelligence",
         "modifier_wisdom",
         "modifier_charisma",
-        "initiative",
+        "modifier_initiative",
         "attack_melee",
         "attack_range",
         "attack_magic",

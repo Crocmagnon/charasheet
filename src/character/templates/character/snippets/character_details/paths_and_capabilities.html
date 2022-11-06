@@ -1,23 +1,26 @@
+{% load character_extras %}
 {% load django_bootstrap5 %}
 <div id="paths-and-capabilities">
-    <form>
-        {% csrf_token %}
-        <div class="row">
-            <div class="col">
-                {% bootstrap_form_errors add_path_form %}
-                <div class="input-group">
-                    {{ add_path_form.character_path }}
-                    {{ add_path_form.other_path }}
-                    <button class="btn btn-primary"
-                        hx-target="#paths-and-capabilities"
-                        hx-swap="outerHTML"
-                        hx-post="{% url "character:add_path" pk=character.pk %}">
-                        Sélectionner
-                    </button>
+    {% if character|managed_by:user %}
+        <form>
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    {% bootstrap_form_errors add_path_form %}
+                    <div class="input-group">
+                        {{ add_path_form.character_path }}
+                        {{ add_path_form.other_path }}
+                        <button class="btn btn-primary"
+                            hx-target="#paths-and-capabilities"
+                            hx-swap="outerHTML"
+                            hx-post="{% url "character:add_path" pk=character.pk %}">
+                            Sélectionner
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    {% endif %}
     <div class="row mt-2 gy-3">
         {% for path, capabilities in character.get_capabilities_by_path.items %}
             {% include "character/snippets/character_details/path.html" %}

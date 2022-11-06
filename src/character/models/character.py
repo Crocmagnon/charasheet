@@ -337,3 +337,6 @@ class Character(models.Model):
         return HarmfulState.objects.exclude(
             pk__in=self.states.all().values_list("pk", flat=True)
         )
+
+    def managed_by(self, user):
+        return self in Character.objects.managed_by(user)

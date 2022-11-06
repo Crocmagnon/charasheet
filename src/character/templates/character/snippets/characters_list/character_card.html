@@ -1,3 +1,4 @@
+{% load character_extras %}
 <div class="col">
     <div class="card">
         <div class="card-body">
@@ -21,18 +22,22 @@
                     {% endfor %}
                 {% endwith %}
             </p>
-            {% if character.player == user %}
-                <div class="btn-group btn-group-sm">
+            <div class="btn-group btn-group-sm">
+                {% if character|managed_by:user %}
                     <a href="{% url "character:view" pk=character.pk %}" class="btn btn-success">
-                        <i class="fa-solid fa-user"></i> Jouer
+                        <i class="fa-solid fa-user"></i> {% if character.player == user %}Jouer{% else %}Gérer{% endif %}
                     </a>
                     {% if party %}
                         <a href="{% url "party:leave" pk=party.pk character_pk=character.pk %}" class="btn btn-warning">
                             <i class="fa-solid fa-person-walking-arrow-right"></i> Quitter le groupe
                         </a>
                     {% endif %}
-                </div>
-            {% endif %}
+                {% else %}
+                    <a href="{% url "character:view" pk=character.pk %}" class="btn btn-primary">
+                        <i class="fa-solid fa-eye"></i> Observer
+                    </a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 from django import template
 
 from character.models import Character, Path, Weapon
+from common.models import User
 
 register = template.Library()
 
@@ -37,3 +38,8 @@ def has_next_capability(path: Path, character: Character) -> bool:
 @register.filter
 def max_rank(path: Path, character: Character) -> int:
     return path.max_rank(character)
+
+
+@register.filter
+def managed_by(character: Character, user: User) -> bool:
+    return character.managed_by(user)

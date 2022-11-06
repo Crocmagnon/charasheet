@@ -1,13 +1,16 @@
+{% load character_extras %}
 <div class="card" id="equipment">
     <h5 class="card-header">
         Équipement
-        <a hx-get="{% url "character:equipment_change" pk=character.pk %}"
-            hx-target="#equipment"
-            hx-swap="outerHTML"
-            class="btn btn-primary btn-sm"
-        >
-            <i class="fa-solid fa-pen-to-square"></i> Edit
-        </a>
+        {% if character|managed_by:user %}
+            <a hx-get="{% url "character:equipment_change" pk=character.pk %}"
+                hx-target="#equipment"
+                hx-swap="outerHTML"
+                class="btn btn-primary btn-sm"
+            >
+                <i class="fa-solid fa-pen-to-square"></i> Edit
+            </a>
+        {% endif %}
     </h5>
     <div class="card-body">
         <p class="card-text">

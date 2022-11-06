@@ -2,22 +2,24 @@
 <div class="col-12 col-md-6 col-xl-4">
     <h5>
         {{ path.display_name }} ({{ path|max_rank:character }})
-        <div class="btn-group btn-group-sm">
-            <button hx-get="{% url "character:remove_last_in_path" character_pk=character.pk path_pk=path.pk %}"
-                hx-target="#paths-and-capabilities"
-                hx-swap="outerHTML"
-                class="btn btn-secondary">
-                <i class="fa-solid fa-minus"></i>
-            </button>
-            {% if path|has_next_capability:character %}
-                <button hx-get="{% url "character:add_next_in_path" character_pk=character.pk path_pk=path.pk %}"
+        {% if character|managed_by:user %}
+            <div class="btn-group btn-group-sm">
+                <button hx-get="{% url "character:remove_last_in_path" character_pk=character.pk path_pk=path.pk %}"
                     hx-target="#paths-and-capabilities"
                     hx-swap="outerHTML"
-                    class="btn btn-primary">
-                    <i class="fa-solid fa-plus"></i>
+                    class="btn btn-secondary">
+                    <i class="fa-solid fa-minus"></i>
                 </button>
-            {% endif %}
-        </div>
+                {% if path|has_next_capability:character %}
+                    <button hx-get="{% url "character:add_next_in_path" character_pk=character.pk path_pk=path.pk %}"
+                        hx-target="#paths-and-capabilities"
+                        hx-swap="outerHTML"
+                        class="btn btn-primary">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                {% endif %}
+            </div>
+        {% endif %}
     </h5>
     {% if path.notes %}
         <div class="alert alert-primary">{{ path.notes }}</div>

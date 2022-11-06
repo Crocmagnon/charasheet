@@ -7,9 +7,11 @@
 
 {% block content %}
     <h1>{{ character.name }}</h1>
-    <p>
-        <a href="{% url "admin:character_character_change" object_id=character.pk %}">Edit</a>
-    </p>
+    {% if character|managed_by:user %}
+        <p>
+            <a href="{% url "admin:character_character_change" object_id=character.pk %}">Edit</a>
+        </p>
+    {% endif %}
     <p>
         Joueur : {{ character.player.get_full_name|default:character.player.username }}
     </p>
@@ -28,30 +30,32 @@
                     <tr>
                         <th scope="row">
                             Initiative divers
-                            <div class="btn-group btn-group-sm float-end" role="group">
-                                <button
-                                    hx-get="{% url "character:initiative_misc_change" pk=character.pk %}?value=ko"
-                                    hx-target="#initiative-misc"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
-                                <button
-                                    hx-get="{% url "character:initiative_misc_change" pk=character.pk %}?value=-1"
-                                    hx-target="#initiative-misc"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
-                                <button
-                                    hx-get="{% url "character:initiative_misc_change" pk=character.pk %}?value=1"
-                                    hx-target="#initiative-misc"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
-                                <button
-                                    type="button"
-                                    disabled
-                                    class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
-                            </div>
+                            {% if character|managed_by:user %}
+                                <div class="btn-group btn-group-sm float-end" role="group">
+                                    <button
+                                        hx-get="{% url "character:initiative_misc_change" pk=character.pk %}?value=ko"
+                                        hx-target="#initiative-misc"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
+                                    <button
+                                        hx-get="{% url "character:initiative_misc_change" pk=character.pk %}?value=-1"
+                                        hx-target="#initiative-misc"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+                                    <button
+                                        hx-get="{% url "character:initiative_misc_change" pk=character.pk %}?value=1"
+                                        hx-target="#initiative-misc"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                    <button
+                                        type="button"
+                                        disabled
+                                        class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
+                                </div>
+                            {% endif %}
                         </th>
                         <td id="initiative-misc">
                             {{ character.initiative_misc }}
@@ -62,8 +66,10 @@
                         <td data-bs-toggle="tooltip"
                             data-bs-placement="left"
                             data-bs-title="{{ character.modifier_dexterity }} (mod. DEX) + {{ character.initiative_misc }} (divers)"
-                            hx-get="{% url "character:get_initiative" pk=character.pk %}"
-                            hx-trigger="update_initiative from:#fight-table">
+                            {% if character|managed_by:user %}
+                                hx-get="{% url "character:get_initiative" pk=character.pk %}"
+                                hx-trigger="update_initiative from:#fight-table"
+                            {% endif %}>
                             {{ character.modifier_initiative|modifier }}
                         </td>
                     </tr>
@@ -103,30 +109,32 @@
                     <tr>
                         <th scope="row">
                             Armure
-                            <div class="btn-group btn-group-sm float-end" role="group">
-                                <button
-                                    hx-get="{% url "character:armor_change" pk=character.pk %}?value=ko"
-                                    hx-target="#armor"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
-                                <button
-                                    hx-get="{% url "character:armor_change" pk=character.pk %}?value=-1"
-                                    hx-target="#armor"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
-                                <button
-                                    hx-get="{% url "character:armor_change" pk=character.pk %}?value=1"
-                                    hx-target="#armor"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
-                                <button
-                                    type="button"
-                                    disabled
-                                    class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
-                            </div>
+                            {% if character|managed_by:user %}
+                                <div class="btn-group btn-group-sm float-end" role="group">
+                                    <button
+                                        hx-get="{% url "character:armor_change" pk=character.pk %}?value=ko"
+                                        hx-target="#armor"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
+                                    <button
+                                        hx-get="{% url "character:armor_change" pk=character.pk %}?value=-1"
+                                        hx-target="#armor"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+                                    <button
+                                        hx-get="{% url "character:armor_change" pk=character.pk %}?value=1"
+                                        hx-target="#armor"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                    <button
+                                        type="button"
+                                        disabled
+                                        class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
+                                </div>
+                            {% endif %}
                         </th>
                         <td id="armor">
                             {{ character.armor }}
@@ -135,30 +143,32 @@
                     <tr>
                         <th scope="row">
                             Bouclier
-                            <div class="btn-group btn-group-sm float-end" role="group">
-                                <button
-                                    hx-get="{% url "character:shield_change" pk=character.pk %}?value=ko"
-                                    hx-target="#shield"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
-                                <button
-                                    hx-get="{% url "character:shield_change" pk=character.pk %}?value=-1"
-                                    hx-target="#shield"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
-                                <button
-                                    hx-get="{% url "character:shield_change" pk=character.pk %}?value=1"
-                                    hx-target="#shield"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
-                                <button
-                                    type="button"
-                                    disabled
-                                    class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
-                            </div>
+                            {% if character|managed_by:user %}
+                                <div class="btn-group btn-group-sm float-end" role="group">
+                                    <button
+                                        hx-get="{% url "character:shield_change" pk=character.pk %}?value=ko"
+                                        hx-target="#shield"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
+                                    <button
+                                        hx-get="{% url "character:shield_change" pk=character.pk %}?value=-1"
+                                        hx-target="#shield"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+                                    <button
+                                        hx-get="{% url "character:shield_change" pk=character.pk %}?value=1"
+                                        hx-target="#shield"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                    <button
+                                        type="button"
+                                        disabled
+                                        class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
+                                </div>
+                            {% endif %}
                         </th>
                         <td id="shield">
                             {{ character.shield }}
@@ -167,30 +177,32 @@
                     <tr>
                         <th scope="row">
                             Divers défense
-                            <div class="btn-group btn-group-sm float-end" role="group">
-                                <button
-                                    hx-get="{% url "character:defense_misc_change" pk=character.pk %}?value=ko"
-                                    hx-target="#defense-misc"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
-                                <button
-                                    hx-get="{% url "character:defense_misc_change" pk=character.pk %}?value=-1"
-                                    hx-target="#defense-misc"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
-                                <button
-                                    hx-get="{% url "character:defense_misc_change" pk=character.pk %}?value=1"
-                                    hx-target="#defense-misc"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
-                                <button
-                                    type="button"
-                                    disabled
-                                    class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
-                            </div>
+                            {% if character|managed_by:user %}
+                                <div class="btn-group btn-group-sm float-end" role="group">
+                                    <button
+                                        hx-get="{% url "character:defense_misc_change" pk=character.pk %}?value=ko"
+                                        hx-target="#defense-misc"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
+                                    <button
+                                        hx-get="{% url "character:defense_misc_change" pk=character.pk %}?value=-1"
+                                        hx-target="#defense-misc"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+                                    <button
+                                        hx-get="{% url "character:defense_misc_change" pk=character.pk %}?value=1"
+                                        hx-target="#defense-misc"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                    <button
+                                        type="button"
+                                        disabled
+                                        class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
+                                </div>
+                            {% endif %}
                         </th>
                         <td id="defense-misc">
                             {{ character.defense_misc }}
@@ -201,8 +213,10 @@
                         <td data-bs-toggle="tooltip"
                             data-bs-placement="left"
                             data-bs-title="10 + armure + bouclier + mod. DEX + divers"
-                            hx-get="{% url "character:get_defense" pk=character.pk %}"
-                            hx-trigger="update_defense from:#fight-table">
+                            {% if character|managed_by:user %}
+                                hx-get="{% url "character:get_defense" pk=character.pk %}"
+                                hx-trigger="update_defense from:#fight-table"
+                            {% endif %}>
                             {{ character.defense }}
                         </td>
                     </tr>
@@ -218,64 +232,68 @@
                     <tr>
                         <th scope="row">
                             Points de vie
-                            <div class="btn-group btn-group-sm float-end" role="group">
-                                <button
-                                    hx-get="{% url "character:health_change" pk=character.pk %}?value=ko"
-                                    hx-target="#health-remaining"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
-                                <button
-                                    hx-get="{% url "character:health_change" pk=character.pk %}?value=-1"
-                                    hx-target="#health-remaining"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
-                                <button
-                                    hx-get="{% url "character:health_change" pk=character.pk %}?value=1"
-                                    hx-target="#health-remaining"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
-                                <button
-                                    hx-get="{% url "character:health_change" pk=character.pk %}?value=max"
-                                    hx-target="#health-remaining"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-outline-success"><i class="fa-solid fa-battery-full"></i></button>
-                            </div>
+                            {% if character|managed_by:user %}
+                                <div class="btn-group btn-group-sm float-end" role="group">
+                                    <button
+                                        hx-get="{% url "character:health_change" pk=character.pk %}?value=ko"
+                                        hx-target="#health-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
+                                    <button
+                                        hx-get="{% url "character:health_change" pk=character.pk %}?value=-1"
+                                        hx-target="#health-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+                                    <button
+                                        hx-get="{% url "character:health_change" pk=character.pk %}?value=1"
+                                        hx-target="#health-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                    <button
+                                        hx-get="{% url "character:health_change" pk=character.pk %}?value=max"
+                                        hx-target="#health-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-outline-success"><i class="fa-solid fa-battery-full"></i></button>
+                                </div>
+                            {% endif %}
                         </th>
                         <td><span id="health-remaining">{{ character.health_remaining }}</span> / {{ character.health_max }}</td>
                     </tr>
                     <tr>
                         <th scope="row">
                             Points de mana
-                            <div class="btn-group btn-group-sm float-end" role="group">
-                                <button
-                                    hx-get="{% url "character:mana_change" pk=character.pk %}?value=ko"
-                                    hx-target="#mana-remaining"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
-                                <button
-                                    hx-get="{% url "character:mana_change" pk=character.pk %}?value=-1"
-                                    hx-target="#mana-remaining"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
-                                <button
-                                    hx-get="{% url "character:mana_change" pk=character.pk %}?value=1"
-                                    hx-target="#mana-remaining"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
-                                <button
-                                    hx-get="{% url "character:mana_change" pk=character.pk %}?value=max"
-                                    hx-target="#mana-remaining"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-outline-success"><i class="fa-solid fa-battery-full"></i></button>
-                            </div>
+                            {% if character|managed_by:user %}
+                                <div class="btn-group btn-group-sm float-end" role="group">
+                                    <button
+                                        hx-get="{% url "character:mana_change" pk=character.pk %}?value=ko"
+                                        hx-target="#mana-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
+                                    <button
+                                        hx-get="{% url "character:mana_change" pk=character.pk %}?value=-1"
+                                        hx-target="#mana-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+                                    <button
+                                        hx-get="{% url "character:mana_change" pk=character.pk %}?value=1"
+                                        hx-target="#mana-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                    <button
+                                        hx-get="{% url "character:mana_change" pk=character.pk %}?value=max"
+                                        hx-target="#mana-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-outline-success"><i class="fa-solid fa-battery-full"></i></button>
+                                </div>
+                            {% endif %}
                         </th>
                         <td data-bs-toggle="tooltip"
                             data-bs-placement="left"
@@ -291,28 +309,30 @@
                     <tr>
                         <th scope="row">
                             Points de récup.
-                            <div class="btn-group btn-group-sm float-end" role="group">
-                                <button
-                                    type="button"
-                                    disabled
-                                    class="btn btn-outline-secondary"><i class="fa-solid fa-battery-empty"></i></button>
-                                <button
-                                    hx-get="{% url "character:recovery_points_change" pk=character.pk %}?value=-1"
-                                    hx-target="#recovery-points-remaining"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
-                                <button
-                                    hx-get="{% url "character:recovery_points_change" pk=character.pk %}?value=1"
-                                    hx-target="#recovery-points-remaining"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
-                                <button
-                                    type="button"
-                                    disabled
-                                    class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
-                            </div>
+                            {% if character|managed_by:user %}
+                                <div class="btn-group btn-group-sm float-end" role="group">
+                                    <button
+                                        type="button"
+                                        disabled
+                                        class="btn btn-outline-secondary"><i class="fa-solid fa-battery-empty"></i></button>
+                                    <button
+                                        hx-get="{% url "character:recovery_points_change" pk=character.pk %}?value=-1"
+                                        hx-target="#recovery-points-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+                                    <button
+                                        hx-get="{% url "character:recovery_points_change" pk=character.pk %}?value=1"
+                                        hx-target="#recovery-points-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                    <button
+                                        type="button"
+                                        disabled
+                                        class="btn btn-outline-secondary"><i class="fa-solid fa-battery-full"></i></button>
+                                </div>
+                            {% endif %}
                         </th>
                         <td>
                             <span id="recovery-points-remaining">{{ character.recovery_points_remaining }}</span> / {{ character.recovery_points_max }}</td>
@@ -320,30 +340,32 @@
                     <tr>
                         <th scope="row">
                             Points de chance
-                            <div class="btn-group btn-group-sm float-end" role="group">
-                                <button
-                                    type="button"
-                                    disabled
-                                    class="btn btn-outline-secondary"><i class="fa-solid fa-battery-empty"></i></button>
-                                <button
-                                    hx-get="{% url "character:luck_points_change" pk=character.pk %}?value=-1"
-                                    hx-target="#luck-points-remaining"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
-                                <button
-                                    hx-get="{% url "character:luck_points_change" pk=character.pk %}?value=1"
-                                    hx-target="#luck-points-remaining"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
-                                <button
-                                    hx-get="{% url "character:luck_points_change" pk=character.pk %}?value=max"
-                                    hx-target="#luck-points-remaining"
-                                    hx-swap="innerHTML"
-                                    type="button"
-                                    class="btn btn-outline-success"><i class="fa-solid fa-battery-full"></i></button>
-                            </div>
+                            {% if character|managed_by:user %}
+                                <div class="btn-group btn-group-sm float-end" role="group">
+                                    <button
+                                        type="button"
+                                        disabled
+                                        class="btn btn-outline-secondary"><i class="fa-solid fa-battery-empty"></i></button>
+                                    <button
+                                        hx-get="{% url "character:luck_points_change" pk=character.pk %}?value=-1"
+                                        hx-target="#luck-points-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+                                    <button
+                                        hx-get="{% url "character:luck_points_change" pk=character.pk %}?value=1"
+                                        hx-target="#luck-points-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                    <button
+                                        hx-get="{% url "character:luck_points_change" pk=character.pk %}?value=max"
+                                        hx-target="#luck-points-remaining"
+                                        hx-swap="innerHTML"
+                                        type="button"
+                                        class="btn btn-outline-success"><i class="fa-solid fa-battery-full"></i></button>
+                                </div>
+                            {% endif %}
                         </th>
                         <td data-bs-toggle="tooltip"
                             data-bs-placement="left"

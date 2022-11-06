@@ -29,12 +29,11 @@
                             <i class="fa-solid fa-user"></i> Jouer
                         </a>
                     {% else %}
-
                         <a href="{% url "character:view" pk=character.pk %}" class="btn btn-primary">
                             <i class="fa-solid fa-cog"></i> Gérer
                         </a>
                     {% endif %}
-                    {% if party %}
+                    {% if party and character in party.characters.all %}
                         <a href="{% url "party:leave" pk=party.pk character_pk=character.pk %}" class="btn btn-warning">
                             <i class="fa-solid fa-person-walking-arrow-right"></i> Quitter le groupe
                         </a>

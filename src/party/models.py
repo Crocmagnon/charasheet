@@ -31,6 +31,12 @@ class Party(UniquelyNamedModel, TimeStampedModel, models.Model):
         related_name="parties",
         verbose_name="meneur de jeu",
     )
+    invited_characters = models.ManyToManyField(
+        "character.Character",
+        blank=True,
+        related_name="invites",
+        verbose_name="personnages invités",
+    )
     characters = models.ManyToManyField(
         "character.Character",
         blank=True,

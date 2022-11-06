@@ -7,9 +7,22 @@
 {% block content %}
     <h1>{{ party.name }}</h1>
     <p>MJ : {{ party.game_master.get_full_name|default:party.game_master.username }}</p>
+    <h2>Personnages</h2>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
         {% for character in party.characters.all %}
             {% include "character/snippets/characters_list/character_card.html" %}
+        {% empty %}
+            <p>Aucun...</p>
         {% endfor %}
     </div>
+    {% with party.invited_characters.all as invites %}
+        {% if invites %}
+            <h2>Invités</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                {% for character in invites %}
+                    {% include "character/snippets/characters_list/character_card.html" %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
 {% endblock %}

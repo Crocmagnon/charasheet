@@ -14,8 +14,7 @@
                 <a href="{% url "character:view" pk=character.pk %}">
                     {{ character.name }}</a>
                 {% if character.player == user %}
-                    (<a href="{% url "party:leave" pk=party.pk character_pk=character.pk %}">
-                        Quitter</a>)
+                    (<a href="{% url "party:leave" pk=party.pk character_pk=character.pk %}">Quitter</a>)
                 {% endif %}
             </li>
         {% empty %}

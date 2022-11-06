@@ -6,13 +6,17 @@
 
 {% block content %}
     <h1>{{ party.name }}</h1>
+    <p>MJ : {{ party.game_master.get_full_name|default:party.game_master.username }}</p>
     <p>Personnages :</p>
     <ul>
         {% for character in party.characters.all %}
             <li>
                 <a href="{% url "character:view" pk=character.pk %}">
-                    {{ character.name }}
-                </a>
+                    {{ character.name }}</a>
+                {% if character.player == user %}
+                    (<a href="{% url "party:leave" pk=party.pk character_pk=character.pk %}">
+                        Quitter</a>)
+                {% endif %}
             </li>
         {% empty %}
             <li>Aucun...</li>

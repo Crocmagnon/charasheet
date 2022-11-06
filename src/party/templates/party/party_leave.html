@@ -1,0 +1,17 @@
+{% extends "common/base.html" %}
+{% load character_extras %}
+
+{% block title %}Quitter le groupe {{ party.name }}{% endblock %}
+
+{% block content %}
+    <h1>Quitter le groupe {{ party.name }}</h1>
+    <form action="{% url "party:leave" pk=party.pk character_pk=character.pk %}" method=post>
+        {% csrf_token %}
+        <p>
+            Êtes-vous certain de vouloir faire quitter le groupe {{ party.name }} à {{ character.name }} ?
+        </p>
+        <button class="btn btn-danger" type="submit">
+            <i class="fa-solid fa-person-walking-arrow-right"></i> Quitter le groupe
+        </button>
+    </form>
+{% endblock %}

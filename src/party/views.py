@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 
+from character.models import Character
 from party.forms import PartyForm
 from party.models import Party
 
@@ -48,3 +49,17 @@ def party_delete(request, pk):
         messages.success(request, f"Le groupe {name} a été supprimé.")
         return redirect("party:list")
     return render(request, "party/party_delete.html", context)
+
+
+@login_required
+def party_leave(request, pk, character_pk):
+    party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
+    character = get_object_or_404(
+        Character.objects.owned_by(request.user), pk=character_pk
+    )
+    context = {"party": party, "character": character}
+    if request.method == "POST":
+        character.parties.remove(party)
+        messages.success(request, f"{character} a quitté le groupe {party}.")
+        return redirect("party:list")
+    return render(request, "party/party_leave.html", context)

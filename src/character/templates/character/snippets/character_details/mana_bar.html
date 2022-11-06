@@ -1,0 +1,11 @@
+{% load character_extras %}
+<div class="progress" id="mana-bar"
+    {% if character|managed_by:user %}
+        hx-get="{% url "character:get_mana_bar" pk=character.pk %}"
+        hx-trigger="refresh_mana_bar from:body"
+        hx-swap="outerHTML"
+    {% endif %}>
+    <div class="progress-bar bg-primary" style="width: {{ character.mana_remaining_percent|floatformat:"0" }}%">
+        PM : {{ character.mana_remaining }}/{{ character.mana_max }}
+    </div>
+</div>

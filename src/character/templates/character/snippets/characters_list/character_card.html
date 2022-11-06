@@ -9,16 +9,10 @@
                 {{ character.race.name }} {{ character.profile.name }} niv. {{ character.level }}<br>
                 {{ character.get_gender_display }}, {{ character.age }} ans, {{ character.height_m }}m, {{ character.weight }}kg
             </p>
-            <div class="progress">
-                <div class="progress-bar bg-success" style="width: {{ character.health_remaining_percent|floatformat:"0" }}%">
-                    PV : {{ character.health_remaining }}/{{ character.health_max }}
-                </div>
-            </div>
+            {% include "character/snippets/character_details/health_bar.html" %}
             {% if character.mana_max > 0 %}
-                <div class="progress mt-1">
-                    <div class="progress-bar bg-primary" style="width: {{ character.mana_remaining_percent|floatformat:"0" }}%">
-                        PM : {{ character.mana_remaining }}/{{ character.mana_max }}
-                    </div>
+                <div class="mt-1">
+                    {% include "character/snippets/character_details/mana_bar.html" %}
                 </div>
             {% endif %}
             <p class="card-text mt-3">

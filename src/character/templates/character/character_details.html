@@ -269,48 +269,60 @@
                         <td><span id="health-remaining">{{ character.health_remaining }}</span> / {{ character.health_max }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">
-                            Points de mana
-                            {% if character|managed_by:user %}
-                                <div class="btn-group btn-group-sm float-end" role="group">
-                                    <button
-                                        hx-get="{% url "character:mana_change" pk=character.pk %}?value=ko"
-                                        hx-target="#mana-remaining"
-                                        hx-swap="innerHTML"
-                                        type="button"
-                                        class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
-                                    <button
-                                        hx-get="{% url "character:mana_change" pk=character.pk %}?value=-1"
-                                        hx-target="#mana-remaining"
-                                        hx-swap="innerHTML"
-                                        type="button"
-                                        class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
-                                    <button
-                                        hx-get="{% url "character:mana_change" pk=character.pk %}?value=1"
-                                        hx-target="#mana-remaining"
-                                        hx-swap="innerHTML"
-                                        type="button"
-                                        class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
-                                    <button
-                                        hx-get="{% url "character:mana_change" pk=character.pk %}?value=max"
-                                        hx-target="#mana-remaining"
-                                        hx-swap="innerHTML"
-                                        type="button"
-                                        class="btn btn-outline-success"><i class="fa-solid fa-battery-full"></i></button>
-                                </div>
-                            {% endif %}
-                        </th>
-                        <td data-bs-toggle="tooltip"
-                            data-bs-placement="left"
-                            {% if character.profile.mana_max_compute == 1 %}
-                                data-bs-title="{{ character.level }} (niveau) + {{ character.modifier_magic }} (mod. {{ character.profile.magical_strength }})"
-                            {% elif character.profile.mana_max_compute == 2 %}
-                                data-bs-title="2 x {{ character.level }} (niveau) + {{ character.modifier_magic }} (mod. {{ character.profile.magical_strength }})"
-                            {% endif %}
-                        >
-                            <span id="mana-remaining">{{ character.mana_remaining }}</span> / {{ character.mana_max }}
+                        <td colspan="2">
+                            {% include "character/snippets/character_details/health_bar.html" %}
                         </td>
                     </tr>
+                    {% if character.mana_max > 0 %}
+                        <tr>
+                            <th scope="row">
+                                Points de mana
+                                {% if character|managed_by:user %}
+                                    <div class="btn-group btn-group-sm float-end" role="group">
+                                        <button
+                                            hx-get="{% url "character:mana_change" pk=character.pk %}?value=ko"
+                                            hx-target="#mana-remaining"
+                                            hx-swap="innerHTML"
+                                            type="button"
+                                            class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
+                                        <button
+                                            hx-get="{% url "character:mana_change" pk=character.pk %}?value=-1"
+                                            hx-target="#mana-remaining"
+                                            hx-swap="innerHTML"
+                                            type="button"
+                                            class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+                                        <button
+                                            hx-get="{% url "character:mana_change" pk=character.pk %}?value=1"
+                                            hx-target="#mana-remaining"
+                                            hx-swap="innerHTML"
+                                            type="button"
+                                            class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                        <button
+                                            hx-get="{% url "character:mana_change" pk=character.pk %}?value=max"
+                                            hx-target="#mana-remaining"
+                                            hx-swap="innerHTML"
+                                            type="button"
+                                            class="btn btn-outline-success"><i class="fa-solid fa-battery-full"></i></button>
+                                    </div>
+                                {% endif %}
+                            </th>
+                            <td data-bs-toggle="tooltip"
+                                data-bs-placement="left"
+                                {% if character.profile.mana_max_compute == 1 %}
+                                    data-bs-title="{{ character.level }} (niveau) + {{ character.modifier_magic }} (mod. {{ character.profile.magical_strength }})"
+                                {% elif character.profile.mana_max_compute == 2 %}
+                                    data-bs-title="2 x {{ character.level }} (niveau) + {{ character.modifier_magic }} (mod. {{ character.profile.magical_strength }})"
+                                {% endif %}
+                            >
+                                <span id="mana-remaining">{{ character.mana_remaining }}</span> / {{ character.mana_max }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                {% include "character/snippets/character_details/mana_bar.html" %}
+                            </td>
+                        </tr>
+                    {% endif %}
                     <tr>
                         <th scope="row">
                             Points de récup.

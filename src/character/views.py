@@ -80,7 +80,8 @@ def character_health_change(request, pk: int):
     value = get_updated_value(request, character.health_remaining, character.health_max)
     character.health_remaining = value
     character.save(update_fields=["health_remaining"])
-    return HttpResponse(value)
+    response = HttpResponse(value)
+    return trigger_client_event(response, "refresh_health_bar", {})
 
 
 @login_required
@@ -94,7 +95,8 @@ def character_mana_change(request, pk: int):
     value = get_updated_value(request, character.mana_remaining, character.mana_max)
     character.mana_remaining = value
     character.save(update_fields=["mana_remaining"])
-    return HttpResponse(value)
+    response = HttpResponse(value)
+    return trigger_client_event(response, "refresh_mana_bar", {})
 
 
 @login_required
@@ -198,6 +200,32 @@ def character_get_defense(request, pk: int):
         pk=pk,
     )
     return HttpResponse(character.defense)
+
+
+@login_required
+def character_get_health_bar(request, pk: int):
+    character = get_object_or_404(
+        Character.objects.managed_by(request.user).only(
+            "health_max", "health_remaining"
+        ),
+        pk=pk,
+    )
+    context = {"character": character}
+    return render(
+        request, "character/snippets/character_details/health_bar.html", context
+    )
+
+
+@login_required
+def character_get_mana_bar(request, pk: int):
+    character = get_object_or_404(
+        Character.objects.managed_by(request.user).select_related("profile"),
+        pk=pk,
+    )
+    context = {"character": character}
+    return render(
+        request, "character/snippets/character_details/mana_bar.html", context
+    )
 
 
 @login_required

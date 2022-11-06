@@ -39,6 +39,16 @@ urlpatterns = [
         name="armor_change",
     ),
     path(
+        "<int:pk>/get_health_bar/",
+        views.character_get_health_bar,
+        name="get_health_bar",
+    ),
+    path(
+        "<int:pk>/get_mana_bar/",
+        views.character_get_mana_bar,
+        name="get_mana_bar",
+    ),
+    path(
         "<int:pk>/get_initiative/",
         views.character_get_initiative,
         name="get_initiative",

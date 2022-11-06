@@ -1,0 +1,11 @@
+{% load character_extras %}
+<div class="progress" id="health-bar"
+    {% if character|managed_by:user %}
+        hx-get="{% url "character:get_health_bar" pk=character.pk %}"
+        hx-trigger="refresh_health_bar from:body"
+        hx-swap="outerHTML"
+    {% endif %}>
+    <div class="progress-bar bg-success" style="width: {{ character.health_remaining_percent|floatformat:"0" }}%">
+        PV : {{ character.health_remaining }}/{{ character.health_max }}
+    </div>
+</div>

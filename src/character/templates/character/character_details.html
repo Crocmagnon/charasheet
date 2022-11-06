@@ -469,5 +469,8 @@
     </div>
     <h2>Voies & Capacités</h2>
     {% include "character/snippets/character_details/paths_and_capabilities.html" %}
-    {% include "character/snippets/character_details/notes_display.html" %}
+
+    {% if character|managed_by:user %}
+        {% include "character/snippets/character_details/notes_display.html" %}
+    {% endif %}
 {% endblock %}

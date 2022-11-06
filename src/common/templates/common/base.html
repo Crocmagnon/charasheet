@@ -1,4 +1,4 @@
-{% load static django_htmx %}
+{% load static django_htmx django_bootstrap5 %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +22,7 @@
     <body>
         {% include "common/navbar.html" %}
         <div class="container">
+            {% bootstrap_messages %}
             {% block content %}
             {% endblock %}
         </div>

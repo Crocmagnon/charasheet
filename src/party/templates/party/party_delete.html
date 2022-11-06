@@ -1,0 +1,18 @@
+{% extends "common/base.html" %}
+{% load character_extras %}
+
+{% block title %}Suppression groupe {{ party.name }}{% endblock %}
+
+{% block content %}
+    <h1>Suppression groupe {{ party.name }}</h1>
+    <form action="{% url "party:delete" pk=party.pk %}" method=post>
+        {% csrf_token %}
+        <p>
+            Êtes-vous certain de vouloir supprimer le groupe {{ party.name }} ?<br>
+            Cette action est irréversible.
+        </p>
+        <button class="btn btn-danger" type="submit">
+            <i class="fa-solid fa-users-slash"></i> Supprimer le groupe
+        </button>
+    </form>
+{% endblock %}

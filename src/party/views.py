@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 
@@ -35,3 +36,15 @@ def party_details(request, pk):
     party = get_object_or_404(Party.objects.related_to(request.user), pk=pk)
     context = {"party": party}
     return render(request, "party/party_details.html", context)
+
+
+@login_required
+def party_delete(request, pk):
+    party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
+    context = {"party": party}
+    if request.method == "POST":
+        name = party.name
+        party.delete()
+        messages.success(request, f"Le groupe {name} a été supprimé.")
+        return redirect("party:list")
+    return render(request, "party/party_delete.html", context)

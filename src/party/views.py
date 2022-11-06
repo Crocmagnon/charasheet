@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 
-from character.models import Character
+from character.models import Character, HarmfulState
 from party.forms import PartyForm
 from party.models import Party
 
@@ -35,7 +35,10 @@ def party_create(request):
 @login_required
 def party_details(request, pk):
     party = get_object_or_404(Party.objects.related_to(request.user), pk=pk)
-    context = {"party": party}
+    context = {
+        "party": party,
+        "all_states": HarmfulState.objects.all(),
+    }
     return render(request, "party/party_details.html", context)
 
 

@@ -7,7 +7,19 @@
             <p class="card-text">
                 {{ character.race.name }} {{ character.profile.name }} niv. {{ character.level }}<br>
                 {{ character.get_gender_display }}, {{ character.age }} ans, {{ character.height_m }}m, {{ character.weight }}kg<br>
-                PV {{ character.health_remaining }}/{{ character.health_max }}, PM {{ character.mana_remaining }}/{{ character.mana_max }}
+                PV {{ character.health_remaining }}/{{ character.health_max }}, PM {{ character.mana_remaining }}/{{ character.mana_max }}<br>
+                {% with character.states.all as character_states %}
+                    {% for state in all_states %}
+                        <img src="{{ state.icon_url }}" alt="{{ state.name }}" height="25" width="25"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="{{ state.name }} : {{ state.description }}"
+                            {% if state in character_states %}
+                                class="state-enabled"
+                            {% endif %}
+                        >
+                    {% endfor %}
+                {% endwith %}
             </p>
             {% if character.player == user %}
                 <div class="btn-group btn-group-sm">

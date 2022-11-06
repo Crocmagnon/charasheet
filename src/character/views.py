@@ -13,7 +13,8 @@ def characters_list(request):
     context = {
         "characters": Character.objects.owned_by(request.user).select_related(
             "race", "profile"
-        )
+        ),
+        "all_states": HarmfulState.objects.all(),
     }
     return render(request, "character/characters_list.html", context)
 

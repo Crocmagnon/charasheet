@@ -24,9 +24,16 @@
             </p>
             <div class="btn-group btn-group-sm">
                 {% if character|managed_by:user %}
-                    <a href="{% url "character:view" pk=character.pk %}" class="btn btn-success">
-                        <i class="fa-solid fa-user"></i> {% if character.player == user %}Jouer{% else %}Gérer{% endif %}
-                    </a>
+                    {% if character.player == user %}
+                        <a href="{% url "character:view" pk=character.pk %}" class="btn btn-success">
+                            <i class="fa-solid fa-user"></i> Jouer
+                        </a>
+                    {% else %}
+
+                        <a href="{% url "character:view" pk=character.pk %}" class="btn btn-primary">
+                            <i class="fa-solid fa-cog"></i> Gérer
+                        </a>
+                    {% endif %}
                     {% if party %}
                         <a href="{% url "party:leave" pk=party.pk character_pk=character.pk %}" class="btn btn-warning">
                             <i class="fa-solid fa-person-walking-arrow-right"></i> Quitter le groupe

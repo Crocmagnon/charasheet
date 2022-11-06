@@ -306,6 +306,18 @@ class Character(models.Model):
     def luck_points_max(self) -> int:
         return 3 + self.modifier_charisma
 
+    @property
+    def health_remaining_percent(self) -> float:
+        if self.health_max == 0:
+            return 0
+        return self.health_remaining / self.health_max * 100
+
+    @property
+    def mana_remaining_percent(self) -> float:
+        if self.mana_max == 0:
+            return 0
+        return self.mana_remaining / self.mana_max * 100
+
     def get_modifier_for_weapon(self, weapon: Weapon) -> int:
         modifier_map = {
             Weapon.Category.RANGE: self.modifier_dexterity,

@@ -7,8 +7,21 @@
             </h5>
             <p class="card-text">
                 {{ character.race.name }} {{ character.profile.name }} niv. {{ character.level }}<br>
-                {{ character.get_gender_display }}, {{ character.age }} ans, {{ character.height_m }}m, {{ character.weight }}kg<br>
-                PV {{ character.health_remaining }}/{{ character.health_max }}, PM {{ character.mana_remaining }}/{{ character.mana_max }}<br>
+                {{ character.get_gender_display }}, {{ character.age }} ans, {{ character.height_m }}m, {{ character.weight }}kg
+            </p>
+            <div class="progress">
+                <div class="progress-bar bg-success" style="width: {{ character.health_remaining_percent|floatformat:"0" }}%">
+                    PV : {{ character.health_remaining }}/{{ character.health_max }}
+                </div>
+            </div>
+            {% if character.mana_max > 0 %}
+                <div class="progress mt-1">
+                    <div class="progress-bar bg-primary" style="width: {{ character.mana_remaining_percent|floatformat:"0" }}%">
+                        PM : {{ character.mana_remaining }}/{{ character.mana_max }}
+                    </div>
+                </div>
+            {% endif %}
+            <p class="card-text mt-3">
                 {% with character.states.all as character_states %}
                     {% for state in all_states %}
                         <img src="{{ state.icon_url }}" alt="{{ state.name }}" height="25" width="25"

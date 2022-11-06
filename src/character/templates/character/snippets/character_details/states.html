@@ -1,3 +1,4 @@
+{% load character_extras %}
 <p id="states">
     États :
     {% with character.states.all as character_states %}
@@ -8,12 +9,16 @@
                 data-bs-title="{{ state.name }} : {{ state.description }}"
                 {% if state in character_states %}
                     class="state-enabled"
-                    hx-get="{% url "character:remove_state" pk=character.pk state_pk=state.pk %}"
-                {% else %}
-                    hx-get="{% url "character:add_state" pk=character.pk state_pk=state.pk %}"
                 {% endif %}
-                hx-target="#states"
-                hx-swap="outerHTML"
+                {% if character|managed_by:user %}
+                    {% if state in character_states %}
+                        hx-get="{% url "character:remove_state" pk=character.pk state_pk=state.pk %}"
+                    {% else %}
+                        hx-get="{% url "character:add_state" pk=character.pk state_pk=state.pk %}"
+                    {% endif %}
+                    hx-target="#states"
+                    hx-swap="outerHTML"
+                {% endif %}
             >
         {% endfor %}
     {% endwith %}

@@ -5,15 +5,19 @@ from party.models import Party
 
 
 class PartyForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        self.original_instance = kwargs.get("instance")
+        super().__init__(*args, **kwargs)
+
     class Meta:
         model = Party
         fields = ["name", "invited_characters"]
 
     def clean_invited_characters(self):
         invited = self.cleaned_data["invited_characters"]
-        if not self.instance:
+        if not self.original_instance:
             return invited
-        members = self.instance.characters.all()
+        members = self.original_instance.characters.all()
         for character in invited:
             if character in members:
                 self.add_error(

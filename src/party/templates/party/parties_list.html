@@ -39,7 +39,25 @@
     <h2 class="mt-3">Groupes dont vous êtes membre</h2>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         {% for party in played_parties %}
-
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{ party.name }}
+                        </h5>
+                        <a href="{% url "party:details" pk=party.pk %}" class="btn btn-sm btn-success">
+                            <i class="fa-solid fa-users"></i> Accéder
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col">Aucun</div>
+        {% endfor %}
+    </div>
+    <h2 class="mt-3">Groupes auxquels vous avez été invités</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        {% for party in invited_to %}
             <div class="col">
                 <div class="card">
                     <div class="card-body">

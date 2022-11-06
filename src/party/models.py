@@ -19,6 +19,9 @@ class PartyQuerySet(models.QuerySet):
             | Q(characters__in=Character.objects.filter(player=user))
         ).distinct()
 
+    def invited_to(self, user):
+        return self.filter(invited_characters__in=Character.objects.filter(player=user))
+
 
 class PartyManager(UniquelyNamedModelManager):
     pass

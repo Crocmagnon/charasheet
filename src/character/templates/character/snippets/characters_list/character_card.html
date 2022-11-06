@@ -23,21 +23,28 @@
                 {% endwith %}
             </p>
             <div class="btn-group btn-group-sm">
-                {% if character|managed_by:user %}
-                    {% if character.player == user %}
-                        <a href="{% url "character:view" pk=character.pk %}" class="btn btn-success">
-                            <i class="fa-solid fa-user"></i> Jouer
-                        </a>
-                    {% else %}
-                        <a href="{% url "character:view" pk=character.pk %}" class="btn btn-primary">
-                            <i class="fa-solid fa-cog"></i> Gérer
-                        </a>
+                {% if character.player == user %}
+                    <a href="{% url "character:view" pk=character.pk %}" class="btn btn-success">
+                        <i class="fa-solid fa-user"></i> Jouer
+                    </a>
+                    {% if party %}
+                        {% if character in party.characters.all %}
+                            <a href="{% url "party:leave" pk=party.pk character_pk=character.pk %}" class="btn btn-warning">
+                                <i class="fa-solid fa-person-walking-arrow-right"></i> Quitter le groupe
+                            </a>
+                        {% elif character in party.invited_characters.all %}
+                            <a href="{% url "party:join" pk=party.pk character_pk=character.pk %}" class="btn btn-primary">
+                                <i class="fa-solid fa-check"></i> Rejoindre
+                            </a>
+                            <a href="{% url "party:refuse" pk=party.pk character_pk=character.pk %}" class="btn btn-warning">
+                                <i class="fa-solid fa-person-walking-arrow-right"></i> Refuser l'invitation
+                            </a>
+                        {% endif %}
                     {% endif %}
-                    {% if party and character in party.characters.all %}
-                        <a href="{% url "party:leave" pk=party.pk character_pk=character.pk %}" class="btn btn-warning">
-                            <i class="fa-solid fa-person-walking-arrow-right"></i> Quitter le groupe
-                        </a>
-                    {% endif %}
+                {% elif character|managed_by:user %}
+                    <a href="{% url "character:view" pk=character.pk %}" class="btn btn-primary">
+                        <i class="fa-solid fa-cog"></i> Gérer
+                    </a>
                 {% else %}
                     <a href="{% url "character:view" pk=character.pk %}" class="btn btn-primary">
                         <i class="fa-solid fa-eye"></i> Observer

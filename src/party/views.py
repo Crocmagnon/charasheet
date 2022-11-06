@@ -12,6 +12,7 @@ def parties_list(request):
     context = {
         "managed_parties": Party.objects.managed_by(request.user),
         "played_parties": Party.objects.played_by(request.user).distinct(),
+        "invited_to": Party.objects.invited_to(request.user).distinct(),
     }
     return render(request, "party/parties_list.html", context)
 
@@ -72,7 +73,7 @@ def party_change(request, pk):
 
 @login_required
 def party_leave(request, pk, character_pk):
-    party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
+    party = get_object_or_404(Party.objects.played_by(request.user).distinct(), pk=pk)
     character = get_object_or_404(
         Character.objects.owned_by(request.user), pk=character_pk
     )
@@ -82,3 +83,26 @@ def party_leave(request, pk, character_pk):
         messages.success(request, f"{character} a quitté le groupe {party}.")
         return redirect("party:list")
     return render(request, "party/party_leave.html", context)
+
+
+@login_required
+def party_join(request, pk, character_pk):
+    party = get_object_or_404(Party.objects.invited_to(request.user).distinct(), pk=pk)
+    character = get_object_or_404(
+        Character.objects.owned_by(request.user), pk=character_pk
+    )
+    party.characters.add(character)
+    party.invited_characters.remove(character)
+    messages.success(request, f"{character} a rejoint le groupe {party}.")
+    return redirect("party:list")
+
+
+@login_required
+def party_refuse(request, pk, character_pk):
+    party = get_object_or_404(Party.objects.invited_to(request.user).distinct(), pk=pk)
+    character = get_object_or_404(
+        Character.objects.owned_by(request.user), pk=character_pk
+    )
+    party.invited_characters.remove(character)
+    messages.success(request, f"{character} a refusé l'invitation au groupe {party}.")
+    return redirect("party:list")

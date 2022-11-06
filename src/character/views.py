@@ -6,6 +6,7 @@ from django_htmx.http import trigger_client_event
 from character.forms import AddPathForm, EquipmentForm
 from character.models import Capability, Character, HarmfulState, Path
 from character.templatetags.character_extras import modifier
+from party.models import Party
 
 
 @login_required
@@ -38,6 +39,12 @@ def character_view(request, pk: int):
         "add_path_form": add_path_form,
         "all_states": HarmfulState.objects.all(),
     }
+    party_pk = request.GET.get("party")
+    if party_pk:
+        context["party"] = get_object_or_404(
+            Party.objects.related_to(request.user).prefetch_related("characters"),
+            pk=party_pk,
+        )
     return render(request, "character/character_details.html", context)
 
 

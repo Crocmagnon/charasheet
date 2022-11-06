@@ -24,7 +24,7 @@
             </p>
             <div class="btn-group btn-group-sm">
                 {% if character.player == user %}
-                    <a href="{% url "character:view" pk=character.pk %}" class="btn btn-success">
+                    <a href="{% url "character:view" pk=character.pk %}{% if party %}?party={{ party.pk }}{% endif %}" class="btn btn-success">
                         <i class="fa-solid fa-user"></i> Jouer
                     </a>
                     {% if party %}
@@ -42,11 +42,11 @@
                         {% endif %}
                     {% endif %}
                 {% elif character|managed_by:user %}
-                    <a href="{% url "character:view" pk=character.pk %}" class="btn btn-primary">
+                    <a href="{% url "character:view" pk=character.pk %}{% if party %}?party={{ party.pk }}{% endif %}" class="btn btn-primary">
                         <i class="fa-solid fa-cog"></i> Gérer
                     </a>
                 {% else %}
-                    <a href="{% url "character:view" pk=character.pk %}" class="btn btn-primary">
+                    <a href="{% url "character:view" pk=character.pk %}{% if party %}?party={{ party.pk }}{% endif %}" class="btn btn-primary">
                         <i class="fa-solid fa-eye"></i> Observer
                     </a>
                 {% endif %}

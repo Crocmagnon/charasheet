@@ -23,13 +23,16 @@
         {% block head_end %}
         {% endblock %}
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100 mb-0">
         {% include "common/navbar.html" %}
-        <div class="container">
-            {% bootstrap_messages %}
-            {% block content %}
-            {% endblock %}
-        </div>
+        <main>
+            <div class="container">
+                {% bootstrap_messages %}
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+        {% include "common/footer.html" %}
 
         <script src="{% static 'vendor/htmx-1.8.2.min.js' %}" defer></script>
         {% django_htmx_script %}

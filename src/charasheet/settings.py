@@ -109,6 +109,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "charasheet.context_processors.app",
             ],
         },
     },
@@ -223,3 +224,26 @@ SERVER_EMAIL = "charasheet@mg.augendre.info"
 
 if DEBUG:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+APP = {
+    "build": {
+        "date": "latest-date",
+        "commit": "latest-commit",
+        "describe": "latest-describe",
+    }
+}
+try:
+    with open("/app/git/build-date") as f:
+        APP["build"]["date"] = f.read().strip()
+except Exception:  # noqa: S110
+    pass
+try:
+    with open("/app/git/git-commit") as f:
+        APP["build"]["commit"] = f.read().strip()
+except Exception:  # noqa: S110
+    pass
+try:
+    with open("/app/git/git-describe") as f:
+        APP["build"]["describe"] = f.read().strip()
+except Exception:  # noqa: S110
+    pass

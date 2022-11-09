@@ -53,6 +53,8 @@ class CharacterCreateForm(forms.ModelForm):
         self.fields[
             "racial_capability"
         ].queryset = RacialCapability.objects.select_related("race")
+        self.fields["damage_reduction"].widget.attrs.update({"rows": 2})
+        self.fields["equipment"].widget.attrs.update({"rows": 3})
 
     class Meta:
         model = Character

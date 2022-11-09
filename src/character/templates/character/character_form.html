@@ -4,9 +4,54 @@
 {% block title %}Création de personnage{% endblock %}
 
 {% block content %}
+    <h1>Création de personnage</h1>
     <form action="" method="post">
         {% csrf_token %}
-        {% bootstrap_form form %}
+        <h2>Identité</h2>
+        {% bootstrap_field form.name %}
+        {% bootstrap_field form.private %}
+        <div class="row">
+            <div class="col-md-5">{% bootstrap_field form.race %}</div>
+            <div class="col-md-5">{% bootstrap_field form.profile %}</div>
+            <div class="col-md-2">{% bootstrap_field form.level %}</div>
+        </div>
+        {% bootstrap_field form.racial_capability %}
+        <h2>Apparence</h2>
+        <div class="row">
+            <div class="col-md-3">{% bootstrap_field form.gender %}</div>
+            <div class="col-md-3">{% bootstrap_field form.age %}</div>
+            <div class="col-md-3">{% bootstrap_field form.height %}</div>
+            <div class="col-md-3">{% bootstrap_field form.weight %}</div>
+        </div>
+        <h2>Compétences</h2>
+        <div class="row">
+            <div class="col-md-2">{% bootstrap_field form.value_strength %}</div>
+            <div class="col-md-2">{% bootstrap_field form.value_dexterity %}</div>
+            <div class="col-md-2">{% bootstrap_field form.value_constitution %}</div>
+            <div class="col-md-2">{% bootstrap_field form.value_intelligence %}</div>
+            <div class="col-md-2">{% bootstrap_field form.value_wisdom %}</div>
+            <div class="col-md-2">{% bootstrap_field form.value_charisma %}</div>
+        </div>
+        <h2>Protection</h2>
+        <div class="row">
+            <div class="col-md-4">{% bootstrap_field form.armor %}</div>
+            <div class="col-md-4">{% bootstrap_field form.shield %}</div>
+            <div class="col-md-4">{% bootstrap_field form.defense_misc %}</div>
+        </div>
+        {% bootstrap_field form.damage_reduction %}
+        {% bootstrap_field form.health_max %}
+
+        <h2>Possessions</h2>
+        {% bootstrap_field form.weapons %}
+        {% bootstrap_field form.equipment %}
+        <div class="row">
+            <div class="col-md-3">{% bootstrap_field form.money_pp %}</div>
+            <div class="col-md-3">{% bootstrap_field form.money_po %}</div>
+            <div class="col-md-3">{% bootstrap_field form.money_pa %}</div>
+            <div class="col-md-3">{% bootstrap_field form.money_pc %}</div>
+        </div>
+        <h2>Notes</h2>
+        {% bootstrap_field form.notes show_label=False %}
         <button type="submit" class="btn btn-primary">Enregistrer</button>
     </form>
 {% endblock %}

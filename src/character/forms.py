@@ -2,7 +2,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.db.models import Q
 
-from character.models import Character, Path
+from character.models import Character, Path, RacialCapability
 
 
 class EquipmentForm(forms.ModelForm):
@@ -45,3 +45,45 @@ class AddPathForm(forms.Form):
         if len(list(filter(None, values))) != 1:
             raise ValidationError("Vous devez sélectionner une seule valeur.")
         return cleaned_data
+
+
+class CharacterCreateForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields[
+            "racial_capability"
+        ].queryset = RacialCapability.objects.select_related("race")
+
+    class Meta:
+        model = Character
+        fields = [
+            "name",
+            "race",
+            "profile",
+            "private",
+            "level",
+            "gender",
+            "age",
+            "height",
+            "weight",
+            "value_strength",
+            "value_dexterity",
+            "value_constitution",
+            "value_intelligence",
+            "value_wisdom",
+            "value_charisma",
+            "health_max",
+            "racial_capability",
+            "weapons",
+            "armor",
+            "shield",
+            "defense_misc",
+            "initiative_misc",
+            "equipment",
+            "money_pp",
+            "money_po",
+            "money_pa",
+            "money_pc",
+            "damage_reduction",
+            "notes",
+        ]

@@ -1,9 +1,10 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django_htmx.http import trigger_client_event
 
-from character.forms import AddPathForm, EquipmentForm
+from character.forms import AddPathForm, CharacterCreateForm, EquipmentForm
 from character.models import Capability, Character, HarmfulState, Path
 from character.templatetags.character_extras import modifier
 from party.models import Party
@@ -22,7 +23,38 @@ def characters_list(request):
 
 @login_required
 def character_create(request):
-    return redirect("admin:character_character_add")
+    if request.method == "POST":
+        form = CharacterCreateForm(request.POST)
+        if form.is_valid():
+            character = form.save(commit=False)
+            character.player = request.user
+            character.recovery_points_remaining = character.recovery_points_max
+            character.luck_points_remaining = character.luck_points_max
+            character.mana_remaining = character.mana_max
+            character.health_remaining = character.health_max
+            character.save()
+            form.save_m2m()
+            messages.success(request, f"{character.name} a été créé.")
+            return redirect("character:list")
+    else:
+        form = CharacterCreateForm()
+    context = {"form": form}
+    return render(request, "character/character_form.html", context)
+
+
+@login_required
+def character_change(request, pk: int):
+    character = get_object_or_404(Character.objects.managed_by(request.user), pk=pk)
+    if request.method == "POST":
+        form = CharacterCreateForm(request.POST, instance=character)
+        if form.is_valid():
+            character = form.save()
+            messages.success(request, f"{character.name} a été enregistré.")
+            return redirect(character.get_absolute_url())
+    else:
+        form = CharacterCreateForm(instance=character)
+    context = {"form": form}
+    return render(request, "character/character_form.html", context)
 
 
 @login_required

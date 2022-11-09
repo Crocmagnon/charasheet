@@ -7,6 +7,7 @@ urlpatterns = [
     path("", views.characters_list, name="list"),
     path("create/", views.character_create, name="create"),
     path("<int:pk>/", views.character_view, name="view"),
+    path("<int:pk>/change/", views.character_change, name="change"),
     path(
         "<int:pk>/health_change/", views.character_health_change, name="health_change"
     ),

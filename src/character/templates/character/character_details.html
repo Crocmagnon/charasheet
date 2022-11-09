@@ -17,7 +17,7 @@
     {% endif %}
     {% if character|managed_by:user %}
         <p>
-            <a href="{% url "admin:character_character_change" object_id=character.pk %}">Edit</a>
+            <a href="{% url "character:change" pk=character.pk %}">Edit</a>
         </p>
     {% endif %}
     <p>

@@ -202,6 +202,13 @@ class Character(models.Model):
 
     states = models.ManyToManyField(HarmfulState, blank=True, related_name="characters")
 
+    private = models.BooleanField(
+        "privé",
+        help_text="Empêche toute invitation dans un groupe.",
+        default=False,
+        blank=True,
+    )
+
     objects = CharacterManager.from_queryset(CharacterQuerySet)()
 
     class Meta:

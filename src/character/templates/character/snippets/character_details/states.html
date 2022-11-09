@@ -7,10 +7,9 @@
                 data-bs-toggle="tooltip"
                 data-bs-placement="top"
                 data-bs-title="{{ state.name }} : {{ state.description }}"
-                {% if state in character_states %}
-                    class="state-enabled"
-                {% endif %}
+                class="{% if state in character_states %}state-enabled{% endif %}"
                 {% if character|managed_by:user %}
+                    role="button"
                     {% if state in character_states %}
                         hx-get="{% url "character:remove_state" pk=character.pk state_pk=state.pk %}"
                     {% else %}

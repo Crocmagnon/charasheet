@@ -5,7 +5,7 @@
         hx-trigger="refresh_mana_bar from:body"
         hx-swap="outerHTML"
     {% endif %}>
-    <div class="progress-bar bg-primary" style="width: {{ character.mana_remaining_percent|floatformat:"0" }}%">
+    <div class="progress-bar {% if character.mana_remaining_percent > 60 %}bg-primary{% elif character.mana_remaining_percent > 30 %}bg-warning{% else %}bg-danger{% endif %}" style="width: {{ character.mana_remaining_percent|floatformat:"0" }}%">
         PM : {{ character.mana_remaining }}/{{ character.mana_max }}
     </div>
 </div>

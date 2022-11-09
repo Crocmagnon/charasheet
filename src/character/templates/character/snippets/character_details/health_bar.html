@@ -5,7 +5,7 @@
         hx-trigger="refresh_health_bar from:body"
         hx-swap="outerHTML"
     {% endif %}>
-    <div class="progress-bar bg-success" style="width: {{ character.health_remaining_percent|floatformat:"0" }}%">
+    <div class="progress-bar {% if character.health_remaining_percent > 60 %}bg-success{% elif character.health_remaining_percent > 30 %}bg-warning{% else %}bg-danger{% endif %}" style="width: {{ character.health_remaining_percent|floatformat:"0" }}%">
         PV : {{ character.health_remaining }}/{{ character.health_max }}
     </div>
 </div>

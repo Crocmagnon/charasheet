@@ -22,7 +22,7 @@
         </form>
     {% endif %}
     <div class="row mt-2 gy-3">
-        {% for path, capabilities in character.get_capabilities_by_path.items %}
+        {% for path, character_capabilities in character.get_capabilities_by_path.items %}
             {% include "character/snippets/character_details/path.html" %}
         {% endfor %}
     </div>

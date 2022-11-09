@@ -1,5 +1,6 @@
 import collections
 from collections.abc import Iterable
+from dataclasses import dataclass
 
 import markdown
 from django.db import models
@@ -103,6 +104,12 @@ DEFAULT_NOTES = """
 
 #### Religion
 """.lstrip()
+
+
+@dataclass
+class CharacterCapability:
+    capability: Capability
+    known: bool = False
 
 
 class Character(models.Model):
@@ -333,15 +340,22 @@ class Character(models.Model):
         }
         return modifier_map.get(Weapon.Category(weapon.category), 0) + self.level
 
-    def get_capabilities_by_path(self) -> dict[Path, list[Capability]]:
+    def get_capabilities_by_path(self) -> dict[Path, list[CharacterCapability]]:
         capabilities_by_path = collections.defaultdict(list)
-        for capability in self.capabilities.all():
-            capabilities_by_path[capability.path].append(capability)
+        character_capabilities = self.capabilities.all()
+        character_paths = {capability.path for capability in character_capabilities}
+        for path in character_paths:
+            for capability in path.capabilities.all():
+                capabilities_by_path[capability.path].append(
+                    CharacterCapability(
+                        capability, known=capability in character_capabilities
+                    )
+                )
 
         return dict(
             sorted(
                 (
-                    (path, sorted(capabilities, key=lambda x: x.rank))
+                    (path, sorted(capabilities, key=lambda x: x.capability.rank))
                     for path, capabilities in capabilities_by_path.items()
                 ),
                 key=lambda x: x[0].name,

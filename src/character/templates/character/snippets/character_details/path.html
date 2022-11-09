@@ -25,7 +25,7 @@
         <div class="alert alert-primary">{{ path.notes }}</div>
     {% endif %}
     <div class="accordion capabilities">
-        {% for capability in capabilities %}
+        {% for character_capability in character_capabilities %}
             {% include "character/snippets/character_details/capability.html" %}
         {% endfor %}
     </div>

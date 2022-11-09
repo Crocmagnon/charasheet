@@ -18,11 +18,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import logout
 from django.urls import include, path
-from django.views.generic import TemplateView
 from django_registration.backends.activation.views import RegistrationView
 
 from common.forms import RegistrationForm
-from common.views import ActivationView, hello_world
+from common.views import hello_world
 
 urlpatterns = [
     path("logout/", logout, {"next_page": settings.LOGOUT_REDIRECT_URL}, name="logout"),
@@ -30,18 +29,6 @@ urlpatterns = [
         "accounts/register/",
         RegistrationView.as_view(form_class=RegistrationForm),
         name="django_registration_register",
-    ),
-    path(
-        "accounts/activate/complete/",
-        TemplateView.as_view(
-            template_name="django_registration/activation_complete.html"
-        ),
-        name="django_registration_activation_complete",
-    ),
-    path(
-        "accounts/activate/<str:activation_key>/",
-        ActivationView.as_view(),
-        name="django_registration_activate",
     ),
     path("accounts/", include("django_registration.backends.activation.urls")),
     path("accounts/", include("django.contrib.auth.urls")),

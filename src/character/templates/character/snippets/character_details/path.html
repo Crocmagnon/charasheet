@@ -1,7 +1,7 @@
 {% load character_extras %}
 <div class="col-12 col-md-6 col-xl-4">
     <h5>
-        {{ path.display_name }} ({{ path|max_rank:character }})
+        {{ path.display_name }} <span class="badge text-bg-dark rounded-pill">{{ path|max_rank:character }}</span>
         {% if character|managed_by:user %}
             <div class="btn-group btn-group-sm">
                 <button hx-get="{% url "character:remove_last_in_path" character_pk=character.pk path_pk=path.pk %}"

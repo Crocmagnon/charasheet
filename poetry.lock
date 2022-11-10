@@ -26,6 +26,14 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
+name = "atomicwrites"
+version = "1.4.1"
+description = "Atomic file writes."
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
 name = "attrs"
 version = "22.1.0"
 description = "Classes Without Boilerplate"
@@ -654,23 +662,36 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "pytest"
-version = "7.2.0"
+version = "6.2.5"
 description = "pytest: simple powerful testing with Python"
 category = "dev"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.6"
 
 [package.dependencies]
+atomicwrites = {version = ">=1.0", markers = "sys_platform == \"win32\""}
 attrs = ">=19.2.0"
 colorama = {version = "*", markers = "sys_platform == \"win32\""}
-exceptiongroup = {version = ">=1.0.0rc8", markers = "python_version < \"3.11\""}
 iniconfig = "*"
 packaging = "*"
 pluggy = ">=0.12,<2.0"
-tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
+py = ">=1.8.2"
+toml = "*"
 
 [package.extras]
-testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
+testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
+
+[[package]]
+name = "pytest-base-url"
+version = "2.0.0"
+description = "pytest plugin for URL based testing"
+category = "dev"
+optional = false
+python-versions = ">=3.7,<4.0"
+
+[package.dependencies]
+pytest = ">=3.0.0,<8.0.0"
+requests = ">=2.9"
 
 [[package]]
 name = "pytest-cov"
@@ -725,6 +746,42 @@ python-versions = ">=3.7,<4.0"
 
 [package.dependencies]
 pytest = ">=3.0.0,<8.0.0"
+
+[[package]]
+name = "pytest-selenium"
+version = "4.0.0"
+description = "pytest plugin for Selenium"
+category = "dev"
+optional = false
+python-versions = ">=3.7,<4.0"
+
+[package.dependencies]
+pytest = ">=6.0.0,<7.0.0"
+pytest-base-url = ">=2.0.0,<3.0.0"
+pytest-html = ">=2.0.0"
+pytest-variables = ">=2.0.0,<3.0.0"
+requests = ">=2.26.0,<3.0.0"
+selenium = ">=4.0.0,<5.0.0"
+tenacity = ">=6.0.0,<7.0.0"
+
+[package.extras]
+appium = ["appium-python-client (>=2.0.0,<3.0.0)"]
+
+[[package]]
+name = "pytest-variables"
+version = "2.0.0"
+description = "pytest plugin for providing variables to tests/fixtures"
+category = "dev"
+optional = false
+python-versions = ">=3.7,<4.0"
+
+[package.dependencies]
+pytest = ">=3.0.0,<8.0.0"
+
+[package.extras]
+hjson = ["hjson"]
+toml = ["toml"]
+yaml = ["pyyaml"]
 
 [[package]]
 name = "python-dateutil"
@@ -800,7 +857,7 @@ requests = ">=2.0.1,<3.0.0"
 
 [[package]]
 name = "selenium"
-version = "4.5.0"
+version = "4.6.0"
 description = ""
 category = "main"
 optional = false
@@ -851,6 +908,20 @@ description = "A non-validating SQL parser."
 category = "main"
 optional = false
 python-versions = ">=3.5"
+
+[[package]]
+name = "tenacity"
+version = "6.3.1"
+description = "Retry code until it succeeds"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = ">=1.9.0"
+
+[package.extras]
+doc = ["reno", "sphinx", "tornado (>=4.5)"]
 
 [[package]]
 name = "toml"
@@ -973,7 +1044,7 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0, <4"
-content-hash = "0f3a51fc5bde7b9ffb5f8596be2c7f9db40d1279a3dbda8daff47f4312e94e83"
+content-hash = "c415c2b6a560284b2c3ffff9ccd7bf2ff79e8fd1b8f5d845fee1f0970fb6360f"
 
 [metadata.files]
 ansicon = [
@@ -987,6 +1058,9 @@ asgiref = [
 async-generator = [
     {file = "async_generator-1.10-py3-none-any.whl", hash = "sha256:01c7bf666359b4967d2cda0000cc2e4af16a0ae098cbffcb8472fb9e8ad6585b"},
     {file = "async_generator-1.10.tar.gz", hash = "sha256:6ebb3d106c12920aaae42ccb6f787ef5eefdcdd166ea3d628fa8476abe712144"},
+]
+atomicwrites = [
+    {file = "atomicwrites-1.4.1.tar.gz", hash = "sha256:81b2c9071a49367a7f770170e5eec8cb66567cfbbc8c73d20ce5ca4a8d71cf11"},
 ]
 attrs = [
     {file = "attrs-22.1.0-py2.py3-none-any.whl", hash = "sha256:86efa402f67bf2df34f51a335487cf46b1ec130d02b8d39fd248abfd30da551c"},
@@ -1479,8 +1553,12 @@ pysocks = [
     {file = "PySocks-1.7.1.tar.gz", hash = "sha256:3f8804571ebe159c380ac6de37643bb4685970655d3bba243530d6558b799aa0"},
 ]
 pytest = [
-    {file = "pytest-7.2.0-py3-none-any.whl", hash = "sha256:892f933d339f068883b6fd5a459f03d85bfcb355e4981e146d2c7616c21fef71"},
-    {file = "pytest-7.2.0.tar.gz", hash = "sha256:c4014eb40e10f11f355ad4e3c2fb2c6c6d1919c73f3b5a433de4708202cade59"},
+    {file = "pytest-6.2.5-py3-none-any.whl", hash = "sha256:7310f8d27bc79ced999e760ca304d69f6ba6c6649c0b60fb0e04a4a77cacc134"},
+    {file = "pytest-6.2.5.tar.gz", hash = "sha256:131b36680866a76e6781d13f101efb86cf674ebb9762eb70d3082b6f29889e89"},
+]
+pytest-base-url = [
+    {file = "pytest-base-url-2.0.0.tar.gz", hash = "sha256:e1e88a4fd221941572ccdcf3bf6c051392d2f8b6cef3e0bc7da95abec4b5346e"},
+    {file = "pytest_base_url-2.0.0-py3-none-any.whl", hash = "sha256:ed36fd632c32af9f1c08f2c2835dcf42ca8fcd097d6ed44a09f253d365ad8297"},
 ]
 pytest-cov = [
     {file = "pytest-cov-4.0.0.tar.gz", hash = "sha256:996b79efde6433cdbd0088872dbc5fb3ed7fe1578b68cdbba634f14bb8dd0470"},
@@ -1497,6 +1575,14 @@ pytest-html = [
 pytest-metadata = [
     {file = "pytest_metadata-2.0.3-py3-none-any.whl", hash = "sha256:7fbb5a09110a7f62060ecad77110c6481e4e3a85e46556605b323fc97c072c7f"},
     {file = "pytest_metadata-2.0.3.tar.gz", hash = "sha256:4a09b7582a4b8307be7c604bc392d33b9cc03831a5ed62f9bc3d08e4bc721250"},
+]
+pytest-selenium = [
+    {file = "pytest-selenium-4.0.0.tar.gz", hash = "sha256:a0b45a0d1d5833a67b14a279cfe1a0eeaf4981ab4b0d12e9787fcfa1ed48049f"},
+    {file = "pytest_selenium-4.0.0-py3-none-any.whl", hash = "sha256:1a512e2bc49140cf347a9a45036245da956d569a5fe53b653a85695470cd9fe1"},
+]
+pytest-variables = [
+    {file = "pytest-variables-2.0.0.tar.gz", hash = "sha256:1c9e4fc321e33be7d1b352ac9cf20fdd2c39a8e4e6fa2dcd042aaf70ed516be7"},
+    {file = "pytest_variables-2.0.0-py3-none-any.whl", hash = "sha256:1a24a30b7acf9654d71bcdc8b10c1eb0d81b73b3eec72d810703c522475d643b"},
 ]
 python-dateutil = [
     {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
@@ -1561,7 +1647,7 @@ requests-toolbelt = [
     {file = "requests_toolbelt-0.10.1-py2.py3-none-any.whl", hash = "sha256:18565aa58116d9951ac39baa288d3adb5b3ff975c4f25eee78555d89e8f247f7"},
 ]
 selenium = [
-    {file = "selenium-4.5.0-py3-none-any.whl", hash = "sha256:a733dd77d3171b846893f4d51b18967d809313f547a10974e26579f9ce797462"},
+    {file = "selenium-4.6.0-py3-none-any.whl", hash = "sha256:3f1999875ef487ae676a254e7293a68041f1f1ec76be81402d8a1cd5a481bf3b"},
 ]
 six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
@@ -1582,6 +1668,10 @@ soupsieve = [
 sqlparse = [
     {file = "sqlparse-0.4.3-py3-none-any.whl", hash = "sha256:0323c0ec29cd52bceabc1b4d9d579e311f3e4961b98d174201d5622a23b85e34"},
     {file = "sqlparse-0.4.3.tar.gz", hash = "sha256:69ca804846bb114d2ec380e4360a8a340db83f0ccf3afceeb1404df028f57268"},
+]
+tenacity = [
+    {file = "tenacity-6.3.1-py2.py3-none-any.whl", hash = "sha256:baed357d9f35ec64264d8a4bbf004c35058fad8795c5b0d8a7dc77ecdcbb8f39"},
+    {file = "tenacity-6.3.1.tar.gz", hash = "sha256:e14d191fb0a309b563904bbc336582efe2037de437e543b38da749769b544d7f"},
 ]
 toml = [
     {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},

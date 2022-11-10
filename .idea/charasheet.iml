@@ -19,7 +19,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/test_reports" />
       <excludeFolder url="file://$MODULE_DIR$/src/character/tests/test_reports" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (charasheet)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.11 (charasheet)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">

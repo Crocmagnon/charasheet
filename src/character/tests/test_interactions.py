@@ -82,17 +82,3 @@ def test_create_character(selenium: WebDriver, live_server: LiveServer):
     assert character.player == player
     for name, value in raw_values.items():
         assert getattr(character, name) == value
-
-
-@pytest.mark.django_db
-def test_list_characters(selenium: WebDriver, live_server: LiveServer):
-    # Load fixtures
-    call_command("loaddata", "initial_data")
-    # Create user 1
-    # Create user 2
-    # Create two characters (1, 2) for user 1
-    # Create a character (3) for user 2
-    # Login as user 1
-    # Go to home page
-    # Assert characters 1 and 2 are shown
-    raise AssertionError()

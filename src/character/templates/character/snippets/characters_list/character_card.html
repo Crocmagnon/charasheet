@@ -3,6 +3,13 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">
+                {% if character.private %}
+                    <i class="fa-solid fa-lock"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        data-bs-title="Personnage privé, ne peut pas être invité dans un nouveau groupe."
+                    ></i>
+                {% endif %}
                 {{ character.name }}
             </h5>
             <p class="card-text">

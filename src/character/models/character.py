@@ -318,7 +318,7 @@ class Character(models.Model):
 
     @property
     def luck_points_max(self) -> int:
-        return 3 + self.modifier_charisma
+        return max([3 + self.modifier_charisma, 0])
 
     @property
     def health_remaining_percent(self) -> float:

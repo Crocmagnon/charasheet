@@ -80,7 +80,6 @@ class CharacterCreateForm(forms.ModelForm):
             "armor",
             "shield",
             "defense_misc",
-            "initiative_misc",
             "equipment",
             "money_pp",
             "money_po",

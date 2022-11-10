@@ -21,6 +21,7 @@ env = environ.Env(
     REGISTRATION_OPEN=(bool, True),
     MAILGUN_API_KEY=(str, ""),
     MAILGUN_SENDER_DOMAIN=(str, ""),
+    CSRF_TRUSTED_ORIGINS=(list, ["http://localhost:8000"]),
 )
 
 env_file = os.getenv("ENV_FILE", None)
@@ -47,6 +48,7 @@ if DEBUG:
     INTERNAL_IPS.append(ip)
     ALLOWED_HOSTS.append(ip)
 
+CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS")
 
 # Application definition
 

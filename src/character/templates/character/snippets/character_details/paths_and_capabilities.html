@@ -1,6 +1,7 @@
 {% load character_extras %}
 {% load django_bootstrap5 %}
 <div id="paths-and-capabilities">
+    <h2>Voies & Capacités <span class="badge text-bg-{% if character.capability_points_remaining > 0 %}success{% elif character.capability_points_remaining == 0 %}secondary{% else %}danger{% endif %} rounded-pill">{{ character.capability_points_remaining }}</span></h2>
     {% if character|managed_by:user %}
         <form>
             {% csrf_token %}

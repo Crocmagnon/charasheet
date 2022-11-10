@@ -332,6 +332,18 @@ class Character(models.Model):
             return 0
         return self.mana_remaining / self.mana_max * 100
 
+    @property
+    def capability_points_max(self) -> int:
+        return 2 * self.level
+
+    @property
+    def capability_points_used(self) -> int:
+        return sum(cap.capability_points_cost for cap in self.capabilities.only("rank"))
+
+    @property
+    def capability_points_remaining(self) -> int:
+        return self.capability_points_max - self.capability_points_used
+
     def get_modifier_for_weapon(self, weapon: Weapon) -> int:
         modifier_map = {
             Weapon.Category.RANGE: self.modifier_dexterity,

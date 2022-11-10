@@ -119,6 +119,12 @@ class Capability(DocumentedModel, TimeStampedModel, models.Model):
     def natural_key(self):
         return (self.path_id, self.rank)
 
+    @property
+    def capability_points_cost(self) -> int:
+        if self.rank in [1, 2]:
+            return 1
+        return 2
+
 
 class RacialCapabilityManager(models.Manager):
     def get_by_natural_key(self, name: str, race_id: int):

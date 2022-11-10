@@ -973,7 +973,7 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0, <4"
-content-hash = "a8492fca0c4d83c2605cfd4e6aa9f043ba5969bd497ab20876ee1f93f2520d1f"
+content-hash = "0f3a51fc5bde7b9ffb5f8596be2c7f9db40d1279a3dbda8daff47f4312e94e83"
 
 [metadata.files]
 ansicon = [

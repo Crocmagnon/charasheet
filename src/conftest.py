@@ -11,3 +11,9 @@ def collectstatic():
 def firefox_options(firefox_options):
     firefox_options.add_argument("-headless")
     return firefox_options
+
+
+@pytest.fixture(autouse=True)
+def settings(settings):
+    settings.DEBUG_TOOLBAR = False
+    return settings

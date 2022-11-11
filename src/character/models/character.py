@@ -86,6 +86,13 @@ class CharacterQuerySet(models.QuerySet):
     def owned_by(self, user):
         return self.filter(player=user)
 
+    def friendly_to(self, user):
+        from party.models import Party
+
+        return self.filter(
+            Q(player=user) | Q(parties__in=Party.objects.related_to(user))
+        )
+
 
 DEFAULT_NOTES = """
 #### Traits personnalisés

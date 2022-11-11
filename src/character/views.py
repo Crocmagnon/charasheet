@@ -60,7 +60,7 @@ def character_change(request, pk: int):
 @login_required
 def character_view(request, pk: int):
     character = get_object_or_404(
-        Character.objects.all()
+        Character.objects.friendly_to(request.user)
         .select_related("player", "racial_capability", "profile", "race")
         .prefetch_related("capabilities__path", "weapons"),
         pk=pk,

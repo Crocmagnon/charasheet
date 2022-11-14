@@ -37,3 +37,4 @@ dashboard_templates/backup_*.zip
 
 .hypothesis
 .idea/sonarlint/
+character.json

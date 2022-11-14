@@ -6838,7 +6838,7 @@
       "rank": 5,
       "limited": false,
       "spell": false,
-      "description": "Le chevalier obtient une monture volante (p\u00e9gase, griffon, hippogriffe, drake, etc.). Init 15, DEF 16, PV [5 \u00d7 niveau], Att +8, DM 1d6+4. Lorsqu'il est en selle, le chevalier peut faire attaquer sa monture une fois par tour (action gratuite), \u00e0 la m\u00eame Initiative que lui, avec un score d'attaque \u00e9gal \u00e0 son niveau +3. En vol, la monture couvre une distance de 30 m par action de mouvement. Les capacit\u00e9s de la #Monture magique s'appliquent \u00e9galement."
+      "description": "Le chevalier obtient une monture volante (p\u00e9gase, griffon, hippogriffe, drake, etc.). Init 15, DEF 16, PV [5 \u00d7 niveau], Att +8, DM 1d6+4. Lorsqu'il est en selle, le chevalier peut faire attaquer sa monture une fois par tour (action gratuite), \u00e0 la m\u00eame Initiative que lui, avec un score d'attaque \u00e9gal \u00e0 son niveau +3. En vol, la monture couvre une distance de 30 m par action de mouvement. Les capacit\u00e9s de la Monture magique s'appliquent \u00e9galement."
     }
   },
   {

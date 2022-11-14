@@ -21,12 +21,7 @@ def test_create_character(selenium: WebDriver, live_server: LiveServer):
 
     # Go to home page
     selenium.get(live_server.url)
-
-    # Login as user
-    selenium.find_element(By.ID, "login").click()
-    selenium.find_element(By.ID, "id_username").send_keys(username)
-    selenium.find_element(By.ID, "id_password").send_keys(password)
-    selenium.find_element(By.CSS_SELECTOR, "button[type=submit]").click()
+    login(selenium, username, password)
 
     # Click on new character
     selenium.find_element(By.ID, "new-character").click()
@@ -116,12 +111,7 @@ def test_list_characters(selenium: WebDriver, live_server: LiveServer):
 
     # Go to home page
     selenium.get(live_server.url)
-
-    # Login as user 1
-    selenium.find_element(By.ID, "login").click()
-    selenium.find_element(By.ID, "id_username").send_keys(username)
-    selenium.find_element(By.ID, "id_password").send_keys(password)
-    selenium.find_element(By.CSS_SELECTOR, "button[type=submit]").click()
+    login(selenium, username, password)
 
     # Assert only characters 1 and 2 are shown although there are 3 characters in DB
     assert Character.objects.count() == 3
@@ -133,3 +123,10 @@ def test_list_characters(selenium: WebDriver, live_server: LiveServer):
     }
     expected_names = {character.name for character in characters}
     assert names == expected_names
+
+
+def login(selenium, username, password):
+    selenium.find_element(By.ID, "login").click()
+    selenium.find_element(By.ID, "id_username").send_keys(username)
+    selenium.find_element(By.ID, "id_password").send_keys(password)
+    selenium.find_element(By.CSS_SELECTOR, "button[type=submit]").click()

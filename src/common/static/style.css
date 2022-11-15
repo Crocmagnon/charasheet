@@ -5,3 +5,8 @@
 #notes img {
     max-width: 100%;
 }
+
+blockquote {
+    padding-left: 2em;
+    border-left: solid #d5d5d5 4px;
+}

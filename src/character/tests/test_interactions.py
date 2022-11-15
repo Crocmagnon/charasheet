@@ -125,6 +125,28 @@ def test_list_characters(selenium: WebDriver, live_server: LiveServer):
     assert names == expected_names
 
 
+@pytest.mark.django_db
+def test_delete_character(selenium: WebDriver, live_server: LiveServer):
+    call_command("loaddata", "initial_data")
+
+    username, password = "user", "some_password"
+    player = User.objects.create_user(username, password=password)
+    characters = baker.make(Character, _quantity=2, player=player)
+
+    selenium.get(live_server.url)
+    login(selenium, username, password)
+
+    assert Character.objects.count() == 2
+    selenium.find_element(
+        By.CSS_SELECTOR, f".character.card[data-id='{characters[0].pk}'] .delete"
+    ).click()
+    selenium.find_element(By.CSS_SELECTOR, "[type=submit]").click()
+
+    assert selenium.current_url == live_server.url + reverse("character:list")
+    assert Character.objects.count() == 1
+    assert Character.objects.filter(pk=characters[0].pk).first() is None
+
+
 def login(selenium, username, password):
     selenium.find_element(By.ID, "login").click()
     selenium.find_element(By.ID, "id_username").send_keys(username)

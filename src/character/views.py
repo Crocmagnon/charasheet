@@ -58,6 +58,18 @@ def character_change(request, pk: int):
 
 
 @login_required
+def character_delete(request, pk: int):
+    character = get_object_or_404(Character.objects.owned_by(request.user), pk=pk)
+    context = {"character": character}
+    if request.method == "POST":
+        name = character.name
+        character.delete()
+        messages.success(request, f"Le personnage {name} a été supprimé.")
+        return redirect("character:list")
+    return render(request, "character/character_delete.html", context)
+
+
+@login_required
 def character_view(request, pk: int):
     character = get_object_or_404(
         Character.objects.friendly_to(request.user)

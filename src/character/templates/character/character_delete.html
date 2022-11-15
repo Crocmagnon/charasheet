@@ -1,0 +1,18 @@
+{% extends "common/base.html" %}
+{% load character_extras %}
+
+{% block title %}Suppression personnage {{ character.name }}{% endblock %}
+
+{% block content %}
+    <h1>Suppression personnage {{ character.name }}</h1>
+    <form action="{% url "character:delete" pk=character.pk %}" method=post>
+        {% csrf_token %}
+        <p>
+            Êtes-vous certain de vouloir supprimer le personnage {{ character.name }} ?<br>
+            Cette action est irréversible.
+        </p>
+        <button class="btn btn-danger" type="submit">
+            <i class="fa-solid fa-user-minus"></i> Supprimer le personnage
+        </button>
+    </form>
+{% endblock %}

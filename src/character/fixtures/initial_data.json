@@ -2,12 +2,12 @@
   {
     "model": "character.weapon",
     "fields": {
-      "name": "Baton ferr\u00e9",
+      "name": "Lance de cavalerie",
       "url": "",
-      "created": "2022-10-28T21:54:05.158Z",
-      "modified": "2022-10-30T23:15:00.921Z",
-      "damage": "1D6",
-      "special": "",
+      "created": "2022-11-15T16:47:37.922Z",
+      "modified": "2022-11-15T16:48:41.128Z",
+      "damage": "2d6",
+      "special": "Arme \u00e0 une main (utilisable avec un bouclier)\r\nPas d'utilisation non mont\u00e9, d\u00e9placement obligatoire (10m?) avant l'attaque (le poids, l'\u00e9lan)",
       "category": "MEL"
     }
   },

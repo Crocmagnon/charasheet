@@ -93,7 +93,7 @@ class CharacterQuerySet(models.QuerySet):
             Q(player=user)
             | Q(parties__in=Party.objects.related_to(user))
             | Q(invites__in=Party.objects.related_to(user))
-        )
+        ).distinct()
 
 
 DEFAULT_NOTES = """

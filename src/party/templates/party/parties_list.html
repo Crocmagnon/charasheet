@@ -12,19 +12,19 @@
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {% for party in managed_parties %}
             <div class="col">
-                <div class="card">
+                <div class="card party" data-id="{{ party.pk }}">
                     <div class="card-body">
                         <h5 class="card-title">
                             {{ party.name }}
                         </h5>
                         <div class="btn-group btn-group-sm">
-                            <a href="{% url "party:details" pk=party.pk %}" class="btn btn-success">
+                            <a href="{% url "party:details" pk=party.pk %}" class="btn btn-success access">
                                 <i class="fa-solid fa-users"></i> Accéder
                             </a>
-                            <a href="{% url "party:change" pk=party.pk %}" class="btn btn-secondary">
+                            <a href="{% url "party:change" pk=party.pk %}" class="btn btn-secondary edit">
                                 <i class="fa-solid fa-gear"></i> Modifier
                             </a>
-                            <a href="{% url "party:delete" pk=party.pk %}" class="btn btn-danger">
+                            <a href="{% url "party:delete" pk=party.pk %}" class="btn btn-danger delete">
                                 <i class="fa-solid fa-users-slash"></i> Supprimer
                             </a>
                         </div>

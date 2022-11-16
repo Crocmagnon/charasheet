@@ -1,5 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from django.db.models import Q
 
 from character.models import Character
 from party.models import Party
@@ -9,9 +10,16 @@ class PartyForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.original_instance = kwargs.get("instance")
         super().__init__(*args, **kwargs)
-        qs = Character.objects.filter(private=False)
+        qs = Character.objects.all()
         if self.original_instance:
-            qs = qs.union(self.original_instance.invited_characters.all())
+            qs = qs.filter(
+                Q(private=False)
+                | Q(
+                    pk__in=self.original_instance.invited_characters.all().values_list(
+                        "pk", flat=True
+                    )
+                )
+            )
         self.fields["invited_characters"].queryset = qs
 
     class Meta:

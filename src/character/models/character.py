@@ -90,7 +90,9 @@ class CharacterQuerySet(models.QuerySet):
         from party.models import Party
 
         return self.filter(
-            Q(player=user) | Q(parties__in=Party.objects.related_to(user))
+            Q(player=user)
+            | Q(parties__in=Party.objects.related_to(user))
+            | Q(invites__in=Party.objects.related_to(user))
         )
 
 

@@ -221,7 +221,9 @@ def character_luck_points_change(request, pk: int):
     return HttpResponse(value)
 
 
-def get_updated_value(request, remaining_value: int, max_value: int | float) -> int:
+def get_updated_value(
+    request, remaining_value: int | float, max_value: int | float
+) -> int:
     form_value = request.GET.get("value")
     if form_value == "ko":
         remaining_value = 0
@@ -232,7 +234,7 @@ def get_updated_value(request, remaining_value: int, max_value: int | float) -> 
         remaining_value += form_value
         remaining_value = min([max_value, remaining_value])
         remaining_value = max([0, remaining_value])
-    return remaining_value
+    return int(remaining_value)
 
 
 @login_required

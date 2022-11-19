@@ -6,7 +6,7 @@ from pytest_django.live_server_helper import LiveServer
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
 
-from character.models import Character
+from character.models import Character, Profile
 from common.models import User
 
 
@@ -142,6 +142,40 @@ def test_delete_character(selenium: WebDriver, live_server: LiveServer):
     assert selenium.current_url == live_server.url + reverse("character:list")
     assert Character.objects.count() == 1
     assert Character.objects.filter(pk=characters[0].pk).first() is None
+
+
+@pytest.mark.django_db
+def test_reset_stats_view(
+    selenium: WebDriver, live_server: LiveServer, initial_data: None
+):
+    username, password = "user", "some_password"
+    player = User.objects.create_user(username, password=password)
+    profile = Profile.objects.get(name__iexact="Magicien")
+
+    character = baker.make(Character, player=player, profile=profile)
+    character.health_max = 20
+    character.health_remaining = 15
+    character.value_intelligence = 15
+    character.level = 3
+    character.mana_remaining = character.mana_max - 1
+    character.recovery_points_remaining = 2
+    character.value_charisma = 15
+    character.luck_points_remaining = character.luck_points_max - 2
+    character.save()
+
+    login(selenium, live_server, username, password)
+
+    url = reverse("character:view", kwargs={"pk": character.pk})
+    selenium.get(live_server.url + url)
+    selenium.find_element(By.ID, "reset-stats").click()
+    selenium.find_element(By.CSS_SELECTOR, "[type=submit]").click()
+    assert selenium.current_url == live_server.url + character.get_absolute_url()
+
+    character.refresh_from_db()
+    assert character.health_remaining == character.health_max
+    assert character.mana_remaining == character.mana_max
+    assert character.recovery_points_remaining == character.recovery_points_max
+    assert character.luck_points_remaining == character.luck_points_max
 
 
 def login(

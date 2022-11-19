@@ -409,3 +409,16 @@ def add_state(request, pk: int, state_pk: int):
         request, "character/snippets/character_details/states.html", context
     )
     return trigger_client_event(response, "refresh_tooltips", {})
+
+
+@login_required
+def reset_stats(request, pk: int):
+    character: Character = get_object_or_404(
+        Character.objects.managed_by(request.user), pk=pk
+    )
+    context = {"character": character}
+    if request.method == "POST":
+        character.reset_stats()
+        messages.success(request, f"Les stats de {character} ont été réinitialisées.")
+        return redirect(character)
+    return render(request, "character/character_reset_stats.html", context)

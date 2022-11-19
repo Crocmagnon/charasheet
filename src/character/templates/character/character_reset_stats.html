@@ -1,0 +1,17 @@
+{% extends "common/base.html" %}
+
+{% block title %}Réinitialisation des stats de {{ character.name }}{% endblock %}
+
+{% block content %}
+    <h1>Réinitialisation des stats de {{ character.name }}</h1>
+    <form action="{% url "character:reset_stats" pk=character.pk %}" method=post>
+        {% csrf_token %}
+        <p>
+            Êtes-vous certain de vouloir réinitialiser les stats de {{ character.name }} ?<br>
+            Cette action est irréversible.
+        </p>
+        <button class="btn btn-primary" type="submit">
+            <i class="fa-solid fa-suitcase-medical"></i> Réinitialiser les stats
+        </button>
+    </form>
+{% endblock %}

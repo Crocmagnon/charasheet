@@ -17,7 +17,9 @@
     {% endif %}
     {% if character|managed_by:user %}
         <p>
-            <a href="{% url "character:change" pk=character.pk %}">Edit</a>
+            <a href="{% url "character:change" pk=character.pk %}">Modifier</a>
+            &bullet;
+            <a href="{% url "character:reset_stats" pk=character.pk %}" id="reset-stats">Réinitialiser les stats</a>
         </p>
     {% endif %}
     <p>

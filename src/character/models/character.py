@@ -394,3 +394,10 @@ class Character(models.Model):
 
     def managed_by(self, user):
         return self in Character.objects.managed_by(user)
+
+    def reset_stats(self):
+        self.health_remaining = self.health_max
+        self.mana_remaining = self.mana_max
+        self.luck_points_remaining = self.luck_points_max
+        self.recovery_points_remaining = self.recovery_points_max
+        self.save()

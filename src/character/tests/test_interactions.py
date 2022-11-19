@@ -1,3 +1,5 @@
+from random import randint
+
 import pytest
 from django.core.management import call_command
 from django.urls import reverse
@@ -145,23 +147,14 @@ def test_delete_character(selenium: WebDriver, live_server: LiveServer):
 
 
 @pytest.mark.django_db
+@pytest.mark.parametrize("profile_name", ["Magicien", "Druide", "Guerrier"])
 def test_reset_stats_view(
-    selenium: WebDriver, live_server: LiveServer, initial_data: None
+    profile_name: str, selenium: WebDriver, live_server: LiveServer, initial_data: None
 ):
     username, password = "user", "some_password"
     player = User.objects.create_user(username, password=password)
-    profile = Profile.objects.get(name__iexact="Magicien")
-
-    character = baker.make(Character, player=player, profile=profile)
-    character.health_max = 20
-    character.health_remaining = 15
-    character.value_intelligence = 15
-    character.level = 3
-    character.mana_remaining = character.mana_max - 1
-    character.recovery_points_remaining = 2
-    character.value_charisma = 15
-    character.luck_points_remaining = character.luck_points_max - 2
-    character.save()
+    profile = Profile.objects.get(name__iexact=profile_name)
+    character = create_hurt_character(player, profile)
 
     login(selenium, live_server, username, password)
 
@@ -176,6 +169,21 @@ def test_reset_stats_view(
     assert character.mana_remaining == character.mana_max
     assert character.recovery_points_remaining == character.recovery_points_max
     assert character.luck_points_remaining == character.luck_points_max
+
+
+def create_hurt_character(player, profile):
+    character = baker.make(Character, player=player, profile=profile)
+    character.health_max = randint(5, 20)
+    character.health_remaining = randint(0, character.health_max - 1)
+    character.value_intelligence = randint(10, 20)
+    character.level = randint(1, 12)
+    if character.mana_max > 0:
+        character.mana_remaining = randint(0, character.mana_max - 1)
+    character.recovery_points_remaining = randint(0, character.recovery_points_max - 1)
+    character.value_charisma = randint(10, 20)
+    character.luck_points_remaining = randint(0, character.luck_points_max - 1)
+    character.save()
+    return character
 
 
 def login(

@@ -147,13 +147,12 @@ def test_delete_character(selenium: WebDriver, live_server: LiveServer):
 
 
 @pytest.mark.django_db
-@pytest.mark.parametrize("profile_name", ["Magicien", "Druide", "Guerrier"])
 def test_reset_stats_view(
-    profile_name: str, selenium: WebDriver, live_server: LiveServer, initial_data: None
+    selenium: WebDriver, live_server: LiveServer, initial_data: None
 ):
     username, password = "user", "some_password"
     player = User.objects.create_user(username, password=password)
-    profile = Profile.objects.get(name__iexact=profile_name)
+    profile = Profile.objects.get(name__iexact="Magicien")
     character = create_hurt_character(player, profile)
 
     login(selenium, live_server, username, password)

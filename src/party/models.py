@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import Q
+from django.urls import reverse
 from django_extensions.db.models import TimeStampedModel
 
 from character.models import Character
@@ -53,3 +54,10 @@ class Party(UniquelyNamedModel, TimeStampedModel, models.Model):
     class Meta(UniquelyNamedModel.Meta, TimeStampedModel.Meta):
         verbose_name = "Groupe"
         verbose_name_plural = "Groupes"
+
+    def get_absolute_url(self) -> str:
+        return reverse("party:details", kwargs={"pk": self.pk})
+
+    def reset_stats(self):
+        for character in self.characters.all():
+            character.reset_stats()

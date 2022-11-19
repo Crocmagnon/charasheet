@@ -1,0 +1,17 @@
+{% extends "common/base.html" %}
+
+{% block title %}Réinitialisation des stats des membres de {{ party.name }}{% endblock %}
+
+{% block content %}
+    <h1>Réinitialisation des stats des membres de {{ party.name }}</h1>
+    <form action="{% url "party:reset_stats" pk=party.pk %}" method=post>
+        {% csrf_token %}
+        <p>
+            Êtes-vous certain de vouloir réinitialiser les stats de tous les membres de {{ party.name }} ?<br>
+            Cette action est irréversible.
+        </p>
+        <button class="btn btn-primary" type="submit">
+            <i class="fa-solid fa-suitcase-medical"></i> Réinitialiser les stats
+        </button>
+    </form>
+{% endblock %}

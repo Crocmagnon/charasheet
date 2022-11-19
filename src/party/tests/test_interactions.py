@@ -7,8 +7,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support.select import Select
 
-from character.models import Character
-from character.tests.test_interactions import login
+from character.models import Character, Profile
+from character.tests.test_interactions import create_hurt_character, login
 from common.models import User
 from party.models import Party
 
@@ -90,3 +90,31 @@ def test_gm_observe_invited_character_in_two_groups(
     ).click()
     title = selenium.find_element(By.TAG_NAME, "h1").text.strip()
     assert title == character.name
+
+
+@pytest.mark.django_db
+def test_reset_stats_view(
+    selenium: WebDriver, live_server: LiveServer, initial_data: None
+):
+    user, password = "gm", "password"
+    gm = User.objects.create_user(user, password=password)
+    assert Profile.objects.count() > 1
+    for profile in Profile.objects.all():
+        player = User.objects.create_user(f"user{profile}", password="password")
+        create_hurt_character(player, profile)
+    party = baker.make(Party, game_master=gm)
+    party.characters.set(Character.objects.all())
+
+    login(selenium, live_server, user, password)
+
+    url = reverse("party:details", kwargs={"pk": party.pk})
+    selenium.get(live_server.url + url)
+    selenium.find_element(By.ID, "reset-stats").click()
+    selenium.find_element(By.CSS_SELECTOR, "[type=submit]").click()
+    assert selenium.current_url == live_server.url + party.get_absolute_url()
+
+    for character in Character.objects.all():
+        assert character.health_remaining == character.health_max
+        assert character.mana_remaining == character.mana_max
+        assert character.recovery_points_remaining == character.recovery_points_max
+        assert character.luck_points_remaining == character.luck_points_max

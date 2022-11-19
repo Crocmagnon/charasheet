@@ -56,6 +56,19 @@ def party_delete(request, pk):
 
 
 @login_required
+def party_reset_stats(request, pk):
+    party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
+    context = {"party": party}
+    if request.method == "POST":
+        name = party.name
+        party.reset_stats()
+        message = f"Les stats de tous les membres de {name} ont été réinitialisées."
+        messages.success(request, message)
+        return redirect(party)
+    return render(request, "party/party_reset_stats.html", context)
+
+
+@login_required
 def party_change(request, pk):
     party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
     context = {"party": party}

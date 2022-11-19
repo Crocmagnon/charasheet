@@ -23,8 +23,7 @@ def test_add_character_to_existing_group(selenium: WebDriver, live_server: LiveS
     character = baker.make(Character, player=player)
     party = baker.make(Party, game_master=gm)
 
-    selenium.get(live_server.url)
-    login(selenium, username, password)
+    login(selenium, live_server, username, password)
 
     selenium.get(live_server.url + reverse("party:list"))
     selenium.find_element(
@@ -52,8 +51,7 @@ def test_gm_observe_invited_character_in_group(
     character = baker.make(Character, player=player)
     party.invited_characters.add(character)
 
-    selenium.get(live_server.url)
-    login(selenium, username, password)
+    login(selenium, live_server, username, password)
 
     selenium.get(live_server.url + reverse("party:list"))
     selenium.find_element(
@@ -81,8 +79,7 @@ def test_gm_observe_invited_character_in_two_groups(
     party.invited_characters.add(character)
     other_party.invited_characters.add(character)
 
-    selenium.get(live_server.url)
-    login(selenium, username, password)
+    login(selenium, live_server, username, password)
 
     selenium.get(live_server.url + reverse("party:list"))
     selenium.find_element(

@@ -17,3 +17,8 @@ def firefox_options(firefox_options):
 def settings(settings):
     settings.DEBUG_TOOLBAR = False
     return settings
+
+
+@pytest.fixture
+def initial_data(db: None) -> None:
+    call_command("loaddata", "initial_data")

@@ -20,8 +20,7 @@ def test_create_character(selenium: WebDriver, live_server: LiveServer):
     player = User.objects.create_user(username, password=password)
 
     # Go to home page
-    selenium.get(live_server.url)
-    login(selenium, username, password)
+    login(selenium, live_server, username, password)
 
     # Click on new character
     selenium.find_element(By.ID, "new-character").click()
@@ -110,8 +109,7 @@ def test_list_characters(selenium: WebDriver, live_server: LiveServer):
     baker.make(Character, player=other)
 
     # Go to home page
-    selenium.get(live_server.url)
-    login(selenium, username, password)
+    login(selenium, live_server, username, password)
 
     # Assert only characters 1 and 2 are shown although there are 3 characters in DB
     assert Character.objects.count() == 3
@@ -133,8 +131,7 @@ def test_delete_character(selenium: WebDriver, live_server: LiveServer):
     player = User.objects.create_user(username, password=password)
     characters = baker.make(Character, _quantity=2, player=player)
 
-    selenium.get(live_server.url)
-    login(selenium, username, password)
+    login(selenium, live_server, username, password)
 
     assert Character.objects.count() == 2
     selenium.find_element(
@@ -147,7 +144,10 @@ def test_delete_character(selenium: WebDriver, live_server: LiveServer):
     assert Character.objects.filter(pk=characters[0].pk).first() is None
 
 
-def login(selenium, username, password):
+def login(
+    selenium: WebDriver, live_server: LiveServer, username: str, password: str
+) -> None:
+    selenium.get(live_server.url)
     selenium.find_element(By.ID, "login").click()
     selenium.find_element(By.ID, "id_username").send_keys(username)
     selenium.find_element(By.ID, "id_password").send_keys(password)

@@ -13,12 +13,6 @@ def firefox_options(firefox_options):
     return firefox_options
 
 
-@pytest.fixture
-def chrome_options(chrome_options):
-    chrome_options.add_argument("--headless")
-    return chrome_options
-
-
 @pytest.fixture(autouse=True)
 def settings(settings):
     settings.DEBUG_TOOLBAR = False

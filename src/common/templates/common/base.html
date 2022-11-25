@@ -56,10 +56,8 @@
             let tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
             addEventListener("refresh_tooltips", function (event) {
                 tooltipList.forEach(tooltip => tooltip.dispose());
-                setTimeout(() => {
-                    tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-                    tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-                }, 50);
+                tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+                tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
             });
         </script>
     </body>

@@ -125,7 +125,7 @@ def character_health_change(request, pk: int):
     character.health_remaining = value
     character.save(update_fields=["health_remaining"])
     response = HttpResponse(value)
-    return trigger_client_event(response, "refresh_health_bar", {})
+    return trigger_client_event(response, "refresh_health_bar")
 
 
 @login_required
@@ -140,7 +140,7 @@ def character_mana_change(request, pk: int):
     character.mana_remaining = value
     character.save(update_fields=["mana_remaining"])
     response = HttpResponse(value)
-    return trigger_client_event(response, "refresh_mana_bar", {})
+    return trigger_client_event(response, "refresh_mana_bar")
 
 
 @login_required
@@ -166,7 +166,7 @@ def character_defense_misc_change(request, pk: int):
     character.defense_misc = value
     character.save(update_fields=["defense_misc"])
     response = HttpResponse(value)
-    return trigger_client_event(response, "update_defense", {})
+    return trigger_client_event(response, "update_defense")
 
 
 @login_required
@@ -178,7 +178,7 @@ def character_shield_change(request, pk: int):
     character.shield = value
     character.save(update_fields=["shield"])
     response = HttpResponse(value)
-    return trigger_client_event(response, "update_defense", {})
+    return trigger_client_event(response, "update_defense")
 
 
 @login_required
@@ -190,7 +190,7 @@ def character_armor_change(request, pk: int):
     character.armor = value
     character.save(update_fields=["armor"])
     response = HttpResponse(value)
-    return trigger_client_event(response, "update_defense", {})
+    return trigger_client_event(response, "update_defense")
 
 
 @login_required
@@ -202,7 +202,7 @@ def character_initiative_misc_change(request, pk: int):
     character.initiative_misc = value
     character.save(update_fields=["initiative_misc"])
     response = HttpResponse(value)
-    return trigger_client_event(response, "update_initiative", {})
+    return trigger_client_event(response, "update_initiative")
 
 
 @login_required
@@ -394,7 +394,7 @@ def remove_state(request, pk: int, state_pk: int):
     response = render(
         request, "character/snippets/character_details/states.html", context
     )
-    return trigger_client_event(response, "refresh_tooltips", {})
+    return trigger_client_event(response, "refresh_tooltips", after="swap")
 
 
 @login_required
@@ -408,7 +408,7 @@ def add_state(request, pk: int, state_pk: int):
     response = render(
         request, "character/snippets/character_details/states.html", context
     )
-    return trigger_client_event(response, "refresh_tooltips", {})
+    return trigger_client_event(response, "refresh_tooltips", after="swap")
 
 
 @login_required

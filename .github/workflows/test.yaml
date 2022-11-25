@@ -12,7 +12,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: browser-actions/setup-geckodriver@latest
       - name: Install poetry
         run: pipx install poetry==1.1.15
       - name: Set up Python
@@ -23,11 +22,6 @@ jobs:
       - name: Install dependencies
         run: |
           poetry install
-      - name: check geckodriver
-        run: |
-          echo $PATH
-          geckodriver --version
-          which geckodriver
       - name: Test
-        run: poetry run pytest --cov=. --cov-branch --cov-report term-missing:skip-covered
+        run: poetry run pytest --cov=. --cov-branch --cov-report term-missing:skip-covered --driver-path $CHROMEWEBDRIVER
         working-directory: ./src/

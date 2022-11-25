@@ -53,10 +53,9 @@ build-backend = "poetry.core.masonry.api"
 addopts = """
 --html=test_reports/pytest_result/pytest.html --color=yes --durations 20
 --no-cov-on-fail --strict-markers
---driver=Firefox
+--driver=Chrome
 -W error
--W "ignore:capabilities and desired_capabilities have been deprecated:DeprecationWarning:pytest_selenium.pytest_selenium"
--W "ignore:service_log_path has been deprecated:DeprecationWarning:pytest_selenium.pytest_selenium"
+-W "ignore::DeprecationWarning:selenium.webdriver.chrome.webdriver"
 """
 markers = []
 minversion = "6.0"

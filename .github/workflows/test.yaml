@@ -23,6 +23,11 @@ jobs:
       - name: Install dependencies
         run: |
           poetry install
+      - name: check geckodriver
+        run: |
+          echo $PATH
+          geckodriver --version
+          which geckodriver
       - name: Test
         run: poetry run pytest --cov=. --cov-branch --cov-report term-missing:skip-covered
         working-directory: ./src/

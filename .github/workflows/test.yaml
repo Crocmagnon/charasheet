@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Install Firefox
+        run: sudo snap remove firefox && sudo add-apt-repository ppa:mozillateam/ppa && sudo apt install --target-release 'o=LP-PPA-mozillateam' firefox
+      - uses: browser-actions/setup-geckodriver@latest
       - name: Install poetry
         run: pipx install poetry==1.1.15
       - name: Set up Python
@@ -23,5 +26,5 @@ jobs:
         run: |
           poetry install
       - name: Test
-        run: poetry run pytest --cov=. --cov-branch --cov-report term-missing:skip-covered --driver-path $CHROMEWEBDRIVER
+        run: poetry run pytest --cov=. --cov-branch --cov-report term-missing:skip-covered
         working-directory: ./src/

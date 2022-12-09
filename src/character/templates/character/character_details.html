@@ -3,32 +3,47 @@
 {% load django_bootstrap5 %}
 {% load character_extras %}
 
+{% block head_end %}
+    <link rel="stylesheet" href="{% static "character/details.css" %}">
+{% endblock %}
+
 {% block title %}{{ character.name }}{% endblock %}
 
 {% block content %}
-    <h1>{{ character.name }}</h1>
-    <p>
-        Joueur : {{ character.player.get_full_name|default:character.player.username }}
-    </p>
-    {% if party %}
-        <p>
-            Groupe : <a href="{{ party.get_absolute_url }}">{{ party }}</a>
-            &bullet;
-            Joueurs : {% for other in party.characters.all %}<a href="{% url "character:view" pk=other.pk %}?party={{ party.pk }}">{{ other }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
-        </p>
-    {% endif %}
-    {% if character|managed_by:user %}
-        <p>
-            <a href="{% url "character:change" pk=character.pk %}">Modifier</a>
-            &bullet;
-            <a href="{% url "character:reset_stats" pk=character.pk %}" id="reset-stats">Réinitialiser les stats</a>
-        </p>
-    {% endif %}
-    <p>
-        {{ character.race.name }} {{ character.profile.name }} niv. {{ character.level }}<br>
-        {{ character.get_gender_display }}, {{ character.age }} ans, {{ character.height_m }}m, {{ character.weight }}kg (IMC: {{ character.imc|floatformat }})
-    </p>
-    {% include "character/snippets/character_details/states.html" %}
+    <div class="d-flex flex-column flex-sm-row justify-content-between">
+        <div>
+            <h1>{{ character.name }}</h1>
+            <p>
+                Joueur : {{ character.player.get_full_name|default:character.player.username }}
+            </p>
+            {% if party %}
+                <p>
+                    Groupe : <a href="{{ party.get_absolute_url }}">{{ party }}</a>
+                    &bullet;
+                    Joueurs : {% for other in party.characters.all %}<a href="{% url "character:view" pk=other.pk %}?party={{ party.pk }}">{{ other }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+                </p>
+            {% endif %}
+            {% if character|managed_by:user %}
+                <p>
+                    <a href="{% url "character:change" pk=character.pk %}">Modifier</a>
+                    &bullet;
+                    <a href="{% url "character:reset_stats" pk=character.pk %}" id="reset-stats">Réinitialiser les stats</a>
+                </p>
+            {% endif %}
+            <p>
+                {{ character.race.name }} {{ character.profile.name }} niv. {{ character.level }}<br>
+                {{ character.get_gender_display }}, {{ character.age }} ans, {{ character.height_m }}m, {{ character.weight }}kg (IMC: {{ character.imc|floatformat }})
+            </p>
+            {% include "character/snippets/character_details/states.html" %}
+        </div>
+        {% if character.profile_picture %}
+            <img class="rounded-5 profile-pic"
+                src="{{ character.profile_picture.url }}"
+                alt="Image de profil"
+            >
+        {% endif %}
+    </div>
+
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl">
             <table id="fight-table" class="table table-hover table-sm">

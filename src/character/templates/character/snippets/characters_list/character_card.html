@@ -3,6 +3,12 @@
     <div class="card character" data-id="{{ character.pk }}">
         <div class="card-body">
             <h5 class="card-title">
+                {% if character.profile_picture %}
+                    <img src="{{ character.profile_picture.url }}"
+                        class="profile-pic rounded-5"
+                        alt="Image de profil"
+                    >
+                {% endif %}
                 {% if character.private %}
                     <i class="fa-solid fa-lock"
                         data-bs-toggle="tooltip"

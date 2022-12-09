@@ -1,11 +1,6 @@
 {% extends "common/base.html" %}
-{% load static %}
 {% load django_bootstrap5 %}
 {% load character_extras %}
-
-{% block head_end %}
-    <link rel="stylesheet" href="{% static "character/details.css" %}">
-{% endblock %}
 
 {% block title %}{{ character.name }}{% endblock %}
 

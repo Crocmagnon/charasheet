@@ -10,3 +10,15 @@ blockquote {
     padding-left: 2em;
     border-left: solid #d5d5d5 4px;
 }
+
+.card img.profile-pic {
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+}
+
+img.profile-pic {
+    max-width: 240px;
+    max-height: 240px;
+    object-fit: cover;
+}

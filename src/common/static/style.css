@@ -11,7 +11,7 @@ blockquote {
     border-left: solid #d5d5d5 4px;
 }
 
-.card img.profile-pic {
+img.profile-pic-small {
     width: 28px;
     height: 28px;
     object-fit: cover;

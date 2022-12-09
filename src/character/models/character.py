@@ -134,6 +134,12 @@ class Character(models.Model):
         related_name="characters",
         verbose_name="joueur",
     )
+    profile_picture = models.ImageField(
+        verbose_name="image de profil",
+        upload_to="profile_pictures",
+        blank=True,
+        null=True,
+    )
 
     race = models.ForeignKey(
         "character.Race",

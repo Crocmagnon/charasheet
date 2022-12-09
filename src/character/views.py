@@ -24,7 +24,7 @@ def characters_list(request):
 @login_required
 def character_create(request):
     if request.method == "POST":
-        form = CharacterCreateForm(request.POST)
+        form = CharacterCreateForm(request.POST, request.FILES)
         if form.is_valid():
             character = form.save(commit=False)
             character.player = request.user
@@ -46,7 +46,7 @@ def character_create(request):
 def character_change(request, pk: int):
     character = get_object_or_404(Character.objects.managed_by(request.user), pk=pk)
     if request.method == "POST":
-        form = CharacterCreateForm(request.POST, instance=character)
+        form = CharacterCreateForm(request.POST, request.FILES, instance=character)
         if form.is_valid():
             character = form.save()
             messages.success(request, f"{character.name} a été enregistré.")

@@ -5,12 +5,17 @@
 
 {% block content %}
     <h1>Création de personnage</h1>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         {% bootstrap_form_errors form %}
         {% csrf_token %}
         <h2>Identité</h2>
-        {% bootstrap_field form.name %}
-        {% bootstrap_field form.private %}
+        <div class="row">
+            <div class="col-lg-4 col-xl-6">
+                {% bootstrap_field form.name %}
+                {% bootstrap_field form.private %}
+            </div>
+            <div class="col-lg-8 col-xl-6">{% bootstrap_field form.profile_picture %}</div>
+        </div>
         <div class="row">
             <div class="col-md-5">{% bootstrap_field form.race %}</div>
             <div class="col-md-5">{% bootstrap_field form.profile %}</div>

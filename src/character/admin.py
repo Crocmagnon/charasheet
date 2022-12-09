@@ -119,7 +119,17 @@ class CharacterAdmin(admin.ModelAdmin):
     fieldsets = [
         (
             "Identité",
-            {"fields": ["name", "player", "profile", "level", "race", "private"]},
+            {
+                "fields": [
+                    "name",
+                    "profile_picture",
+                    "player",
+                    "profile",
+                    "level",
+                    "race",
+                    "private",
+                ]
+            },
         ),
         ("Apparence", {"fields": ["gender", "age", "height", "weight"]}),
         (

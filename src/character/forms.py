@@ -62,6 +62,7 @@ class CharacterCreateForm(forms.ModelForm):
             "name",
             "race",
             "profile",
+            "profile_picture",
             "private",
             "level",
             "gender",

@@ -1,8 +1,10 @@
 import collections
 from collections.abc import Iterable
 from dataclasses import dataclass
+from functools import partial
 
 import markdown
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import Q
 from django.db.models.functions import Lower
@@ -121,6 +123,12 @@ class CharacterCapability:
     known: bool = False
 
 
+def validate_image(fieldfile_obj, megabytes_limit: float):
+    filesize = fieldfile_obj.file.size
+    if filesize > megabytes_limit * 1024 * 1024:
+        raise ValidationError("La taille maximale est de %sMo" % str(megabytes_limit))
+
+
 class Character(models.Model):
     class Gender(models.TextChoices):
         MALE = "M", "Mâle"
@@ -139,6 +147,7 @@ class Character(models.Model):
         upload_to="profile_pictures",
         blank=True,
         null=True,
+        validators=[partial(validate_image, megabytes_limit=2)],
     )
 
     race = models.ForeignKey(

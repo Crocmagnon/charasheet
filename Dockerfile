@@ -50,7 +50,7 @@ ENV SECRET_KEY "changeme"
 ENV DEBUG "false"
 ENV DATABASE_URL "sqlite:////app/db/db.sqlite3"
 
-RUN python -m pip install -r requirements.txt
+RUN python -m pip install --no-cache-dir -r requirements.txt
 WORKDIR /app/src
 RUN python manage.py collectstatic --noinput --clear
 

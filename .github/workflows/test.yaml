@@ -12,9 +12,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install Firefox
-        run: sudo snap remove firefox && sudo add-apt-repository ppa:mozillateam/ppa && sudo apt install --target-release 'o=LP-PPA-mozillateam' firefox
-      - uses: browser-actions/setup-geckodriver@latest
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -25,5 +22,5 @@ jobs:
           pip install pip-tools
           pip-sync requirements.txt requirements-dev.txt
       - name: Test
-        run: pytest --cov=. --cov-branch --cov-report term-missing:skip-covered
+        run: pytest --cov=. --cov-branch --cov-report term-missing:skip-covered --driver-path $GECKOWEBDRIVER
         working-directory: ./src/

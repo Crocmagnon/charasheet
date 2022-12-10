@@ -1,4 +1,7 @@
 exclude: \.min\.(js|css)(\.map)?$|^\.idea/
+ci:
+  skip: [pip-compile]
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0

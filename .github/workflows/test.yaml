@@ -10,7 +10,6 @@ jobs:
     name: Python tests
     runs-on: ubuntu-latest
     steps:
-      - run: ls -al $GECKOWEBDRIVER
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set up Python

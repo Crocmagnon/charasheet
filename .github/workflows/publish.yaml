@@ -29,8 +29,6 @@ jobs:
           cache-from: type=registry,ref=crocmagnon/charasheet:latest
           cache-to: type=inline
           platforms: linux/amd64
-          build-args: |
-            POETRY_OPTIONS=--no-dev
   deploy:
     name: Deploy new image
     runs-on: ubuntu-latest

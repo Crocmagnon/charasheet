@@ -12,6 +12,27 @@ TEST_ENV = {"ENV_FILE": BASE_DIR / "envs" / "test-envs.env"}
 
 
 @task
+def update_dependencies(ctx):
+    with ctx.cd(BASE_DIR):
+        ctx.run(
+            "pip-compile --allow-unsafe --resolver=backtracking --generate-hashes --upgrade requirements.in",
+            pty=True,
+            echo=True,
+        )
+        ctx.run(
+            "pip-compile --allow-unsafe --resolver=backtracking --strip-extras --upgrade -o constraints.txt requirements.in",
+            pty=True,
+            echo=True,
+        )
+        ctx.run(
+            "pip-compile --allow-unsafe --resolver=backtracking --generate-hashes --upgrade requirements-dev.in",
+            pty=True,
+            echo=True,
+        )
+        ctx.run("pip-sync requirements.txt requirements-dev.txt", pty=True, echo=True)
+
+
+@task
 def makemessages(ctx):
     with ctx.cd(SRC_DIR):
         ctx.run("./manage.py makemessages -l en -l fr", pty=True, echo=True)

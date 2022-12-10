@@ -5,7 +5,8 @@ Clone, then
 ```shell
 pyenv virtualenv 3.10.7 charasheet
 pyenv local charasheet
-poetry install
+pip install pip-tools
+pip-sync requirements.txt requirements-dev.txt
 pre-commit install --install-hooks
 inv test
 ./src/manage.py migrate

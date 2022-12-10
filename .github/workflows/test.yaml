@@ -10,6 +10,7 @@ jobs:
     name: Python tests
     runs-on: ubuntu-latest
     steps:
+      - run: ls -al $GECKOWEBDRIVER
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set up Python
@@ -22,5 +23,5 @@ jobs:
           pip install pip-tools
           pip-sync requirements.txt requirements-dev.txt
       - name: Test
-        run: pytest --cov=. --cov-branch --cov-report term-missing:skip-covered --driver-path $GECKOWEBDRIVER
+        run: pytest --cov=. --cov-branch --cov-report term-missing:skip-covered
         working-directory: ./src/

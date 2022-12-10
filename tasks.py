@@ -13,19 +13,20 @@ TEST_ENV = {"ENV_FILE": BASE_DIR / "envs" / "test-envs.env"}
 
 @task
 def update_dependencies(ctx):
+    common_args = "--allow-unsafe --resolver=backtracking --upgrade"
     with ctx.cd(BASE_DIR):
         ctx.run(
-            "pip-compile --allow-unsafe --resolver=backtracking --generate-hashes --upgrade requirements.in",
+            f"pip-compile {common_args} --generate-hashes requirements.in",
             pty=True,
             echo=True,
         )
         ctx.run(
-            "pip-compile --allow-unsafe --resolver=backtracking --strip-extras --upgrade -o constraints.txt requirements.in",
+            f"pip-compile {common_args} --strip-extras -o constraints.txt requirements.in",
             pty=True,
             echo=True,
         )
         ctx.run(
-            "pip-compile --allow-unsafe --resolver=backtracking --generate-hashes --upgrade requirements-dev.in",
+            f"pip-compile {common_args} --generate-hashes requirements-dev.in",
             pty=True,
             echo=True,
         )

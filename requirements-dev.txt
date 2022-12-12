@@ -242,9 +242,9 @@ h11==0.14.0 \
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.60.0 \
-    --hash=sha256:39c06cd49f491204380d7c7aa45389d3fb84ee80ea1e3f10afc744044aceb751 \
-    --hash=sha256:3e8a1e061a6bfa3d8c282dafec100f2c8c527ea50b6560e9a33adf0e2e5fef8f
+hypothesis==6.61.0 \
+    --hash=sha256:7bb22d22e35db99d5724bbf5bdc686b46add94a0f228bf1be249c47ec46b9c7f \
+    --hash=sha256:fbf7da30aea839d88898f74bcc027f0f997060498a8a7605880688c8a2166215
     # via -r requirements-dev.in
 identify==2.5.9 \
     --hash=sha256:906036344ca769539610436e40a684e170c3648b552194980bb7b617a8daeb9f \
@@ -415,7 +415,7 @@ requests==2.28.1 \
 selenium==4.7.2 \
     --hash=sha256:06a1c7d9f313130b21c3218ddd8852070d0e7419afdd31f96160cd576555a5ce
     # via
-    #   -r requirements-dev.in
+    #   -c constraints.txt
     #   pytest-selenium
 six==1.16.0 \
     --hash=sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926 \

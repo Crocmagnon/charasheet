@@ -28,8 +28,7 @@ RUN useradd -M -d /app -u 1000 -g 1000 -s /bin/bash django
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         libxml2 \
-        media-types \
-        postgresql-client
+        media-types
 
 # Fetch project requirements
 ##############################################

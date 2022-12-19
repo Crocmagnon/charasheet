@@ -13,3 +13,6 @@ inv test
 ./src/manage.py loaddata initial_data
 ./src/manage.py createsuperuser
 ```
+
+# Reuse
+If you do reuse my work, please consider linking back to this repository 🙂

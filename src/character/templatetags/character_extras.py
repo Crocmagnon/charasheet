@@ -43,3 +43,8 @@ def max_rank(path: Path, character: Character) -> int:
 @register.filter
 def managed_by(character: Character, user: User) -> bool:
     return character.managed_by(user)
+
+
+@register.filter
+def mastered_by(character: Character, user: User) -> bool:
+    return character.mastered_by(user)

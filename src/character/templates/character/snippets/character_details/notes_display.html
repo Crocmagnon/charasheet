@@ -10,5 +10,9 @@
             <i class="fa-solid fa-pen-to-square"></i> Edit
         </a>
     </h2>
+    <div class="alert alert-info">
+        Le {% if character|mastered_by:user %}joueur{% else %}MJ{% endif %}
+        peut également voir et modifier ces notes.
+    </div>
     {{ character.get_formatted_notes|safe }}
 </div>

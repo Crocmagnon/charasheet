@@ -1,0 +1,17 @@
+<div class="mt-3" id="gm-notes">
+    <form>
+        <h2>
+            Notes MJ
+            <a hx-post="{% url "character:gm_notes_change" pk=character.pk %}"
+                hx-target="#gm-notes"
+                hx-swap="innerHTML"
+                class="btn btn-primary btn-sm"
+            >
+                <i class="fa-solid fa-save"></i> Save
+            </a>
+        </h2>
+        <div class="alert alert-info">Ces notes ne sont pas visibles par le joueur.</div>
+        {% csrf_token %}
+        <textarea class="form-control" name="gm_notes" rows="10">{{ character.gm_notes }}</textarea>
+    </form>
+</div>

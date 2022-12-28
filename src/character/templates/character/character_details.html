@@ -510,6 +510,9 @@
     </div>
     {% include "character/snippets/character_details/paths_and_capabilities.html" %}
 
+    {% if character|mastered_by:user %}
+        {% include "character/snippets/character_details/gm_notes_display.html" %}
+    {% endif %}
     {% if character|managed_by:user %}
         {% include "character/snippets/character_details/notes_display.html" %}
     {% endif %}

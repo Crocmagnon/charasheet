@@ -79,16 +79,35 @@ class CharacterManager(models.Manager):
 
 class CharacterQuerySet(models.QuerySet):
     def managed_by(self, user):
+        """
+        Return characters managed by the given user.
+
+        Characters are managed by a user if they own the character
+        or if they are the game master for a group in which the character plays.
+        """
         from party.models import Party
 
         return self.filter(
             Q(player=user) | Q(parties__in=Party.objects.managed_by(user))
         )
 
+    def mastered_by(self, user):
+        """Return characters in groups where the given user is the game master."""
+        from party.models import Party
+
+        return self.filter(parties__in=Party.objects.managed_by(user))
+
     def owned_by(self, user):
+        """Return characters either owned by the given user."""
         return self.filter(player=user)
 
     def friendly_to(self, user):
+        """
+        Return characters friendly to the given users.
+
+        Friendly characters are either owned by the given user
+        or in a party related to the given user.
+        """
         from party.models import Party
 
         return self.filter(
@@ -229,6 +248,7 @@ class Character(models.Model):
     )
 
     notes = models.TextField(blank=True, verbose_name="notes", default=DEFAULT_NOTES)
+    gm_notes = models.TextField(blank=True, verbose_name="notes MJ")
     damage_reduction = models.TextField(blank=True, verbose_name="réduction de dégâts")
 
     states = models.ManyToManyField(HarmfulState, blank=True, related_name="characters")
@@ -402,6 +422,10 @@ class Character(models.Model):
         md = markdown.Markdown(extensions=["extra", "nl2br"])
         return md.convert(self.notes)
 
+    def get_formatted_gm_notes(self) -> str:
+        md = markdown.Markdown(extensions=["extra", "nl2br"])
+        return md.convert(self.gm_notes)
+
     def get_missing_states(self) -> Iterable[HarmfulState]:
         return HarmfulState.objects.exclude(
             pk__in=self.states.all().values_list("pk", flat=True)
@@ -409,6 +433,9 @@ class Character(models.Model):
 
     def managed_by(self, user):
         return self in Character.objects.managed_by(user)
+
+    def mastered_by(self, user):
+        return self in Character.objects.mastered_by(user)
 
     def reset_stats(self):
         self.health_remaining = self.health_max

@@ -291,6 +291,11 @@ def character_notes_change(request, pk: int):
 
 
 @login_required
+def character_gm_notes_change(request, pk: int):
+    return update_text_field(request, pk, "gm_notes")
+
+
+@login_required
 def character_equipment_change(request, pk: int):
     field = "equipment"
     character = get_object_or_404(

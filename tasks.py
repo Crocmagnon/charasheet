@@ -1,8 +1,23 @@
 import time
 from pathlib import Path
 
+import patchy
 import requests
 from invoke import task
+
+patchy.patch(
+    "invoke.tasks.Task.argspec",
+    """\
+@@ -16,7 +16,7 @@
+     # TODO: __call__ exhibits the 'self' arg; do we manually nix 1st result
+     # in argspec, or is there a way to get the "really callable" spec?
+     func = body if isinstance(body, types.FunctionType) else body.__call__
+-    spec = inspect.getargspec(func)
++    spec = inspect.getfullargspec(func)
+     arg_names = spec.args[:]
+     matched_args = [reversed(x) for x in [spec.args, spec.defaults or []]]
+     spec_dict = dict(zip_longest(*matched_args, fillvalue=NO_DEFAULT))""",
+)
 
 BASE_DIR = Path(__file__).parent.resolve(strict=True)
 SRC_DIR = BASE_DIR / "src"

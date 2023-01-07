@@ -375,7 +375,9 @@
                                 </div>
                             {% endif %}
                         </th>
-                        <td>
+                        <td data-bs-toggle="tooltip"
+                            data-bs-placement="left"
+                            data-bs-title="[1 dé de vie + {{ character.modifier_constitution|add:character.level }}] PV">
                             <span id="recovery-points-remaining">{{ character.recovery_points_remaining }}</span> / {{ character.recovery_points_max }}</td>
                     </tr>
                     <tr>
@@ -410,7 +412,7 @@
                         </th>
                         <td data-bs-toggle="tooltip"
                             data-bs-placement="left"
-                            data-bs-title="[1 dé de vie + {{ character.modifier_constitution|add:character.level }}] PV">
+                            data-bs-title="+10 sur un test">
                             <span id="luck-points-remaining">{{ character.luck_points_remaining }}</span> / {{ character.luck_points_max }}
                         </td>
                     </tr>

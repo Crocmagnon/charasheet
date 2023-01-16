@@ -1,8 +1,8 @@
 import pytest
-from django.core.management import call_command
 from django.urls import reverse
 from model_bakery import baker
 from pytest_django.live_server_helper import LiveServer
+from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support.select import Select
@@ -10,13 +10,13 @@ from selenium.webdriver.support.select import Select
 from character.models import Character, Profile
 from character.tests.test_interactions import create_hurt_character, login
 from common.models import User
-from party.models import Party
+from party.models import BattleEffect, Party
 
 
 @pytest.mark.django_db
-def test_add_character_to_existing_group(selenium: WebDriver, live_server: LiveServer):
-    call_command("loaddata", "initial_data")
-
+def test_add_character_to_existing_group(
+    selenium: WebDriver, live_server: LiveServer, initial_data: None
+):
     username, password = "gm", "password"
     gm = User.objects.create_user(username, password=password)
     player = User.objects.create_user("player")
@@ -40,10 +40,8 @@ def test_add_character_to_existing_group(selenium: WebDriver, live_server: LiveS
 
 @pytest.mark.django_db
 def test_gm_observe_invited_character_in_group(
-    selenium: WebDriver, live_server: LiveServer
+    selenium: WebDriver, live_server: LiveServer, initial_data: None
 ):
-    call_command("loaddata", "initial_data")
-
     username, password = "gm", "password"
     gm = User.objects.create_user(username, password=password)
     player = User.objects.create_user("player")
@@ -66,10 +64,8 @@ def test_gm_observe_invited_character_in_group(
 
 @pytest.mark.django_db
 def test_gm_observe_invited_character_in_two_groups(
-    selenium: WebDriver, live_server: LiveServer
+    selenium: WebDriver, live_server: LiveServer, initial_data: None
 ):
-    call_command("loaddata", "initial_data")
-
     username, password = "gm", "password"
     gm = User.objects.create_user(username, password=password)
     player = User.objects.create_user("player")
@@ -118,3 +114,102 @@ def test_reset_stats_view(
         assert character.mana_remaining == character.mana_max
         assert character.recovery_points_remaining == character.recovery_points_max
         assert character.luck_points_remaining == character.luck_points_max
+
+
+@pytest.mark.django_db
+def test_player_can_add_effect_to_group(
+    selenium: WebDriver, live_server: LiveServer, initial_data: None
+):
+    """Any member of a group can add effects to the group."""
+    user, password = "player", "password"
+    player = User.objects.create_user(user, password=password)
+    character = baker.make(Character, player=player)
+    party = baker.make(Party)
+    party.characters.add(character)
+
+    assert BattleEffect.objects.count() == 0
+
+    login(selenium, live_server, user, password)
+
+    url = reverse("party:details", kwargs={"pk": party.pk})
+    selenium.get(live_server.url + url)
+    selenium.find_element(By.ID, "add-effect").click()
+    selenium.find_element(By.ID, "id_name").send_keys("Agrandissement")
+    selenium.find_element(By.ID, "id_target").send_keys("Joueur 4")
+    selenium.find_element(By.ID, "id_description").send_keys(
+        "Le Magicien ou une cible volontaire (au contact) voit sa taille augmenter de "
+        "50% pendant [5 + Mod. d'INT] tours. Il gagne +2 aux DM au contact et aux "
+        "tests de FOR. Pataud, il subit un malus de -2 aux tests de DEX."
+    )
+    selenium.find_element(By.ID, "id_remaining_rounds").send_keys(Keys.DELETE, "8")
+    selenium.find_element(By.CSS_SELECTOR, "button[type=submit]").click()
+
+    assert BattleEffect.objects.count() == 1
+    # Todo: assert effect is displayed
+
+
+@pytest.mark.django_db
+def test_gm_can_add_effect_to_group(
+    selenium: WebDriver, live_server: LiveServer, initial_data: None
+):
+    """The GM of a group can add effects to the group."""
+    user, password = "gm", "password"
+    gm = User.objects.create_user(user, password=password)
+    party = baker.make(Party, game_master=gm)
+
+    assert BattleEffect.objects.count() == 0
+
+    login(selenium, live_server, user, password)
+
+    url = reverse("party:details", kwargs={"pk": party.pk})
+    selenium.get(live_server.url + url)
+    selenium.find_element(By.ID, "add-effect").click()
+    selenium.find_element(By.ID, "id_name").send_keys("Brûlé")
+    selenium.find_element(By.ID, "id_target").send_keys("Boss 2")
+    selenium.find_element(By.ID, "id_description").send_keys(
+        "Le Magicien choisit une cible située à moins de 30 mètres. Si son attaque "
+        "magique réussit, la cible encaisse [1d6 + Mod. d'INT] DM et la flèche "
+        "enflamme ses vêtements. Chaque tour de combat suivant, le feu inflige 1d6 "
+        "dégâts supplémentaires. Sur un résultat de 1 à 2, les flammes s'éteignent et "
+        "le sort prend fin."
+    )
+    selenium.find_element(By.ID, "id_remaining_rounds").send_keys(Keys.DELETE, "-1")
+    selenium.find_element(By.CSS_SELECTOR, "button[type=submit]").click()
+
+    assert BattleEffect.objects.count() == 1
+    # Todo: assert effect is displayed
+
+
+@pytest.mark.django_db
+def test_gm_can_change_remaining_rounds(
+    selenium: WebDriver, live_server: LiveServer, initial_data: None
+):
+    """The GM of a group can increase or decrease the remaining rounds of effects."""
+
+
+@pytest.mark.django_db
+def test_gm_can_update_existing_effect(
+    selenium: WebDriver, live_server: LiveServer, initial_data: None
+):
+    """The GM of a group can update existing effect, except group and creator."""
+
+
+@pytest.mark.django_db
+def test_gm_can_delete_any_existing_effect(
+    selenium: WebDriver, live_server: LiveServer, initial_data: None
+):
+    """The GM of a group can delete any existing effect, running or terminated."""
+
+
+@pytest.mark.django_db
+def test_player_cant_change_existing_running_effect(
+    selenium: WebDriver, live_server: LiveServer, initial_data: None
+):
+    """Members of the group can only view existing running effects, no update."""
+
+
+@pytest.mark.django_db
+def test_player_can_delete_terminated_effect(
+    selenium: WebDriver, live_server: LiveServer, initial_data: None
+):
+    """Members of the group can delete terminated effects."""

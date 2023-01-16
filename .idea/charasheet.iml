@@ -18,6 +18,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/public" />
       <excludeFolder url="file://$MODULE_DIR$/src/test_reports" />
       <excludeFolder url="file://$MODULE_DIR$/src/character/tests/test_reports" />
+      <excludeFolder url="file://$MODULE_DIR$/src/common/static/vendor" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.11 (charasheet)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

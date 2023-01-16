@@ -22,3 +22,18 @@ img.profile-pic {
     max-height: 240px;
     object-fit: cover;
 }
+
+#effects-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.effect {
+    width: 100px;
+    margin-right: 3em;
+    align-self: flex-end;
+}
+
+.effect .bar {
+    background-color: red;
+}

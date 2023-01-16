@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 
 from character.models import Character, HarmfulState
-from party.forms import PartyForm
+from party.forms import BattleEffectForm, PartyForm
 from party.models import Party
 
 
@@ -66,6 +66,24 @@ def party_reset_stats(request, pk):
         messages.success(request, message)
         return redirect(party)
     return render(request, "party/party_reset_stats.html", context)
+
+
+@login_required
+def party_add_effect(request, pk):
+    party = get_object_or_404(Party.objects.played_or_mastered_by(request.user), pk=pk)
+    context = {"party": party}
+    if request.method == "GET":
+        form = BattleEffectForm()
+    else:
+        form = BattleEffectForm(request.POST or None)
+        if form.is_valid():
+            effect = form.save(commit=False)
+            effect.party = party
+            effect.created_by = request.user
+            effect.save()
+            return render(request, "party/snippets/effects.html", context)
+    context["form"] = form
+    return render(request, "party/snippets/add_effect_form.html", context)
 
 
 @login_required

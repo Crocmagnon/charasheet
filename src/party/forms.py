@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 from django.db.models import Q
 
 from character.models import Character
-from party.models import Party
+from party.models import BattleEffect, Party
 
 
 class PartyForm(forms.ModelForm):
@@ -38,3 +38,9 @@ class PartyForm(forms.ModelForm):
                     ValidationError(f"{character} is already a group member."),
                 )
         return invited
+
+
+class BattleEffectForm(forms.ModelForm):
+    class Meta:
+        model = BattleEffect
+        fields = ["name", "target", "description", "remaining_rounds"]

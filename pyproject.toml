@@ -4,7 +4,7 @@
 [tool.pytest.ini_options]
 addopts = """
 --html=test_reports/pytest_result/pytest.html --color=yes --durations 20
---no-cov-on-fail --strict-markers
+--no-cov-on-fail --strict-markers --reuse-db
 --driver=Firefox
 -W error
 -W "ignore:capabilities and desired_capabilities have been deprecated:DeprecationWarning:pytest_selenium.pytest_selenium"
@@ -67,4 +67,7 @@ flake8-bandit = [
     "-S101", # Use of assert detected.
     "-S106", # Possible hardcoded password.
     "-S311", # Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+]
+flake8-bugbear = [
+    "-B011", # Do not call assert False since python -O removes these calls.
 ]

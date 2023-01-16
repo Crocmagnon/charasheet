@@ -14,6 +14,12 @@ class PartyQuerySet(models.QuerySet):
     def played_by(self, user):
         return self.filter(characters__in=Character.objects.filter(player=user))
 
+    def played_or_mastered_by(self, user):
+        return self.filter(
+            Q(game_master=user)
+            | Q(characters__in=Character.objects.filter(player=user))
+        ).distinct()
+
     def related_to(self, user):
         return self.filter(
             Q(game_master=user)
@@ -61,3 +67,36 @@ class Party(UniquelyNamedModel, TimeStampedModel, models.Model):
     def reset_stats(self):
         for character in self.characters.all():
             character.reset_stats()
+
+
+class BattleEffectManager(models.Manager):
+    def decrease_all_remaining_rounds(self):
+        pass
+
+
+class BattleEffect(TimeStampedModel, models.Model):
+    name = models.CharField(max_length=100, blank=False, null=False, verbose_name="nom")
+    target = models.CharField(
+        max_length=100, blank=False, null=False, verbose_name="cible"
+    )
+    description = models.TextField(blank=True, null=False, verbose_name="description")
+    remaining_rounds = models.SmallIntegerField(
+        blank=False,
+        default=-1,
+        verbose_name="nombre de tours restants",
+        help_text="-1 pour un effet permanent",
+    )
+    party = models.ForeignKey(
+        "party.Party",
+        on_delete=models.CASCADE,
+        related_name="effects",
+        verbose_name="groupe",
+    )
+    created_by = models.ForeignKey(
+        "common.User",
+        on_delete=models.CASCADE,
+        related_name="effects",
+        verbose_name="créé par",
+    )
+
+    objects = BattleEffectManager()

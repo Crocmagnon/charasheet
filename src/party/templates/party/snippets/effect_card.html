@@ -1,0 +1,32 @@
+{% with rounds=effect.remaining_rounds %}
+    <div class="col">
+        <div class="card {% if rounds == 0 %}text-bg-secondary{% endif %} effect" data-id="{{ effect.pk }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ effect.name }}</h5>
+                <h6 class="card-subtitle mb-2 {% if rounds != 0 %}text-muted{% endif %}">
+                    {{ effect.created_by.get_full_name|default:effect.created_by.username }} <i class="fa-solid fa-arrow-right"></i>
+                    {{ effect.target }}
+                </h6>
+                <p class="card-text">{{ effect.description }}</p>
+            </div>
+            <div class="card-footer text-center">
+                {% if rounds == 0 %}
+                    Terminé !
+                {% else %}
+                    <div class="progress" id="health-bar">
+                        <div class="progress-bar {% if effect.remaining_percent >= 60 %}bg-success{% elif effect.remaining_percent >= 30 %}bg-warning{% else %}bg-danger{% endif %}"
+                            style="width: {{ effect.remaining_percent|floatformat:"0" }}%">
+                            {% if rounds == -1 %}
+                                Permanent
+                            {% elif rounds == 1 %}
+                                Dernier
+                            {% else %}
+                                {{ rounds }} tours
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endwith %}

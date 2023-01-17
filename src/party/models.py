@@ -100,3 +100,10 @@ class BattleEffect(TimeStampedModel, models.Model):
     )
 
     objects = BattleEffectManager()
+
+    @property
+    def remaining_percent(self) -> float:
+        max_display_percent = 5
+        if self.remaining_rounds >= max_display_percent or self.remaining_rounds < 0:
+            return 100
+        return self.remaining_rounds / max_display_percent * 100

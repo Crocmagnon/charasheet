@@ -9,14 +9,9 @@
             class="btn btn-primary"><i class="fa-solid fa-plus"></i> Ajouter un effet
         </button>
     </div>
-    <div id="effects-list">
+    <div id="effects-cards" class="row mt-1 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         {% for effect in party.effects.all %}
-            <div class="effect">
-                <div style="height: calc({{ effect.remaining_rounds }}px * 20)" class="bar"></div>
-                <div class="name">{{ effect.name }}</div>
-                <div class="target">sur : {{ effect.target }}</div>
-                <div class="description text-secondary small">{{ effect.description }}</div>
-            </div>
+            {% include "party/snippets/effect_card.html" %}
         {% endfor %}
     </div>
 </div>

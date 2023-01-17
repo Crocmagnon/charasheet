@@ -1,3 +1,5 @@
+import random
+
 import pytest
 from django.urls import reverse
 from model_bakery import baker
@@ -137,13 +139,8 @@ def test_player_can_add_effect_to_group(
     )
     remaining_rounds = "8"
 
-    login(selenium, live_server, user, password)
-
-    url = reverse("party:details", kwargs={"pk": party.pk})
-    selenium.get(live_server.url + url)
-
+    go_to_party(selenium, live_server, party, user, password)
     fill_effect(selenium, name, description, target, remaining_rounds)
-
     assert_effect_is_created(name, description, target, remaining_rounds)
     # Todo: assert effect is displayed
 
@@ -170,13 +167,8 @@ def test_gm_can_add_effect_to_group(
     )
     remaining_rounds = "-1"
 
-    login(selenium, live_server, user, password)
-
-    url = reverse("party:details", kwargs={"pk": party.pk})
-    selenium.get(live_server.url + url)
-
+    go_to_party(selenium, live_server, party, user, password)
     fill_effect(selenium, name, description, target, remaining_rounds)
-
     assert_effect_is_created(name, description, target, remaining_rounds)
     # Todo: assert effect is displayed
 
@@ -186,6 +178,59 @@ def test_gm_can_change_remaining_rounds(
     selenium: WebDriver, live_server: LiveServer, initial_data: None
 ):
     """The GM of a group can increase or decrease the remaining rounds of effects."""
+    user, password = "gm", "password"
+    gm = User.objects.create_user(user, password=password)
+    party = baker.make(Party, game_master=gm)
+
+    active_not_nearly_terminated = baker.make(  # noqa: F841
+        BattleEffect,
+        _quantity=7,
+        remaining_rounds=lambda: random.randint(2, 12),
+        party=party,
+    )
+    active_nearly_terminated = baker.make(  # noqa: F841
+        BattleEffect, _quantity=3, remaining_rounds=1, party=party
+    )
+    terminated = baker.make(  # noqa: F841
+        BattleEffect, _quantity=5, remaining_rounds=0, party=party
+    )
+    permanent = baker.make(  # noqa: F841
+        BattleEffect, _quantity=2, remaining_rounds=-1, party=party
+    )
+    not_party = baker.make(BattleEffect, _quantity=4, remaining_rounds=55)  # noqa: F841
+
+    go_to_party(selenium, live_server, party, user, password)
+    selenium.find_element(By.ID, "increase-rounds").click()
+    assert BattleEffect.objects.filter(party=party).permanent().count() == 2
+    assert (
+        BattleEffect.objects.filter(party=party, remaining_rounds__gt=1).count() == 10
+    )
+    assert BattleEffect.objects.filter(party=party, remaining_rounds=1).count() == 5
+    assert BattleEffect.objects.filter(party=party).terminated().count() == 0
+    assert (
+        BattleEffect.objects.exclude(party=party).filter(remaining_rounds=55).count()
+        == 4
+    )
+
+    selenium.find_element(By.ID, "decrease-rounds").click()
+    assert BattleEffect.objects.filter(party=party).permanent().count() == 2
+    assert BattleEffect.objects.filter(party=party, remaining_rounds__gt=1).count() == 7
+    assert BattleEffect.objects.filter(party=party, remaining_rounds=1).count() == 3
+    assert BattleEffect.objects.filter(party=party).terminated().count() == 5
+    assert (
+        BattleEffect.objects.exclude(party=party).filter(remaining_rounds=55).count()
+        == 4
+    )
+
+    selenium.find_element(By.ID, "decrease-rounds").click()
+    assert BattleEffect.objects.filter(party=party).permanent().count() == 2
+    assert BattleEffect.objects.filter(party=party).active().count() == 7
+    assert BattleEffect.objects.filter(party=party, remaining_rounds=1).count() == 0
+    assert BattleEffect.objects.filter(party=party).terminated().count() == 8
+    assert (
+        BattleEffect.objects.exclude(party=party).filter(remaining_rounds=55).count()
+        == 4
+    )
 
 
 @pytest.mark.django_db
@@ -234,3 +279,9 @@ def assert_effect_is_created(name, description, target, remaining_rounds):
     assert effect.target == target
     assert effect.description == description
     assert str(effect.remaining_rounds) == remaining_rounds
+
+
+def go_to_party(selenium, live_server, party, user, password):
+    login(selenium, live_server, user, password)
+    url = reverse("party:details", kwargs={"pk": party.pk})
+    selenium.get(live_server.url + url)

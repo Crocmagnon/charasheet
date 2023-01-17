@@ -1,12 +1,14 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.http import require_GET, require_http_methods
 
 from character.models import Character, HarmfulState
 from party.forms import BattleEffectForm, PartyForm
 from party.models import Party
 
 
+@require_GET
 @login_required
 def parties_list(request):
     context = {
@@ -17,6 +19,7 @@ def parties_list(request):
     return render(request, "party/parties_list.html", context)
 
 
+@require_http_methods(["GET", "POST"])
 @login_required
 def party_create(request):
     if request.method == "GET":
@@ -33,6 +36,7 @@ def party_create(request):
     return render(request, "party/party_form.html", context)
 
 
+@require_GET
 @login_required
 def party_details(request, pk):
     party = get_object_or_404(Party.objects.related_to(request.user), pk=pk)
@@ -43,6 +47,7 @@ def party_details(request, pk):
     return render(request, "party/party_details.html", context)
 
 
+@require_http_methods(["GET", "POST"])
 @login_required
 def party_delete(request, pk):
     party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
@@ -55,6 +60,7 @@ def party_delete(request, pk):
     return render(request, "party/party_delete.html", context)
 
 
+@require_http_methods(["GET", "POST"])
 @login_required
 def party_reset_stats(request, pk):
     party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
@@ -68,6 +74,7 @@ def party_reset_stats(request, pk):
     return render(request, "party/party_reset_stats.html", context)
 
 
+@require_http_methods(["GET", "POST"])
 @login_required
 def party_add_effect(request, pk):
     party = get_object_or_404(Party.objects.played_or_mastered_by(request.user), pk=pk)
@@ -86,6 +93,23 @@ def party_add_effect(request, pk):
     return render(request, "party/snippets/add_effect_form.html", context)
 
 
+@require_GET
+@login_required
+def party_increase_rounds(request, pk):
+    party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
+    party.effects.increase_rounds()
+    return render(request, "party/snippets/effects.html", {"party": party})
+
+
+@require_GET
+@login_required
+def party_decrease_rounds(request, pk):
+    party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
+    party.effects.decrease_rounds()
+    return render(request, "party/snippets/effects.html", {"party": party})
+
+
+@require_http_methods(["GET", "POST"])
 @login_required
 def party_change(request, pk):
     party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
@@ -102,6 +126,7 @@ def party_change(request, pk):
     return render(request, "party/party_form.html", context)
 
 
+@require_http_methods(["GET", "POST"])
 @login_required
 def party_leave(request, pk, character_pk):
     party = get_object_or_404(Party.objects.played_by(request.user).distinct(), pk=pk)
@@ -116,6 +141,7 @@ def party_leave(request, pk, character_pk):
     return render(request, "party/party_leave.html", context)
 
 
+@require_GET
 @login_required
 def party_join(request, pk, character_pk):
     party = get_object_or_404(Party.objects.invited_to(request.user).distinct(), pk=pk)
@@ -128,6 +154,7 @@ def party_join(request, pk, character_pk):
     return redirect("party:list")
 
 
+@require_GET
 @login_required
 def party_refuse(request, pk, character_pk):
     party = get_object_or_404(Party.objects.invited_to(request.user).distinct(), pk=pk)

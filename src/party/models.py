@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import Q
+from django.db.models import F, Q
 from django.urls import reverse
 from django_extensions.db.models import TimeStampedModel
 
@@ -69,9 +69,28 @@ class Party(UniquelyNamedModel, TimeStampedModel, models.Model):
             character.reset_stats()
 
 
+class BattleEffectQuerySet(models.QuerySet):
+    def increase_rounds(self):
+        self.temporary().update(remaining_rounds=F("remaining_rounds") + 1)
+
+    def decrease_rounds(self):
+        self.active().update(remaining_rounds=F("remaining_rounds") - 1)
+
+    def active(self):
+        return self.filter(remaining_rounds__gt=0)
+
+    def terminated(self):
+        return self.filter(remaining_rounds=0)
+
+    def permanent(self):
+        return self.filter(remaining_rounds=-1)
+
+    def temporary(self):
+        return self.exclude(remaining_rounds=-1)
+
+
 class BattleEffectManager(models.Manager):
-    def decrease_all_remaining_rounds(self):
-        pass
+    pass
 
 
 class BattleEffect(TimeStampedModel, models.Model):
@@ -99,7 +118,7 @@ class BattleEffect(TimeStampedModel, models.Model):
         verbose_name="créé par",
     )
 
-    objects = BattleEffectManager()
+    objects = BattleEffectManager.from_queryset(BattleEffectQuerySet)()
 
     @property
     def remaining_percent(self) -> float:

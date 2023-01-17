@@ -7,10 +7,12 @@
 {% block content %}
     <h1>{{ party.name }}</h1>
     <p>MJ : {{ party.game_master.get_full_name|default:party.game_master.username }}</p>
-    <p>
-        <a href="{% url "party:reset_stats" pk=party.pk %}" id="reset-stats">Réinitialiser
-            les stats</a>
-    </p>
+    {% if party.game_master == request.user %}
+        <p>
+            <a href="{% url "party:reset_stats" pk=party.pk %}" id="reset-stats">Réinitialiser
+                les stats</a>
+        </p>
+    {% endif %}
     <h2 class="mt-4">Personnages</h2>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
         {% for character in party.characters.all %}

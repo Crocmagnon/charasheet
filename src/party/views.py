@@ -5,7 +5,7 @@ from django.views.decorators.http import require_GET, require_http_methods
 
 from character.models import Character, HarmfulState
 from party.forms import BattleEffectForm, PartyForm
-from party.models import Party
+from party.models import BattleEffect, Party
 
 
 @require_GET
@@ -106,6 +106,14 @@ def party_increase_rounds(request, pk):
 def party_decrease_rounds(request, pk):
     party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
     party.effects.decrease_rounds()
+    return render(request, "party/snippets/effects.html", {"party": party})
+
+
+@require_GET
+@login_required
+def party_delete_effect(request, pk, effect_pk):
+    party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
+    BattleEffect.objects.filter(pk=effect_pk).delete()
     return render(request, "party/snippets/effects.html", {"party": party})
 
 

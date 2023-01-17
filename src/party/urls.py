@@ -12,6 +12,11 @@ urlpatterns = [
     path("<int:pk>/reset_stats/", views.party_reset_stats, name="reset_stats"),
     path("<int:pk>/add_effect/", views.party_add_effect, name="add_effect"),
     path(
+        "<int:pk>/delete_effect/<int:effect_pk>/",
+        views.party_delete_effect,
+        name="delete_effect",
+    ),
+    path(
         "<int:pk>/increase_rounds/", views.party_increase_rounds, name="increase_rounds"
     ),
     path(

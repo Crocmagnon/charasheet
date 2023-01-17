@@ -2,7 +2,20 @@
     <div class="col">
         <div class="card {% if rounds == 0 %}text-bg-secondary{% endif %} effect" data-id="{{ effect.pk }}">
             <div class="card-body">
-                <h5 class="card-title">{{ effect.name }}</h5>
+                <h5 class="card-title">
+                    {% if party.game_master == request.user %}
+                        <button
+                            hx-get="{% url "party:delete_effect" pk=party.pk effect_pk=effect.pk %}"
+                            hx-target="#effects"
+                            hx-swap="outerHTML"
+                            class="btn btn-sm btn-danger delete"
+                            type="button"
+                        >
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    {% endif %}
+                    {{ effect.name }}
+                </h5>
                 <h6 class="card-subtitle mb-2 {% if rounds != 0 %}text-muted{% endif %}">
                     {{ effect.created_by.get_full_name|default:effect.created_by.username }} <i class="fa-solid fa-arrow-right"></i>
                     {{ effect.target }}

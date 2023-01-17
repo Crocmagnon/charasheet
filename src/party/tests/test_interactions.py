@@ -2,7 +2,6 @@ import pytest
 from django.urls import reverse
 from model_bakery import baker
 from pytest_django.live_server_helper import LiveServer
-from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support.select import Select
@@ -129,22 +128,23 @@ def test_player_can_add_effect_to_group(
 
     assert BattleEffect.objects.count() == 0
 
-    login(selenium, live_server, user, password)
-
-    url = reverse("party:details", kwargs={"pk": party.pk})
-    selenium.get(live_server.url + url)
-    selenium.find_element(By.ID, "add-effect").click()
-    selenium.find_element(By.ID, "id_name").send_keys("Agrandissement")
-    selenium.find_element(By.ID, "id_target").send_keys("Joueur 4")
-    selenium.find_element(By.ID, "id_description").send_keys(
+    name = "Agrandissement"
+    target = "Joueur 4"
+    description = (
         "Le Magicien ou une cible volontaire (au contact) voit sa taille augmenter de "
         "50% pendant [5 + Mod. d'INT] tours. Il gagne +2 aux DM au contact et aux "
         "tests de FOR. Pataud, il subit un malus de -2 aux tests de DEX."
     )
-    selenium.find_element(By.ID, "id_remaining_rounds").send_keys(Keys.DELETE, "8")
-    selenium.find_element(By.CSS_SELECTOR, "button[type=submit]").click()
+    remaining_rounds = "8"
 
-    assert BattleEffect.objects.count() == 1
+    login(selenium, live_server, user, password)
+
+    url = reverse("party:details", kwargs={"pk": party.pk})
+    selenium.get(live_server.url + url)
+
+    fill_effect(selenium, name, description, target, remaining_rounds)
+
+    assert_effect_is_created(name, description, target, remaining_rounds)
     # Todo: assert effect is displayed
 
 
@@ -159,24 +159,25 @@ def test_gm_can_add_effect_to_group(
 
     assert BattleEffect.objects.count() == 0
 
-    login(selenium, live_server, user, password)
-
-    url = reverse("party:details", kwargs={"pk": party.pk})
-    selenium.get(live_server.url + url)
-    selenium.find_element(By.ID, "add-effect").click()
-    selenium.find_element(By.ID, "id_name").send_keys("Brûlé")
-    selenium.find_element(By.ID, "id_target").send_keys("Boss 2")
-    selenium.find_element(By.ID, "id_description").send_keys(
+    name = "Brûlé"
+    target = "Boss 2"
+    description = (
         "Le Magicien choisit une cible située à moins de 30 mètres. Si son attaque "
         "magique réussit, la cible encaisse [1d6 + Mod. d'INT] DM et la flèche "
         "enflamme ses vêtements. Chaque tour de combat suivant, le feu inflige 1d6 "
         "dégâts supplémentaires. Sur un résultat de 1 à 2, les flammes s'éteignent et "
         "le sort prend fin."
     )
-    selenium.find_element(By.ID, "id_remaining_rounds").send_keys(Keys.DELETE, "-1")
-    selenium.find_element(By.CSS_SELECTOR, "button[type=submit]").click()
+    remaining_rounds = "-1"
 
-    assert BattleEffect.objects.count() == 1
+    login(selenium, live_server, user, password)
+
+    url = reverse("party:details", kwargs={"pk": party.pk})
+    selenium.get(live_server.url + url)
+
+    fill_effect(selenium, name, description, target, remaining_rounds)
+
+    assert_effect_is_created(name, description, target, remaining_rounds)
     # Todo: assert effect is displayed
 
 
@@ -213,3 +214,23 @@ def test_player_can_delete_terminated_effect(
     selenium: WebDriver, live_server: LiveServer, initial_data: None
 ):
     """Members of the group can delete terminated effects."""
+
+
+def fill_effect(selenium, name, description, target, remaining_rounds):
+    selenium.find_element(By.ID, "add-effect").click()
+    selenium.find_element(By.ID, "id_name").send_keys(name)
+    selenium.find_element(By.ID, "id_target").send_keys(target)
+    selenium.find_element(By.ID, "id_description").send_keys(description)
+    rounds_element = selenium.find_element(By.ID, "id_remaining_rounds")
+    rounds_element.clear()
+    rounds_element.send_keys(remaining_rounds)
+    selenium.find_element(By.CSS_SELECTOR, "button[type=submit]").click()
+
+
+def assert_effect_is_created(name, description, target, remaining_rounds):
+    assert BattleEffect.objects.count() == 1
+    effect = BattleEffect.objects.first()
+    assert effect.name == name
+    assert effect.target == target
+    assert effect.description == description
+    assert str(effect.remaining_rounds) == remaining_rounds

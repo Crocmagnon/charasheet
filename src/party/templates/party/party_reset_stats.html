@@ -10,6 +10,13 @@
             Êtes-vous certain de vouloir réinitialiser les stats de tous les membres de {{ party.name }} ?<br>
             Cette action est irréversible.
         </p>
+        <p>Joueurs affectés :</p>
+        <ul>
+            {% for character in party.characters.all %}
+                <li>{{ character.name }}</li>
+            {% endfor %}
+        </ul>
+        {% include "character/snippets/reset_affected_stats.html" %}
         <button class="btn btn-primary" type="submit">
             <i class="fa-solid fa-suitcase-medical"></i> Réinitialiser les stats
         </button>

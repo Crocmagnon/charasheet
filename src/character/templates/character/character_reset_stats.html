@@ -10,6 +10,7 @@
             Êtes-vous certain de vouloir réinitialiser les stats de {{ character.name }} ?<br>
             Cette action est irréversible.
         </p>
+        {% include "character/snippets/reset_affected_stats.html" %}
         <button class="btn btn-primary" type="submit">
             <i class="fa-solid fa-suitcase-medical"></i> Réinitialiser les stats
         </button>

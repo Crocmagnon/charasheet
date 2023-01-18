@@ -20,7 +20,24 @@
             </h5>
             <p class="card-text">
                 {{ character.race.name }} {{ character.profile.name }} niv. {{ character.level }}<br>
-                {{ character.get_gender_display }}, {{ character.age }} ans, {{ character.height_m }}m, {{ character.weight }}kg
+                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Attaque au contact">
+                    ⚔️&nbsp;{{ character.attack_melee|modifier }}
+                </span> /
+                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Attaque à distance">
+                    🏹&nbsp;{{ character.attack_range|modifier }}
+                </span> /
+                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Attaque magique">
+                    🪄&nbsp;{{ character.attack_magic|modifier }}
+                </span> /
+                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="DEF">
+                    🛡️&nbsp;{{ character.defense }}
+                </span><br>
+                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Initiative">
+                    🎲&nbsp;{{ character.modifier_initiative|modifier }}
+                </span> /
+                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Mod. FOR">
+                    💪&nbsp;{{ character.modifier_strength|modifier }}
+                </span>
             </p>
             {% include "character/snippets/character_details/health_bar.html" %}
             {% if character.mana_max > 0 %}

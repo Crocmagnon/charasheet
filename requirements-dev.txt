@@ -400,10 +400,6 @@ packaging==23.0 \
     # via
     #   build
     #   pytest
-patchy==2.6.1 \
-    --hash=sha256:1bbbd907b2cd7df7c55210a210172f3d1a5e943c7727f66446d298c9024b6518 \
-    --hash=sha256:c71e99242c9d2467143d5b8200459e5a2e848608c7cfb7a35121f1744979de8a
-    # via -r requirements-dev.in
 pathspec==0.10.3 \
     --hash=sha256:3c95343af8b756205e2aba76e843ba9520a24dd84f68c22b9f93251507509dd6 \
     --hash=sha256:56200de4077d9d0791465aa9095a01d421861e405b5096955051deefd697d6f6

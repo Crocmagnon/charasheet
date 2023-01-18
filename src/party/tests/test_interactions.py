@@ -8,6 +8,7 @@ from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.wait import WebDriverWait
 
 from character.models import Character, Profile
 from character.tests.test_interactions import create_hurt_character, login
@@ -186,7 +187,7 @@ def test_gm_can_change_remaining_rounds(
     active_not_nearly_terminated = baker.make(  # noqa: F841
         BattleEffect,
         _quantity=7,
-        remaining_rounds=lambda: random.randint(2, 12),
+        remaining_rounds=lambda: random.randint(3, 12),
         party=party,
     )
     active_nearly_terminated = baker.make(  # noqa: F841
@@ -199,9 +200,18 @@ def test_gm_can_change_remaining_rounds(
         BattleEffect, _quantity=2, remaining_rounds=-1, party=party
     )
     not_party = baker.make(BattleEffect, _quantity=4, remaining_rounds=55)  # noqa: F841
+    beacon = active_nearly_terminated[0]
+    selector = f'.effect[data-id="{beacon.pk}"] .card-footer'
+
+    def beacon_has_text(text: str):
+        def wrapped(driver: WebDriver):
+            return driver.find_element(By.CSS_SELECTOR, selector).text == text
+
+        return wrapped
 
     go_to_party(selenium, live_server, party, user, password)
     selenium.find_element(By.ID, "increase-rounds").click()
+    WebDriverWait(selenium, 3).until(beacon_has_text("2 tours"))
     assert BattleEffect.objects.filter(party=party).permanent().count() == 2
     assert (
         BattleEffect.objects.filter(party=party, remaining_rounds__gt=1).count() == 10
@@ -214,6 +224,7 @@ def test_gm_can_change_remaining_rounds(
     )
 
     selenium.find_element(By.ID, "decrease-rounds").click()
+    WebDriverWait(selenium, 3).until(beacon_has_text("Dernier"))
     assert BattleEffect.objects.filter(party=party).permanent().count() == 2
     assert BattleEffect.objects.filter(party=party, remaining_rounds__gt=1).count() == 7
     assert BattleEffect.objects.filter(party=party, remaining_rounds=1).count() == 3
@@ -224,6 +235,7 @@ def test_gm_can_change_remaining_rounds(
     )
 
     selenium.find_element(By.ID, "decrease-rounds").click()
+    WebDriverWait(selenium, 3).until(beacon_has_text("Terminé !"))
     assert BattleEffect.objects.filter(party=party).permanent().count() == 2
     assert BattleEffect.objects.filter(party=party).active().count() == 7
     assert BattleEffect.objects.filter(party=party, remaining_rounds=1).count() == 0

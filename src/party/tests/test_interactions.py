@@ -143,8 +143,11 @@ def test_player_can_add_effect_to_group(
 
     go_to_party(selenium, live_server, party, user, password)
     fill_effect(selenium, name, description, target, remaining_rounds)
-    assert_effect_is_created(name, description, target, remaining_rounds)
-    # Todo: assert effect is displayed
+    effect = assert_effect_is_created(name, description, target, remaining_rounds)
+    element = selenium.find_element(By.CSS_SELECTOR, f'.effect[data-id="{effect.pk}"]')
+    assert effect.name in element.text
+    assert effect.target in element.text
+    assert effect.description in element.text
 
 
 @pytest.mark.django_db
@@ -171,8 +174,11 @@ def test_gm_can_add_effect_to_group(
 
     go_to_party(selenium, live_server, party, user, password)
     fill_effect(selenium, name, description, target, remaining_rounds)
-    assert_effect_is_created(name, description, target, remaining_rounds)
-    # Todo: assert effect is displayed
+    effect = assert_effect_is_created(name, description, target, remaining_rounds)
+    element = selenium.find_element(By.CSS_SELECTOR, f'.effect[data-id="{effect.pk}"]')
+    assert effect.name in element.text
+    assert effect.target in element.text
+    assert effect.description in element.text
 
 
 @pytest.mark.django_db
@@ -296,7 +302,9 @@ def test_player_cant_change_existing_running_effect(
         selenium.find_element(By.ID, "decrease-rounds")
 
 
-def fill_effect(selenium, name, description, target, remaining_rounds):
+def fill_effect(
+    selenium: WebDriver, name: str, description: str, target: str, remaining_rounds: str
+) -> None:
     selenium.find_element(By.ID, "add-effect").click()
     selenium.find_element(By.ID, "id_name").send_keys(name)
     selenium.find_element(By.ID, "id_target").send_keys(target)
@@ -307,16 +315,21 @@ def fill_effect(selenium, name, description, target, remaining_rounds):
     selenium.find_element(By.CSS_SELECTOR, "button[type=submit]").click()
 
 
-def assert_effect_is_created(name, description, target, remaining_rounds):
+def assert_effect_is_created(
+    name: str, description: str, target: str, remaining_rounds: str
+) -> BattleEffect:
     assert BattleEffect.objects.count() == 1
     effect = BattleEffect.objects.first()
     assert effect.name == name
     assert effect.target == target
     assert effect.description == description
     assert str(effect.remaining_rounds) == remaining_rounds
+    return effect
 
 
-def go_to_party(selenium, live_server, party, user, password):
+def go_to_party(
+    selenium: WebDriver, live_server: LiveServer, party: Party, user: str, password: str
+) -> None:
     login(selenium, live_server, user, password)
     url = reverse("party:details", kwargs={"pk": party.pk})
     selenium.get(live_server.url + url)

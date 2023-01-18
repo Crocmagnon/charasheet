@@ -1,5 +1,5 @@
 {% load character_extras %}
-<div class="progress" id="health-bar"
+<div class="progress"
     {% if character|managed_by:user %}
         hx-get="{% url "character:get_health_bar" pk=character.pk %}"
         hx-trigger="refresh_health_bar from:body"

@@ -1,5 +1,5 @@
 {% load character_extras %}
-<div class="progress" id="mana-bar"
+<div class="progress"
     {% if character|managed_by:user %}
         hx-get="{% url "character:get_mana_bar" pk=character.pk %}"
         hx-trigger="refresh_mana_bar from:body"

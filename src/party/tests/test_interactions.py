@@ -17,9 +17,7 @@ from party.models import BattleEffect, Party
 
 
 @pytest.mark.django_db
-def test_add_character_to_existing_group(
-    selenium: WebDriver, live_server: LiveServer, initial_data: None
-):
+def test_add_character_to_existing_group(selenium: WebDriver, live_server: LiveServer):
     username, password = "gm", "password"
     gm = User.objects.create_user(username, password=password)
     player = User.objects.create_user("player")
@@ -43,7 +41,7 @@ def test_add_character_to_existing_group(
 
 @pytest.mark.django_db
 def test_gm_observe_invited_character_in_group(
-    selenium: WebDriver, live_server: LiveServer, initial_data: None
+    selenium: WebDriver, live_server: LiveServer
 ):
     username, password = "gm", "password"
     gm = User.objects.create_user(username, password=password)
@@ -67,7 +65,7 @@ def test_gm_observe_invited_character_in_group(
 
 @pytest.mark.django_db
 def test_gm_observe_invited_character_in_two_groups(
-    selenium: WebDriver, live_server: LiveServer, initial_data: None
+    selenium: WebDriver, live_server: LiveServer
 ):
     username, password = "gm", "password"
     gm = User.objects.create_user(username, password=password)
@@ -120,9 +118,7 @@ def test_reset_stats_view(
 
 
 @pytest.mark.django_db
-def test_player_can_add_effect_to_group(
-    selenium: WebDriver, live_server: LiveServer, initial_data: None
-):
+def test_player_can_add_effect_to_group(selenium: WebDriver, live_server: LiveServer):
     """Any member of a group can add effects to the group."""
     user, password = "player", "password"
     player = User.objects.create_user(user, password=password)
@@ -151,9 +147,7 @@ def test_player_can_add_effect_to_group(
 
 
 @pytest.mark.django_db
-def test_gm_can_add_effect_to_group(
-    selenium: WebDriver, live_server: LiveServer, initial_data: None
-):
+def test_gm_can_add_effect_to_group(selenium: WebDriver, live_server: LiveServer):
     """The GM of a group can add effects to the group."""
     user, password = "gm", "password"
     gm = User.objects.create_user(user, password=password)
@@ -182,9 +176,7 @@ def test_gm_can_add_effect_to_group(
 
 
 @pytest.mark.django_db
-def test_gm_can_change_remaining_rounds(
-    selenium: WebDriver, live_server: LiveServer, initial_data: None
-):
+def test_gm_can_change_remaining_rounds(selenium: WebDriver, live_server: LiveServer):
     """The GM of a group can increase or decrease the remaining rounds of effects."""
     user, password = "gm", "password"
     gm = User.objects.create_user(user, password=password)
@@ -254,7 +246,7 @@ def test_gm_can_change_remaining_rounds(
 
 @pytest.mark.django_db
 def test_gm_can_delete_any_existing_effect(
-    selenium: WebDriver, live_server: LiveServer, initial_data: None
+    selenium: WebDriver, live_server: LiveServer
 ):
     """The GM of a group can delete any existing effect, running or terminated."""
     user, password = "gm", "password"
@@ -275,7 +267,7 @@ def test_gm_can_delete_any_existing_effect(
 
 @pytest.mark.django_db
 def test_player_cant_change_existing_running_effect(
-    selenium: WebDriver, live_server: LiveServer, initial_data: None
+    selenium: WebDriver, live_server: LiveServer
 ):
     """Members of the group can only view existing running effects, no update."""
     user, password = "player", "password"

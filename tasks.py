@@ -34,6 +34,11 @@ def sync_dependencies(ctx: Context, update: bool = False):
 
 
 @task
+def update_dependencies(ctx: Context):
+    return sync_dependencies(ctx, update=True)
+
+
+@task
 def makemessages(ctx: Context):
     with ctx.cd(SRC_DIR):
         ctx.run("./manage.py makemessages -l en -l fr", pty=True, echo=True)

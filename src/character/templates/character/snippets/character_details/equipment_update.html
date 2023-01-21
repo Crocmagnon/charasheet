@@ -16,7 +16,7 @@
         {% endif %}
         <div class="card-body">
             {% csrf_token %}
-            <textarea class="form-control" name="equipment" rows="10">{{ character.equipment }}</textarea>
+            <textarea class="form-control" name="equipment">{{ character.equipment }}</textarea>
         </div>
         <div class="card-footer">
             <div class="row g-1">

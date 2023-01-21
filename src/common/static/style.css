@@ -22,3 +22,12 @@ img.profile-pic {
     max-height: 240px;
     object-fit: cover;
 }
+
+div#equipment .card-body {
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+form#equipment .card-body textarea {
+    height: 210px;
+}

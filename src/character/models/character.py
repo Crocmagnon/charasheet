@@ -66,7 +66,7 @@ class HarmfulState(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models
 def modifier(value: int) -> int:
     if not value:
         return 0
-    if 1 < value < 10:
+    if 1 < value < 10:  # noqa: PLR2004
         value -= 1
     value -= 10
     return int(value / 2)
@@ -343,10 +343,9 @@ class Character(models.Model):
         mana_max_compute = self.profile.mana_max_compute
         if mana_max_compute == Profile.ManaMax.NO_MANA:
             return 0
-        elif mana_max_compute == Profile.ManaMax.LEVEL:
+        if mana_max_compute == Profile.ManaMax.LEVEL:
             return self.level + self.modifier_magic
-        else:
-            return 2 * self.level + self.modifier_magic
+        return 2 * self.level + self.modifier_magic
 
     @property
     def height_m(self) -> float:

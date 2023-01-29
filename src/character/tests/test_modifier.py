@@ -4,7 +4,7 @@ from character.models.character import modifier
 
 
 @pytest.mark.parametrize(
-    "value,expected",
+    ("value", "expected"),
     [
         (1, -4),
         (2, -4),

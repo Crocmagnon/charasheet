@@ -7,7 +7,7 @@ from character.models.dice import Dice
 
 
 class Command(BaseCommand):
-    def handle(self, *args, **options) -> None:
+    def handle(self, *args, **options) -> None:  # noqa: ARG002
         url = "https://www.co-drs.org/fr/jeu/profils"
         self.setup_selenium()
         self.selenium.get(url)
@@ -17,7 +17,7 @@ class Command(BaseCommand):
             try:
                 self.import_profile(url)
             except Exception as e:
-                print(f"{type(e)}: {e}")
+                self.stderr.write(f"{type(e)}: {e}")
 
     def import_profile(self, url: str) -> None:
         self.selenium.get(url)
@@ -48,8 +48,7 @@ class Command(BaseCommand):
             self.stdout.write(
                 self.style.WARNING(f"Multiple dice for {name}: {number_of_dice}")
             )
-        dice = Dice(dice_value)
-        return dice
+        return Dice(dice_value)
 
     def get_magical_strength(self) -> Profile.MagicalStrength:
         try:
@@ -79,7 +78,7 @@ class Command(BaseCommand):
     def get_mana_max_compute(self, name) -> Profile.ManaMax:
         if name in ["Barde", "Druide", "Forgesort", "Prêtre"]:
             return Profile.ManaMax.LEVEL
-        elif name in ["Ensorceleur", "Magicien", "Nécromancien"]:
+        if name in ["Ensorceleur", "Magicien", "Nécromancien"]:
             return Profile.ManaMax.DOUBLE_LEVEL
         return Profile.ManaMax.NO_MANA
 

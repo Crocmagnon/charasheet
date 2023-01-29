@@ -8,7 +8,7 @@ from character.models import Capability, Path
 
 
 class Command(BaseCommand):
-    def handle(self, *args, **options):
+    def handle(self, *args, **options) -> None:  # noqa: ARG002
         url = "https://www.co-drs.org/fr/jeu/capacites"
         self.setup_selenium()
         self.selenium.get(url)
@@ -23,7 +23,7 @@ class Command(BaseCommand):
             try:
                 self.import_capability(card)
             except Exception as e:
-                print(f"{type(e)}: {e}")
+                self.stderr.write(f"{type(e)}: {e}")
         self.stdout.write(f"Finished processing {len(cards)} caps.")
 
     def import_capability(self, card: WebElement):

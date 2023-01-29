@@ -10,7 +10,7 @@ TEST_ENV = {"ENV_FILE": BASE_DIR / "envs" / "test-envs.env"}
 
 
 @task
-def sync_dependencies(ctx: Context, update: bool = False):
+def sync_dependencies(ctx: Context, *, update: bool = False):
     common_args = "-q --allow-unsafe --resolver=backtracking"
     if update:
         common_args += " --upgrade"
@@ -107,5 +107,5 @@ def import_from_co_drs(ctx: Context):
 
 
 @task(pre=[import_from_co_drs, dump_initial])
-def update_fixtures(ctx: Context):
+def update_fixtures(_: Context):
     pass

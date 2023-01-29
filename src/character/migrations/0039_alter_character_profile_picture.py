@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 null=True,
                 upload_to="profile_pictures",
                 validators=[
-                    functools.partial(
+                    functools.partial(  # noqa: PIE804
                         character.models.character.validate_image,
                         *(),
                         **{"megabytes_limit": 2},

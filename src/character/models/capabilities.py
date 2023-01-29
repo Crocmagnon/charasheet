@@ -59,10 +59,9 @@ class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
         category = Path.Category(self.category)
         if category == Path.Category.PROFILE:
             return self.profile
-        elif category == Path.Category.RACE:
+        if category == Path.Category.RACE:
             return self.race
-        else:
-            return None
+        return None
 
     def get_next_capability(self, character) -> Capability:
         next_rank = self.max_rank(character) + 1
@@ -71,9 +70,10 @@ class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
     def has_next_capability(self, character) -> bool:
         try:
             self.get_next_capability(character)
-            return True
         except Capability.DoesNotExist:
             return False
+        else:
+            return True
 
     def max_rank(self, character) -> int:
         return character.capabilities.filter(path=self).count()

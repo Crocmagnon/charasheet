@@ -12,7 +12,7 @@ from character.models import Character, Profile
 from common.models import User
 
 
-@pytest.mark.django_db
+@pytest.mark.django_db()
 def test_create_character(selenium: WebDriver, live_server: LiveServer):
     # Load fixtures
     call_command("loaddata", "initial_data")
@@ -93,7 +93,7 @@ def test_create_character(selenium: WebDriver, live_server: LiveServer):
         assert getattr(character, name) == value
 
 
-@pytest.mark.django_db
+@pytest.mark.django_db()
 def test_list_characters(selenium: WebDriver, live_server: LiveServer):
     # Load fixtures
     call_command("loaddata", "initial_data")
@@ -125,7 +125,7 @@ def test_list_characters(selenium: WebDriver, live_server: LiveServer):
     assert names == expected_names
 
 
-@pytest.mark.django_db
+@pytest.mark.django_db()
 def test_delete_character(selenium: WebDriver, live_server: LiveServer):
     call_command("loaddata", "initial_data")
 
@@ -146,7 +146,7 @@ def test_delete_character(selenium: WebDriver, live_server: LiveServer):
     assert Character.objects.filter(pk=characters[0].pk).first() is None
 
 
-@pytest.mark.django_db
+@pytest.mark.django_db()
 def test_reset_stats_view(
     selenium: WebDriver, live_server: LiveServer, initial_data: None
 ):

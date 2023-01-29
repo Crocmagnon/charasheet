@@ -43,10 +43,9 @@ class PathAdmin(admin.ModelAdmin):
         category = models.Path.Category(instance.category)
         if category == models.Path.Category.PROFILE:
             return str(instance.profile)
-        elif category == models.Path.Category.RACE:
+        if category == models.Path.Category.RACE:
             return str(instance.race)
-        else:
-            return ""
+        return ""
 
 
 @admin.register(models.RacialCapability)

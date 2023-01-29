@@ -7,7 +7,7 @@ from character.models import Path, Profile, Race
 
 
 class Command(BaseCommand):
-    def handle(self, *args, **options):
+    def handle(self, *args, **options) -> None:  # noqa: ARG002
         url = "https://www.co-drs.org/fr/jeu/voies"
         self.setup_selenium()
         self.selenium.get(url)
@@ -23,7 +23,7 @@ class Command(BaseCommand):
             try:
                 self.import_path(url)
             except Exception as e:
-                print(f"{type(e)}: {e}")
+                self.stderr.write(f"{type(e)}: {e}")
         self.stdout.write(f"Finished processing {len(urls)} paths.")
 
     def import_path(self, url: str):
@@ -81,9 +81,10 @@ class Command(BaseCommand):
             profile_name = self.selenium.find_element(
                 By.CSS_SELECTOR, ".field--name-type + strong + a"
             ).text
-            return Profile.objects.get_by_natural_key(profile_name)
         except Exception:
             self.stdout.write(self.style.WARNING(f"Couldn't find profile for {name}"))
+        else:
+            return Profile.objects.get_by_natural_key(profile_name)
 
     def get_race(self, path_name: str) -> Race | None:
         to_remove = ["voie de la", "voie de l'", "voie du"]

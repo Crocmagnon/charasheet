@@ -7,7 +7,7 @@ from character.models import Weapon
 
 
 class Command(BaseCommand):
-    def handle(self, *args, **options) -> None:
+    def handle(self, *args, **options) -> None:  # noqa: ARG002
         url = "https://www.co-drs.org/fr/ressources/equipements/armes"
         self.setup_selenium()
         self.selenium.get(url)
@@ -16,7 +16,7 @@ class Command(BaseCommand):
             try:
                 self.import_row(url, state)
             except Exception as e:
-                print(f"{type(e)}: {e}")
+                self.stderr.write(f"{type(e)}: {e}")
         self.stdout.write(f"Finished processing {len(states)} weapons.")
 
     def import_row(self, url: str, state_row: WebElement) -> None:

@@ -8,7 +8,7 @@ from character.tests.utils import ability_values, levels, modifier_test
 
 
 @pytest.mark.parametrize(
-    "value,expected",
+    ("value", "expected"),
     [
         (1, -4),
         (2, -4),

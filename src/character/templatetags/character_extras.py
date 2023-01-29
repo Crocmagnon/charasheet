@@ -10,8 +10,7 @@ register = template.Library()
 def modifier(value):
     if value > 0:
         return f"+{value}"
-    else:
-        return value
+    return value
 
 
 @register.filter
@@ -24,10 +23,9 @@ def weapon_modifier(character: Character, weapon: Weapon):
     value = character.get_modifier_for_weapon(weapon)
     if value > 0:
         return f"+ {value}"
-    elif value < 0:
+    if value < 0:
         return f"- {abs(value)}"
-    else:
-        return ""
+    return ""
 
 
 @register.filter

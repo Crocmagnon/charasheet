@@ -316,13 +316,12 @@ def character_equipment_change(request, pk: int):
             f"character/snippets/character_details/{field}_display.html",
             context,
         )
-    else:
-        context["errors"] = form.errors
-        return render(
-            request,
-            f"character/snippets/character_details/{field}_update.html",
-            context,
-        )
+    context["errors"] = form.errors
+    return render(
+        request,
+        f"character/snippets/character_details/{field}_update.html",
+        context,
+    )
 
 
 @login_required

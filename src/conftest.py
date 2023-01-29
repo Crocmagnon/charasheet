@@ -4,23 +4,23 @@ from selenium.webdriver.remote.webdriver import WebDriver
 
 
 @pytest.fixture(scope="session", autouse=True)
-def collectstatic():
+def _collectstatic():
     call_command("collectstatic", "--clear", "--noinput", "--verbosity=0")
 
 
-@pytest.fixture
+@pytest.fixture()
 def live_server(settings, live_server):
     settings.STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
     return live_server
 
 
-@pytest.fixture
+@pytest.fixture()
 def firefox_options(firefox_options):
     firefox_options.add_argument("-headless")
     return firefox_options
 
 
-@pytest.fixture
+@pytest.fixture()
 def selenium(selenium: WebDriver) -> WebDriver:
     selenium.implicitly_wait(3)
     selenium.set_window_size(3860, 2140)
@@ -33,6 +33,7 @@ def settings(settings):
     return settings
 
 
-@pytest.fixture
-def initial_data(db: None) -> None:
+@pytest.fixture()
+@pytest.mark.django_db()
+def initial_data() -> None:  # noqa: PT004
     call_command("loaddata", "initial_data")

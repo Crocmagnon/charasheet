@@ -6,7 +6,8 @@ on:
     - cron: '0 18 * * TUE'
 
 permissions:
-  contents: read
+  pull-requests: write
+  contents: write
 
 jobs:
   update:
@@ -37,7 +38,8 @@ jobs:
           title: Update dependencies
           delete-branch: true
       - name: Enable auto merge
+        if: steps.cpr.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v2
         with:
-          token: ${{ secrets.PERSONAL_TOKEN_PR }}
+          # Can't use the fine-grained token here because they don't have access to the GraphQL API.
           pull-request-number: ${{ steps.create-pull-request.outputs.pull-request-number }}

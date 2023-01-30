@@ -3,7 +3,7 @@ name: Test
 on:
   workflow_dispatch:
   schedule:
-    interval: "weekly"
+    - cron: '0 18 * * TUE'
 
 permissions:
   contents: read

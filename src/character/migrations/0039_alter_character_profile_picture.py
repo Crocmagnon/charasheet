@@ -8,7 +8,6 @@ import character.models.character
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("character", "0038_character_profile_picture"),
     ]

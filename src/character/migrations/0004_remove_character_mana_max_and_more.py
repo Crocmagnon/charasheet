@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("character", "0003_alter_character_equipment_alter_character_notes_and_more"),
     ]

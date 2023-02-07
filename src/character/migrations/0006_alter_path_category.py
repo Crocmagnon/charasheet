@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("character", "0005_profile_notes_alter_character_mana_consumed_and_more"),
     ]

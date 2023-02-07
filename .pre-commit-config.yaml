@@ -34,16 +34,16 @@ repos:
       - id: django-upgrade
         args: [--target-version, "4.1"]
   - repo: https://github.com/psf/black
-    rev: 22.12.0
+    rev: 23.1.0
     hooks:
       - id: black
         args: [--target-version, py311]
   - repo: https://github.com/rtts/djhtml
-    rev: v1.5.2
+    rev: v2.0.0
     hooks:
       - id: djhtml
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: 'v0.0.238'
+    rev: 'v0.0.243'
     hooks:
       - id: ruff
         args: [--fix]
@@ -62,7 +62,7 @@ repos:
           - eslint@8.32.0
           - eslint-config-prettier@8.5.0
   - repo: https://github.com/jazzband/pip-tools
-    rev: 6.12.1
+    rev: 6.12.2
     hooks:
       - id: pip-compile
         name: pip-compile requirements.txt

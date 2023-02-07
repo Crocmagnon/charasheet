@@ -22,7 +22,7 @@ charset-normalizer==3.0.1
     # via requests
 confusable-homoglyphs==3.2.0
     # via django-registration
-django==4.1.5
+django==4.1.6
     # via
     #   -r requirements.in
     #   django-anymail
@@ -91,5 +91,5 @@ wsproto==1.2.0
     # via trio-websocket
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==67.0.0
+setuptools==67.2.0
     # via gunicorn

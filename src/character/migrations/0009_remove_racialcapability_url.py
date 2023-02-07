@@ -4,7 +4,6 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("character", "0008_capability_url_path_url_profile_url_race_url_and_more"),
     ]

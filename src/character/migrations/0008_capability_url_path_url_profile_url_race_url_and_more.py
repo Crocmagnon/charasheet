@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("character", "0007_alter_capability_limited_alter_capability_spell"),
     ]

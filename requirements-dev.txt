@@ -353,9 +353,9 @@ h11==0.14.0 \
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.65.2 \
-    --hash=sha256:26c52473a526b31672d97f88be0b7ac134f0ea180737c71ada2a4d82ad175e92 \
-    --hash=sha256:821279f05fad38575271be3fdfff1e22232613f3d21b3fc991d735057f9b5b47
+hypothesis==6.67.1 \
+    --hash=sha256:7abb4361d796ae6432d1c0b22a514210a2a19cb0d85efca8463e619a80f3132c \
+    --hash=sha256:947839d8b5fd24d9b4d1e41ee10f7285d023f49f3b318519bf110fa9e5f3154e
     # via -r requirements-dev.in
 identify==2.5.17 \
     --hash=sha256:7d526dd1283555aafcc91539acc061d8f6f59adb0a7bba462735b0a318bff7ed \

@@ -50,13 +50,13 @@ repos:
       - id: prettier
         types_or: [javascript, css]
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v8.33.0
+    rev: v8.34.0
     hooks:
       - id: eslint
         args: [--fix]
         types_or: [javascript, css]
         additional_dependencies:
-          - eslint@8.32.0
+          - eslint@8.34.0
           - eslint-config-prettier@8.5.0
   - repo: https://github.com/tox-dev/pyproject-fmt
     rev: 0.9.1

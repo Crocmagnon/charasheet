@@ -151,13 +151,13 @@ django-extensions==3.2.1 \
     --hash=sha256:2a4f4d757be2563cd1ff7cfdf2e57468f5f931cc88b23cf82ca75717aae504a4 \
     --hash=sha256:421464be390289513f86cb5e18eb43e5dc1de8b4c27ba9faa3b91261b0d67e09
     # via -r requirements.in
-django-htmx==1.13.0 \
-    --hash=sha256:781a59376d769aa28302619e73d37d481a125ab155d9fdd7fb17f10e7d25f352 \
-    --hash=sha256:848c3e195b8757656626c8a099f9be59c6d30f468f1d54e69f0f2a48f0a14928
+django-htmx==1.14.0 \
+    --hash=sha256:393e2a4a963aff691b3973c898dbca1363139d7c7bf2e8cc4c605e2ad808a779 \
+    --hash=sha256:b689a8d6f7052a96a373411ec55ba81c1ddffb4d66b1f5ab4d6e3d28420842fd
     # via -r requirements.in
-django-linear-migrations==2.6.0 \
-    --hash=sha256:0a26b5f49ce716d8d4f0c2b9061b6aeeb9df692ef6153e7736881ca46daea57b \
-    --hash=sha256:20a5c619847db79af6cbc7d66a9d242802ae1f3853e12842c268ff91f0d9e557
+django-linear-migrations==2.7.0 \
+    --hash=sha256:29b47e8e1b29830aecf4495496ca69689664e36e4bd13c92c1dd862d3b188034 \
+    --hash=sha256:cbb5626c6f6003dbc6b2560bfcbb5206a7497e90e51e23bd7dc2ab20e2d6a5d1
     # via -r requirements.in
 django-registration==3.3 \
     --hash=sha256:884a4cc9ec87b9f1c0ceb6b6c4b7ba491c1877997a3cd29cc923697dac785eb8 \
@@ -307,9 +307,9 @@ urllib3[socks]==1.26.14 \
     # via
     #   requests
     #   selenium
-whitenoise==6.3.0 \
-    --hash=sha256:cf8ecf56d86ba1c734fdb5ef6127312e39e92ad5947fef9033dc9e43ba2777d9 \
-    --hash=sha256:fe0af31504ab08faa1ec7fc02845432096e40cc1b27e6a7747263d7b30fb51fa
+whitenoise==6.4.0 \
+    --hash=sha256:599dc6ca57e48929dfeffb2e8e187879bfe2aed0d49ca419577005b7f2cc930b \
+    --hash=sha256:a02d6660ad161ff17e3042653c8e3f5ecbb2a2481a006bde125b9efb9a30113a
     # via -r requirements.in
 wsproto==1.2.0 \
     --hash=sha256:ad565f26ecb92588a3e43bc3d96164de84cd9902482b130d0ddbaa9664a85065 \
@@ -317,7 +317,7 @@ wsproto==1.2.0 \
     # via trio-websocket
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==67.3.2 \
-    --hash=sha256:95f00380ef2ffa41d9bba85d95b27689d923c93dfbafed4aecd7cf988a25e012 \
-    --hash=sha256:bb6d8e508de562768f2027902929f8523932fcd1fb784e6d573d2cafac995a48
+setuptools==67.4.0 \
+    --hash=sha256:e5fd0a713141a4a105412233c63dc4e17ba0090c8e8334594ac790ec97792330 \
+    --hash=sha256:f106dee1b506dee5102cc3f3e9e68137bbad6d47b616be7991714b0c62204251
     # via gunicorn

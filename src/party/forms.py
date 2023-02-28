@@ -7,7 +7,7 @@ from party.models import BattleEffect, Party
 
 
 class PartyForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs) -> None:
         self.original_instance = kwargs.get("instance")
         super().__init__(*args, **kwargs)
         qs = Character.objects.all()
@@ -16,9 +16,10 @@ class PartyForm(forms.ModelForm):
                 Q(private=False)
                 | Q(
                     pk__in=self.original_instance.invited_characters.all().values_list(
-                        "pk", flat=True
-                    )
-                )
+                        "pk",
+                        flat=True,
+                    ),
+                ),
             )
         self.fields["invited_characters"].queryset = qs
 

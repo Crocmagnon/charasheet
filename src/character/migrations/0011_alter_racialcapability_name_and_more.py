@@ -17,7 +17,9 @@ class Migration(migrations.Migration):
         migrations.AddConstraint(
             model_name="racialcapability",
             constraint=models.UniqueConstraint(
-                models.F("name"), models.F("race"), name="unique_name_race"
+                models.F("name"),
+                models.F("race"),
+                name="unique_name_race",
             ),
         ),
     ]

@@ -13,7 +13,8 @@ class Migration(migrations.Migration):
             model_name="character",
             name="states",
             field=models.ManyToManyField(
-                related_name="characters", to="character.harmfulstate"
+                related_name="characters",
+                to="character.harmfulstate",
             ),
         ),
     ]

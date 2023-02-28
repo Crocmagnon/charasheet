@@ -17,7 +17,12 @@ from character.models.equipment import Weapon
 from common.models import DocumentedModel, UniquelyNamedModel
 
 
-class Profile(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
+class Profile(  # noqa: DJ008
+    DocumentedModel,
+    UniquelyNamedModel,
+    TimeStampedModel,
+    models.Model,
+):
     class MagicalStrength(models.TextChoices):
         NONE = "NON", "Aucun"
         INTELLIGENCE = "INT", "Intelligence"
@@ -36,10 +41,13 @@ class Profile(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Mode
         verbose_name="force magique",
     )
     life_dice = models.PositiveSmallIntegerField(
-        choices=Dice.choices, verbose_name="dé de vie"
+        choices=Dice.choices,
+        verbose_name="dé de vie",
     )
     mana_max_compute = models.PositiveSmallIntegerField(
-        choices=ManaMax.choices, verbose_name="calcul mana max", default=ManaMax.NO_MANA
+        choices=ManaMax.choices,
+        verbose_name="calcul mana max",
+        default=ManaMax.NO_MANA,
     )
     notes = models.TextField(blank=True, verbose_name="notes")
 
@@ -48,13 +56,23 @@ class Profile(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Mode
         verbose_name_plural = "Profils"
 
 
-class Race(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
+class Race(  # noqa: DJ008
+    DocumentedModel,
+    UniquelyNamedModel,
+    TimeStampedModel,
+    models.Model,
+):
     class Meta(UniquelyNamedModel.Meta, TimeStampedModel.Meta):
         verbose_name = "Race"
         verbose_name_plural = "Races"
 
 
-class HarmfulState(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
+class HarmfulState(  # noqa: DJ008
+    DocumentedModel,
+    UniquelyNamedModel,
+    TimeStampedModel,
+    models.Model,
+):
     description = models.TextField()
     icon_url = models.URLField()
 
@@ -88,7 +106,7 @@ class CharacterQuerySet(models.QuerySet):
         from party.models import Party
 
         return self.filter(
-            Q(player=user) | Q(parties__in=Party.objects.managed_by(user))
+            Q(player=user) | Q(parties__in=Party.objects.managed_by(user)),
         )
 
     def mastered_by(self, user):
@@ -113,7 +131,7 @@ class CharacterQuerySet(models.QuerySet):
         return self.filter(
             Q(player=user)
             | Q(parties__in=Party.objects.related_to(user))
-            | Q(invites__in=Party.objects.related_to(user))
+            | Q(invites__in=Party.objects.related_to(user)),
         ).distinct()
 
 
@@ -184,7 +202,10 @@ class Character(models.Model):
     level = models.PositiveSmallIntegerField(verbose_name="niveau", default=1)
 
     gender = models.CharField(
-        max_length=1, choices=Gender.choices, default=Gender.OTHER, verbose_name="genre"
+        max_length=1,
+        choices=Gender.choices,
+        default=Gender.OTHER,
+        verbose_name="genre",
     )
     age = models.PositiveSmallIntegerField(verbose_name="âge")
     height = models.PositiveSmallIntegerField(verbose_name="taille")
@@ -193,17 +214,17 @@ class Character(models.Model):
     value_strength = models.PositiveSmallIntegerField(verbose_name="valeur force")
     value_dexterity = models.PositiveSmallIntegerField(verbose_name="valeur dextérité")
     value_constitution = models.PositiveSmallIntegerField(
-        verbose_name="valeur constitution"
+        verbose_name="valeur constitution",
     )
     value_intelligence = models.PositiveSmallIntegerField(
-        verbose_name="valeur intelligence"
+        verbose_name="valeur intelligence",
     )
     value_wisdom = models.PositiveSmallIntegerField(verbose_name="valeur sagesse")
     value_charisma = models.PositiveSmallIntegerField(verbose_name="valeur charisme")
 
     health_max = models.PositiveSmallIntegerField(verbose_name="points de vie max")
     health_remaining = models.PositiveSmallIntegerField(
-        verbose_name="points de vie restants"
+        verbose_name="points de vie restants",
     )
 
     racial_capability = models.ForeignKey(
@@ -214,7 +235,9 @@ class Character(models.Model):
     )
 
     weapons = models.ManyToManyField(
-        "character.Weapon", blank=True, verbose_name="armes"
+        "character.Weapon",
+        blank=True,
+        verbose_name="armes",
     )
 
     armor = models.PositiveSmallIntegerField(verbose_name="armure", default=0)
@@ -222,20 +245,24 @@ class Character(models.Model):
     defense_misc = models.SmallIntegerField(verbose_name="divers défense", default=0)
 
     initiative_misc = models.SmallIntegerField(
-        verbose_name="divers initiative", default=0
+        verbose_name="divers initiative",
+        default=0,
     )
 
     capabilities = models.ManyToManyField(
-        "character.Capability", blank=True, verbose_name="capacités"
+        "character.Capability",
+        blank=True,
+        verbose_name="capacités",
     )
 
     equipment = models.TextField(blank=True, verbose_name="équipement")
     luck_points_remaining = models.PositiveSmallIntegerField(
-        verbose_name="points de chance restants"
+        verbose_name="points de chance restants",
     )
 
     mana_remaining = models.PositiveSmallIntegerField(
-        default=0, verbose_name="mana restant"
+        default=0,
+        verbose_name="mana restant",
     )
 
     money_pp = models.PositiveSmallIntegerField(default=0, verbose_name="PP")
@@ -244,7 +271,8 @@ class Character(models.Model):
     money_pc = models.PositiveSmallIntegerField(default=0, verbose_name="PC")
 
     recovery_points_remaining = models.PositiveSmallIntegerField(
-        default=5, verbose_name="points de récupération restants"
+        default=5,
+        verbose_name="points de récupération restants",
     )
 
     notes = models.TextField(blank=True, verbose_name="notes", default=DEFAULT_NOTES)
@@ -267,8 +295,10 @@ class Character(models.Model):
         verbose_name_plural = "Personnages"
         constraints = [
             models.UniqueConstraint(
-                Lower("name"), "player", name="unique_character_player"
-            )
+                Lower("name"),
+                "player",
+                name="unique_character_player",
+            ),
         ]
 
     def __str__(self):
@@ -329,7 +359,8 @@ class Character(models.Model):
             Profile.MagicalStrength.NONE: 0,
         }
         return modifier_map.get(
-            Profile.MagicalStrength(self.profile.magical_strength), 0
+            Profile.MagicalStrength(self.profile.magical_strength),
+            0,
         )
 
     @property
@@ -403,8 +434,9 @@ class Character(models.Model):
             for capability in path.capabilities.all():
                 capabilities_by_path[capability.path].append(
                     CharacterCapability(
-                        capability, known=capability in character_capabilities
-                    )
+                        capability,
+                        known=capability in character_capabilities,
+                    ),
                 )
 
         return dict(
@@ -414,7 +446,7 @@ class Character(models.Model):
                     for path, capabilities in capabilities_by_path.items()
                 ),
                 key=lambda x: x[0].name,
-            )
+            ),
         )
 
     def get_formatted_notes(self) -> str:
@@ -427,7 +459,7 @@ class Character(models.Model):
 
     def get_missing_states(self) -> Iterable[HarmfulState]:
         return HarmfulState.objects.exclude(
-            pk__in=self.states.all().values_list("pk", flat=True)
+            pk__in=self.states.all().values_list("pk", flat=True),
         )
 
     def managed_by(self, user):

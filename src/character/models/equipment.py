@@ -4,7 +4,12 @@ from django_extensions.db.models import TimeStampedModel
 from common.models import DocumentedModel, UniquelyNamedModel
 
 
-class Weapon(UniquelyNamedModel, DocumentedModel, TimeStampedModel, models.Model):
+class Weapon(  # noqa: DJ008
+    UniquelyNamedModel,
+    DocumentedModel,
+    TimeStampedModel,
+    models.Model,
+):
     class Category(models.TextChoices):
         MELEE = "MEL", "corps à corps"
         RANGE = "RAN", "à distance"
@@ -13,7 +18,9 @@ class Weapon(UniquelyNamedModel, DocumentedModel, TimeStampedModel, models.Model
     damage = models.CharField(max_length=50, blank=True, verbose_name="dégâts")
     special = models.TextField(blank=True, verbose_name="spécial")
     category = models.CharField(
-        max_length=3, choices=Category.choices, default=Category.NONE
+        max_length=3,
+        choices=Category.choices,
+        default=Category.NONE,
     )
 
     class Meta(UniquelyNamedModel.Meta, TimeStampedModel.Meta):

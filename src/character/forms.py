@@ -18,10 +18,12 @@ class AddPathForm(forms.Form):
         empty_label="----- Voies liées au personnage -----",
     )
     other_path = forms.ModelChoiceField(
-        Path.objects.none(), required=False, empty_label="----- Autres voies -----"
+        Path.objects.none(),
+        required=False,
+        empty_label="----- Autres voies -----",
     )
 
-    def __init__(self, character: Character, *args, **kwargs):
+    def __init__(self, character: Character, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         paths = {cap.path_id for cap in character.capabilities.all()}
         paths = (
@@ -30,12 +32,12 @@ class AddPathForm(forms.Form):
             .select_related("profile", "race")
         )
         character_paths = paths.filter(
-            Q(profile=character.profile) | Q(race=character.race)
+            Q(profile=character.profile) | Q(race=character.race),
         )
         self.fields["character_path"].queryset = character_paths
         self.fields["character_path"].widget.attrs["class"] = "form-select"
         self.fields["other_path"].queryset = paths.exclude(
-            pk__in={path.pk for path in character_paths}
+            pk__in={path.pk for path in character_paths},
         )
         self.fields["other_path"].widget.attrs["class"] = "form-select"
 
@@ -43,12 +45,13 @@ class AddPathForm(forms.Form):
         cleaned_data = super().clean()
         values = [cleaned_data.get("character_path"), cleaned_data.get("other_path")]
         if len(list(filter(None, values))) != 1:
-            raise ValidationError("Vous devez sélectionner une seule valeur.")
+            msg = "Vous devez sélectionner une seule valeur."
+            raise ValidationError(msg)
         return cleaned_data
 
 
 class CharacterCreateForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.fields[
             "racial_capability"

@@ -139,7 +139,8 @@ def party_change(request, pk):
 def party_leave(request, pk, character_pk):
     party = get_object_or_404(Party.objects.played_by(request.user).distinct(), pk=pk)
     character = get_object_or_404(
-        Character.objects.owned_by(request.user), pk=character_pk
+        Character.objects.owned_by(request.user),
+        pk=character_pk,
     )
     context = {"party": party, "character": character}
     if request.method == "POST":
@@ -154,7 +155,8 @@ def party_leave(request, pk, character_pk):
 def party_join(request, pk, character_pk):
     party = get_object_or_404(Party.objects.invited_to(request.user).distinct(), pk=pk)
     character = get_object_or_404(
-        Character.objects.owned_by(request.user), pk=character_pk
+        Character.objects.owned_by(request.user),
+        pk=character_pk,
     )
     party.characters.add(character)
     party.invited_characters.remove(character)
@@ -167,7 +169,8 @@ def party_join(request, pk, character_pk):
 def party_refuse(request, pk, character_pk):
     party = get_object_or_404(Party.objects.invited_to(request.user).distinct(), pk=pk)
     character = get_object_or_404(
-        Character.objects.owned_by(request.user), pk=character_pk
+        Character.objects.owned_by(request.user),
+        pk=character_pk,
     )
     party.invited_characters.remove(character)
     messages.success(request, f"{character} a refusé l'invitation au groupe {party}.")

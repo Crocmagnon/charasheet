@@ -28,13 +28,15 @@ class Migration(migrations.Migration):
                 (
                     "created",
                     django_extensions.db.fields.CreationDateTimeField(
-                        auto_now_add=True, verbose_name="created"
+                        auto_now_add=True,
+                        verbose_name="created",
                     ),
                 ),
                 (
                     "modified",
                     django_extensions.db.fields.ModificationDateTimeField(
-                        auto_now=True, verbose_name="modified"
+                        auto_now=True,
+                        verbose_name="modified",
                     ),
                 ),
                 ("name", models.CharField(max_length=100, verbose_name="nom")),

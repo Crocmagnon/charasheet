@@ -10,7 +10,9 @@ urlpatterns = [
     path("<int:pk>/change/", views.character_change, name="change"),
     path("<int:pk>/delete/", views.character_delete, name="delete"),
     path(
-        "<int:pk>/health_change/", views.character_health_change, name="health_change"
+        "<int:pk>/health_change/",
+        views.character_health_change,
+        name="health_change",
     ),
     path("<int:pk>/mana_change/", views.character_mana_change, name="mana_change"),
     path(
@@ -87,7 +89,9 @@ urlpatterns = [
     ),
     path("<int:pk>/add_path/", views.add_path, name="add_path"),
     path(
-        "<int:pk>/remove_state/<int:state_pk>/", views.remove_state, name="remove_state"
+        "<int:pk>/remove_state/<int:state_pk>/",
+        views.remove_state,
+        name="remove_state",
     ),
     path("<int:pk>/add_state/<int:state_pk>/", views.add_state, name="add_state"),
     path("<int:pk>/reset_stats/", views.reset_stats, name="reset_stats"),

@@ -68,7 +68,10 @@ def test_attack_range(level, dexterity):
 @given(armor=integers(), shield=integers(), dexterity=ability_values(), misc=integers())
 def test_defense(armor, shield, dexterity, misc):
     char = Character(
-        armor=armor, shield=shield, value_dexterity=dexterity, defense_misc=misc
+        armor=armor,
+        shield=shield,
+        value_dexterity=dexterity,
+        defense_misc=misc,
     )
     assert char.defense == 10 + armor + shield + modifier_test(dexterity) + misc
 

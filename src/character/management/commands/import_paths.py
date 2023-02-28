@@ -16,7 +16,8 @@ class Command(BaseCommand):
         while len(anchors) < expected_path_count:
             self.selenium.find_element(By.TAG_NAME, "body").send_keys(Keys.END)
             anchors = self.selenium.find_elements(
-                By.CSS_SELECTOR, ".card-body .card-title a"
+                By.CSS_SELECTOR,
+                ".card-body .card-title a",
             )
         urls = [anchor.get_attribute("href") for anchor in anchors]
         for url in urls:
@@ -57,7 +58,8 @@ class Command(BaseCommand):
         try:
             category = (
                 self.selenium.find_element(
-                    By.CSS_SELECTOR, ".field--name-type .field__item"
+                    By.CSS_SELECTOR,
+                    ".field--name-type .field__item",
                 )
                 .text.lower()
                 .strip()
@@ -65,8 +67,8 @@ class Command(BaseCommand):
         except Exception:
             self.stdout.write(
                 self.style.WARNING(
-                    f"Couldn't find category for {name}. Defaulting to profile."
-                )
+                    f"Couldn't find category for {name}. Defaulting to profile.",
+                ),
             )
             return Path.Category.PROFILE
 
@@ -79,7 +81,8 @@ class Command(BaseCommand):
     def get_profile(self, name: str) -> Profile | None:
         try:
             profile_name = self.selenium.find_element(
-                By.CSS_SELECTOR, ".field--name-type + strong + a"
+                By.CSS_SELECTOR,
+                ".field--name-type + strong + a",
             ).text
         except Exception:
             self.stdout.write(self.style.WARNING(f"Couldn't find profile for {name}"))
@@ -99,7 +102,8 @@ class Command(BaseCommand):
     def get_notes(self) -> str:
         try:
             return self.selenium.find_element(
-                By.CSS_SELECTOR, ".mt-3 > .field--name-description"
+                By.CSS_SELECTOR,
+                ".mt-3 > .field--name-description",
             ).text.strip()
         except Exception:
             return ""

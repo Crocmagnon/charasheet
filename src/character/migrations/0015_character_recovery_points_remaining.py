@@ -13,7 +13,8 @@ class Migration(migrations.Migration):
             model_name="character",
             name="recovery_points_remaining",
             field=models.PositiveSmallIntegerField(
-                default=5, verbose_name="points de récupération restants"
+                default=5,
+                verbose_name="points de récupération restants",
             ),
         ),
     ]

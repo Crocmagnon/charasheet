@@ -44,7 +44,10 @@ def test_can_access_character_in_party(client):
     notes = "Some notes"
     gm_notes = "Some GM notes"
     friend_character = baker.make(
-        Character, player=friend, notes=notes, gm_notes=gm_notes
+        Character,
+        player=friend,
+        notes=notes,
+        gm_notes=gm_notes,
     )
     party = baker.make(Party)
     party.characters.add(character)

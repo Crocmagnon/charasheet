@@ -118,7 +118,8 @@ def test_list_characters(selenium: WebDriver, live_server: LiveServer):
     names = {
         name.text
         for name in selenium.find_elements(
-            By.CSS_SELECTOR, ".character.card .card-title"
+            By.CSS_SELECTOR,
+            ".character.card .card-title",
         )
     }
     expected_names = {character.name for character in characters}
@@ -137,7 +138,8 @@ def test_delete_character(selenium: WebDriver, live_server: LiveServer):
 
     assert Character.objects.count() == 2
     selenium.find_element(
-        By.CSS_SELECTOR, f".character.card[data-id='{characters[0].pk}'] .delete"
+        By.CSS_SELECTOR,
+        f".character.card[data-id='{characters[0].pk}'] .delete",
     ).click()
     selenium.find_element(By.CSS_SELECTOR, "[type=submit]").click()
 
@@ -148,7 +150,9 @@ def test_delete_character(selenium: WebDriver, live_server: LiveServer):
 
 @pytest.mark.django_db()
 def test_reset_stats_view(
-    selenium: WebDriver, live_server: LiveServer, initial_data: None
+    selenium: WebDriver,
+    live_server: LiveServer,
+    initial_data: None,
 ):
     username, password = "user", "some_password"
     player = User.objects.create_user(username, password=password)
@@ -186,7 +190,10 @@ def create_hurt_character(player, profile):
 
 
 def login(
-    selenium: WebDriver, live_server: LiveServer, username: str, password: str
+    selenium: WebDriver,
+    live_server: LiveServer,
+    username: str,
+    password: str,
 ) -> None:
     selenium.get(live_server.url)
     selenium.find_element(By.ID, "login").click()

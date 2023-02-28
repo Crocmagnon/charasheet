@@ -128,7 +128,7 @@ DATABASES = {"default": env.db()}
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.db.DatabaseCache",
-    }
+    },
 }
 
 SOLO_CACHE = "default"
@@ -244,7 +244,7 @@ APP = {
         "date": "latest-date",
         "commit": "latest-commit",
         "describe": "latest-describe",
-    }
+    },
 }
 try:
     with Path("/app/git/build-date").open() as f:

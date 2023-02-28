@@ -41,19 +41,20 @@ class Command(BaseCommand):
 
     def get_dice(self, name: str) -> Dice:
         dice = self.selenium.find_element(By.CSS_SELECTOR, ".dice + div").text.split(
-            "D"
+            "D",
         )
         number_of_dice, dice_value = int(dice[0]), int(dice[1])
         if number_of_dice != 1:
             self.stdout.write(
-                self.style.WARNING(f"Multiple dice for {name}: {number_of_dice}")
+                self.style.WARNING(f"Multiple dice for {name}: {number_of_dice}"),
             )
         return Dice(dice_value)
 
     def get_magical_strength(self) -> Profile.MagicalStrength:
         try:
             magical_strength = self.selenium.find_element(
-                By.CSS_SELECTOR, ".field--name-magic-attack-modifier .field__item"
+                By.CSS_SELECTOR,
+                ".field--name-magic-attack-modifier .field__item",
             ).text
             magical_strength = Profile.MagicalStrength(magical_strength)
         except Exception:

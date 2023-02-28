@@ -13,7 +13,11 @@ class UniquelyNamedModelManager(models.Manager):
 
 class UniquelyNamedModel(models.Model):
     name = models.CharField(
-        max_length=100, blank=False, null=False, unique=True, verbose_name="nom"
+        max_length=100,
+        blank=False,
+        null=False,
+        unique=True,
+        verbose_name="nom",
     )
     objects = UniquelyNamedModelManager()
 

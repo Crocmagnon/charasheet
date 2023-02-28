@@ -17,14 +17,14 @@ class PartyQuerySet(models.QuerySet):
     def played_or_mastered_by(self, user):
         return self.filter(
             Q(game_master=user)
-            | Q(characters__in=Character.objects.filter(player=user))
+            | Q(characters__in=Character.objects.filter(player=user)),
         ).distinct()
 
     def related_to(self, user):
         return self.filter(
             Q(game_master=user)
             | Q(characters__in=Character.objects.filter(player=user))
-            | Q(invited_characters__in=Character.objects.filter(player=user))
+            | Q(invited_characters__in=Character.objects.filter(player=user)),
         ).distinct()
 
     def invited_to(self, user):
@@ -35,7 +35,7 @@ class PartyManager(UniquelyNamedModelManager):
     pass
 
 
-class Party(UniquelyNamedModel, TimeStampedModel, models.Model):
+class Party(UniquelyNamedModel, TimeStampedModel, models.Model):  # noqa: DJ008
     game_master = models.ForeignKey(
         "common.User",
         on_delete=models.PROTECT,
@@ -96,7 +96,10 @@ class BattleEffectManager(models.Manager):
 class BattleEffect(TimeStampedModel, models.Model):
     name = models.CharField(max_length=100, blank=False, null=False, verbose_name="nom")
     target = models.CharField(
-        max_length=100, blank=False, null=False, verbose_name="cible"
+        max_length=100,
+        blank=False,
+        null=False,
+        verbose_name="cible",
     )
     description = models.TextField(blank=True, null=False, verbose_name="description")
     remaining_rounds = models.SmallIntegerField(
@@ -126,3 +129,6 @@ class BattleEffect(TimeStampedModel, models.Model):
         if self.remaining_rounds >= max_display_percent or self.remaining_rounds < 0:
             return 100
         return self.remaining_rounds / max_display_percent * 100
+
+    def __str__(self):
+        return self.name

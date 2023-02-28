@@ -28,7 +28,8 @@ def test_add_character_to_existing_group(selenium: WebDriver, live_server: LiveS
 
     selenium.get(live_server.url + reverse("party:list"))
     selenium.find_element(
-        By.CSS_SELECTOR, f".party[data-id='{party.pk}'] .edit"
+        By.CSS_SELECTOR,
+        f".party[data-id='{party.pk}'] .edit",
     ).click()
     invited = Select(selenium.find_element(By.ID, "id_invited_characters"))
     invited.select_by_index(0)
@@ -41,7 +42,8 @@ def test_add_character_to_existing_group(selenium: WebDriver, live_server: LiveS
 
 @pytest.mark.django_db()
 def test_gm_observe_invited_character_in_group(
-    selenium: WebDriver, live_server: LiveServer
+    selenium: WebDriver,
+    live_server: LiveServer,
 ):
     username, password = "gm", "password"
     gm = User.objects.create_user(username, password=password)
@@ -54,10 +56,12 @@ def test_gm_observe_invited_character_in_group(
 
     selenium.get(live_server.url + reverse("party:list"))
     selenium.find_element(
-        By.CSS_SELECTOR, f".party[data-id='{party.pk}'] .access"
+        By.CSS_SELECTOR,
+        f".party[data-id='{party.pk}'] .access",
     ).click()
     selenium.find_element(
-        By.CSS_SELECTOR, f".character[data-id='{character.pk}'] .observe"
+        By.CSS_SELECTOR,
+        f".character[data-id='{character.pk}'] .observe",
     ).click()
     title = selenium.find_element(By.TAG_NAME, "h1").text.strip()
     assert title == character.name
@@ -65,7 +69,8 @@ def test_gm_observe_invited_character_in_group(
 
 @pytest.mark.django_db()
 def test_gm_observe_invited_character_in_two_groups(
-    selenium: WebDriver, live_server: LiveServer
+    selenium: WebDriver,
+    live_server: LiveServer,
 ):
     username, password = "gm", "password"
     gm = User.objects.create_user(username, password=password)
@@ -80,10 +85,12 @@ def test_gm_observe_invited_character_in_two_groups(
 
     selenium.get(live_server.url + reverse("party:list"))
     selenium.find_element(
-        By.CSS_SELECTOR, f".party[data-id='{party.pk}'] .access"
+        By.CSS_SELECTOR,
+        f".party[data-id='{party.pk}'] .access",
     ).click()
     selenium.find_element(
-        By.CSS_SELECTOR, f".character[data-id='{character.pk}'] .observe"
+        By.CSS_SELECTOR,
+        f".character[data-id='{character.pk}'] .observe",
     ).click()
     title = selenium.find_element(By.TAG_NAME, "h1").text.strip()
     assert title == character.name
@@ -91,7 +98,9 @@ def test_gm_observe_invited_character_in_two_groups(
 
 @pytest.mark.django_db()
 def test_reset_stats_view(
-    selenium: WebDriver, live_server: LiveServer, initial_data: None
+    selenium: WebDriver,
+    live_server: LiveServer,
+    initial_data: None,
 ):
     user, password = "gm", "password"
     gm = User.objects.create_user(user, password=password)
@@ -189,13 +198,22 @@ def test_gm_can_change_remaining_rounds(selenium: WebDriver, live_server: LiveSe
         party=party,
     )
     active_nearly_terminated = baker.make(
-        BattleEffect, _quantity=3, remaining_rounds=1, party=party
+        BattleEffect,
+        _quantity=3,
+        remaining_rounds=1,
+        party=party,
     )
     terminated = baker.make(  # noqa: F841
-        BattleEffect, _quantity=5, remaining_rounds=0, party=party
+        BattleEffect,
+        _quantity=5,
+        remaining_rounds=0,
+        party=party,
     )
     permanent = baker.make(  # noqa: F841
-        BattleEffect, _quantity=2, remaining_rounds=-1, party=party
+        BattleEffect,
+        _quantity=2,
+        remaining_rounds=-1,
+        party=party,
     )
     not_party = baker.make(BattleEffect, _quantity=4, remaining_rounds=55)  # noqa: F841
     beacon = active_nearly_terminated[0]
@@ -246,7 +264,8 @@ def test_gm_can_change_remaining_rounds(selenium: WebDriver, live_server: LiveSe
 
 @pytest.mark.django_db()
 def test_gm_can_delete_any_existing_effect(
-    selenium: WebDriver, live_server: LiveServer
+    selenium: WebDriver,
+    live_server: LiveServer,
 ):
     """The GM of a group can delete any existing effect, running or terminated."""
     user, password = "gm", "password"
@@ -258,7 +277,8 @@ def test_gm_can_delete_any_existing_effect(
 
     go_to_party(selenium, live_server, party, user, password)
     selenium.find_element(
-        By.CSS_SELECTOR, f'.effect[data-id="{effects[0].pk}"] .delete'
+        By.CSS_SELECTOR,
+        f'.effect[data-id="{effects[0].pk}"] .delete',
     ).click()
 
     assert BattleEffect.objects.count() == 1
@@ -267,7 +287,8 @@ def test_gm_can_delete_any_existing_effect(
 
 @pytest.mark.django_db()
 def test_player_cant_change_existing_running_effect(
-    selenium: WebDriver, live_server: LiveServer
+    selenium: WebDriver,
+    live_server: LiveServer,
 ):
     """Members of the group can only view existing running effects, no update."""
     user, password = "player", "password"
@@ -280,7 +301,8 @@ def test_player_cant_change_existing_running_effect(
     go_to_party(selenium, live_server, party, user, password)
     effect = effects[0]
     effect_element = selenium.find_element(
-        By.CSS_SELECTOR, f'.effect[data-id="{effect.pk}"]'
+        By.CSS_SELECTOR,
+        f'.effect[data-id="{effect.pk}"]',
     )
     assert effect.name in effect_element.text
     assert effect.target in effect_element.text
@@ -295,7 +317,11 @@ def test_player_cant_change_existing_running_effect(
 
 
 def fill_effect(
-    selenium: WebDriver, name: str, description: str, target: str, remaining_rounds: str
+    selenium: WebDriver,
+    name: str,
+    description: str,
+    target: str,
+    remaining_rounds: str,
 ) -> None:
     selenium.find_element(By.ID, "add-effect").click()
     selenium.find_element(By.ID, "id_name").send_keys(name)
@@ -308,7 +334,10 @@ def fill_effect(
 
 
 def assert_effect_is_created(
-    name: str, description: str, target: str, remaining_rounds: str
+    name: str,
+    description: str,
+    target: str,
+    remaining_rounds: str,
 ) -> BattleEffect:
     assert BattleEffect.objects.count() == 1
     effect = BattleEffect.objects.first()
@@ -320,7 +349,11 @@ def assert_effect_is_created(
 
 
 def go_to_party(
-    selenium: WebDriver, live_server: LiveServer, party: Party, user: str, password: str
+    selenium: WebDriver,
+    live_server: LiveServer,
+    party: Party,
+    user: str,
+    password: str,
 ) -> None:
     login(selenium, live_server, user, password)
     url = reverse("party:details", kwargs={"pk": party.pk})

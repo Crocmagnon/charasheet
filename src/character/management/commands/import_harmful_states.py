@@ -22,10 +22,12 @@ class Command(BaseCommand):
     def import_row(self, url: str, state_row: WebElement) -> None:
         name = state_row.find_element(By.CLASS_NAME, "views-field-name").text.strip()
         description = state_row.find_element(
-            By.CLASS_NAME, "views-field-description__value"
+            By.CLASS_NAME,
+            "views-field-description__value",
         ).text.strip()
         icon_url = state_row.find_element(
-            By.CSS_SELECTOR, ".views-field-field-svg-icon img"
+            By.CSS_SELECTOR,
+            ".views-field-field-svg-icon img",
         ).get_attribute("src")
         state, _ = HarmfulState.objects.update_or_create(
             name=name,

@@ -32,13 +32,15 @@ class Migration(migrations.Migration):
                 (
                     "created",
                     django_extensions.db.fields.CreationDateTimeField(
-                        auto_now_add=True, verbose_name="created"
+                        auto_now_add=True,
+                        verbose_name="created",
                     ),
                 ),
                 (
                     "modified",
                     django_extensions.db.fields.ModificationDateTimeField(
-                        auto_now=True, verbose_name="modified"
+                        auto_now=True,
+                        verbose_name="modified",
                     ),
                 ),
                 (
@@ -47,7 +49,7 @@ class Migration(migrations.Migration):
                         validators=[
                             django.core.validators.MinValueValidator(1),
                             django.core.validators.MaxValueValidator(5),
-                        ]
+                        ],
                     ),
                 ),
                 ("limited", models.BooleanField(blank=True)),
@@ -74,13 +76,15 @@ class Migration(migrations.Migration):
                 (
                     "created",
                     django_extensions.db.fields.CreationDateTimeField(
-                        auto_now_add=True, verbose_name="created"
+                        auto_now_add=True,
+                        verbose_name="created",
                     ),
                 ),
                 (
                     "modified",
                     django_extensions.db.fields.ModificationDateTimeField(
-                        auto_now=True, verbose_name="modified"
+                        auto_now=True,
+                        verbose_name="modified",
                     ),
                 ),
                 (
@@ -106,7 +110,7 @@ class Migration(migrations.Migration):
                             (10, "D10"),
                             (12, "D12"),
                             (20, "D20"),
-                        ]
+                        ],
                     ),
                 ),
             ],
@@ -130,13 +134,15 @@ class Migration(migrations.Migration):
                 (
                     "created",
                     django_extensions.db.fields.CreationDateTimeField(
-                        auto_now_add=True, verbose_name="created"
+                        auto_now_add=True,
+                        verbose_name="created",
                     ),
                 ),
                 (
                     "modified",
                     django_extensions.db.fields.ModificationDateTimeField(
-                        auto_now=True, verbose_name="modified"
+                        auto_now=True,
+                        verbose_name="modified",
                     ),
                 ),
             ],
@@ -160,13 +166,15 @@ class Migration(migrations.Migration):
                 (
                     "created",
                     django_extensions.db.fields.CreationDateTimeField(
-                        auto_now_add=True, verbose_name="created"
+                        auto_now_add=True,
+                        verbose_name="created",
                     ),
                 ),
                 (
                     "modified",
                     django_extensions.db.fields.ModificationDateTimeField(
-                        auto_now=True, verbose_name="modified"
+                        auto_now=True,
+                        verbose_name="modified",
                     ),
                 ),
                 ("damage", models.CharField(blank=True, max_length=50)),
@@ -192,20 +200,23 @@ class Migration(migrations.Migration):
                 (
                     "created",
                     django_extensions.db.fields.CreationDateTimeField(
-                        auto_now_add=True, verbose_name="created"
+                        auto_now_add=True,
+                        verbose_name="created",
                     ),
                 ),
                 (
                     "modified",
                     django_extensions.db.fields.ModificationDateTimeField(
-                        auto_now=True, verbose_name="modified"
+                        auto_now=True,
+                        verbose_name="modified",
                     ),
                 ),
                 ("description", models.TextField()),
                 (
                     "race",
                     models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="character.race"
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="character.race",
                     ),
                 ),
             ],
@@ -229,13 +240,15 @@ class Migration(migrations.Migration):
                 (
                     "created",
                     django_extensions.db.fields.CreationDateTimeField(
-                        auto_now_add=True, verbose_name="created"
+                        auto_now_add=True,
+                        verbose_name="created",
                     ),
                 ),
                 (
                     "modified",
                     django_extensions.db.fields.ModificationDateTimeField(
-                        auto_now=True, verbose_name="modified"
+                        auto_now=True,
+                        verbose_name="modified",
                     ),
                 ),
                 (
@@ -355,7 +368,8 @@ class Migration(migrations.Migration):
             model_name="capability",
             name="path",
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="character.path"
+                on_delete=django.db.models.deletion.CASCADE,
+                to="character.path",
             ),
         ),
         migrations.AddConstraint(
@@ -369,7 +383,9 @@ class Migration(migrations.Migration):
         migrations.AddConstraint(
             model_name="capability",
             constraint=models.UniqueConstraint(
-                models.F("path"), models.F("rank"), name="unique_path_rank"
+                models.F("path"),
+                models.F("rank"),
+                name="unique_path_rank",
             ),
         ),
     ]

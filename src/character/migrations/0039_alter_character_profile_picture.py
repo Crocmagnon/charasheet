@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                         character.models.character.validate_image,
                         *(),
                         **{"megabytes_limit": 2},
-                    )
+                    ),
                 ],
                 verbose_name="image de profil",
             ),

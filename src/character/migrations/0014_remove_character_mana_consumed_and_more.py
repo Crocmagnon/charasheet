@@ -17,7 +17,8 @@ class Migration(migrations.Migration):
             model_name="character",
             name="mana_remaining",
             field=models.PositiveSmallIntegerField(
-                default=0, verbose_name="mana restant"
+                default=0,
+                verbose_name="mana restant",
             ),
         ),
     ]

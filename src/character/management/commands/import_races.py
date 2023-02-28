@@ -27,7 +27,8 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS(f"Created/updated race {race}"))
 
         racial_cap = self.selenium.find_element(
-            By.CSS_SELECTOR, ".field--name-abilities"
+            By.CSS_SELECTOR,
+            ".field--name-abilities",
         )
         racial_name = (
             racial_cap.find_element(By.TAG_NAME, "strong")

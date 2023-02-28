@@ -17,7 +17,8 @@ class Command(BaseCommand):
         while len(cards) < expected_capability_count:
             self.selenium.find_element(By.TAG_NAME, "body").send_keys(Keys.END)
             cards = self.selenium.find_elements(
-                By.CSS_SELECTOR, ".col-md-4.col-sm-6.col-12.mb-4.views-row"
+                By.CSS_SELECTOR,
+                ".col-md-4.col-sm-6.col-12.mb-4.views-row",
             )
         for card in cards:
             try:
@@ -63,11 +64,11 @@ class Command(BaseCommand):
                     },
                 )
                 self.stdout.write(
-                    self.style.SUCCESS(f"Created/updated cap {capability}")
+                    self.style.SUCCESS(f"Created/updated cap {capability}"),
                 )
             except Exception as e:
                 self.stdout.write(
-                    self.style.ERROR(f"Couldn't create/update cap {name}: {e}")
+                    self.style.ERROR(f"Couldn't create/update cap {name}: {e}"),
                 )
 
     def get_paths(self, card: WebElement, name: str) -> list[Path]:
@@ -78,7 +79,7 @@ class Command(BaseCommand):
                 paths.append(Path.objects.get(name__iexact=path_name))
         except Exception:
             self.stdout.write(
-                self.style.WARNING(f"Couldn't find path in card for cap '{name}'.")
+                self.style.WARNING(f"Couldn't find path in card for cap '{name}'."),
             )
             return []
         return paths

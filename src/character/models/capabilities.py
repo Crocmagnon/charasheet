@@ -32,7 +32,9 @@ class Path(DocumentedModel, UniquelyNamedModel, TimeStampedModel, models.Model):
         CREATURE = "creature", "Créature"
 
     category = models.CharField(
-        max_length=20, choices=Category.choices, verbose_name="catégorie"
+        max_length=20,
+        choices=Category.choices,
+        verbose_name="catégorie",
     )
     notes = models.TextField(blank=True, verbose_name="notes")
 
@@ -93,13 +95,20 @@ class Capability(DocumentedModel, TimeStampedModel, models.Model):
         related_name="capabilities",
     )
     rank = models.PositiveSmallIntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(5)], verbose_name="rang"
+        validators=[MinValueValidator(1), MaxValueValidator(5)],
+        verbose_name="rang",
     )
     limited = models.BooleanField(
-        blank=True, null=False, default=False, verbose_name="limitée"
+        blank=True,
+        null=False,
+        default=False,
+        verbose_name="limitée",
     )
     spell = models.BooleanField(
-        blank=True, null=False, default=False, verbose_name="sort"
+        blank=True,
+        null=False,
+        default=False,
+        verbose_name="sort",
     )
     description = models.TextField(verbose_name="description")
 
@@ -134,7 +143,9 @@ class RacialCapabilityManager(models.Manager):
 class RacialCapability(DocumentedModel, TimeStampedModel, models.Model):
     name = models.CharField(max_length=100, blank=False, null=False, verbose_name="nom")
     race = models.ForeignKey(
-        "character.Race", on_delete=models.CASCADE, verbose_name="race"
+        "character.Race",
+        on_delete=models.CASCADE,
+        verbose_name="race",
     )
     description = models.TextField(verbose_name="description")
 

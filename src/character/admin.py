@@ -92,12 +92,14 @@ class RaceAdmin(admin.ModelAdmin):
 class CharacterAdminForm(ModelForm):
     class Meta:
         model = models.Character
-        exclude = ()
+        exclude = ()  # noqa: DJ006
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.fields["capabilities"].queryset = models.Capability.objects.select_related(
-            "path", "path__race", "path__profile"
+            "path",
+            "path__race",
+            "path__profile",
         )
         self.fields[
             "racial_capability"
@@ -127,7 +129,7 @@ class CharacterAdmin(admin.ModelAdmin):
                     "level",
                     "race",
                     "private",
-                ]
+                ],
             },
         ),
         ("Apparence", {"fields": ["gender", "age", "height", "weight"]}),
@@ -141,7 +143,7 @@ class CharacterAdmin(admin.ModelAdmin):
                     ("value_intelligence", "modifier_intelligence"),
                     ("value_wisdom", "modifier_wisdom"),
                     ("value_charisma", "modifier_charisma"),
-                ]
+                ],
             },
         ),
         (
@@ -153,7 +155,7 @@ class CharacterAdmin(admin.ModelAdmin):
                     "attack_range",
                     "attack_magic",
                     "states",
-                ]
+                ],
             },
         ),
         ("Vitalité", {"fields": [("health_max", "health_remaining")]}),
@@ -165,7 +167,7 @@ class CharacterAdmin(admin.ModelAdmin):
                     "weapons",
                     "equipment",
                     ("money_pp", "money_po", "money_pa", "money_pc"),
-                ]
+                ],
             },
         ),
         ("Race", {"fields": ["racial_capability"]}),

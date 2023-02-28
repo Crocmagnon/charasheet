@@ -84,7 +84,9 @@ def download_db(ctx: Context):
         )
         ctx.run("rm -rf src/media/", pty=True, echo=True)
         ctx.run(
-            "scp -r ubuntu:/mnt/data/charasheet/media/ ./src/media", pty=True, echo=True
+            "scp -r ubuntu:/mnt/data/charasheet/media/ ./src/media",
+            pty=True,
+            echo=True,
         )
     with ctx.cd(SRC_DIR):
         ctx.run("./manage.py changepassword gaugendre", pty=True, echo=True)

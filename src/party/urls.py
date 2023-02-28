@@ -17,10 +17,14 @@ urlpatterns = [
         name="delete_effect",
     ),
     path(
-        "<int:pk>/increase_rounds/", views.party_increase_rounds, name="increase_rounds"
+        "<int:pk>/increase_rounds/",
+        views.party_increase_rounds,
+        name="increase_rounds",
     ),
     path(
-        "<int:pk>/decrease_rounds/", views.party_decrease_rounds, name="decrease_rounds"
+        "<int:pk>/decrease_rounds/",
+        views.party_decrease_rounds,
+        name="decrease_rounds",
     ),
     path("<int:pk>/leave/<int:character_pk>/", views.party_leave, name="leave"),
     path("<int:pk>/join/<int:character_pk>/", views.party_join, name="join"),

@@ -56,7 +56,9 @@ class Migration(migrations.Migration):
             model_name="capability",
             name="limited",
             field=models.BooleanField(
-                blank=True, default=False, verbose_name="limitée"
+                blank=True,
+                default=False,
+                verbose_name="limitée",
             ),
         ),
         migrations.AlterField(
@@ -108,7 +110,9 @@ class Migration(migrations.Migration):
             model_name="character",
             name="capabilities",
             field=models.ManyToManyField(
-                blank=True, to="character.capability", verbose_name="capacités"
+                blank=True,
+                to="character.capability",
+                verbose_name="capacités",
             ),
         ),
         migrations.AlterField(
@@ -140,7 +144,7 @@ class Migration(migrations.Migration):
             model_name="character",
             name="health_remaining",
             field=models.PositiveSmallIntegerField(
-                verbose_name="points de vie restants"
+                verbose_name="points de vie restants",
             ),
         ),
         migrations.AlterField(
@@ -162,14 +166,15 @@ class Migration(migrations.Migration):
             model_name="character",
             name="luck_points_remaining",
             field=models.PositiveSmallIntegerField(
-                verbose_name="points de chance restants"
+                verbose_name="points de chance restants",
             ),
         ),
         migrations.AlterField(
             model_name="character",
             name="mana_consumed",
             field=models.PositiveSmallIntegerField(
-                default=0, verbose_name="mana utilisé"
+                default=0,
+                verbose_name="mana utilisé",
             ),
         ),
         migrations.AlterField(
@@ -261,7 +266,9 @@ class Migration(migrations.Migration):
             model_name="character",
             name="weapons",
             field=models.ManyToManyField(
-                blank=True, to="character.weapon", verbose_name="armes"
+                blank=True,
+                to="character.weapon",
+                verbose_name="armes",
             ),
         ),
         migrations.AlterField(

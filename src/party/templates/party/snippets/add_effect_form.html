@@ -3,6 +3,6 @@
     {% csrf_token %}
     {% bootstrap_form form %}
     <button class="btn btn-primary" type="submit" hx-post="{% url "party:add_effect" pk=party.pk %}"
-        hx-target="#effects" hx-swap="outerHTML"
+            hx-target="#effects" hx-swap="outerHTML"
     >Enregistrer</button>
 </form>

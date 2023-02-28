@@ -1,10 +1,10 @@
 {% load character_extras %}
 <div class="progress"
-    {% if character|managed_by:user %}
-        hx-get="{% url "character:get_mana_bar" pk=character.pk %}"
-        hx-trigger="refresh_mana_bar from:body"
-        hx-swap="outerHTML"
-    {% endif %}>
+     {% if character|managed_by:user %}
+         hx-get="{% url "character:get_mana_bar" pk=character.pk %}"
+         hx-trigger="refresh_mana_bar from:body"
+         hx-swap="outerHTML"
+     {% endif %}>
     <div class="progress-bar {% if character.mana_remaining_percent > 60 %}bg-primary{% elif character.mana_remaining_percent > 30 %}bg-warning{% else %}bg-danger{% endif %}" style="width: {{ character.mana_remaining_percent|floatformat:"0" }}%">
         PM : {{ character.mana_remaining }}/{{ character.mana_max }}
     </div>

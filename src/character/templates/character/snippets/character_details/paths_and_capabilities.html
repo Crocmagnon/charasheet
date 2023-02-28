@@ -12,9 +12,9 @@
                         {{ add_path_form.character_path }}
                         {{ add_path_form.other_path }}
                         <button class="btn btn-primary"
-                            hx-target="#paths-and-capabilities"
-                            hx-swap="outerHTML"
-                            hx-post="{% url "character:add_path" pk=character.pk %}">
+                                hx-target="#paths-and-capabilities"
+                                hx-swap="outerHTML"
+                                hx-post="{% url "character:add_path" pk=character.pk %}">
                             Sélectionner
                         </button>
                     </div>

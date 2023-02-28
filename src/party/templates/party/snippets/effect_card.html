@@ -28,7 +28,7 @@
                 {% else %}
                     <div class="progress">
                         <div class="progress-bar {% if effect.remaining_percent >= 60 %}bg-success{% elif effect.remaining_percent >= 30 %}bg-warning{% else %}bg-danger{% endif %}"
-                            style="width: {{ effect.remaining_percent|floatformat:"0" }}%">
+                             style="width: {{ effect.remaining_percent|floatformat:"0" }}%">
                             {% if rounds == -1 %}
                                 Permanent
                             {% elif rounds == 1 %}

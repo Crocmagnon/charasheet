@@ -4,9 +4,9 @@
         Équipement
         {% if character|managed_by:user %}
             <a hx-get="{% url "character:equipment_change" pk=character.pk %}"
-                hx-target="#equipment"
-                hx-swap="outerHTML"
-                class="btn btn-primary btn-sm"
+               hx-target="#equipment"
+               hx-swap="outerHTML"
+               class="btn btn-primary btn-sm"
             >
                 <i class="fa-solid fa-pen-to-square"></i> Edit
             </a>

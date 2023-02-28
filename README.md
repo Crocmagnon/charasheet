@@ -3,9 +3,7 @@
 ## Quick start
 Clone, then
 ```shell
-pyenv virtualenv 3.11.1 charasheet
-pyenv local charasheet
-pip install pip-tools
+pip install -U pip pip-tools
 pip-sync requirements.txt requirements-dev.txt
 pre-commit install --install-hooks
 inv test

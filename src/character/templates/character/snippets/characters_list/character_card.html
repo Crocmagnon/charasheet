@@ -5,15 +5,15 @@
             <h5 class="card-title">
                 {% if character.profile_picture %}
                     <img src="{{ character.profile_picture.url }}"
-                        class="profile-pic-small rounded-5"
-                        alt="Image de profil"
+                         class="profile-pic-small rounded-5"
+                         alt="Image de profil"
                     >
                 {% endif %}
                 {% if character.private %}
                     <i class="fa-solid fa-lock"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="top"
-                        data-bs-title="Personnage privé, ne peut pas être invité dans un nouveau groupe."
+                       data-bs-toggle="tooltip"
+                       data-bs-placement="top"
+                       data-bs-title="Personnage privé, ne peut pas être invité dans un nouveau groupe."
                     ></i>
                 {% endif %}
                 {{ character.name }}
@@ -49,12 +49,12 @@
                 {% with character.states.all as character_states %}
                     {% for state in all_states %}
                         <img src="{{ state.icon_url }}" alt="{{ state.name }}" height="25" width="25"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-title="{{ state.name }} : {{ state.description }}"
-                            {% if state in character_states %}
-                                class="state-enabled"
-                            {% endif %}
+                             data-bs-toggle="tooltip"
+                             data-bs-placement="top"
+                             data-bs-title="{{ state.name }} : {{ state.description }}"
+                             {% if state in character_states %}
+                                 class="state-enabled"
+                             {% endif %}
                         >
                     {% endfor %}
                 {% endwith %}

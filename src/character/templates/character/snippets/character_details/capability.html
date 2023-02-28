@@ -2,7 +2,7 @@
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed {% if not character_capability.known %}text-bg-light{% endif %}" type="button"
-                data-bs-toggle="collapse" data-bs-target="#cap-{{ capability.pk }}">
+                    data-bs-toggle="collapse" data-bs-target="#cap-{{ capability.pk }}">
                 {{ capability.rank }}.
                 {{ capability.name }}
                 {% if capability.spell %}&nbsp;<i class="fa-solid fa-hand-sparkles"></i>{% endif %}

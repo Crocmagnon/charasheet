@@ -20,8 +20,8 @@
                         <a href="{% url "character:view" pk=other.pk %}?party={{ party.pk }}">
                             {% if other.profile_picture %}
                                 <img class="rounded-5 profile-pic-small"
-                                    src="{{ other.profile_picture.url }}"
-                                    alt="Image de profil"
+                                     src="{{ other.profile_picture.url }}"
+                                     alt="Image de profil"
                                 >
                             {% endif %}
                             {{ other }}</a>{% if not forloop.last %}, {% endif %}
@@ -43,8 +43,8 @@
         </div>
         {% if character.profile_picture %}
             <img class="rounded-5 profile-pic"
-                src="{{ character.profile_picture.url }}"
-                alt="Image de profil"
+                 src="{{ character.profile_picture.url }}"
+                 alt="Image de profil"
             >
         {% endif %}
     </div>

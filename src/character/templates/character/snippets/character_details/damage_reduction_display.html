@@ -4,9 +4,9 @@
         Réduction de dégâts
         {% if character|managed_by:user %}
             <a hx-get="{% url "character:damage_reduction_change" pk=character.pk %}"
-                hx-target="#damage-reduction"
-                hx-swap="outerHTML"
-                class="btn btn-primary btn-sm"
+               hx-target="#damage-reduction"
+               hx-swap="outerHTML"
+               class="btn btn-primary btn-sm"
             >
                 <i class="fa-solid fa-pen-to-square"></i> Edit
             </a>

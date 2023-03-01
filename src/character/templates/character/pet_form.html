@@ -1,0 +1,14 @@
+{% extends "common/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %}Création de familier{% endblock %}
+
+{% block content %}
+    <h1>Création de familier</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% bootstrap_form_errors form %}
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+{% endblock %}

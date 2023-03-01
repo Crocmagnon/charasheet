@@ -1,0 +1,18 @@
+{% extends "common/base.html" %}
+{% load character_extras %}
+
+{% block title %}Suppression familier {{ pet.name }}{% endblock %}
+
+{% block content %}
+    <h1>Suppression familier {{ pet.name }}</h1>
+    <form action="{% url "character:pet_delete" pk=pet.pk %}" method=post>
+        {% csrf_token %}
+        <p>
+            Êtes-vous certain de vouloir supprimer le familier {{ pet.name }} ?<br>
+            Cette action est irréversible.
+        </p>
+        <button class="btn btn-danger" type="submit">
+            <i class="fa-solid fa-user-minus"></i> Supprimer le familier
+        </button>
+    </form>
+{% endblock %}

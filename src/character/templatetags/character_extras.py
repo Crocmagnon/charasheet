@@ -46,3 +46,8 @@ def managed_by(character: Character, user: User) -> bool:
 @register.filter
 def mastered_by(character: Character, user: User) -> bool:
     return character.mastered_by(user)
+
+
+@register.filter
+def owned_by(character: Character, user: User) -> bool:
+    return character.owned_by(user)

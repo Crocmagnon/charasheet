@@ -494,6 +494,15 @@
             </table>
         </div>
     </div>
+    <a href="{% url "character:create_pet" pk=character.pk %}"
+       id="add-pet"
+       class="btn btn-success mb-2"
+    >Nouveau familier</a>
+    <div class="row mb-3 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        {% for pet in character.pets.all %}
+            {% include "character/snippets/characters_list/pet_card.html" %}
+        {% endfor %}
+    </div>
     <div class="row">
         <div class="col-md-6 col-lg-4 mb-3">
             <div class="card">

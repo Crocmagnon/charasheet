@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
 
 from character.models import Character
+from character.tests.test_interactions import login
 from common.models import User
 
 
@@ -16,6 +17,7 @@ def test_pet_happy_path(selenium: WebDriver, live_server: LiveServer):
     username, password = "user", "some_password"
     player = User.objects.create_user(username, password=password)
     character = baker.make(Character, player=player)
+    login(selenium, live_server, username, password)
 
     # Starting on the character's sheet.
     selenium.get(live_server.url + character.get_absolute_url())
@@ -48,7 +50,7 @@ def test_pet_happy_path(selenium: WebDriver, live_server: LiveServer):
     selenium.find_element(By.ID, "id_notes").send_keys("My pet's notes")
 
     # Save & check redirected to character's sheet.
-    selenium.find_element(By.ID, "save-pet").click()
+    selenium.find_element(By.CSS_SELECTOR, "[type=submit]").click()
     assert selenium.current_url == live_server.url + character.get_absolute_url()
 
     # Fetch pet
@@ -57,7 +59,10 @@ def test_pet_happy_path(selenium: WebDriver, live_server: LiveServer):
     # It now displays the pet's information.
     # There can be multiple pets.
     assert (
-        selenium.find_element(By.CSS_SELECTOR, f".pet[data-id='{pet.pk}'] .name").text
+        selenium.find_element(
+            By.CSS_SELECTOR,
+            f".pet[data-id='{pet.pk}'] .pet-name",
+        ).text
         == "My pet"
     )
 
@@ -73,18 +78,24 @@ def test_pet_happy_path(selenium: WebDriver, live_server: LiveServer):
     # I can edit my pets. When I click on the edit button of a pet,
     # I have the same form as previously, pre-filled with the current values of my pet.
     selenium.find_element(By.CSS_SELECTOR, f".pet[data-id='{pet.pk}'] .edit").click()
-    assert selenium.find_element(By.ID, "id_name").get_attribute("value") == "My pet"
+    pet_name = selenium.find_element(By.ID, "id_name")
+    assert pet_name.get_attribute("value") == "My pet"
     assert selenium.find_element(By.ID, "id_health_max").get_attribute("value") == "10"
     assert (
         selenium.find_element(By.ID, "id_health_remaining").get_attribute("value")
-        == "10"
+        == "9"
     )
+    pet_name.clear()
+    pet_name.send_keys("new name")
+    selenium.find_element(By.CSS_SELECTOR, "[type=submit]").click()
+    pet.refresh_from_db()
+    assert pet.name == "new name"
 
     # I can delete my pets. When I click on the pet's delete button,
     # I'm redirected to a page asking confirmation of my action,
     # in order to avoid mistakes.
     selenium.find_element(By.CSS_SELECTOR, f".pet[data-id='{pet.pk}'] .delete").click()
     assert character.pets.count() == 1
-    selenium.find_element(By.ID, "delete-pet").click()
+    selenium.find_element(By.CSS_SELECTOR, "[type=submit]").click()
     assert selenium.current_url == live_server.url + character.get_absolute_url()
     assert character.pets.count() == 0

@@ -468,6 +468,9 @@ class Character(models.Model):
     def mastered_by(self, user):
         return self in Character.objects.mastered_by(user)
 
+    def owned_by(self, user):
+        return self in Character.objects.owned_by(user)
+
     def reset_stats(self):
         self.health_remaining = self.health_max
         self.mana_remaining = self.mana_max

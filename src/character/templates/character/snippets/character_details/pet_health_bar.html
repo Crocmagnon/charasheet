@@ -1,0 +1,7 @@
+{% load character_extras %}
+
+<div class="progress">
+    <div class="progress-bar {% if pet.health_remaining_percent > 60 %}bg-success{% elif pet.health_remaining_percent > 30 %}bg-warning{% else %}bg-danger{% endif %}" style="width: {{ pet.health_remaining_percent|floatformat:"0" }}%">
+        PV : {{ pet.health_remaining }}/{{ pet.health_max }}
+    </div>
+</div>

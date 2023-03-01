@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from django.db.models import Q
 
 from character.models import Character, Path, RacialCapability
+from character.models.pet import Pet
 
 
 class EquipmentForm(forms.ModelForm):
@@ -50,7 +51,7 @@ class AddPathForm(forms.Form):
         return cleaned_data
 
 
-class CharacterCreateForm(forms.ModelForm):
+class CharacterForm(forms.ModelForm):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.fields[
@@ -90,5 +91,27 @@ class CharacterCreateForm(forms.ModelForm):
             "money_pa",
             "money_pc",
             "damage_reduction",
+            "notes",
+        ]
+
+
+class PetForm(forms.ModelForm):
+    class Meta:
+        model = Pet
+        fields = [
+            "name",
+            "health_max",
+            "health_remaining",
+            "modifier_strength",
+            "modifier_dexterity",
+            "modifier_constitution",
+            "modifier_intelligence",
+            "modifier_wisdom",
+            "modifier_charisma",
+            "damage",
+            "initiative",
+            "defense",
+            "attack",
+            "recovery",
             "notes",
         ]

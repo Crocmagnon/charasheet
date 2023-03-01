@@ -4,8 +4,9 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django_htmx.http import trigger_client_event
 
-from character.forms import AddPathForm, CharacterCreateForm, EquipmentForm
+from character.forms import AddPathForm, CharacterForm, EquipmentForm, PetForm
 from character.models import Capability, Character, HarmfulState, Path
+from character.models.pet import Pet
 from character.templatetags.character_extras import modifier
 from party.models import Party
 
@@ -25,7 +26,7 @@ def characters_list(request):
 @login_required
 def character_create(request):
     if request.method == "POST":
-        form = CharacterCreateForm(request.POST, request.FILES)
+        form = CharacterForm(request.POST, request.FILES)
         if form.is_valid():
             character = form.save(commit=False)
             character.player = request.user
@@ -38,7 +39,7 @@ def character_create(request):
             messages.success(request, f"{character.name} a été créé.")
             return redirect("character:list")
     else:
-        form = CharacterCreateForm()
+        form = CharacterForm()
     context = {"form": form}
     return render(request, "character/character_form.html", context)
 
@@ -47,13 +48,13 @@ def character_create(request):
 def character_change(request, pk: int):
     character = get_object_or_404(Character.objects.managed_by(request.user), pk=pk)
     if request.method == "POST":
-        form = CharacterCreateForm(request.POST, request.FILES, instance=character)
+        form = CharacterForm(request.POST, request.FILES, instance=character)
         if form.is_valid():
             character = form.save()
             messages.success(request, f"{character.name} a été enregistré.")
             return redirect(character.get_absolute_url())
     else:
-        form = CharacterCreateForm(instance=character)
+        form = CharacterForm(instance=character)
     context = {"form": form}
     return render(request, "character/character_form.html", context)
 
@@ -461,3 +462,71 @@ def reset_stats(request, pk: int):
         messages.success(request, f"Les stats de {character} ont été réinitialisées.")
         return redirect(character)
     return render(request, "character/character_reset_stats.html", context)
+
+
+@login_required
+def create_pet(request, pk: int):
+    character = get_object_or_404(Character.objects.managed_by(request.user), pk=pk)
+    if request.method == "POST":
+        form = PetForm(request.POST, request.FILES)
+        if form.is_valid():
+            pet = form.save(commit=False)
+            pet.owner = character
+            pet.save()
+            form.save_m2m()
+            messages.success(request, f"{pet.name} a été créé.")
+            return redirect("character:view", pk=pk)
+    else:
+        form = PetForm()
+    context = {"form": form}
+    return render(request, "character/pet_form.html", context)
+
+
+@login_required
+def pet_change(request, pk: int):
+    potential_owners = Character.objects.managed_by(request.user)
+    pet = get_object_or_404(Pet.objects.filter(owner__in=potential_owners), pk=pk)
+    if request.method == "POST":
+        form = PetForm(request.POST, request.FILES, instance=pet)
+        if form.is_valid():
+            pet = form.save()
+            messages.success(request, f"{pet.name} a été enregistré.")
+            return redirect(pet.owner.get_absolute_url())
+    else:
+        form = PetForm(instance=pet)
+    context = {"form": form}
+    return render(request, "character/pet_form.html", context)
+
+
+@login_required
+def pet_health_change(request, pk: int):
+    potential_owners = Character.objects.managed_by(request.user)
+    pet = get_object_or_404(
+        Pet.objects.filter(owner__in=potential_owners).only(
+            "health_max",
+            "health_remaining",
+        ),
+        pk=pk,
+    )
+    value = get_updated_value(request, pet.health_remaining, pet.health_max)
+    pet.health_remaining = value
+    pet.save(update_fields=["health_remaining"])
+    return render(
+        request,
+        "character/snippets/character_details/pet_health_bar.html",
+        {"pet": pet},
+    )
+
+
+@login_required
+def pet_delete(request, pk: int):
+    potential_owners = Character.objects.owned_by(request.user)
+    pet = get_object_or_404(Pet.objects.filter(owner__in=potential_owners), pk=pk)
+    context = {"pet": pet}
+    if request.method == "POST":
+        name = pet.name
+        owner = pet.owner
+        pet.delete()
+        messages.success(request, f"Le familier {name} a été supprimé.")
+        return redirect("character:view", pk=owner.pk)
+    return render(request, "character/pet_delete.html", context)

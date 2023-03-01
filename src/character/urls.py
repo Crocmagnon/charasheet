@@ -88,6 +88,7 @@ urlpatterns = [
         name="remove_last_in_path",
     ),
     path("<int:pk>/add_path/", views.add_path, name="add_path"),
+    path("<int:pk>/create_pet/", views.create_pet, name="create_pet"),
     path(
         "<int:pk>/remove_state/<int:state_pk>/",
         views.remove_state,
@@ -95,4 +96,11 @@ urlpatterns = [
     ),
     path("<int:pk>/add_state/<int:state_pk>/", views.add_state, name="add_state"),
     path("<int:pk>/reset_stats/", views.reset_stats, name="reset_stats"),
+    path(
+        "pet/<int:pk>/health_change/",
+        views.pet_health_change,
+        name="pet_health_change",
+    ),
+    path("pet/<int:pk>/change/", views.pet_change, name="pet_change"),
+    path("pet/<int:pk>/delete/", views.pet_delete, name="pet_delete"),
 ]

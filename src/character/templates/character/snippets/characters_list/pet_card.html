@@ -1,0 +1,60 @@
+{% load character_extras %}
+<div class="col">
+    <div class="card pet" data-id="{{ pet.pk }}">
+        <div class="card-body">
+            <h5 class="card-title pet-name">
+                {{ pet.name }}
+            </h5>
+            <p class="card-text">
+                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Attaque">
+                    ⚔️&nbsp;{{ pet.attack }}
+                </span> /
+                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="DEF">
+                    🛡️&nbsp;{{ pet.defense }}
+                </span> /
+                <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Initiative">
+                    🎲&nbsp;{{ pet.initiative }}
+                </span>
+            </p>
+            <div class="health">
+                {% include "character/snippets/character_details/pet_health_bar.html" %}
+                {% if pet.owner|managed_by:user %}
+                    <div class="btn-group btn-group-sm mt-1" role="group">
+                        <button
+                            hx-get="{% url "character:pet_health_change" pk=pet.pk %}?value=ko"
+                            hx-target='[data-id="{{ pet.pk }}"] .health .progress'
+                            hx-swap="outerHTML"
+                            type="button"
+                            class="btn btn-outline-danger min"><i class="fa-solid fa-battery-empty"></i></button>
+                        <button
+                            hx-get="{% url "character:pet_health_change" pk=pet.pk %}?value=-1"
+                            hx-target='[data-id="{{ pet.pk }}"] .health .progress'
+                            hx-swap="outerHTML"
+                            type="button"
+                            class="btn btn-danger decrease"><i class="fa-solid fa-minus"></i></button>
+                        <button
+                            hx-get="{% url "character:pet_health_change" pk=pet.pk %}?value=1"
+                            hx-target='[data-id="{{ pet.pk }}"] .health .progress'
+                            hx-swap="outerHTML"
+                            type="button"
+                            class="btn btn-success increase"><i class="fa-solid fa-plus"></i></button>
+                        <button
+                            hx-get="{% url "character:pet_health_change" pk=pet.pk %}?value=max"
+                            hx-target='[data-id="{{ pet.pk }}"] .health .progress'
+                            hx-swap="outerHTML"
+                            type="button"
+                            class="btn btn-outline-success max"><i class="fa-solid fa-battery-full"></i></button>
+                    </div>
+                {% endif %}
+            </div>
+            {% if pet.owner|managed_by:user %}
+                <a href="{% url "character:pet_change" pk=pet.pk %}"
+                   class="edit">Modifier</a>
+            {% endif %}
+            {% if pet.owner|owned_by:user %}
+                <a href="{% url "character:pet_delete" pk=pet.pk %}"
+                   class="delete">Supprimer</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

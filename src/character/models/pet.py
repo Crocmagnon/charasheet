@@ -26,7 +26,7 @@ class Pet(models.Model):
     )
     modifier_wisdom = models.IntegerField(verbose_name="modificateur sagesse")
     modifier_charisma = models.IntegerField(verbose_name="modificateur charisme")
-    damage = models.PositiveIntegerField(verbose_name="dégâts")
+    damage = models.CharField(max_length=20, verbose_name="dégâts")
     initiative = models.PositiveIntegerField(verbose_name="initiative")
     defense = models.PositiveIntegerField(verbose_name="défense")
     attack = models.PositiveIntegerField(verbose_name="attaque")

@@ -12,7 +12,6 @@ async-generator==1.10
     # via
     #   -c constraints.txt
     #   trio
-    #   trio-websocket
 attrs==22.2.0
     # via
     #   -c constraints.txt
@@ -63,6 +62,10 @@ django-browser-reload==1.7.0
     # via -r requirements-dev.in
 django-debug-toolbar==3.8.1
     # via -r requirements-dev.in
+exceptiongroup==1.1.1
+    # via
+    #   -c constraints.txt
+    #   trio-websocket
 filelock==3.9.0
     # via virtualenv
 freezegun==1.2.2
@@ -75,7 +78,7 @@ h11==0.14.0
     #   wsproto
 hypothesis==6.68.2
     # via -r requirements-dev.in
-identify==2.5.18
+identify==2.5.20
     # via pre-commit
 idna==3.4
     # via
@@ -105,7 +108,7 @@ pathspec==0.11.0
     # via black
 pip-tools==6.12.3
     # via -r requirements-dev.in
-platformdirs==3.1.0
+platformdirs==3.1.1
     # via
     #   black
     #   virtualenv
@@ -163,7 +166,7 @@ requests==2.28.2
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.0.254
+ruff==0.0.255
     # via -r requirements-dev.in
 selenium==4.8.2
     # via
@@ -197,16 +200,16 @@ trio==0.22.0
     #   -c constraints.txt
     #   selenium
     #   trio-websocket
-trio-websocket==0.9.2
+trio-websocket==0.10.0
     # via
     #   -c constraints.txt
     #   selenium
-urllib3[socks]==1.26.14
+urllib3[socks]==1.26.15
     # via
     #   -c constraints.txt
     #   requests
     #   selenium
-virtualenv==20.20.0
+virtualenv==20.21.0
     # via pre-commit
 wcwidth==0.2.6
     # via blessed
@@ -220,7 +223,7 @@ wsproto==1.2.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==23.0.1
     # via pip-tools
-setuptools==67.5.1
+setuptools==67.6.0
     # via
     #   -c constraints.txt
     #   nodeenv

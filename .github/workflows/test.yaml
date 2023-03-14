@@ -43,6 +43,7 @@ jobs:
     needs: tests
     permissions:
       pull-requests: write
+      contents: write
     env:
       GH_TOKEN: ${{ github.token }}
     if: >-

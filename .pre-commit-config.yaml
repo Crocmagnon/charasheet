@@ -36,11 +36,11 @@ repos:
       - id: black
         args: [--target-version, py311]
   - repo: https://github.com/rtts/djhtml
-    rev: 3.0.3
+    rev: 3.0.5
     hooks:
       - id: djhtml
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.254
+    rev: v0.0.255
     hooks:
       - id: ruff
         args: [--fix]
@@ -50,7 +50,7 @@ repos:
       - id: prettier
         types_or: [javascript, css]
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v8.35.0
+    rev: v8.36.0
     hooks:
       - id: eslint
         args: [--fix]

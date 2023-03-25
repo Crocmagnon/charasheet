@@ -304,11 +304,11 @@ class Character(models.Model):
     def __str__(self):
         return self.name
 
-    def natural_key(self):
-        return (self.name, self.player_id)
-
     def get_absolute_url(self):
         return reverse("character:view", kwargs={"pk": self.pk})
+
+    def natural_key(self):
+        return (self.name, self.player_id)
 
     @property
     def modifier_strength(self) -> int:

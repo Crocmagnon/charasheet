@@ -56,6 +56,7 @@ ignore = [
     "B011",  # Do not call assert False since python -O removes these calls.
     "ARG001",  # Unused function argument (mostly fixtures)
     "PLR2004",  # Magic value used in comparison, consider replacing {value} with a constant variable
+    "S311",  # Standard pseudo-random generators are not suitable for cryptographic purposes.
 ]
 # File {name} is part of an implicit namespace package. Add an `__init__.py`.
 "tasks.py" = ["INP001"]

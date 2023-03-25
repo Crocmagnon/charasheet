@@ -1,11 +1,6 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "ghcr.io/devcontainers/features/python:1": {
-      "version": "3.11",
-      "installTools": true,
-      "optimize": false
-    }
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-  "postStartCommand": "pip install pip-tools invoke && inv sync-dependencies && pre-commit install --install-hooks"
+  "postStartCommand": "inv sync-dependencies && pre-commit install --install-hooks"
 }

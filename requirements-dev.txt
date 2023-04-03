@@ -19,7 +19,7 @@ attrs==22.2.0
     #   outcome
     #   pytest
     #   trio
-black==23.1.0
+black==23.3.0
     # via -r requirements-dev.in
 blessed==1.20.0
     # via curtsies
@@ -52,7 +52,7 @@ cwcwidth==0.1.8
     #   curtsies
 distlib==0.3.6
     # via virtualenv
-django==4.1.7
+django==4.2
     # via
     #   -c constraints.txt
     #   django-browser-reload
@@ -60,7 +60,7 @@ django==4.1.7
     #   model-bakery
 django-browser-reload==1.7.0
     # via -r requirements-dev.in
-django-debug-toolbar==3.8.1
+django-debug-toolbar==4.0.0
     # via -r requirements-dev.in
 exceptiongroup==1.1.1
     # via
@@ -76,7 +76,7 @@ h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.70.1
+hypothesis==6.70.2
     # via -r requirements-dev.in
 identify==2.5.22
     # via pre-commit
@@ -89,7 +89,7 @@ iniconfig==2.0.0
     # via pytest
 invoke==2.0.0
     # via -r requirements-dev.in
-model-bakery==1.10.1
+model-bakery==1.10.3
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
     # via black
@@ -166,7 +166,7 @@ requests==2.28.2
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.0.259
+ruff==0.0.260
     # via -r requirements-dev.in
 selenium==4.8.3
     # via
@@ -223,7 +223,7 @@ wsproto==1.2.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==23.0.1
     # via pip-tools
-setuptools==67.6.0
+setuptools==67.6.1
     # via
     #   -c constraints.txt
     #   nodeenv

@@ -168,7 +168,12 @@ APP_DATA = env("APP_DATA")
 
 STATIC_URL = "/static/"
 STATIC_ROOT = env("STATIC_ROOT")
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STORAGES = {
+    "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 # Medias
 MEDIA_URL = "/media/"

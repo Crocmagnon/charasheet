@@ -63,7 +63,7 @@ pillow==9.5.0
     # via -r requirements.in
 pysocks==1.7.1
     # via urllib3
-requests==2.28.2
+requests==2.29.0
     # via
     #   -r requirements.in
     #   django-anymail

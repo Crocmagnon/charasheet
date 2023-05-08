@@ -27,7 +27,7 @@ bpython==0.24
     # via -r requirements-dev.in
 build==0.10.0
     # via pip-tools
-certifi==2022.12.7
+certifi==2023.5.7
     # via
     #   -c constraints.txt
     #   requests
@@ -52,7 +52,7 @@ cwcwidth==0.1.8
     #   curtsies
 distlib==0.3.6
     # via virtualenv
-django==4.2
+django==4.2.1
     # via
     #   -c constraints.txt
     #   django-browser-reload
@@ -76,9 +76,9 @@ h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.75.1
+hypothesis==6.75.2
     # via -r requirements-dev.in
-identify==2.5.23
+identify==2.5.24
     # via pre-commit
 idna==3.4
     # via
@@ -87,7 +87,7 @@ idna==3.4
     #   trio
 iniconfig==2.0.0
     # via pytest
-invoke==2.1.0
+invoke==2.1.1
     # via -r requirements-dev.in
 model-bakery==1.11.0
     # via -r requirements-dev.in
@@ -114,7 +114,7 @@ platformdirs==3.5.0
     #   virtualenv
 pluggy==1.0.0
     # via pytest
-pre-commit==3.2.2
+pre-commit==3.3.1
     # via -r requirements-dev.in
 py==1.11.0
     # via
@@ -160,15 +160,15 @@ pyxdg==0.28
     # via bpython
 pyyaml==6.0
     # via pre-commit
-requests==2.29.0
+requests==2.30.0
     # via
     #   -c constraints.txt
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.0.263
+ruff==0.0.265
     # via -r requirements-dev.in
-selenium==4.9.0
+selenium==4.9.1
     # via
     #   -c constraints.txt
     #   pytest-selenium
@@ -204,7 +204,7 @@ trio-websocket==0.10.2
     # via
     #   -c constraints.txt
     #   selenium
-urllib3[socks]==1.26.15
+urllib3[socks]==2.0.2
     # via
     #   -c constraints.txt
     #   requests

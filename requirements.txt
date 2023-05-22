@@ -69,7 +69,7 @@ pycparser==2.21
     # via cffi
 pysocks==1.7.1
     # via urllib3
-requests==2.30.0
+requests==2.31.0
     # via
     #   -r requirements.in
     #   django-anymail
@@ -98,5 +98,5 @@ wsproto==1.2.0
     # via trio-websocket
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==67.7.2
+setuptools==67.8.0
     # via gunicorn

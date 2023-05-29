@@ -4,7 +4,7 @@
 #
 #    pip-compile --allow-unsafe --resolver=backtracking requirements.in
 #
-asgiref==3.6.0
+asgiref==3.7.2
     # via django
 async-generator==1.10
     # via trio

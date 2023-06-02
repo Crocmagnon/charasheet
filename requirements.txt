@@ -16,14 +16,10 @@ certifi==2023.5.7
     # via
     #   requests
     #   selenium
-cffi==1.15.1
-    # via cryptography
 charset-normalizer==3.1.0
     # via requests
 confusable-homoglyphs==3.2.0
     # via django-registration
-cryptography==40.0.2
-    # via django-anymail
 django==4.2.1
     # via
     #   -r requirements.in
@@ -45,7 +41,7 @@ django-extensions==3.2.1
     # via -r requirements.in
 django-htmx==1.14.0
     # via -r requirements.in
-django-linear-migrations==2.7.0
+django-linear-migrations==2.8.0
     # via -r requirements.in
 django-registration==3.3
     # via -r requirements.in
@@ -65,8 +61,6 @@ outcome==1.2.0
     # via trio
 pillow==9.5.0
     # via -r requirements.in
-pycparser==2.21
-    # via cffi
 pysocks==1.7.1
     # via urllib3
 requests==2.31.0

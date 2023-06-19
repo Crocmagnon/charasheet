@@ -1,3 +1,4 @@
+import logging
 import os
 from pathlib import Path
 
@@ -41,12 +42,16 @@ INTERNAL_IPS = [
 ALLOWED_HOSTS = env("ALLOWED_HOSTS")
 
 if DEBUG:
-    import socket
+    try:
+        import socket
 
-    hostname = socket.gethostname()
-    ip = socket.gethostbyname(hostname)
-    INTERNAL_IPS.append(ip)
-    ALLOWED_HOSTS.append(ip)
+        hostname = socket.gethostname()
+        ip = socket.gethostbyname(hostname)
+        INTERNAL_IPS.append(ip)
+        ALLOWED_HOSTS.append(ip)
+    except Exception as e:
+        logging.info("couldn't setup allowed host in debug: %s", e)
+
 
 CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS")
 

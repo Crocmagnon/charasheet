@@ -103,8 +103,7 @@ def add_path(request, pk: int):
         path: Path = form.cleaned_data.get("character_path") or form.cleaned_data.get(
             "other_path",
         )
-        cap = path.get_next_capability(character)
-        character.capabilities.add(cap)
+        character.paths.add(path)
         context["add_path_form"] = AddPathForm(character)
     else:
         context["add_path_form"] = form
@@ -400,11 +399,21 @@ def remove_last_in_path(request, character_pk: int, path_pk: int):
         Character.objects.managed_by(request.user),
         pk=character_pk,
     )
-    last_rank = max(
-        character.capabilities.filter(path_id=path_pk).values_list("rank", flat=True),
+    capabilities = character.capabilities.filter(path_id=path_pk).values_list(
+        "rank",
+        flat=True,
     )
-    cap = Capability.objects.get(path_id=path_pk, rank=last_rank)
-    character.capabilities.remove(cap)
+    if len(capabilities) == 0:
+        character.paths.remove(path_pk)
+    else:
+        last_rank = max(
+            character.capabilities.filter(path_id=path_pk).values_list(
+                "rank",
+                flat=True,
+            ),
+        )
+        cap = Capability.objects.get(path_id=path_pk, rank=last_rank)
+        character.capabilities.remove(cap)
     context = {
         "character": character,
         "add_path_form": AddPathForm(character),

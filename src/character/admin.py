@@ -171,7 +171,7 @@ class CharacterAdmin(admin.ModelAdmin):
             },
         ),
         ("Race", {"fields": ["racial_capability"]}),
-        ("Capacités", {"fields": ["capabilities"]}),
+        ("Voies & capacités", {"fields": ["paths", "capabilities"]}),
         ("Chance", {"fields": [("luck_points_max", "luck_points_remaining")]}),
         ("Mana", {"fields": [("mana_max", "mana_remaining")]}),
         (

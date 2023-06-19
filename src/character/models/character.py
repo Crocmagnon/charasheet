@@ -254,6 +254,7 @@ class Character(models.Model):
         blank=True,
         verbose_name="capacités",
     )
+    paths = models.ManyToManyField("character.Path", blank=True, verbose_name="voies")
 
     equipment = models.TextField(blank=True, verbose_name="équipement")
     luck_points_remaining = models.PositiveSmallIntegerField(
@@ -428,8 +429,10 @@ class Character(models.Model):
 
     def get_capabilities_by_path(self) -> dict[Path, list[CharacterCapability]]:
         capabilities_by_path = collections.defaultdict(list)
-        character_capabilities = self.capabilities.all()
-        character_paths = {capability.path for capability in character_capabilities}
+        character_capabilities = set(self.capabilities.all())
+        character_paths = {
+            capability.path for capability in character_capabilities
+        } | set(self.paths.all())
         for path in character_paths:
             for capability in path.capabilities.all():
                 capabilities_by_path[capability.path].append(

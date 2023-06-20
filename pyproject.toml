@@ -1,38 +1,6 @@
 ###############################################################################
 # pytest
 ###############################################################################
-[tool.pytest.ini_options]
-addopts = """
---html=test_reports/pytest_result/pytest.html --color=yes --durations 20
---no-cov-on-fail --strict-markers --reuse-db
---driver=Firefox
--W error
--W "ignore:capabilities and desired_capabilities have been deprecated:DeprecationWarning:pytest_selenium.pytest_selenium"
--W "ignore:service_log_path has been deprecated:DeprecationWarning:pytest_selenium.pytest_selenium"
-"""
-markers = []
-minversion = "6.0"
-DJANGO_SETTINGS_MODULE = "charasheet.settings"
-junit_family = "xunit1"
-norecursedirs = [
-    ".*",
-    "docker",
-    "documentation",
-    "static",
-    "public",
-]
-testpaths = [
-    "src",
-]
-python_files = [
-    "test_*.py",
-    "tests.py",
-]
-
-###############################################################################
-# ruff
-###############################################################################
-
 [tool.ruff]
 src = ["src"]
 target-version = "py311"
@@ -72,3 +40,35 @@ convention = "pep257"
 
 [tool.ruff.mccabe]
 max-complexity = 10
+
+[tool.pytest.ini_options]
+addopts = """
+--html=test_reports/pytest_result/pytest.html --color=yes --durations 20
+--no-cov-on-fail --strict-markers --reuse-db
+--driver=Firefox
+-W error
+-W "ignore:capabilities and desired_capabilities have been deprecated:DeprecationWarning:pytest_selenium.pytest_selenium"
+-W "ignore:service_log_path has been deprecated:DeprecationWarning:pytest_selenium.pytest_selenium"
+"""
+markers = []
+minversion = "6.0"
+DJANGO_SETTINGS_MODULE = "charasheet.settings"
+junit_family = "xunit1"
+norecursedirs = [
+    ".*",
+    "docker",
+    "documentation",
+    "static",
+    "public",
+]
+testpaths = [
+    "src",
+]
+python_files = [
+    "test_*.py",
+    "tests.py",
+]
+
+###############################################################################
+# ruff
+###############################################################################

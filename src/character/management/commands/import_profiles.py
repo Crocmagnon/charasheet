@@ -73,8 +73,7 @@ class Command(BaseCommand):
                 notes += f"\n\n# {title}\n{text}"
             except Exception:
                 self.stdout.write(f"No {field_name} found for {name}")
-        notes = notes.strip()
-        return notes
+        return notes.strip()
 
     def get_mana_max_compute(self, name) -> Profile.ManaMax:
         if name in ["Barde", "Druide", "Forgesort", "Prêtre"]:

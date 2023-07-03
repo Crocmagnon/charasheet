@@ -8,10 +8,6 @@ asgiref==3.7.2
     # via
     #   -c constraints.txt
     #   django
-async-generator==1.10
-    # via
-    #   -c constraints.txt
-    #   trio
 attrs==23.1.0
     # via
     #   -c constraints.txt
@@ -51,7 +47,7 @@ cwcwidth==0.1.8
     #   curtsies
 distlib==0.3.6
     # via virtualenv
-django==4.2.2
+django==4.2.3
     # via
     #   -c constraints.txt
     #   django-browser-reload
@@ -61,7 +57,7 @@ django-browser-reload==1.10.0
     # via -r requirements-dev.in
 django-debug-toolbar==4.1.0
     # via -r requirements-dev.in
-exceptiongroup==1.1.1
+exceptiongroup==1.1.2
     # via
     #   -c constraints.txt
     #   trio-websocket
@@ -73,7 +69,7 @@ h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.79.3
+hypothesis==6.80.0
     # via -r requirements-dev.in
 identify==2.5.24
     # via pre-commit
@@ -103,7 +99,7 @@ packaging==23.1
     #   pytest
 pathspec==0.11.1
     # via black
-pip-tools==6.13.0
+pip-tools==6.14.0
     # via -r requirements-dev.in
 platformdirs==3.8.0
     # via
@@ -181,7 +177,7 @@ sqlparse==0.4.4
     #   django-debug-toolbar
 tenacity==8.2.2
     # via pytest-selenium
-trio==0.22.0
+trio==0.22.1
     # via
     #   -c constraints.txt
     #   selenium

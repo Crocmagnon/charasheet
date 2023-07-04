@@ -435,7 +435,7 @@ class Character(models.Model):
         } | set(self.paths.all())
         for path in character_paths:
             for capability in path.capabilities.all():
-                capabilities_by_path[capability.path].append(
+                capabilities_by_path[capability.path].append(  # noqa: PERF401
                     CharacterCapability(
                         capability,
                         known=capability in character_capabilities,

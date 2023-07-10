@@ -16,7 +16,7 @@ certifi==2023.5.7
     #   selenium
 cffi==1.15.1
     # via cryptography
-charset-normalizer==3.1.0
+charset-normalizer==3.2.0
     # via requests
 confusable-homoglyphs==3.2.0
     # via django-registration
@@ -41,11 +41,11 @@ django-environ==0.10.0
     # via -r requirements.in
 django-extensions==3.2.3
     # via -r requirements.in
-django-htmx==1.15.0
+django-htmx==1.16.0
     # via -r requirements.in
-django-linear-migrations==2.10.0
+django-linear-migrations==2.11.0
     # via -r requirements.in
-django-registration==3.3
+django-registration==3.4
     # via -r requirements.in
 exceptiongroup==1.1.2
     # via trio-websocket

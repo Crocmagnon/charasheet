@@ -22,7 +22,7 @@ bpython==0.24
     # via -r requirements-dev.in
 build==0.10.0
     # via pip-tools
-certifi==2023.5.7
+certifi==2023.7.22
     # via
     #   -c constraints.txt
     #   requests
@@ -33,7 +33,7 @@ charset-normalizer==3.2.0
     # via
     #   -c constraints.txt
     #   requests
-click==8.1.5
+click==8.1.6
     # via
     #   black
     #   pip-tools
@@ -69,9 +69,9 @@ h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.81.2
+hypothesis==6.82.0
     # via -r requirements-dev.in
-identify==2.5.24
+identify==2.5.26
     # via pre-commit
 idna==3.4
     # via
@@ -94,12 +94,13 @@ outcome==1.2.0
     #   trio
 packaging==23.1
     # via
+    #   -c constraints.txt
     #   black
     #   build
     #   pytest
 pathspec==0.11.1
     # via black
-pip-tools==7.0.0
+pip-tools==7.1.0
     # via -r requirements-dev.in
 platformdirs==3.9.1
     # via
@@ -145,7 +146,7 @@ pytest-variables==3.0.0
     # via pytest-selenium
 pyxdg==0.28
     # via bpython
-pyyaml==6.0
+pyyaml==6.0.1
     # via pre-commit
 requests==2.31.0
     # via
@@ -153,7 +154,7 @@ requests==2.31.0
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.0.278
+ruff==0.0.280
     # via -r requirements-dev.in
 selenium==4.9.1
     # via
@@ -186,16 +187,16 @@ trio-websocket==0.10.3
     # via
     #   -c constraints.txt
     #   selenium
-urllib3[socks]==2.0.3
+urllib3[socks]==2.0.4
     # via
     #   -c constraints.txt
     #   requests
     #   selenium
-virtualenv==20.24.0
+virtualenv==20.24.2
     # via pre-commit
 wcwidth==0.2.6
     # via blessed
-wheel==0.40.0
+wheel==0.41.0
     # via pip-tools
 wsproto==1.2.0
     # via
@@ -203,10 +204,9 @@ wsproto==1.2.0
     #   trio-websocket
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==23.2
+pip==23.2.1
     # via pip-tools
 setuptools==68.0.0
     # via
-    #   -c constraints.txt
     #   nodeenv
     #   pip-tools

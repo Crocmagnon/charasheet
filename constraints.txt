@@ -31,7 +31,7 @@ django==4.2.3
     #   django-htmx
     #   django-linear-migrations
     #   django-registration
-django-anymail==10.0
+django-anymail==10.1
     # via -r requirements.in
 django-bootstrap5==23.3
     # via -r requirements.in
@@ -57,7 +57,7 @@ idna==3.4
     # via
     #   requests
     #   trio
-markdown==3.4.3
+markdown==3.4.4
     # via -r requirements.in
 outcome==1.2.0
     # via trio

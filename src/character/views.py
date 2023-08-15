@@ -234,8 +234,8 @@ def character_luck_points_change(request, pk: int):
 
 def get_updated_value(
     request,
-    remaining_value: int | float,
-    max_value: int | float,
+    remaining_value: float,
+    max_value: float,
 ) -> int:
     form_value = request.GET.get("value")
     if form_value == "ko":

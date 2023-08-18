@@ -1,5 +1,7 @@
 # charasheet
 
+Manage your RPG party & character using an interactive web app accessible from any browser.
+
 ## Quick start
 Clone, then
 ```shell

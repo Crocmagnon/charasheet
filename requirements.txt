@@ -20,7 +20,7 @@ charset-normalizer==3.2.0
     # via requests
 confusable-homoglyphs==3.2.0
     # via django-registration
-cryptography==41.0.3
+cryptography==41.0.4
     # via django-anymail
 django==4.2.5
     # via
@@ -87,7 +87,7 @@ trio==0.22.2
     #   trio-websocket
 trio-websocket==0.10.4
     # via selenium
-urllib3[socks]==2.0.4
+urllib3[socks]==2.0.5
     # via
     #   django-anymail
     #   requests

@@ -39,3 +39,4 @@ dashboard_templates/backup_*.zip
 .idea/sonarlint/
 character.json
 .direnv/
+.venv/

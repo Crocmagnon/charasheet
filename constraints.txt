@@ -22,7 +22,7 @@ confusable-homoglyphs==3.2.0
     # via django-registration
 cryptography==41.0.4
     # via django-anymail
-django==4.2.5
+django==4.2.6
     # via
     #   -r requirements.in
     #   django-anymail
@@ -55,7 +55,7 @@ idna==3.4
     # via
     #   requests
     #   trio
-markdown==3.4.4
+markdown==3.5
     # via -r requirements.in
 outcome==1.2.0
     # via trio

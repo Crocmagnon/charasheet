@@ -10,7 +10,7 @@
                 <i class="fa-solid fa-save"></i> Save
             </a>
         </h2>
-        <div class="alert alert-info">Ces notes ne sont pas visibles par le joueur.</div>
+        <div class="alert alert-info">Seul le MJ peut voir et modifier ces notes.</div>
         {% csrf_token %}
         <textarea class="form-control" name="gm_notes" rows="10">{{ character.gm_notes }}</textarea>
     </form>

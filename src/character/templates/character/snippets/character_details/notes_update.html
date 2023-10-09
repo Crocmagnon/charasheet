@@ -11,8 +11,7 @@
             </a>
         </h2>
         <div class="alert alert-info">
-            Ces notes ne sont visibles que par le joueur et les MJ
-            des groupes auquel ce personnage appartient.
+            Le joueur et le MJ peuvent voir et modifier ces notes.
         </div>
         {% csrf_token %}
         <textarea class="form-control" name="notes" rows="25">{{ character.notes }}</textarea>

@@ -14,5 +14,14 @@ inv test
 ./src/manage.py createsuperuser
 ```
 
+## With preview mode
+
+```shell
+caddy --config contrib/Caddyfile.local
+./src/manage.py runserver
+cd ~/Projects/charasheet-go
+make run/live
+```
+
 # Reuse
 If you do reuse my work, please consider linking back to this repository 🙂

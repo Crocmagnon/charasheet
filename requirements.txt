@@ -16,7 +16,7 @@ certifi==2023.7.22
     #   selenium
 cffi==1.16.0
     # via cryptography
-charset-normalizer==3.3.0
+charset-normalizer==3.3.1
     # via requests
 confusable-homoglyphs==3.2.0
     # via django-registration
@@ -32,7 +32,9 @@ django==4.2.6
     #   django-linear-migrations
     #   django-registration
 django-anymail[mailgun]==10.1
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   django-anymail
 django-bootstrap5==23.3
     # via -r requirements.in
 django-cleanup==8.0.0
@@ -57,7 +59,7 @@ idna==3.4
     #   trio
 markdown==3.5
     # via -r requirements.in
-outcome==1.2.0
+outcome==1.3.0
     # via trio
 packaging==23.2
     # via gunicorn
@@ -85,11 +87,12 @@ trio==0.22.2
     #   trio-websocket
 trio-websocket==0.11.1
     # via selenium
-urllib3[socks]==2.0.6
+urllib3[socks]==2.0.7
     # via
     #   django-anymail
     #   requests
     #   selenium
+    #   urllib3
 whitenoise==6.6.0
     # via -r requirements.in
 wsproto==1.2.0

@@ -55,7 +55,7 @@ gunicorn==21.2.0
     # via -r requirements.in
 h11==0.14.0
     # via wsproto
-idna==3.4
+idna==3.6
     # via
     #   requests
     #   trio

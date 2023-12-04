@@ -50,7 +50,7 @@ cwcwidth==0.1.9
     #   curtsies
 distlib==0.3.7
     # via virtualenv
-django==4.2.7
+django==4.2.8
     # via
     #   -c constraints.txt
     #   django-browser-reload
@@ -105,7 +105,7 @@ pathspec==0.11.2
     # via black
 pip-tools==7.3.0
     # via -r requirements-dev.in
-platformdirs==4.0.0
+platformdirs==4.1.0
     # via
     #   black
     #   virtualenv
@@ -195,7 +195,7 @@ urllib3[socks]==2.1.0
     #   -c constraints.txt
     #   requests
     #   selenium
-virtualenv==20.24.7
+virtualenv==20.25.0
     # via pre-commit
 wcwidth==0.2.12
     # via blessed

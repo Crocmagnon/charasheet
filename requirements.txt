@@ -22,9 +22,9 @@ charset-normalizer==3.3.2
     # via requests
 confusable-homoglyphs==3.2.0
     # via django-registration
-cryptography==41.0.5
+cryptography==41.0.7
     # via django-anymail
-django==4.2.7
+django==4.2.8
     # via
     #   -r requirements.in
     #   django-anymail

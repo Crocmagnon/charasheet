@@ -21,10 +21,10 @@ class Migration(migrations.Migration):
                 null=True,
                 upload_to="profile_pictures",
                 validators=[
-                    functools.partial(  # noqa: PIE804
+                    functools.partial(
                         character.models.character.validate_image,
                         *(),
-                        **{"megabytes_limit": 2},
+                        megabytes_limit=2,
                     ),
                 ],
                 verbose_name="image de profil",

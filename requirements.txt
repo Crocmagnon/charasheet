@@ -8,7 +8,7 @@ asgiref==3.7.2
     # via
     #   django
     #   django-htmx
-attrs==23.1.0
+attrs==23.2.0
     # via
     #   outcome
     #   trio
@@ -37,7 +37,7 @@ django-anymail[mailgun]==10.2
     # via
     #   -r requirements.in
     #   django-anymail
-django-bootstrap5==23.3
+django-bootstrap5==23.4
     # via -r requirements.in
 django-cleanup==8.0.0
     # via -r requirements.in

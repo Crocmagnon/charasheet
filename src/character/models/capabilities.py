@@ -130,7 +130,7 @@ class Capability(DocumentedModel, TimeStampedModel, models.Model):
 
     @property
     def capability_points_cost(self) -> int:
-        if self.rank in [1, 2]:
+        if self.path.category == Path.Category.PROFILE and self.rank in [1, 2]:
             return 1
         return 2
 

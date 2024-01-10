@@ -14,6 +14,7 @@ from django_extensions.db.models import TimeStampedModel
 from character.models import Capability, Path
 from character.models.dice import Dice
 from character.models.equipment import Weapon
+from character.models.utils import cache_on_instance
 from common.models import DocumentedModel, UniquelyNamedModel
 
 
@@ -471,12 +472,15 @@ class Character(models.Model):
             pk__in=self.states.all().values_list("pk", flat=True),
         )
 
+    @cache_on_instance()
     def managed_by(self, user):
         return self in Character.objects.managed_by(user)
 
+    @cache_on_instance()
     def mastered_by(self, user):
         return self in Character.objects.mastered_by(user)
 
+    @cache_on_instance()
     def owned_by(self, user):
         return self in Character.objects.owned_by(user)
 

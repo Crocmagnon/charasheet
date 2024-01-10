@@ -25,7 +25,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.ruff_cache" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.11 (charasheet)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.12 (charasheet)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">

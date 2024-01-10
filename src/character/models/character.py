@@ -413,7 +413,13 @@ class Character(models.Model):
 
     @property
     def capability_points_used(self) -> int:
-        return sum(cap.capability_points_cost for cap in self.capabilities.only("rank"))
+        return sum(
+            cap.capability_points_cost
+            for cap in self.capabilities.select_related("path").only(
+                "rank",
+                "path__category",
+            )
+        )
 
     @property
     def capability_points_remaining(self) -> int:

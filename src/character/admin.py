@@ -101,9 +101,9 @@ class CharacterAdminForm(ModelForm):
             "path__race",
             "path__profile",
         )
-        self.fields[
-            "racial_capability"
-        ].queryset = models.RacialCapability.objects.select_related("race")
+        self.fields["racial_capability"].queryset = (
+            models.RacialCapability.objects.select_related("race")
+        )
 
 
 class PartyInline(admin.TabularInline):

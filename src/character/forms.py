@@ -54,9 +54,9 @@ class AddPathForm(forms.Form):
 class CharacterForm(forms.ModelForm):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
-        self.fields[
-            "racial_capability"
-        ].queryset = RacialCapability.objects.select_related("race")
+        self.fields["racial_capability"].queryset = (
+            RacialCapability.objects.select_related("race")
+        )
         self.fields["damage_reduction"].widget.attrs.update({"rows": 2})
         self.fields["equipment"].widget.attrs.update({"rows": 3})
 

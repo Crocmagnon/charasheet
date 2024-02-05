@@ -39,6 +39,5 @@ def settings(settings):
 
 
 @pytest.fixture()
-@pytest.mark.django_db()
 def initial_data() -> None:  # noqa: PT004
     call_command("loaddata", "initial_data")

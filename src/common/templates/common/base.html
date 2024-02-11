@@ -10,10 +10,10 @@
         {% include "common/icons.html" %}
         {% include "common/opengraph.html" %}
 
-        <link rel="stylesheet" href="{% static "vendor/bootstrap-5.2.2/bootstrap.min.css" %}">
-        <link rel="stylesheet" href="{% static "vendor/fontawesome-6.2.0/css/fontawesome.min.css" %}">
-        <link rel="stylesheet" href="{% static "vendor/fontawesome-6.2.0/css/brands.min.css" %}">
-        <link rel="stylesheet" href="{% static "vendor/fontawesome-6.2.0/css/solid.min.css" %}">
+        <link rel="stylesheet" href="{% static "vendor/bootstrap-5.3.2/bootstrap.min.css" %}">
+        <link rel="stylesheet" href="{% static "vendor/fontawesome-6.5.1/css/fontawesome.min.css" %}">
+        <link rel="stylesheet" href="{% static "vendor/fontawesome-6.5.1/css/brands.min.css" %}">
+        <link rel="stylesheet" href="{% static "vendor/fontawesome-6.5.1/css/solid.min.css" %}">
         <style>
             body {
                 margin-bottom: 2em;
@@ -35,7 +35,7 @@
         </main>
         {% include "common/footer.html" %}
 
-        <script src="{% static 'vendor/htmx-1.8.2.min.js' %}" defer></script>
+        <script src="{% static 'vendor/htmx-1.9.10.min.js' %}" defer></script>
         {% django_htmx_script %}
         {% if debug %}
             <script type="javascript">
@@ -51,7 +51,7 @@
                 }
             </script>
         {% endif %}
-        <script src="{% static "vendor/bootstrap-5.2.2/bootstrap.bundle.min.js" %}"></script>
+        <script src="{% static "vendor/bootstrap-5.3.2/bootstrap.bundle.min.js" %}"></script>
         <script type="application/javascript" defer>
             let tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
             let tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));

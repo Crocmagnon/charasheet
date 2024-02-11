@@ -2,6 +2,8 @@
 
 Manage your RPG party & character using an interactive web app accessible from any browser.
 
+[![Test, build, publish & deploy](https://github.com/Crocmagnon/charasheet/actions/workflows/publish.yaml/badge.svg)](https://github.com/Crocmagnon/charasheet/actions/workflows/publish.yaml)
+
 ## Quick start
 Clone, then
 ```shell

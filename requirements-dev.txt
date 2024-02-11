@@ -50,7 +50,7 @@ cwcwidth==0.1.9
     #   curtsies
 distlib==0.3.8
     # via virtualenv
-django==4.2.9
+django==5.0.2
     # via
     #   -c constraints.txt
     #   django-browser-reload
@@ -68,9 +68,9 @@ h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.98.1
+hypothesis==6.98.3
     # via -r requirements-dev.in
-identify==2.5.33
+identify==2.5.34
     # via pre-commit
 idna==3.6
     # via
@@ -111,9 +111,7 @@ platformdirs==4.2.0
     #   virtualenv
 pluggy==1.4.0
     # via pytest
-pre-commit==3.6.0
-    # via -r requirements-dev.in
-py==1.11.0
+pre-commit==3.6.1
     # via -r requirements-dev.in
 pygments==2.17.2
     # via bpython
@@ -143,7 +141,7 @@ pytest-html==4.1.1
     # via pytest-selenium
 pytest-metadata==3.1.0
     # via pytest-html
-pytest-selenium==4.0.1
+pytest-selenium==4.1.0
     # via -r requirements-dev.in
 pytest-variables==3.1.0
     # via pytest-selenium
@@ -157,9 +155,9 @@ requests==2.31.0
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.2.0
+ruff==0.2.1
     # via -r requirements-dev.in
-selenium==4.9.1
+selenium==4.17.2
     # via
     #   -c constraints.txt
     #   pytest-selenium
@@ -187,6 +185,10 @@ trio==0.24.0
     #   selenium
     #   trio-websocket
 trio-websocket==0.11.1
+    # via
+    #   -c constraints.txt
+    #   selenium
+typing-extensions==4.9.0
     # via
     #   -c constraints.txt
     #   selenium

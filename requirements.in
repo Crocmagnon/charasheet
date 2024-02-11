@@ -1,14 +1,11 @@
-django>=4.1,<5.0
+django>=4.1
 django-cleanup>=6.0
 django-environ>=0.9.0
 django-htmx>=1.12.2
 django-linear-migrations>=2.2.0
 django-extensions>=3.1.5
 whitenoise>=6.2
-# pytest-selenium is broken with selenium 4.10.0
-# TypeError: WebDriver.__init__() got an unexpected keyword argument 'service_log_path'
-# https://github.com/robotframework/SeleniumLibrary/issues/1835
-selenium>=4.5.0,<4.10.0
+selenium>=4.5.0
 Markdown>=3.2
 django-registration>=3.3
 django-anymail[mailgun]>=8.6

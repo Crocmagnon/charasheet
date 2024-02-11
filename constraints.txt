@@ -16,10 +16,14 @@ certifi==2024.2.2
     # via
     #   requests
     #   selenium
+cffi==1.16.0
+    # via cryptography
 charset-normalizer==3.3.2
     # via requests
 confusable-homoglyphs==3.3.1
     # via django-registration
+cryptography==42.0.2
+    # via django-anymail
 django==5.0.2
     # via
     #   -r requirements.in
@@ -63,6 +67,8 @@ packaging==23.2
     # via gunicorn
 pillow==10.2.0
     # via -r requirements.in
+pycparser==2.21
+    # via cffi
 pysocks==1.7.1
     # via urllib3
 requests==2.31.0

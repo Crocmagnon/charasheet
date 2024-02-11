@@ -223,6 +223,31 @@ class Character(models.Model):
     value_wisdom = models.PositiveSmallIntegerField(verbose_name="valeur sagesse")
     value_charisma = models.PositiveSmallIntegerField(verbose_name="valeur charisme")
 
+    bonus_strength = models.PositiveSmallIntegerField(
+        default=0,
+        verbose_name="bonus force",
+    )
+    bonus_dexterity = models.PositiveSmallIntegerField(
+        default=0,
+        verbose_name="bonus dextérité",
+    )
+    bonus_constitution = models.PositiveSmallIntegerField(
+        default=0,
+        verbose_name="bonus constitution",
+    )
+    bonus_intelligence = models.PositiveSmallIntegerField(
+        default=0,
+        verbose_name="bonus intelligence",
+    )
+    bonus_wisdom = models.PositiveSmallIntegerField(
+        default=0,
+        verbose_name="bonus sagesse",
+    )
+    bonus_charisma = models.PositiveSmallIntegerField(
+        default=0,
+        verbose_name="bonus charisme",
+    )
+
     health_max = models.PositiveSmallIntegerField(verbose_name="points de vie max")
     health_remaining = models.PositiveSmallIntegerField(
         verbose_name="points de vie restants",
@@ -314,27 +339,27 @@ class Character(models.Model):
 
     @property
     def modifier_strength(self) -> int:
-        return modifier(self.value_strength)
+        return modifier(self.value_strength) + self.bonus_strength
 
     @property
     def modifier_dexterity(self) -> int:
-        return modifier(self.value_dexterity)
+        return modifier(self.value_dexterity) + self.bonus_dexterity
 
     @property
     def modifier_constitution(self) -> int:
-        return modifier(self.value_constitution)
+        return modifier(self.value_constitution) + self.bonus_constitution
 
     @property
     def modifier_intelligence(self) -> int:
-        return modifier(self.value_intelligence)
+        return modifier(self.value_intelligence) + self.bonus_intelligence
 
     @property
     def modifier_wisdom(self) -> int:
-        return modifier(self.value_wisdom)
+        return modifier(self.value_wisdom) + self.bonus_wisdom
 
     @property
     def modifier_charisma(self) -> int:
-        return modifier(self.value_charisma)
+        return modifier(self.value_charisma) + self.bonus_charisma
 
     @property
     def modifier_initiative(self) -> int:

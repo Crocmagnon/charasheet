@@ -30,10 +30,6 @@ RUN apt-get update -y \
         libxml2 \
         media-types
 
-# Fetch project requirements
-##############################################
-COPY --chown=django:django --from=git /git-describe /git-commit /build-date /app/git/
-
 # Create directory structure
 ##############################################
 WORKDIR /app
@@ -52,6 +48,10 @@ ENV DATABASE_URL "sqlite:////app/db/db.sqlite3"
 RUN python -m pip install --no-cache-dir -r requirements.txt
 WORKDIR /app/src
 RUN python manage.py collectstatic --noinput --clear
+
+# Copy git info
+##############################################
+COPY --chown=django:django --from=git /git-describe /git-commit /build-date /app/git/
 
 EXPOSE 8000
 

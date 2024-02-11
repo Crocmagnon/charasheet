@@ -3,11 +3,6 @@
         <span>
             Version : {{ build.describe }}
             &bull; {{ build.date }}
-            {% if preview_enabled %}
-                &bull; <a class="text-muted" href="?disable_preview">Disable preview</a>
-            {% else %}
-                &bull; <a class="text-muted" href="?enable_preview">Enable preview</a>
-            {% endif %}
         </span>
         <div>
             <a href="https://github.com/Crocmagnon/charasheet" class="text-muted"><i class="fa-brands fa-github"></i></a>

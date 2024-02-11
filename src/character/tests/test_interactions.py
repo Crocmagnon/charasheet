@@ -94,6 +94,70 @@ def test_create_character(selenium: WebDriver, live_server: LiveServer):
 
 
 @pytest.mark.django_db()
+def test_change_health(selenium: WebDriver, live_server: LiveServer):
+    call_command("loaddata", "initial_data")
+    username, password = "user1", "some_password"
+    player = User.objects.create_user(username, password=password)
+    character = baker.make(Character, player=player)
+    character.health_remaining = character.health_max
+    character.save()
+    login(selenium, live_server, username, password)
+    selenium.find_element(
+        By.CSS_SELECTOR,
+        f".character[data-id='{character.id}'] .btn-success",
+    ).click()
+    assert selenium.find_element(By.ID, "health-remaining").text == str(
+        character.health_remaining,
+    )
+
+    controls = selenium.find_element(By.ID, "health-controls")
+
+    controls.find_element(By.CSS_SELECTOR, "button[type='submit'][value='ko']").click()
+    assert selenium.find_element(By.ID, "health-remaining").text == "0"
+
+    controls.find_element(By.CSS_SELECTOR, "button[type='submit'][value='max']").click()
+    assert selenium.find_element(By.ID, "health-remaining").text == str(
+        character.health_max,
+    )
+
+    controls.find_element(
+        By.CSS_SELECTOR,
+        "button[type='submit'][value='positive']",
+    ).click()
+    assert selenium.find_element(By.ID, "health-remaining").text == str(
+        character.health_max,
+    )
+
+    controls.find_element(
+        By.CSS_SELECTOR,
+        "button[type='submit'][value='negative']",
+    ).click()
+    assert selenium.find_element(By.ID, "health-remaining").text == str(
+        character.health_max - 1,
+    )
+
+    health_input = controls.find_element(By.CSS_SELECTOR, "input[name='value']")
+    health_input.clear()
+    health_input.send_keys("5")
+
+    controls.find_element(
+        By.CSS_SELECTOR,
+        "button[type='submit'][value='positive']",
+    ).click()
+    assert selenium.find_element(By.ID, "health-remaining").text == str(
+        character.health_max,
+    )
+
+    controls.find_element(
+        By.CSS_SELECTOR,
+        "button[type='submit'][value='negative']",
+    ).click()
+    assert selenium.find_element(By.ID, "health-remaining").text == str(
+        character.health_max - 5,
+    )
+
+
+@pytest.mark.django_db()
 def test_list_characters(selenium: WebDriver, live_server: LiveServer):
     # Load fixtures
     call_command("loaddata", "initial_data")

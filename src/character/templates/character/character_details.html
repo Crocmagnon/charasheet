@@ -262,32 +262,36 @@
                         <th scope="row">
                             Points de vie
                             {% if character|managed_by:user %}
-                                <div class="btn-group btn-group-sm float-end" role="group">
-                                    <button
-                                        hx-get="{% url "character:health_change" pk=character.pk %}?value=ko"
-                                        hx-target="#health-remaining"
-                                        hx-swap="innerHTML"
-                                        type="button"
-                                        class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
-                                    <button
-                                        hx-get="{% url "character:health_change" pk=character.pk %}?value=-1"
-                                        hx-target="#health-remaining"
-                                        hx-swap="innerHTML"
-                                        type="button"
-                                        class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
-                                    <button
-                                        hx-get="{% url "character:health_change" pk=character.pk %}?value=1"
-                                        hx-target="#health-remaining"
-                                        hx-swap="innerHTML"
-                                        type="button"
-                                        class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
-                                    <button
-                                        hx-get="{% url "character:health_change" pk=character.pk %}?value=max"
-                                        hx-target="#health-remaining"
-                                        hx-swap="innerHTML"
-                                        type="button"
-                                        class="btn btn-outline-success"><i class="fa-solid fa-battery-full"></i></button>
-                                </div>
+                                <form id="health-controls"
+                                      hx-post="{% url "character:health_change" pk=character.pk %}"
+                                      hx-target="#health-remaining"
+                                      hx-swap="innerHTML"
+                                      style="display: inline">
+                                    {% csrf_token %}
+                                    <div style="width: inherit" class="input-group input-group-sm float-end" role="group">
+                                        <button
+                                            type="submit"
+                                            name="action"
+                                            value="ko"
+                                            class="btn btn-outline-danger"><i class="fa-solid fa-battery-empty"></i></button>
+                                        <button
+                                            type="submit"
+                                            name="action"
+                                            value="negative"
+                                            class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+                                        <input aria-label="points de vie à ajouter/retirer" type="text" name="value" style="width: 50px" class="form-control" value="1">
+                                        <button
+                                            type="submit"
+                                            name="action"
+                                            value="positive"
+                                            class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+                                        <button
+                                            type="submit"
+                                            name="action"
+                                            value="max"
+                                            class="btn btn-outline-success"><i class="fa-solid fa-battery-full"></i></button>
+                                    </div>
+                                </form>
                             {% endif %}
                         </th>
                         <td><span id="health-remaining">{{ character.health_remaining }}</span> / {{ character.health_max }}</td>

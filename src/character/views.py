@@ -123,7 +123,11 @@ def character_health_change(request, pk: int):
         ),
         pk=pk,
     )
-    value = get_updated_value(request, character.health_remaining, character.health_max)
+    value = post_updated_value(
+        request,
+        character.health_remaining,
+        character.health_max,
+    )
     character.health_remaining = value
     character.save(update_fields=["health_remaining"])
     response = HttpResponse(value)
@@ -230,6 +234,31 @@ def character_luck_points_change(request, pk: int):
     character.luck_points_remaining = value
     character.save(update_fields=["luck_points_remaining"])
     return HttpResponse(value)
+
+
+def post_updated_value(
+    request,
+    remaining_value: float,
+    max_value: float,
+) -> int:
+    action = request.POST.get("action")
+    if action == "ko":
+        return 0
+    if action == "max":
+        return int(max_value)
+
+    multiplier = 0
+    if action == "positive":
+        multiplier = 1
+    elif action == "negative":
+        multiplier = -1
+
+    form_value = int(request.POST.get("value"))
+    remaining_value += form_value * multiplier
+    remaining_value = min([max_value, remaining_value])
+    remaining_value = max([0, remaining_value])
+
+    return int(remaining_value)
 
 
 def get_updated_value(

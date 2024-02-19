@@ -15,7 +15,7 @@ attrs==23.2.0
     #   hypothesis
     #   outcome
     #   trio
-black==24.1.1
+black==24.2.0
     # via -r requirements-dev.in
 blessed==1.20.0
     # via curtsies
@@ -68,9 +68,9 @@ h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.98.4
+hypothesis==6.98.8
     # via -r requirements-dev.in
-identify==2.5.34
+identify==2.5.35
     # via pre-commit
 idna==3.6
     # via
@@ -103,7 +103,7 @@ packaging==23.2
     #   pytest
 pathspec==0.12.1
     # via black
-pip-tools==7.3.0
+pip-tools==7.4.0
     # via -r requirements-dev.in
 platformdirs==4.2.0
     # via
@@ -111,17 +111,19 @@ platformdirs==4.2.0
     #   virtualenv
 pluggy==1.4.0
     # via pytest
-pre-commit==3.6.1
+pre-commit==3.6.2
     # via -r requirements-dev.in
 pygments==2.17.2
     # via bpython
 pyproject-hooks==1.0.0
-    # via build
+    # via
+    #   build
+    #   pip-tools
 pysocks==1.7.1
     # via
     #   -c constraints.txt
     #   urllib3
-pytest==8.0.0
+pytest==8.0.1
     # via
     #   -r requirements-dev.in
     #   pytest-base-url
@@ -139,7 +141,7 @@ pytest-django==4.8.0
     # via -r requirements-dev.in
 pytest-html==4.1.1
     # via pytest-selenium
-pytest-metadata==3.1.0
+pytest-metadata==3.1.1
     # via pytest-html
 pytest-selenium==4.1.0
     # via -r requirements-dev.in
@@ -155,9 +157,9 @@ requests==2.31.0
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.2.1
+ruff==0.2.2
     # via -r requirements-dev.in
-selenium==4.17.2
+selenium==4.18.0
     # via
     #   -c constraints.txt
     #   pytest-selenium
@@ -192,7 +194,7 @@ typing-extensions==4.9.0
     # via
     #   -c constraints.txt
     #   selenium
-urllib3[socks]==2.2.0
+urllib3[socks]==2.2.1
     # via
     #   -c constraints.txt
     #   requests

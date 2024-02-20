@@ -39,9 +39,7 @@ click==8.1.7
     #   black
     #   pip-tools
 coverage[toml]==7.4.1
-    # via
-    #   coverage
-    #   pytest-cov
+    # via pytest-cov
 curtsies==0.4.2
     # via bpython
 cwcwidth==0.1.9

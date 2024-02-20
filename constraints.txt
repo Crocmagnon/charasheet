@@ -34,9 +34,7 @@ django==5.0.2
     #   django-linear-migrations
     #   django-registration
 django-anymail==10.2
-    # via
-    #   -r requirements.in
-    #   django-anymail
+    # via -r requirements.in
 django-bootstrap5==23.4
     # via -r requirements.in
 django-cleanup==8.1.0
@@ -96,7 +94,6 @@ urllib3==2.2.1
     #   django-anymail
     #   requests
     #   selenium
-    #   urllib3
 whitenoise==6.6.0
     # via -r requirements.in
 wsproto==1.2.0

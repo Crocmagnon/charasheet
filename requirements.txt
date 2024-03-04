@@ -24,7 +24,7 @@ confusable-homoglyphs==3.3.1
     # via django-registration
 cryptography==42.0.5
     # via django-anymail
-django==5.0.2
+django==5.0.3
     # via
     #   -r requirements.in
     #   django-anymail
@@ -43,7 +43,7 @@ django-environ==0.11.2
     # via -r requirements.in
 django-extensions==3.2.3
     # via -r requirements.in
-django-htmx==1.17.2
+django-htmx==1.17.3
     # via -r requirements.in
 django-linear-migrations==2.12.0
     # via -r requirements.in

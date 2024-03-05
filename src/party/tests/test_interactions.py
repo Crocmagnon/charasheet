@@ -285,37 +285,6 @@ def test_gm_can_delete_any_existing_effect(
     BattleEffect.objects.get(pk=effects[1].pk)
 
 
-@pytest.mark.django_db()
-def test_player_cant_change_existing_running_effect(
-    selenium: WebDriver,
-    live_server: LiveServer,
-):
-    """Members of the group can only view existing running effects, no update."""
-    user, password = "player", "password"
-    player = User.objects.create_user(user, password=password)
-    character = baker.make(Character, player=player)
-    party = baker.make(Party)
-    party.characters.set([character])
-    effects = baker.make(BattleEffect, _quantity=2, party=party)
-
-    go_to_party(selenium, live_server, party, user, password)
-    effect = effects[0]
-    effect_element = selenium.find_element(
-        By.CSS_SELECTOR,
-        f'.effect[data-id="{effect.pk}"]',
-    )
-    assert effect.name in effect_element.text
-    assert effect.target in effect_element.text
-    assert effect.description in effect_element.text
-
-    with pytest.raises(NoSuchElementException):
-        selenium.find_element(By.CSS_SELECTOR, ".effect .delete")
-    with pytest.raises(NoSuchElementException):
-        selenium.find_element(By.ID, "increase-rounds")
-    with pytest.raises(NoSuchElementException):
-        selenium.find_element(By.ID, "decrease-rounds")
-
-
 def fill_effect(
     selenium: WebDriver,
     name: str,

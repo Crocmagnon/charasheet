@@ -9,26 +9,24 @@
             id="add-effect"
             class="btn btn-primary"><i class="fa-solid fa-plus"></i> Ajouter un effet
         </button>
-        {% if party.game_master == request.user %}
-            <div class="btn-group">
-                <button
-                    hx-get="{% url "party:increase_rounds" pk=party.pk %}"
-                    hx-target="#effects"
-                    hx-swap="outerHTML"
-                    type="button"
-                    id="increase-rounds"
-                    class="btn btn-outline-secondary"><i class="fa-solid fa-plus"></i> tours
-                </button>
-                <button
-                    hx-get="{% url "party:decrease_rounds" pk=party.pk %}"
-                    hx-target="#effects"
-                    hx-swap="outerHTML"
-                    type="button"
-                    id="decrease-rounds"
-                    class="btn btn-outline-secondary"><i class="fa-solid fa-minus"></i> tours
-                </button>
-            </div>
-        {% endif %}
+        <div class="btn-group">
+            <button
+                hx-get="{% url "party:increase_rounds" pk=party.pk %}"
+                hx-target="#effects"
+                hx-swap="outerHTML"
+                type="button"
+                id="increase-rounds"
+                class="btn btn-outline-secondary"><i class="fa-solid fa-plus"></i> tours
+            </button>
+            <button
+                hx-get="{% url "party:decrease_rounds" pk=party.pk %}"
+                hx-target="#effects"
+                hx-swap="outerHTML"
+                type="button"
+                id="decrease-rounds"
+                class="btn btn-outline-secondary"><i class="fa-solid fa-minus"></i> tours
+            </button>
+        </div>
     </div>
     <div id="effects-cards" class="row mt-1 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         {% for effect in party.effects.all %}

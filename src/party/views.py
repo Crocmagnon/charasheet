@@ -96,7 +96,7 @@ def party_add_effect(request, pk):
 @require_GET
 @login_required
 def party_increase_rounds(request, pk):
-    party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
+    party = get_object_or_404(Party.objects.played_or_mastered_by(request.user), pk=pk)
     party.effects.increase_rounds()
     return render(request, "party/snippets/effects.html", {"party": party})
 
@@ -104,7 +104,7 @@ def party_increase_rounds(request, pk):
 @require_GET
 @login_required
 def party_decrease_rounds(request, pk):
-    party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
+    party = get_object_or_404(Party.objects.played_or_mastered_by(request.user), pk=pk)
     party.effects.decrease_rounds()
     return render(request, "party/snippets/effects.html", {"party": party})
 
@@ -112,7 +112,7 @@ def party_decrease_rounds(request, pk):
 @require_GET
 @login_required
 def party_delete_effect(request, pk, effect_pk):
-    party = get_object_or_404(Party.objects.managed_by(request.user), pk=pk)
+    party = get_object_or_404(Party.objects.played_or_mastered_by(request.user), pk=pk)
     BattleEffect.objects.filter(pk=effect_pk).delete()
     return render(request, "party/snippets/effects.html", {"party": party})
 

@@ -4,7 +4,6 @@ import pytest
 from django.urls import reverse
 from model_bakery import baker
 from pytest_django.live_server_helper import LiveServer
-from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support.select import Select

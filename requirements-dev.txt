@@ -48,7 +48,7 @@ cwcwidth==0.1.9
     #   curtsies
 distlib==0.3.8
     # via virtualenv
-django==5.0.3
+django==5.0.4
     # via
     #   -c constraints.txt
     #   django-browser-reload
@@ -188,7 +188,7 @@ trio-websocket==0.11.1
     # via
     #   -c constraints.txt
     #   selenium
-typing-extensions==4.10.0
+typing-extensions==4.11.0
     # via
     #   -c constraints.txt
     #   selenium

@@ -68,7 +68,7 @@ h11==0.14.0
     #   wsproto
 hypothesis==6.100.1
     # via -r requirements-dev.in
-identify==2.5.35
+identify==2.5.36
     # via pre-commit
 idna==3.7
     # via
@@ -83,7 +83,7 @@ jinja2==3.1.3
     # via pytest-html
 markupsafe==2.1.5
     # via jinja2
-model-bakery==1.17.0
+model-bakery==1.18.0
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
     # via black
@@ -107,7 +107,7 @@ platformdirs==4.2.0
     # via
     #   black
     #   virtualenv
-pluggy==1.4.0
+pluggy==1.5.0
     # via pytest
 pre-commit==3.7.0
     # via -r requirements-dev.in
@@ -155,7 +155,7 @@ requests==2.31.0
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.3.7
+ruff==0.4.1
     # via -r requirements-dev.in
 selenium==4.19.0
     # via
@@ -197,7 +197,7 @@ urllib3[socks]==2.2.1
     #   -c constraints.txt
     #   requests
     #   selenium
-virtualenv==20.25.1
+virtualenv==20.25.3
     # via pre-commit
 wcwidth==0.2.13
     # via blessed

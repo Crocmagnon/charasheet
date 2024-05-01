@@ -164,7 +164,8 @@ class CharacterCapability:
 def validate_image(fieldfile_obj, megabytes_limit: float):
     filesize = fieldfile_obj.file.size
     if filesize > megabytes_limit * 1024 * 1024:
-        raise ValidationError("La taille maximale est de %sMo" % str(megabytes_limit))
+        msg = f"La taille maximale est de {megabytes_limit}Mo"
+        raise ValidationError(msg)
 
 
 class Character(models.Model):

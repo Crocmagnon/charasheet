@@ -20,7 +20,7 @@ charset-normalizer==3.3.2
     # via requests
 confusable-homoglyphs==3.3.1
     # via django-registration
-django==5.0.5
+django==5.0.6
     # via
     #   -r requirements.in
     #   django-anymail

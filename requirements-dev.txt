@@ -58,7 +58,7 @@ django-browser-reload==1.12.1
     # via -r requirements-dev.in
 django-debug-toolbar==4.4.2
     # via -r requirements-dev.in
-filelock==3.14.0
+filelock==3.15.1
     # via virtualenv
 greenlet==3.0.3
     # via bpython
@@ -66,7 +66,7 @@ h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.103.1
+hypothesis==6.103.2
     # via -r requirements-dev.in
 identify==2.5.36
     # via pre-commit
@@ -155,7 +155,7 @@ requests==2.32.3
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.4.8
+ruff==0.4.9
     # via -r requirements-dev.in
 selenium==4.21.0
     # via
@@ -177,7 +177,7 @@ sqlparse==0.5.0
     #   -c constraints.txt
     #   django
     #   django-debug-toolbar
-tenacity==8.3.0
+tenacity==8.4.1
     # via pytest-selenium
 trio==0.25.1
     # via
@@ -192,7 +192,7 @@ typing-extensions==4.12.2
     # via
     #   -c constraints.txt
     #   selenium
-urllib3[socks]==2.2.1
+urllib3[socks]==2.2.2
     # via
     #   -c constraints.txt
     #   requests

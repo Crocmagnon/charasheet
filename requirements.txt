@@ -12,7 +12,7 @@ attrs==23.2.0
     # via
     #   outcome
     #   trio
-certifi==2024.6.2
+certifi==2024.7.4
     # via
     #   requests
     #   selenium
@@ -75,7 +75,7 @@ sortedcontainers==2.4.0
     # via trio
 sqlparse==0.5.0
     # via django
-trio==0.25.1
+trio==0.26.0
     # via
     #   selenium
     #   trio-websocket

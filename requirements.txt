@@ -20,7 +20,7 @@ charset-normalizer==3.3.2
     # via requests
 confusable-homoglyphs==3.3.1
     # via django-registration
-django==5.0.6
+django==5.0.7
     # via
     #   -r requirements.in
     #   django-anymail
@@ -29,7 +29,7 @@ django==5.0.6
     #   django-htmx
     #   django-linear-migrations
     #   django-registration
-django-anymail[mailgun]==11.0
+django-anymail[mailgun]==11.0.1
     # via -r requirements.in
 django-bootstrap5==24.2
     # via -r requirements.in

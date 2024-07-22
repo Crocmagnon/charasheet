@@ -66,7 +66,7 @@ h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.108.2
+hypothesis==6.108.3
     # via -r requirements-dev.in
 identify==2.6.0
     # via pre-commit
@@ -121,7 +121,7 @@ pysocks==1.7.1
     # via
     #   -c constraints.txt
     #   urllib3
-pytest==8.2.2
+pytest==8.3.1
     # via
     #   -r requirements-dev.in
     #   pytest-base-url
@@ -155,9 +155,9 @@ requests==2.32.3
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.5.2
+ruff==0.5.4
     # via -r requirements-dev.in
-selenium==4.22.0
+selenium==4.23.0
     # via
     #   -c constraints.txt
     #   pytest-selenium
@@ -172,7 +172,7 @@ sortedcontainers==2.4.0
     #   -c constraints.txt
     #   hypothesis
     #   trio
-sqlparse==0.5.0
+sqlparse==0.5.1
     # via
     #   -c constraints.txt
     #   django
@@ -188,7 +188,7 @@ trio-websocket==0.11.1
     # via
     #   -c constraints.txt
     #   selenium
-typing-extensions==4.12.2
+typing-extensions==4.9.0
     # via
     #   -c constraints.txt
     #   selenium
@@ -215,5 +215,5 @@ wsproto==1.2.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.1.2
     # via pip-tools
-setuptools==70.3.0
+setuptools==71.1.0
     # via pip-tools

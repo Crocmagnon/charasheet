@@ -8,7 +8,7 @@ asgiref==3.8.1
     # via
     #   django
     #   django-htmx
-attrs==23.2.0
+attrs==24.1.0
     # via
     #   outcome
     #   trio
@@ -39,7 +39,7 @@ django-environ==0.11.2
     # via -r requirements.in
 django-extensions==3.2.3
     # via -r requirements.in
-django-htmx==1.18.0
+django-htmx==1.19.0
     # via -r requirements.in
 django-linear-migrations==2.13.0
     # via -r requirements.in
@@ -75,7 +75,7 @@ sortedcontainers==2.4.0
     # via trio
 sqlparse==0.5.1
     # via django
-trio==0.26.0
+trio==0.26.1
     # via
     #   selenium
     #   trio-websocket

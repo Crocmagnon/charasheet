@@ -49,6 +49,7 @@ lint.unfixable = [
   "T20",
 ]
 lint.mccabe.max-complexity = 10
+# TODO remove "hash" ignore after issue is fixed: https://github.com/python-trio/trio/issues/3053
 lint.pydocstyle.convention = "pep257"
 
 [tool.pytest.ini_options]
@@ -57,8 +58,7 @@ addopts = """
 --no-cov-on-fail --strict-markers --reuse-db
 --driver=Firefox
 -W error
--W "ignore:capabilities and desired_capabilities have been deprecated:DeprecationWarning:pytest_selenium.pytest_selenium"
--W "ignore:service_log_path has been deprecated:DeprecationWarning:pytest_selenium.pytest_selenium"
+-W "ignore:The `hash` argument is deprecated in favor of `unsafe_hash` and will be removed in or after August 2025:DeprecationWarning"
 """
 markers = [
 ]

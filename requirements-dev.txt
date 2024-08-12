@@ -9,7 +9,7 @@ asgiref==3.8.1
     #   -c constraints.txt
     #   django
     #   django-browser-reload
-attrs==24.1.0
+attrs==24.2.0
     # via
     #   -c constraints.txt
     #   hypothesis
@@ -48,7 +48,7 @@ cwcwidth==0.1.9
     #   curtsies
 distlib==0.3.8
     # via virtualenv
-django==5.0.7
+django==5.1
     # via
     #   -c constraints.txt
     #   django-browser-reload
@@ -66,7 +66,7 @@ h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.108.8
+hypothesis==6.111.0
     # via -r requirements-dev.in
 identify==2.6.0
     # via pre-commit
@@ -83,7 +83,7 @@ jinja2==3.1.4
     # via pytest-html
 markupsafe==2.1.5
     # via jinja2
-model-bakery==1.18.2
+model-bakery==1.19.1
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
     # via black
@@ -147,7 +147,7 @@ pytest-variables==3.1.0
     # via pytest-selenium
 pyxdg==0.28
     # via bpython
-pyyaml==6.0.1
+pyyaml==6.0.2
     # via pre-commit
 requests==2.32.3
     # via
@@ -155,7 +155,7 @@ requests==2.32.3
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.5.6
+ruff==0.5.7
     # via -r requirements-dev.in
 selenium==4.23.1
     # via
@@ -179,7 +179,7 @@ sqlparse==0.5.1
     #   django-debug-toolbar
 tenacity==9.0.0
     # via pytest-selenium
-trio==0.26.1
+trio==0.26.2
     # via
     #   -c constraints.txt
     #   selenium

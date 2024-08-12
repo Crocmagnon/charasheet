@@ -8,7 +8,7 @@ asgiref==3.8.1
     # via
     #   django
     #   django-htmx
-attrs==24.1.0
+attrs==24.2.0
     # via
     #   outcome
     #   trio
@@ -20,7 +20,7 @@ charset-normalizer==3.3.2
     # via requests
 confusable-homoglyphs==3.3.1
     # via django-registration
-django==5.0.7
+django==5.1
     # via
     #   -r requirements.in
     #   django-anymail
@@ -29,7 +29,7 @@ django==5.0.7
     #   django-htmx
     #   django-linear-migrations
     #   django-registration
-django-anymail==11.0.1
+django-anymail==11.1
     # via -r requirements.in
 django-bootstrap5==24.2
     # via -r requirements.in
@@ -45,7 +45,7 @@ django-linear-migrations==2.13.0
     # via -r requirements.in
 django-registration==3.4
     # via -r requirements.in
-gunicorn==22.0.0
+gunicorn==23.0.0
     # via -r requirements.in
 h11==0.14.0
     # via wsproto
@@ -75,7 +75,7 @@ sortedcontainers==2.4.0
     # via trio
 sqlparse==0.5.1
     # via django
-trio==0.26.1
+trio==0.26.2
     # via
     #   selenium
     #   trio-websocket

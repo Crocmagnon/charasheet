@@ -8,7 +8,7 @@ from common.models import User
 from party.models import Party
 
 
-@pytest.mark.django_db()
+@pytest.mark.django_db
 def test_can_access_own_character(client):
     player = User.objects.create_user("username", password="password")
 
@@ -24,7 +24,7 @@ def test_can_access_own_character(client):
     assert gm_notes not in body
 
 
-@pytest.mark.django_db()
+@pytest.mark.django_db
 def test_cant_access_random_character(client):
     player = User.objects.create_user("user", password="password")
     other = User.objects.create_user("other", password="password")
@@ -35,7 +35,7 @@ def test_cant_access_random_character(client):
     assert res.status_code == HTTPStatus.NOT_FOUND
 
 
-@pytest.mark.django_db()
+@pytest.mark.django_db
 def test_can_access_character_in_party(client):
     player = User.objects.create_user("user", password="password")
     friend = User.objects.create_user("friend", password="password")
@@ -61,7 +61,7 @@ def test_can_access_character_in_party(client):
     assert gm_notes not in body
 
 
-@pytest.mark.django_db()
+@pytest.mark.django_db
 def test_game_master_can_access_character_in_party(client):
     player = User.objects.create_user("user", password="password")
     gm = User.objects.create_user("gm", password="password")

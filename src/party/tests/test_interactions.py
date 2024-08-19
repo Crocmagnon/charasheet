@@ -15,7 +15,7 @@ from common.models import User
 from party.models import BattleEffect, Party
 
 
-@pytest.mark.django_db()
+@pytest.mark.django_db
 def test_add_character_to_existing_group(selenium: WebDriver, live_server: LiveServer):
     username, password = "gm", "password"
     gm = User.objects.create_user(username, password=password)
@@ -39,7 +39,7 @@ def test_add_character_to_existing_group(selenium: WebDriver, live_server: LiveS
     assert set(party.invited_characters.all()) == {character}
 
 
-@pytest.mark.django_db()
+@pytest.mark.django_db
 def test_gm_observe_invited_character_in_group(
     selenium: WebDriver,
     live_server: LiveServer,
@@ -66,7 +66,7 @@ def test_gm_observe_invited_character_in_group(
     assert title == character.name
 
 
-@pytest.mark.django_db()
+@pytest.mark.django_db
 def test_gm_observe_invited_character_in_two_groups(
     selenium: WebDriver,
     live_server: LiveServer,
@@ -95,7 +95,7 @@ def test_gm_observe_invited_character_in_two_groups(
     assert title == character.name
 
 
-@pytest.mark.django_db()
+@pytest.mark.django_db
 def test_reset_stats_view(
     selenium: WebDriver,
     live_server: LiveServer,
@@ -125,7 +125,7 @@ def test_reset_stats_view(
         assert character.luck_points_remaining == character.luck_points_max
 
 
-@pytest.mark.django_db()
+@pytest.mark.django_db
 def test_player_can_add_effect_to_group(selenium: WebDriver, live_server: LiveServer):
     """Any member of a group can add effects to the group."""
     user, password = "player", "password"
@@ -154,7 +154,7 @@ def test_player_can_add_effect_to_group(selenium: WebDriver, live_server: LiveSe
     assert effect.description in element.text
 
 
-@pytest.mark.django_db()
+@pytest.mark.django_db
 def test_gm_can_add_effect_to_group(selenium: WebDriver, live_server: LiveServer):
     """The GM of a group can add effects to the group."""
     user, password = "gm", "password"
@@ -183,7 +183,7 @@ def test_gm_can_add_effect_to_group(selenium: WebDriver, live_server: LiveServer
     assert effect.description in element.text
 
 
-@pytest.mark.django_db()
+@pytest.mark.django_db
 def test_gm_can_change_remaining_rounds(selenium: WebDriver, live_server: LiveServer):
     """The GM of a group can increase or decrease the remaining rounds of effects."""
     user, password = "gm", "password"
@@ -261,7 +261,7 @@ def test_gm_can_change_remaining_rounds(selenium: WebDriver, live_server: LiveSe
     )
 
 
-@pytest.mark.django_db()
+@pytest.mark.django_db
 def test_gm_can_delete_any_existing_effect(
     selenium: WebDriver,
     live_server: LiveServer,

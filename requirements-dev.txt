@@ -54,7 +54,7 @@ django==5.1
     #   django-browser-reload
     #   django-debug-toolbar
     #   model-bakery
-django-browser-reload==1.13.0
+django-browser-reload==1.15.0
     # via -r requirements-dev.in
 django-debug-toolbar==4.4.6
     # via -r requirements-dev.in
@@ -66,7 +66,7 @@ h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.111.0
+hypothesis==6.111.1
     # via -r requirements-dev.in
 identify==2.6.0
     # via pre-commit
@@ -83,7 +83,7 @@ jinja2==3.1.4
     # via pytest-html
 markupsafe==2.1.5
     # via jinja2
-model-bakery==1.19.1
+model-bakery==1.19.3
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
     # via black
@@ -155,7 +155,7 @@ requests==2.32.3
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.5.7
+ruff==0.6.1
     # via -r requirements-dev.in
 selenium==4.23.1
     # via
@@ -215,5 +215,5 @@ wsproto==1.2.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.2
     # via pip-tools
-setuptools==72.1.0
+setuptools==72.2.0
     # via pip-tools

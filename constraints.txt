@@ -49,7 +49,7 @@ gunicorn==23.0.0
     # via -r requirements.in
 h11==0.14.0
     # via wsproto
-idna==3.7
+idna==3.8
     # via
     #   requests
     #   trio

@@ -29,7 +29,7 @@ django==5.1.1
     #   django-htmx
     #   django-linear-migrations
     #   django-registration
-django-anymail[mailgun]==11.1
+django-anymail[mailgun]==12.0
     # via -r requirements.in
 django-bootstrap5==24.2
     # via -r requirements.in
@@ -49,7 +49,7 @@ gunicorn==23.0.0
     # via -r requirements.in
 h11==0.14.0
     # via wsproto
-idna==3.8
+idna==3.10
     # via
     #   requests
     #   trio
@@ -83,7 +83,7 @@ trio-websocket==0.11.1
     # via selenium
 typing-extensions==4.12.2
     # via selenium
-urllib3[socks]==2.2.2
+urllib3[socks]==2.2.3
     # via
     #   django-anymail
     #   requests

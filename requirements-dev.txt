@@ -60,17 +60,17 @@ django-debug-toolbar==4.4.6
     # via -r requirements-dev.in
 filelock==3.16.0
     # via virtualenv
-greenlet==3.0.3
+greenlet==3.1.0
     # via bpython
 h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.112.0
+hypothesis==6.112.1
     # via -r requirements-dev.in
-identify==2.6.0
+identify==2.6.1
     # via pre-commit
-idna==3.8
+idna==3.10
     # via
     #   -c constraints.txt
     #   requests
@@ -103,7 +103,7 @@ pathspec==0.12.1
     # via black
 pip-tools==7.4.1
     # via -r requirements-dev.in
-platformdirs==4.3.2
+platformdirs==4.3.3
     # via
     #   black
     #   virtualenv
@@ -121,7 +121,7 @@ pysocks==1.7.1
     # via
     #   -c constraints.txt
     #   urllib3
-pytest==8.3.2
+pytest==8.3.3
     # via
     #   -r requirements-dev.in
     #   pytest-base-url
@@ -155,7 +155,7 @@ requests==2.32.3
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.6.4
+ruff==0.6.5
     # via -r requirements-dev.in
 selenium==4.24.0
     # via
@@ -192,7 +192,7 @@ typing-extensions==4.12.2
     # via
     #   -c constraints.txt
     #   selenium
-urllib3[socks]==2.2.2
+urllib3[socks]==2.2.3
     # via
     #   -c constraints.txt
     #   requests
@@ -215,5 +215,5 @@ wsproto==1.2.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.2
     # via pip-tools
-setuptools==74.1.2
+setuptools==75.1.0
     # via pip-tools

@@ -16,11 +16,11 @@ certifi==2024.8.30
     # via
     #   requests
     #   selenium
-charset-normalizer==3.3.2
+charset-normalizer==3.4.0
     # via requests
 confusable-homoglyphs==3.3.1
     # via django-registration
-django==5.1.1
+django==5.1.2
     # via
     #   -r requirements.in
     #   django-anymail
@@ -41,7 +41,7 @@ django-extensions==3.2.3
     # via -r requirements.in
 django-htmx==1.19.0
     # via -r requirements.in
-django-linear-migrations==2.13.0
+django-linear-migrations==2.15.0
     # via -r requirements.in
 django-registration==3.4
     # via -r requirements.in

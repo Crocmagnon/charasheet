@@ -38,7 +38,7 @@ click==8.1.7
     # via
     #   black
     #   pip-tools
-coverage[toml]==7.6.3
+coverage[toml]==7.6.4
     # via pytest-cov
 curtsies==0.4.2
     # via bpython
@@ -66,7 +66,7 @@ h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.115.0
+hypothesis==6.115.3
     # via -r requirements-dev.in
 identify==2.6.1
     # via pre-commit
@@ -81,7 +81,7 @@ invoke==2.2.0
     # via -r requirements-dev.in
 jinja2==3.1.4
     # via pytest-html
-markupsafe==3.0.1
+markupsafe==3.0.2
     # via jinja2
 model-bakery==1.20.0
     # via -r requirements-dev.in
@@ -155,7 +155,7 @@ requests==2.32.3
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.6.9
+ruff==0.7.0
     # via -r requirements-dev.in
 selenium==4.25.0
     # via
@@ -179,7 +179,7 @@ sqlparse==0.5.1
     #   django-debug-toolbar
 tenacity==9.0.0
     # via pytest-selenium
-trio==0.26.2
+trio==0.27.0
     # via
     #   -c constraints.txt
     #   selenium
@@ -197,7 +197,7 @@ urllib3[socks]==2.2.3
     #   -c constraints.txt
     #   requests
     #   selenium
-virtualenv==20.26.6
+virtualenv==20.27.0
     # via pre-commit
 wcwidth==0.2.13
     # via blessed
@@ -215,5 +215,5 @@ wsproto==1.2.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.2
     # via pip-tools
-setuptools==75.1.0
+setuptools==75.2.0
     # via pip-tools

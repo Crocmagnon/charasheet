@@ -20,7 +20,7 @@ charset-normalizer==3.4.0
     # via requests
 confusable-homoglyphs==3.3.1
     # via django-registration
-django==5.1.2
+django==5.1.3
     # via
     #   -r requirements.in
     #   django-anymail
@@ -43,7 +43,7 @@ django-htmx==1.21.0
     # via -r requirements.in
 django-linear-migrations==2.16.0
     # via -r requirements.in
-django-registration==3.4
+django-registration==5.1.0
     # via -r requirements.in
 gunicorn==23.0.0
     # via -r requirements.in
@@ -57,7 +57,7 @@ markdown==3.7
     # via -r requirements.in
 outcome==1.3.0.post0
     # via trio
-packaging==24.1
+packaging==24.2
     # via gunicorn
 pillow==11.0.0
     # via -r requirements.in

@@ -48,7 +48,7 @@ cwcwidth==0.1.9
     #   curtsies
 distlib==0.3.9
     # via virtualenv
-django==5.1.2
+django==5.1.3
     # via
     #   -c constraints.txt
     #   django-browser-reload
@@ -66,9 +66,9 @@ h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.116.0
+hypothesis==6.118.7
     # via -r requirements-dev.in
-identify==2.6.1
+identify==2.6.2
     # via pre-commit
 idna==3.10
     # via
@@ -93,7 +93,7 @@ outcome==1.3.0.post0
     # via
     #   -c constraints.txt
     #   trio
-packaging==24.1
+packaging==24.2
     # via
     #   -c constraints.txt
     #   black
@@ -155,7 +155,7 @@ requests==2.32.3
     #   bpython
     #   pytest-base-url
     #   pytest-selenium
-ruff==0.7.2
+ruff==0.7.3
     # via -r requirements-dev.in
 selenium==4.26.1
     # via
@@ -205,7 +205,7 @@ websocket-client==1.8.0
     # via
     #   -c constraints.txt
     #   selenium
-wheel==0.44.0
+wheel==0.45.0
     # via pip-tools
 wsproto==1.2.0
     # via

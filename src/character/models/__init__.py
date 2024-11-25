@@ -4,11 +4,11 @@ from .equipment import Weapon
 
 __all__ = [
     "Capability",
-    "Path",
-    "RacialCapability",
     "Character",
     "HarmfulState",
+    "Path",
     "Profile",
     "Race",
+    "RacialCapability",
     "Weapon",
 ]

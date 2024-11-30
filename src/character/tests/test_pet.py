@@ -79,10 +79,12 @@ def test_pet_happy_path(selenium: WebDriver, live_server: LiveServer):
     # I have the same form as previously, pre-filled with the current values of my pet.
     selenium.find_element(By.CSS_SELECTOR, f".pet[data-id='{pet.pk}'] .edit").click()
     pet_name = selenium.find_element(By.ID, "id_name")
-    assert pet_name.get_attribute("value") == "My pet"
-    assert selenium.find_element(By.ID, "id_health_max").get_attribute("value") == "10"
+    assert pet_name.get_dom_attribute("value") == "My pet"
     assert (
-        selenium.find_element(By.ID, "id_health_remaining").get_attribute("value")
+        selenium.find_element(By.ID, "id_health_max").get_dom_attribute("value") == "10"
+    )
+    assert (
+        selenium.find_element(By.ID, "id_health_remaining").get_dom_attribute("value")
         == "9"
     )
     pet_name.clear()

@@ -19,7 +19,7 @@ class Command(BaseCommand):
                 By.CSS_SELECTOR,
                 ".card-body .card-title a",
             )
-        urls = [anchor.get_attribute("href") for anchor in anchors]
+        urls = [anchor.get_dom_attribute("href") for anchor in anchors]
         for url in urls:
             try:
                 self.import_path(url)

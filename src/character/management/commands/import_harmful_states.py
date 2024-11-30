@@ -28,7 +28,7 @@ class Command(BaseCommand):
         icon_url = state_row.find_element(
             By.CSS_SELECTOR,
             ".views-field-field-svg-icon img",
-        ).get_attribute("src")
+        ).get_dom_attribute("src")
         state, _ = HarmfulState.objects.update_or_create(
             name=name,
             defaults={"description": description, "url": url, "icon_url": icon_url},

@@ -40,3 +40,4 @@ dashboard_templates/backup_*.zip
 character.json
 .direnv/
 .venv/
+node_modules

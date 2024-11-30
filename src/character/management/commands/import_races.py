@@ -11,7 +11,7 @@ class Command(BaseCommand):
         self.setup_selenium()
         self.selenium.get(url)
         anchors = self.selenium.find_elements(By.CSS_SELECTOR, "h2 a")
-        urls = [anchor.get_attribute("href") for anchor in anchors]
+        urls = [anchor.get_dom_attribute("href") for anchor in anchors]
         for url in urls:
             try:
                 self.import_race(url)

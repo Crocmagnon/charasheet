@@ -30,7 +30,7 @@ certifi==2024.12.14
     #   selenium
 cfgv==3.4.0
     # via pre-commit
-charset-normalizer==3.4.0
+charset-normalizer==3.4.1
     # via
     #   -c constraints.txt
     #   requests
@@ -38,7 +38,7 @@ click==8.1.8
     # via
     #   black
     #   pip-tools
-coverage[toml]==7.6.9
+coverage[toml]==7.6.10
     # via pytest-cov
 curtsies==0.4.2
     # via bpython
@@ -66,9 +66,9 @@ h11==0.14.0
     # via
     #   -c constraints.txt
     #   wsproto
-hypothesis==6.123.0
+hypothesis==6.123.2
     # via -r requirements-dev.in
-identify==2.6.3
+identify==2.6.4
     # via pre-commit
 idna==3.10
     # via
@@ -179,7 +179,7 @@ sqlparse==0.5.3
     #   django-debug-toolbar
 tenacity==9.0.0
     # via pytest-selenium
-trio==0.27.0
+trio==0.28.0
     # via
     #   -c constraints.txt
     #   selenium

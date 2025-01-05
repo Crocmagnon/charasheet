@@ -14,7 +14,7 @@
         <array />
       </option>
       <option name="outputFromStdout" value="false" />
-      <option name="program" value="$USER_HOME$/.local/pipx/venvs/pre-commit/bin/pre-commit" />
+      <option name="program" value="$USER_HOME$/.local/bin/pre-commit" />
       <option name="runOnExternalChanges" value="false" />
       <option name="scopeName" value="Project Files" />
       <option name="trackOnlyRoot" value="false" />

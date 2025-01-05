@@ -1,6 +1,3 @@
-[tools]
-python = {version="3.13", virtualenv=".venv"}
-
 [env]
 ENV_FILE = "{{config_root}}/envs/local-envs.env"
 DATABASE_URL = "sqlite:///{{config_root}}/db/db.sqlite3"

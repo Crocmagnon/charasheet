@@ -7,8 +7,7 @@ Manage your RPG party & character using an interactive web app accessible from a
 ## Quick start
 Clone, then
 ```shell
-pip install -U pip pip-tools invoke
-inv sync-dependencies
+uv sync
 pre-commit install --install-hooks
 inv test
 ./src/manage.py migrate

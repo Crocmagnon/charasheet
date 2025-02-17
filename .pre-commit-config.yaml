@@ -48,7 +48,7 @@ repos:
       - id: prettier
         types_or: [javascript, css]
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v9.20.0
+    rev: v9.20.1
     hooks:
       - id: eslint
         args: [--fix]
@@ -61,6 +61,6 @@ repos:
     hooks:
       - id: pyproject-fmt
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.5.29
+    rev: 0.6.1
     hooks:
       - id: uv-lock

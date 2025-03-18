@@ -50,7 +50,8 @@ if DEBUG:
         INTERNAL_IPS.append(ip)
         ALLOWED_HOSTS.append(ip)
     except Exception as e:
-        logging.info("couldn't setup allowed host in debug: %s", e)
+        logger = logging.getLogger(__name__)
+        logger.info("couldn't setup allowed host in debug: %s", e)
 
 
 CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS")

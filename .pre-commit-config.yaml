@@ -34,11 +34,11 @@ repos:
       - id: black
         args: [--target-version, py311]
   - repo: https://github.com/rtts/djhtml
-    rev: 3.0.7
+    rev: 3.0.8
     hooks:
       - id: djhtml
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.10
+    rev: v0.11.11
     hooks:
       - id: ruff
         args: [--fix]
@@ -57,10 +57,10 @@ repos:
           - eslint@8.36.0
           - eslint-config-prettier@8.5.0
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: v2.5.1
+    rev: v2.6.0
     hooks:
       - id: pyproject-fmt
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.7.5
+    rev: 0.7.8
     hooks:
       - id: uv-lock
